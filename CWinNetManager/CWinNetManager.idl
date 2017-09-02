@@ -1,0 +1,18 @@
+// CWinNetManager.idl : IDL source for CWinNetManager
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (CWinNetManager.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	uuid(F53A3EDB-3D55-4E7B-8687-F0759A72FBCA),
+	version(1.0),
+]
+library CWinNetManagerLib
+{
+	importlib("stdole2.tlb");
+};
+
