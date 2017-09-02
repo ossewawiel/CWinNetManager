@@ -2,7 +2,7 @@
 
 #include "stdafx.h"
 #include "resource.h"
-#include "CWinNetManager_i.h"
+#include "CWinNetManager.h"
 #include "dllmain.h"
 #include "xdlldata.h"
 

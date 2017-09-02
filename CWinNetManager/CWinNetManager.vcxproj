@@ -94,7 +94,7 @@
       <MkTypLibCompatible>false</MkTypLibCompatible>
       <TargetEnvironment>Win32</TargetEnvironment>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <HeaderFileName>CWinNetManager_i.h</HeaderFileName>
+      <HeaderFileName>CWinNetManager.h</HeaderFileName>
       <InterfaceIdentifierFileName>CWinNetManager_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>CWinNetManager_p.c</ProxyFileName>
       <GenerateStublessProxies>true</GenerateStublessProxies>
@@ -110,7 +110,8 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <ModuleDefinitionFile>.\CWinNetManager.def</ModuleDefinitionFile>
-      <RegisterOutput>true</RegisterOutput>
+      <RegisterOutput>false</RegisterOutput>
+      <AdditionalDependencies>Netapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -155,7 +156,7 @@
       <MkTypLibCompatible>false</MkTypLibCompatible>
       <TargetEnvironment>Win32</TargetEnvironment>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <HeaderFileName>CWinNetManager_i.h</HeaderFileName>
+      <HeaderFileName>CWinNetManager.h</HeaderFileName>
       <InterfaceIdentifierFileName>CWinNetManager_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>CWinNetManager_p.c</ProxyFileName>
       <GenerateStublessProxies>true</GenerateStublessProxies>
@@ -173,7 +174,8 @@
       <ModuleDefinitionFile>.\CWinNetManager.def</ModuleDefinitionFile>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <RegisterOutput>true</RegisterOutput>
+      <RegisterOutput>false</RegisterOutput>
+      <AdditionalDependencies>Netapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -209,6 +211,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CNetUser.cpp" />
+    <ClCompile Include="CUserInfo1.cpp" />
     <ClCompile Include="CWinNetManager.cpp" />
     <ClCompile Include="CWinNetManager_i.c">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
@@ -260,7 +264,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CWinNetManager_i.h" />
+    <ClInclude Include="CNetUser.h" />
+    <ClInclude Include="CUserInfo1.h" />
+    <ClInclude Include="CWinNetManager.h" />
     <ClInclude Include="dllmain.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
@@ -274,6 +280,8 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="CNetUser.rgs" />
+    <None Include="CUserInfo1.rgs" />
     <None Include="CWinNetManager.def" />
     <None Include="CWinNetManager.rgs" />
   </ItemGroup>

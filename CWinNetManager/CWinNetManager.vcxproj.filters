@@ -34,6 +34,12 @@
     <ClCompile Include="CWinNetManager_i.c">
       <Filter>Generated Files</Filter>
     </ClCompile>
+    <ClCompile Include="CNetUser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CUserInfo1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -51,8 +57,14 @@
     <ClInclude Include="xdlldata.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CWinNetManager_i.h">
+    <ClInclude Include="CWinNetManager.h">
       <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CNetUser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CUserInfo1.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +81,12 @@
     </None>
     <None Include="CWinNetManager.def">
       <Filter>Source Files</Filter>
+    </None>
+    <None Include="CNetUser.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CUserInfo1.rgs">
+      <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

@@ -8,11 +8,54 @@ import "oaidl.idl";
 import "ocidl.idl";
 
 [
+	object,
+	uuid(54E16B87-DEA7-4424-A7F9-239AE50DD5F7),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1 : IDispatch {
+	[propget, id(1)] HRESULT Name([out, retval] BSTR* pVal);
+	[id(2)] HRESULT Initialise([in] BSTR bsName, [in] BSTR bsPwd, [in] ULONG ulPwdAge, [in] ULONG ulPriv, [in] BSTR bsHomeDir, [in] BSTR bsComment, [in] ULONG ulFlags, [in] BSTR bsScriptPath);
+	[propget, id(3)] HRESULT Password([out, retval] BSTR* pVal);
+	[propget, id(4)] HRESULT PasswordAge([out, retval] ULONG* pVal);
+	[propget, id(5)] HRESULT Privilege([out, retval] ULONG* pVal);
+	[propget, id(6)] HRESULT HomeDirectory([out, retval] BSTR* pVal);
+	[propget, id(7)] HRESULT Comment([out, retval] BSTR* pVal);
+	[propget, id(8)] HRESULT Flags([out, retval] ULONG* pVal);
+	[propget, id(9)] HRESULT ScriptPath([out, retval] BSTR* pVal);
+};
+[
+	object,
+	uuid(6F0101CF-7948-4472-8542-044189587EFB),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICNetUser : IDispatch{
+	[id(1)] HRESULT GetUserInfo1([in] BSTR bsName, [in] BSTR bsPwd, [in] ULONG ulPwdAge, [in] ULONG ulPriv, [in] BSTR bsHomeDir, [in] BSTR bsComment, [in] ULONG ulFlags, [in] BSTR bsScriptPath, [out, retval] ICUserInfo1** ppUserInfo1);
+	[id(2)] HRESULT NetUserAdd([in] BSTR bsServerName, [in] IUnknown* pUserInfo);
+};
+[
 	uuid(F53A3EDB-3D55-4E7B-8687-F0759A72FBCA),
 	version(1.0),
 ]
 library CWinNetManagerLib
 {
 	importlib("stdole2.tlb");
+	[
+		uuid(0DDF380E-2C9E-404A-9B6C-1EBCAAF9607C)		
+	]
+	coclass CNetUser
+	{
+		[default] interface ICNetUser;
+	};
+	[
+		uuid(6C44397A-7257-4456-B53C-7CC1BF813528)		
+	]
+	coclass CUserInfo1
+	{
+		[default] interface ICUserInfo1;
+	};
 };
 
