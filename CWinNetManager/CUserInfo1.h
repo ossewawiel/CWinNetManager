@@ -100,6 +100,8 @@ public:
 	STDMETHOD(get_ScriptPath)(BSTR* pVal);
 private:
 	_bstr_t m_bsScriptPath;
+public:
+	STDMETHOD(Clear)();
 };
 
 OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserInfo1), CCUserInfo1)

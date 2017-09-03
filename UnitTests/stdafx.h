@@ -12,7 +12,7 @@
 #include <atlbase.h>
 #include <atlcom.h>
 #include <comdef.h>
-#include <LMaccess.h>
+#include <lm.h>
 #include <string>
 
 #include <gtest\gtest.h>

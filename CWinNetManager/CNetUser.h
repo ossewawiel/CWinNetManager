@@ -62,6 +62,10 @@ public:
 
 	STDMETHOD(GetUserInfo1)(BSTR bsName, BSTR bsPwd, ULONG ulPwdAge, ULONG ulPriv, BSTR bsHomeDir, BSTR bsComment, ULONG ulFlags, BSTR bsScriptPath, ICUserInfo1** ppUserInfo1);
 	STDMETHOD(NetUserAdd)(BSTR bsServerName, IUnknown* pUserInfo);
+	STDMETHOD(NetUserDel)(BSTR bsServerName, BSTR bsUserName);
+	STDMETHOD(NetUserGetInfo)(BSTR bsServerName, BSTR bsUserName, eUserInfoType userInfoType, IUnknown** ppUserInfo);
+	STDMETHOD(CastToUserInfo1)(IUnknown* pUnk, ICUserInfo1** ppUserInfo1);
+	STDMETHOD(GetNetUserInfo2)(BSTR bsName, BSTR bsPassword, ULONG ulPasswordAge, ULONG ulPrivilege, BSTR bsHomeDir, BSTR bsComment, ULONG ulFlags, BSTR bsScriptPath, ULONG ulAuthFlags, BSTR bsFullName, BSTR bsUsrComment, BSTR bsParams, BSTR bsWorkstations, ULONG ulLastLogon, ULONG ulLastLogoff, ULONG ulAccntExpires, ULONG ulMaxStorage, ULONG ulUnitsPerWeek, BYTE bLogonHours, ULONG ulBadPwdCount, ULONG ulNumLogons, BSTR bsLogonServer, ULONG ulCountryCode, ULONG ulCodePage, ICUserInfo2** ppUserInfo2);
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(CNetUser), CCNetUser)

@@ -90,3 +90,17 @@ STDMETHODIMP CCUserInfo1::get_ScriptPath(BSTR* pVal)
 	*pVal = m_bsScriptPath.copy();
 	return S_OK;
 }
+
+
+STDMETHODIMP CCUserInfo1::Clear()
+{
+	m_bsComment		= L"";
+	m_bsHomeDir		= L"";
+	m_bsName		= L"";
+	m_bsPwd			= L"";
+	m_bsScriptPath	= L"";
+	m_ulFlgs		= 0;
+	m_ulPriv		= 0;
+	m_ulPwdAge		= 0;
+	return			S_OK;
+}

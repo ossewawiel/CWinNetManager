@@ -7,6 +7,20 @@
 import "oaidl.idl";
 import "ocidl.idl";
 
+typedef [public, v1_enum] enum eUserInfoType
+{
+	  uiType0 = 0x00
+	, uiType1 = 0x01
+	, uiType2 = 0x02
+	, uiType3 = 0x03
+	, uiType4 = 0x04
+	, uiTYpe10 = 0x10
+	, uiTYpe11 = 0x11
+	, uiTYpe20 = 0x20
+	, uiTYpe23 = 0x23
+	, uiTYpe24 = 0x24
+} eUserInfoType;
+
 [
 	object,
 	uuid(54E16B87-DEA7-4424-A7F9-239AE50DD5F7),
@@ -24,6 +38,16 @@ interface ICUserInfo1 : IDispatch {
 	[propget, id(7)] HRESULT Comment([out, retval] BSTR* pVal);
 	[propget, id(8)] HRESULT Flags([out, retval] ULONG* pVal);
 	[propget, id(9)] HRESULT ScriptPath([out, retval] BSTR* pVal);
+	[id(10)] HRESULT Clear();
+};
+[
+	object,
+	uuid(26A49885-E545-4512-87BB-B8AD4A44A450),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo2 : IDispatch {
 };
 [
 	object,
@@ -35,6 +59,10 @@ interface ICUserInfo1 : IDispatch {
 interface ICNetUser : IDispatch{
 	[id(1)] HRESULT GetUserInfo1([in] BSTR bsName, [in] BSTR bsPwd, [in] ULONG ulPwdAge, [in] ULONG ulPriv, [in] BSTR bsHomeDir, [in] BSTR bsComment, [in] ULONG ulFlags, [in] BSTR bsScriptPath, [out, retval] ICUserInfo1** ppUserInfo1);
 	[id(2)] HRESULT NetUserAdd([in] BSTR bsServerName, [in] IUnknown* pUserInfo);
+	[id(3)] HRESULT NetUserDel([in] BSTR bsServerName, [in] BSTR bsUserName);
+	[id(4)] HRESULT NetUserGetInfo([in] BSTR bsServerName, [in] BSTR bsUserName, [in] eUserInfoType userInfoType, [out, retval] IUnknown** ppUserInfo);
+	[id(5)] HRESULT CastToUserInfo1([in] IUnknown* pUnk, [out, retval] ICUserInfo1** ppUserInfo1);
+	[id(6)] HRESULT GetNetUserInfo2([in] BSTR bsName, [in] BSTR bsPassword, [in] ULONG ulPasswordAge, [in] ULONG ulPrivilege, [in] BSTR bsHomeDir, [in] BSTR bsComment, [in] ULONG ulFlags, [in] BSTR bsScriptPath, [in] ULONG ulAuthFlags, [in] BSTR bsFullName, [in] BSTR bsUsrComment, [in] BSTR bsParams, [in] BSTR bsWorkstations, [in] ULONG ulLastLogon, [in] ULONG ulLastLogoff, [in] ULONG ulAccntExpires, [in] ULONG ulMaxStorage, [in] ULONG ulUnitsPerWeek, [in] BYTE bLogonHours, [in] ULONG ulBadPwdCount, [in] ULONG ulNumLogons, [in] BSTR bsLogonServer, [in] ULONG ulCountryCode, [in] ULONG ulCodePage, [out, retval] ICUserInfo2** ppUserInfo2);
 };
 [
 	uuid(F53A3EDB-3D55-4E7B-8687-F0759A72FBCA),
@@ -56,6 +84,13 @@ library CWinNetManagerLib
 	coclass CUserInfo1
 	{
 		[default] interface ICUserInfo1;
+	};
+	[
+		uuid(2DDD4CDA-8B20-4691-9DD5-74D2F38FC6C0)		
+	]
+	coclass CUserInfo2
+	{
+		[default] interface ICUserInfo2;
 	};
 };
 

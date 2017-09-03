@@ -12,7 +12,7 @@ public:
 	void SetUp()
 	{
 		HRESULT hr = mpCNetUser.CoCreateInstance(CLSID_CNetUser);
-		ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString();
+		ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 	}
 
 	void TearDown()

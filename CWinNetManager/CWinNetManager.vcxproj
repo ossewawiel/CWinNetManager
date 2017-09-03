@@ -213,6 +213,7 @@
   <ItemGroup>
     <ClCompile Include="CNetUser.cpp" />
     <ClCompile Include="CUserInfo1.cpp" />
+    <ClCompile Include="CUserInfo2.cpp" />
     <ClCompile Include="CWinNetManager.cpp" />
     <ClCompile Include="CWinNetManager_i.c">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
@@ -266,6 +267,7 @@
   <ItemGroup>
     <ClInclude Include="CNetUser.h" />
     <ClInclude Include="CUserInfo1.h" />
+    <ClInclude Include="CUserInfo2.h" />
     <ClInclude Include="CWinNetManager.h" />
     <ClInclude Include="dllmain.h" />
     <ClInclude Include="Resource.h" />
@@ -282,6 +284,7 @@
   <ItemGroup>
     <None Include="CNetUser.rgs" />
     <None Include="CUserInfo1.rgs" />
+    <None Include="CUserInfo2.rgs" />
     <None Include="CWinNetManager.def" />
     <None Include="CWinNetManager.rgs" />
   </ItemGroup>

@@ -24,4 +24,4 @@
 #include <atlcom.h>
 #include <atlctl.h>
 #include <comdef.h>
-#include <LMaccess.h>
+#include <lm.h>
