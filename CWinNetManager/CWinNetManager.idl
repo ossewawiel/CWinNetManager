@@ -720,6 +720,132 @@ interface ICUserInfo1008 : IDispatch{
 interface ICUserInfo1009 : IDispatch{
 };
 [
+	object,
+	uuid(F0C88122-26CB-4014-A042-1BE26AE67ECA),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1010 : IDispatch{
+};
+[
+	object,
+	uuid(8440219B-EB30-491B-9B31-30A4ED848401),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1011 : IDispatch{
+};
+[
+	object,
+	uuid(F9277CC9-E27C-4DF0-8228-15459415CAD6),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1012 : IDispatch{
+};
+[
+	object,
+	uuid(072BCA73-A103-4B92-B5FA-35DCDA81A2D5),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1013 : IDispatch{
+};
+[
+	object,
+	uuid(078DBB8D-B9AD-4FC1-B19F-4350E6D342C7),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1014 : IDispatch{
+};
+[
+	object,
+	uuid(C2F6CF6A-C02B-4E60-880A-8D03F2C1D0F9),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1017 : IDispatch{
+};
+[
+	object,
+	uuid(84B7C76D-ED3D-4D0B-A753-5512C17A709B),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1018 : IDispatch{
+};
+[
+	object,
+	uuid(91E5BE48-571B-4478-ABC8-BFB0D698785B),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1020 : IDispatch{
+};
+[
+	object,
+	uuid(DD330CEA-13DD-4D3E-841E-E559CD5F6F7D),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1023 : IDispatch{
+};
+[
+	object,
+	uuid(A08D86C4-47EE-4C75-B844-71D66B532760),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1025 : IDispatch{
+};
+[
+	object,
+	uuid(18695385-BE01-44FF-9962-7F1F8EB57AE2),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1024 : IDispatch{
+};
+[
+	object,
+	uuid(03BF198D-2AC8-49DF-B657-610B3879DBEB),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1051 : IDispatch{
+};
+[
+	object,
+	uuid(0AF7CBB8-DBA4-4AD4-B633-5B50958849D6),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1052 : IDispatch{
+};
+[
+	object,
+	uuid(81BB6120-B547-4025-8F18-807F6895D984),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1053 : IDispatch{
+};
+[
 	uuid(F53A3EDB-3D55-4E7B-8687-F0759A72FBCA),
 	version(1.0),
 ]
@@ -858,6 +984,104 @@ library CWinNetManagerLib
 	coclass CUserInfo1009
 	{
 		[default] interface ICUserInfo1009;
+	};
+	[
+		uuid(F3B84B6C-8EBD-4463-AF55-1B4320DEBE88)		
+	]
+	coclass CUserInfo1010
+	{
+		[default] interface ICUserInfo1010;
+	};
+	[
+		uuid(1023B8C6-740A-4F44-B94C-F3DA519F330C)		
+	]
+	coclass CUserInfo1011
+	{
+		[default] interface ICUserInfo1011;
+	};
+	[
+		uuid(7BFC1A24-3D49-4039-9386-98301834E7E1)		
+	]
+	coclass CUserInfo1012
+	{
+		[default] interface ICUserInfo1012;
+	};
+	[
+		uuid(04543656-0900-4677-93A5-2B6C4BB73437)		
+	]
+	coclass CUserInfo1013
+	{
+		[default] interface ICUserInfo1013;
+	};
+	[
+		uuid(2037D943-73CC-43D7-86F2-78AF5CF0D929)		
+	]
+	coclass CUserInfo1014
+	{
+		[default] interface ICUserInfo1014;
+	};
+	[
+		uuid(2BC695D4-585E-43A4-BE74-F2C02B46A994)		
+	]
+	coclass CUserInfo1017
+	{
+		[default] interface ICUserInfo1017;
+	};
+	[
+		uuid(2C93746E-3F31-4E32-9E91-3CC0AD67AC1B)		
+	]
+	coclass CUserInfo1018
+	{
+		[default] interface ICUserInfo1018;
+	};
+	[
+		uuid(FF3A2DA0-7797-49CB-8491-D524F033109B)		
+	]
+	coclass CUserInfo1020
+	{
+		[default] interface ICUserInfo1020;
+	};
+	[
+		uuid(32E31B6D-29E3-49EA-8C88-37575DC7C812)		
+	]
+	coclass CUserInfo1023
+	{
+		[default] interface ICUserInfo1023;
+	};
+	[
+		uuid(46A671D6-F698-4B1E-AEAA-09BCD4463100)		
+	]
+	coclass CUserInfo1025
+	{
+		[default] interface ICUserInfo1025;
+	};
+	[
+		uuid(ECB6D3A7-E2D4-4F0E-964E-538A517FB7BF)		
+	]
+	coclass CUserInfo1024
+	{
+		[default] interface ICUserInfo1024;
+	};
+	[
+		uuid(555770A5-DFE2-4579-9197-83DF950AACA9)		
+	]
+	coclass CUserInfo1051
+	{
+		[default] interface ICUserInfo1051;
+	};
+	[
+		uuid(B4CAC0B5-B9A1-4DDC-AE3D-4A28B5CF5F98)		
+	]
+	coclass CUserInfo1052
+	{
+		[default] interface ICUserInfo1052;
+	};
+	[
+		uuid(EE03A171-E0C5-41EA-A6F5-7C4707EAD7FD)		
+	]
+	coclass CUserInfo1053
+	{
+		[default] interface ICUserInfo1053;
 	};
 };
 

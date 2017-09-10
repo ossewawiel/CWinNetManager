@@ -17,6 +17,9 @@
       <UniqueIdentifier>{9f327796-72f2-4a6b-ac11-6203d56dd231}</UniqueIdentifier>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
+    <Filter Include="CUserInfo">
+      <UniqueIdentifier>{3cbc7f1e-552d-4533-81b5-198aac42b268}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -37,59 +40,101 @@
     <ClCompile Include="CNetUser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CUserInfo0.cpp">
+      <Filter>CUserInfo</Filter>
+    </ClCompile>
     <ClCompile Include="CUserInfo1.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>CUserInfo</Filter>
     </ClCompile>
     <ClCompile Include="CUserInfo2.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>CUserInfo</Filter>
     </ClCompile>
     <ClCompile Include="CUserInfo3.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>CUserInfo</Filter>
     </ClCompile>
     <ClCompile Include="CUserInfo4.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CUserInfo0.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>CUserInfo</Filter>
     </ClCompile>
     <ClCompile Include="CUserInfo10.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>CUserInfo</Filter>
     </ClCompile>
     <ClCompile Include="CUserInfo11.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>CUserInfo</Filter>
     </ClCompile>
     <ClCompile Include="CUserInfo20.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CUserInfo23.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CuserInfo24.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>CUserInfo</Filter>
     </ClCompile>
     <ClCompile Include="CUserInfo21.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>CUserInfo</Filter>
     </ClCompile>
     <ClCompile Include="CUserInfo22.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>CUserInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CUserInfo23.cpp">
+      <Filter>CUserInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CuserInfo24.cpp">
+      <Filter>CUserInfo</Filter>
     </ClCompile>
     <ClCompile Include="CUserInfo1003.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>CUserInfo</Filter>
     </ClCompile>
     <ClCompile Include="CUserInfo1005.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>CUserInfo</Filter>
     </ClCompile>
     <ClCompile Include="CUserInfo1006.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>CUserInfo</Filter>
     </ClCompile>
     <ClCompile Include="CUserInfo1007.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>CUserInfo</Filter>
     </ClCompile>
     <ClCompile Include="CUserInfo1008.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>CUserInfo</Filter>
     </ClCompile>
     <ClCompile Include="CUserInfo1009.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>CUserInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CUserInfo1010.cpp">
+      <Filter>CUserInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CUserInfo1011.cpp">
+      <Filter>CUserInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CUserInfo1012.cpp">
+      <Filter>CUserInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CUserInfo1013.cpp">
+      <Filter>CUserInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CUserInfo1014.cpp">
+      <Filter>CUserInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CUserInfo1017.cpp">
+      <Filter>CUserInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CUserInfo1018.cpp">
+      <Filter>CUserInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CUserInfo1020.cpp">
+      <Filter>CUserInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CUserInfo1023.cpp">
+      <Filter>CUserInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CUserInfo1024.cpp">
+      <Filter>CUserInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CUserInfo1025.cpp">
+      <Filter>CUserInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CUserInfo1051.cpp">
+      <Filter>CUserInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CUserInfo1052.cpp">
+      <Filter>CUserInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CUserInfo1053.cpp">
+      <Filter>CUserInfo</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -114,59 +159,101 @@
     <ClInclude Include="CNetUser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CUserInfo1.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="CUserInfo1053.h">
+      <Filter>CUserInfo</Filter>
     </ClInclude>
-    <ClInclude Include="CUserInfo2.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="CUserInfo1052.h">
+      <Filter>CUserInfo</Filter>
     </ClInclude>
-    <ClInclude Include="CUserInfo3.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="CUserInfo1051.h">
+      <Filter>CUserInfo</Filter>
     </ClInclude>
-    <ClInclude Include="CUserInfo4.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="CUserInfo1025.h">
+      <Filter>CUserInfo</Filter>
     </ClInclude>
-    <ClInclude Include="CUserInfo0.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="CUserInfo1024.h">
+      <Filter>CUserInfo</Filter>
     </ClInclude>
-    <ClInclude Include="CUserInfo10.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="CUserInfo1023.h">
+      <Filter>CUserInfo</Filter>
     </ClInclude>
-    <ClInclude Include="CUserInfo11.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="CUserInfo1020.h">
+      <Filter>CUserInfo</Filter>
     </ClInclude>
-    <ClInclude Include="CUserInfo20.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="CUserInfo1018.h">
+      <Filter>CUserInfo</Filter>
     </ClInclude>
-    <ClInclude Include="CUserInfo23.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="CUserInfo1017.h">
+      <Filter>CUserInfo</Filter>
     </ClInclude>
-    <ClInclude Include="CuserInfo24.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="CUserInfo1014.h">
+      <Filter>CUserInfo</Filter>
     </ClInclude>
-    <ClInclude Include="CUserInfo21.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="CUserInfo1013.h">
+      <Filter>CUserInfo</Filter>
     </ClInclude>
-    <ClInclude Include="CUserInfo22.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="CUserInfo1012.h">
+      <Filter>CUserInfo</Filter>
     </ClInclude>
-    <ClInclude Include="CUserInfo1003.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="CUserInfo1011.h">
+      <Filter>CUserInfo</Filter>
     </ClInclude>
-    <ClInclude Include="CUserInfo1005.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CUserInfo1006.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CUserInfo1007.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CUserInfo1008.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="CUserInfo1010.h">
+      <Filter>CUserInfo</Filter>
     </ClInclude>
     <ClInclude Include="CUserInfo1009.h">
-      <Filter>Header Files</Filter>
+      <Filter>CUserInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CUserInfo1008.h">
+      <Filter>CUserInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CUserInfo1007.h">
+      <Filter>CUserInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CUserInfo1006.h">
+      <Filter>CUserInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CUserInfo1005.h">
+      <Filter>CUserInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CUserInfo1003.h">
+      <Filter>CUserInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CuserInfo24.h">
+      <Filter>CUserInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CUserInfo23.h">
+      <Filter>CUserInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CUserInfo22.h">
+      <Filter>CUserInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CUserInfo21.h">
+      <Filter>CUserInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CUserInfo20.h">
+      <Filter>CUserInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CUserInfo11.h">
+      <Filter>CUserInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CUserInfo10.h">
+      <Filter>CUserInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CUserInfo4.h">
+      <Filter>CUserInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CUserInfo3.h">
+      <Filter>CUserInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CUserInfo2.h">
+      <Filter>CUserInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CUserInfo1.h">
+      <Filter>CUserInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CUserInfo0.h">
+      <Filter>CUserInfo</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -239,6 +326,48 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="CUserInfo1009.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CUserInfo1010.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CUserInfo1011.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CUserInfo1012.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CUserInfo1013.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CUserInfo1014.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CUserInfo1017.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CUserInfo1018.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CUserInfo1020.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CUserInfo1023.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CUserInfo1025.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CUserInfo1024.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CUserInfo1051.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CUserInfo1052.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CUserInfo1053.rgs">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
