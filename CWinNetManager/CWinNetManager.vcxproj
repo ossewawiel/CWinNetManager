@@ -212,8 +212,24 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CNetUser.cpp" />
+    <ClCompile Include="CUserInfo0.cpp" />
     <ClCompile Include="CUserInfo1.cpp" />
+    <ClCompile Include="CUserInfo10.cpp" />
+    <ClCompile Include="CUserInfo1003.cpp" />
+    <ClCompile Include="CUserInfo1005.cpp" />
+    <ClCompile Include="CUserInfo1006.cpp" />
+    <ClCompile Include="CUserInfo1007.cpp" />
+    <ClCompile Include="CUserInfo1008.cpp" />
+    <ClCompile Include="CUserInfo1009.cpp" />
+    <ClCompile Include="CUserInfo11.cpp" />
     <ClCompile Include="CUserInfo2.cpp" />
+    <ClCompile Include="CUserInfo20.cpp" />
+    <ClCompile Include="CUserInfo21.cpp" />
+    <ClCompile Include="CUserInfo22.cpp" />
+    <ClCompile Include="CUserInfo23.cpp" />
+    <ClCompile Include="CuserInfo24.cpp" />
+    <ClCompile Include="CUserInfo3.cpp" />
+    <ClCompile Include="CUserInfo4.cpp" />
     <ClCompile Include="CWinNetManager.cpp" />
     <ClCompile Include="CWinNetManager_i.c">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
@@ -266,8 +282,24 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CNetUser.h" />
+    <ClInclude Include="CUserInfo0.h" />
     <ClInclude Include="CUserInfo1.h" />
+    <ClInclude Include="CUserInfo10.h" />
+    <ClInclude Include="CUserInfo1003.h" />
+    <ClInclude Include="CUserInfo1005.h" />
+    <ClInclude Include="CUserInfo1006.h" />
+    <ClInclude Include="CUserInfo1007.h" />
+    <ClInclude Include="CUserInfo1008.h" />
+    <ClInclude Include="CUserInfo1009.h" />
+    <ClInclude Include="CUserInfo11.h" />
     <ClInclude Include="CUserInfo2.h" />
+    <ClInclude Include="CUserInfo20.h" />
+    <ClInclude Include="CUserInfo21.h" />
+    <ClInclude Include="CUserInfo22.h" />
+    <ClInclude Include="CUserInfo23.h" />
+    <ClInclude Include="CuserInfo24.h" />
+    <ClInclude Include="CUserInfo3.h" />
+    <ClInclude Include="CUserInfo4.h" />
     <ClInclude Include="CWinNetManager.h" />
     <ClInclude Include="dllmain.h" />
     <ClInclude Include="Resource.h" />
@@ -283,8 +315,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="CNetUser.rgs" />
+    <None Include="CUserInfo0.rgs" />
     <None Include="CUserInfo1.rgs" />
+    <None Include="CUserInfo10.rgs" />
+    <None Include="CUserInfo1003.rgs" />
+    <None Include="CUserInfo1005.rgs" />
+    <None Include="CUserInfo1006.rgs" />
+    <None Include="CUserInfo1007.rgs" />
+    <None Include="CUserInfo1008.rgs" />
+    <None Include="CUserInfo1009.rgs" />
+    <None Include="CUserInfo11.rgs" />
     <None Include="CUserInfo2.rgs" />
+    <None Include="CUserInfo20.rgs" />
+    <None Include="CUserInfo21.rgs" />
+    <None Include="CUserInfo22.rgs" />
+    <None Include="CUserInfo23.rgs" />
+    <None Include="CuserInfo24.rgs" />
+    <None Include="CUserInfo3.rgs" />
+    <None Include="CUserInfo4.rgs" />
     <None Include="CWinNetManager.def" />
     <None Include="CWinNetManager.rgs" />
   </ItemGroup>

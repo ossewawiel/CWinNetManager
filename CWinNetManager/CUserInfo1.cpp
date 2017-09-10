@@ -31,14 +31,14 @@ STDMETHODIMP CCUserInfo1::get_Name(BSTR* pVal)
 
 STDMETHODIMP CCUserInfo1::Initialise(BSTR bsName, BSTR bsPwd, ULONG ulPwdAge, ULONG ulPriv, BSTR bsHomeDir, BSTR bsComment, ULONG ulFlags, BSTR bsScriptPath)
 {
-	m_bsName = _bstr_t(bsName);
-	m_bsPwd = _bstr_t(bsPwd);
-	m_ulPwdAge = ulPwdAge;
-	m_ulPriv = ulPriv;
-	m_bsHomeDir = _bstr_t(bsHomeDir);
-	m_bsComment = _bstr_t(bsComment);
-	m_ulFlgs = ulFlags;
-	m_bsScriptPath = _bstr_t(bsScriptPath);
+	m_bsName.Assign   (bsName);
+	m_bsPwd.Assign    (bsPwd);
+	m_ulPwdAge       = ulPwdAge;
+	m_ulPriv         = ulPriv;
+	m_bsHomeDir.Assign(bsHomeDir);
+	m_bsComment.Assign(bsComment);
+	m_ulFlgs         = ulFlags;
+	m_bsScriptPath.Assign(bsScriptPath);
 	return S_OK;
 }
 

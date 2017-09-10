@@ -23,6 +23,17 @@ typedef [public, v1_enum] enum eUserInfoType
 
 [
 	object,
+	uuid(FAF36C28-4EF0-4108-9AE3-269D46CFEC48),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo0 : IDispatch {
+	[id(1)] HRESULT Initialise([in] BSTR bsName);
+	[propget, id(2)] HRESULT Name([out, retval] BSTR* pVal);
+};
+[
+	object,
 	uuid(54E16B87-DEA7-4424-A7F9-239AE50DD5F7),
 	dual,
 	nonextensible,
@@ -30,7 +41,15 @@ typedef [public, v1_enum] enum eUserInfoType
 ]
 interface ICUserInfo1 : IDispatch {
 	[propget, id(1)] HRESULT Name([out, retval] BSTR* pVal);
-	[id(2)] HRESULT Initialise([in] BSTR bsName, [in] BSTR bsPwd, [in] ULONG ulPwdAge, [in] ULONG ulPriv, [in] BSTR bsHomeDir, [in] BSTR bsComment, [in] ULONG ulFlags, [in] BSTR bsScriptPath);
+	[id(2)] HRESULT Initialise(
+		[in] BSTR bsName
+		, [in] BSTR bsPwd
+		, [in] ULONG ulPwdAge
+		, [in] ULONG ulPriv
+		, [in] BSTR bsHomeDir
+		, [in] BSTR bsComment
+		, [in] ULONG ulFlags
+		, [in] BSTR bsScriptPath);
 	[propget, id(3)] HRESULT Password([out, retval] BSTR* pVal);
 	[propget, id(4)] HRESULT PasswordAge([out, retval] ULONG* pVal);
 	[propget, id(5)] HRESULT Privilege([out, retval] ULONG* pVal);
@@ -48,6 +67,399 @@ interface ICUserInfo1 : IDispatch {
 	pointer_default(unique)
 ]
 interface ICUserInfo2 : IDispatch {
+	[propget, id(1)] HRESULT Name([out, retval] BSTR* pVal);
+	[propget, id(2)] HRESULT Password([out, retval] BSTR* pVal);
+	[propget, id(3)] HRESULT PasswordAge([out, retval] ULONG* pVal);
+	[propget, id(4)] HRESULT Privilege([out, retval] ULONG* pVal);
+	[propget, id(5)] HRESULT HomeDirectory([out, retval] BSTR* pVal);
+	[propget, id(6)] HRESULT Comment([out, retval] BSTR* pVal);
+	[propget, id(7)] HRESULT Flags([out, retval] ULONG* pVal);
+	[propget, id(8)] HRESULT ScriptPath([out, retval] BSTR* pVal);
+	[propget, id(9)] HRESULT AuthFlags([out, retval] ULONG* pVal);
+	[propget, id(10)] HRESULT FullName([out, retval] BSTR* pVal);
+	[propget, id(11)] HRESULT UsrComment([out, retval] BSTR* pVal);
+	[propget, id(12)] HRESULT Params([out, retval] BSTR* pVal);
+	[propget, id(13)] HRESULT Workstations([out, retval] BSTR* pVal);
+	[propget, id(14)] HRESULT LastLogon([out, retval] ULONG* pVal);
+	[propget, id(15)] HRESULT LastLogoff([out, retval] ULONG* pVal);
+	[propget, id(16)] HRESULT AccntExpires([out, retval] ULONG* pVal);
+	[propget, id(17)] HRESULT MaxStorage([out, retval] ULONG* pVal);
+	[propget, id(18)] HRESULT UnitsPerWeek([out, retval] ULONG* pVal);
+	[propget, id(19)] HRESULT LogonHours([out, retval] BYTE* pVal);
+	[propget, id(20)] HRESULT BadPwdCount([out, retval] ULONG* pVal);
+	[propget, id(21)] HRESULT NumLogons([out, retval] ULONG* pVal);
+	[propget, id(22)] HRESULT LogonServer([out, retval] BSTR* pVal);
+	[propget, id(23)] HRESULT CountryCode([out, retval] ULONG* pVal);
+	[propget, id(24)] HRESULT CodePage([out, retval] ULONG* pVal);
+	[id(25)] HRESULT Initialise(
+		[in] BSTR bsName
+		, [in] BSTR bsPassword
+		, [in] ULONG ulPasswordAge
+		, [in] ULONG ulPrivilege
+		, [in] BSTR bsHomeDir
+		, [in] BSTR bsComment
+		, [in] ULONG ulFlags
+		, [in] BSTR bsScriptPath
+		, [in] ULONG ulAuthFlags
+		, [in] BSTR bsFullName
+		, [in] BSTR bsUsrComment
+		, [in] BSTR bsParams
+		, [in] BSTR bsWorkstations
+		, [in] ULONG ulLastLogon
+		, [in] ULONG ulLastLogoff
+		, [in] ULONG ulAccntExpires
+		, [in] ULONG ulMaxStorage
+		, [in] ULONG ulUnitsPerWeek
+		, [in] BYTE bLogonHours
+		, [in] ULONG ulBadPwdCount
+		, [in] ULONG ulNumLogons
+		, [in] BSTR bsLogonServer
+		, [in] ULONG ulCountryCode
+		, [in] ULONG ulCodePage);
+};
+[
+	object,
+	uuid(87BEA5A5-8A49-4573-850A-D1B634D008EB),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo3 : IDispatch {
+	[id(1)] HRESULT Initialise(
+		[in] BSTR bsName
+		, [in] BSTR bsPassword
+		, [in] ULONG ulPasswordAge
+		, [in] ULONG ulPrivilege
+		, [in] BSTR bsHomeDir
+		, [in] BSTR bsComment
+		, [in] ULONG ulFlags
+		, [in] BSTR bsScriptPath
+		, [in] ULONG ulAuthFlags
+		, [in] BSTR bsFullName
+		, [in] BSTR bsUsrComment
+		, [in] BSTR bsParams
+		, [in] BSTR bsWorkstations
+		, [in] ULONG ulLastLogon
+		, [in] ULONG ulLastLogoff
+		, [in] ULONG ulAccntExpires
+		, [in] ULONG ulMaxStorage
+		, [in] ULONG ulUnitsPerWeek
+		, [in] BYTE bLogonHours
+		, [in] ULONG ulBadPwdCount
+		, [in] ULONG ulNumLogons
+		, [in] BSTR bsLogonServer
+		, [in] ULONG ulCountryCode
+		, [in] ULONG ulCodePage
+		, [in] ULONG ulUserId
+		, [in] ULONG ulPrimaryGrpId
+		, [in] BSTR bsProfile
+		, [in] BSTR bsHomeDirDrive
+		, [in] ULONG ulPwdExpired);
+	[propget, id(2)] HRESULT Name([out, retval] BSTR* pVal);
+	[propget, id(3)] HRESULT Password([out, retval] BSTR* pVal);
+	[propget, id(4)] HRESULT PasswordAge([out, retval] ULONG* pVal);
+	[propget, id(5)] HRESULT Privilege([out, retval] ULONG* pVal);
+	[propget, id(6)] HRESULT HomeDirectory([out, retval] BSTR* pVal);
+	[propget, id(7)] HRESULT Comment([out, retval] BSTR* pVal);
+	[propget, id(8)] HRESULT Flags([out, retval] ULONG* pVal);
+	[propget, id(9)] HRESULT ScriptPath([out, retval] BSTR* pVal);
+	[propget, id(10)] HRESULT AuthFlags([out, retval] ULONG* pVal);
+	[propget, id(11)] HRESULT FullName([out, retval] BSTR* pVal);
+	[propget, id(12)] HRESULT UsrComment([out, retval] BSTR* pVal);
+	[propget, id(13)] HRESULT Params([out, retval] BSTR* pVal);
+	[propget, id(14)] HRESULT Workstations([out, retval] BSTR* pVal);
+	[propget, id(15)] HRESULT LastLogon([out, retval] ULONG* pVal);
+	[propget, id(16)] HRESULT LastLogoff([out, retval] ULONG* pVal);
+	[propget, id(17)] HRESULT AccntExpires([out, retval] ULONG* pVal);
+	[propget, id(18)] HRESULT MaxStorage([out, retval] ULONG* pVal);
+	[propget, id(19)] HRESULT UnitsPerWeek([out, retval] ULONG* pVal);
+	[propget, id(20)] HRESULT LogonHours([out, retval] BYTE* pVal);
+	[propget, id(21)] HRESULT BadPwdCount([out, retval] ULONG* pVal);
+	[propget, id(22)] HRESULT NumLogons([out, retval] ULONG* pVal);
+	[propget, id(23)] HRESULT LogonServer([out, retval] BSTR* pVal);
+	[propget, id(24)] HRESULT CountryCode([out, retval] ULONG* pVal);
+	[propget, id(25)] HRESULT CodePage([out, retval] ULONG* pVal);
+	[propget, id(26)] HRESULT UserId([out, retval] ULONG* pVal);
+	[propget, id(27)] HRESULT PrimaryGrpId([out, retval] ULONG* pVal);
+	[propget, id(28)] HRESULT Profile([out, retval] BSTR* pVal);
+	[propget, id(29)] HRESULT HomeDirDrive([out, retval] BSTR* pVal);
+	[propget, id(30)] HRESULT PwdExpired([out, retval] ULONG* pVal);
+};
+[
+	object,
+	uuid(8DAFA5B1-C91A-49EA-9152-9DA9157A85C2),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo4 : IDispatch {
+	[id(1)] HRESULT Initialise(
+		[in] BSTR bsName
+		, [in] BSTR bsPassword
+		, [in] ULONG ulPasswordAge
+		, [in] ULONG ulPrivilege
+		, [in] BSTR bsHomeDir
+		, [in] BSTR bsComment
+		, [in] ULONG ulFlags
+		, [in] BSTR bsScriptPath
+		, [in] ULONG ulAuthFlags
+		, [in] BSTR bsFullName
+		, [in] BSTR bsUsrComment
+		, [in] BSTR bsParams
+		, [in] BSTR bsWorkstations
+		, [in] ULONG ulLastLogon
+		, [in] ULONG ulLastLogoff
+		, [in] ULONG ulAccntExpires
+		, [in] ULONG ulMaxStorage
+		, [in] ULONG ulUnitsPerWeek
+		, [in] BYTE bLogonHours
+		, [in] ULONG ulBadPwdCount
+		, [in] ULONG ulNumLogons
+		, [in] BSTR bsLogonServer
+		, [in] ULONG ulCountryCode
+		, [in] ULONG ulCodePage
+		, [in] BSTR bsUserSid
+		, [in] ULONG ulPrimaryGrpId
+		, [in] BSTR bsProfile
+		, [in] BSTR bsHomeDirDrive
+		, [in] ULONG ulPwdExpired);
+	[propget, id(2)] HRESULT Name([out, retval] BSTR* pVal);
+	[propget, id(3)] HRESULT Password([out, retval] BSTR* pVal);
+	[propget, id(4)] HRESULT PasswordAge([out, retval] ULONG* pVal);
+	[propget, id(5)] HRESULT Privilege([out, retval] ULONG* pVal);
+	[propget, id(6)] HRESULT HomeDirectory([out, retval] BSTR* pVal);
+	[propget, id(7)] HRESULT Comment([out, retval] BSTR* pVal);
+	[propget, id(8)] HRESULT Flags([out, retval] ULONG* pVal);
+	[propget, id(9)] HRESULT ScriptPath([out, retval] BSTR* pVal);
+	[propget, id(10)] HRESULT AuthFlags([out, retval] ULONG* pVal);
+	[propget, id(11)] HRESULT FullName([out, retval] BSTR* pVal);
+	[propget, id(12)] HRESULT UsrComment([out, retval] BSTR* pVal);
+	[propget, id(13)] HRESULT Params([out, retval] BSTR* pVal);
+	[propget, id(14)] HRESULT Workstations([out, retval] BSTR* pVal);
+	[propget, id(15)] HRESULT LastLogon([out, retval] ULONG* pVal);
+	[propget, id(16)] HRESULT LastLogoff([out, retval] ULONG* pVal);
+	[propget, id(17)] HRESULT AccntExpires([out, retval] ULONG* pVal);
+	[propget, id(18)] HRESULT MaxStorage([out, retval] ULONG* pVal);
+	[propget, id(19)] HRESULT UnitsPerWeek([out, retval] ULONG* pVal);
+	[propget, id(20)] HRESULT LogonHours([out, retval] BYTE* pVal);
+	[propget, id(21)] HRESULT BadPwdCount([out, retval] ULONG* pVal);
+	[propget, id(22)] HRESULT NumLogons([out, retval] ULONG* pVal);
+	[propget, id(23)] HRESULT LogonServer([out, retval] BSTR* pVal);
+	[propget, id(24)] HRESULT CountryCode([out, retval] ULONG* pVal);
+	[propget, id(25)] HRESULT CodePage([out, retval] ULONG* pVal);
+	[propget, id(26)] HRESULT UserSid([out, retval] BSTR* pVal);
+	[propget, id(27)] HRESULT PrimaryGrpId([out, retval] ULONG* pVal);
+	[propget, id(28)] HRESULT Profile([out, retval] BSTR* pVal);
+	[propget, id(29)] HRESULT HomeDirDrive([out, retval] BSTR* pVal);
+	[propget, id(30)] HRESULT PwdExpired([out, retval] ULONG* pVal);
+};
+[
+	object,
+	uuid(384980B6-F16B-47D5-9EE1-47C7F27E67A1),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo10 : IDispatch {
+	[id(1)] HRESULT Initialise(
+		[in] BSTR bsName
+		, [in] BSTR bsComment
+		, [in] BSTR bsUsrComment
+		, [in] BSTR bsFullName);
+	[propget, id(2)] HRESULT Name([out, retval] BSTR* pVal);
+	[propget, id(3)] HRESULT Comment([out, retval] BSTR* pVal);
+	[propget, id(4)] HRESULT UsrComment([out, retval] BSTR* pVal);
+	[propget, id(5)] HRESULT FullName([out, retval] BSTR* pVal);
+};
+[
+	object,
+	uuid(B97DD7CE-7F31-48B2-B5F9-6E3EB8D52A3D),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo11 : IDispatch {
+	[id(1)] HRESULT Initialise(
+		[in] BSTR bsName
+		, [in] BSTR bsComment
+		, [in] BSTR bsUsrComment
+		, [in] BSTR bsFullName
+		, [in] ULONG ulPrivilege
+		, [in] ULONG ulAuthFlags
+		, [in] ULONG ulPasswordAge
+		, [in] BSTR bsHomeDir
+		, [in] BSTR bsParams
+		, [in] ULONG ulLastLogon
+		, [in] ULONG ulLastLogoff
+		, [in] ULONG ulBadPwdCount
+		, [in] ULONG ulNumLogons
+		, [in] BSTR bsLogonServer
+		, [in] ULONG ulCountryCode
+		, [in] BSTR bsWorkstations
+		, [in] ULONG ulMaxStorage
+		, [in] ULONG ulUnitsPerWeek
+		, [in] BYTE bLogonHours
+		, [in] ULONG ulCodePage);
+	[propget, id(2)] HRESULT Name([out, retval] BSTR* pVal);
+	[propget, id(3)] HRESULT Comment([out, retval] BSTR* pVal);
+	[propget, id(4)] HRESULT UsrComment([out, retval] BSTR* pVal);
+	[propget, id(5)] HRESULT FullName([out, retval] BSTR* pVal);
+	[propget, id(6)] HRESULT Privilege([out, retval] ULONG* pVal);
+	[propget, id(7)] HRESULT AuthFlags([out, retval] ULONG* pVal);
+	[propget, id(8)] HRESULT PasswordAge([out, retval] ULONG* pVal);
+	[propget, id(9)] HRESULT HomeDirectory([out, retval] BSTR* pVal);
+	[propget, id(10)] HRESULT Params([out, retval] BSTR* pVal);
+	[propget, id(11)] HRESULT LastLogon([out, retval] ULONG* pVal);
+	[propget, id(12)] HRESULT LastLogoff([out, retval] ULONG* pVal);
+	[propget, id(13)] HRESULT BadPwdCount([out, retval] ULONG* pVal);
+	[propget, id(14)] HRESULT NumLogons([out, retval] ULONG* pVal);
+	[propget, id(15)] HRESULT LogonServer([out, retval] BSTR* pVal);
+	[propget, id(16)] HRESULT CountryCode([out, retval] ULONG* pVal);
+	[propget, id(17)] HRESULT Workstations([out, retval] BSTR* pVal);
+	[propget, id(18)] HRESULT MaxStorage([out, retval] ULONG* pVal);
+	[propget, id(19)] HRESULT UnitsPerWeek([out, retval] ULONG* pVal);
+	[propget, id(20)] HRESULT LogonHours([out, retval] BYTE* pVal);
+	[propget, id(21)] HRESULT CodePage([out, retval] ULONG* pVal);
+};
+[
+	object,
+	uuid(B5BD50A2-3118-4ACB-B393-C4F555296329),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo20 : IDispatch {
+	[id(1)] HRESULT Initialise(
+		[in] BSTR bsName
+		, [in] BSTR bsFullName
+		, [in] BSTR bsComment
+		, [in] ULONG ulFlags
+		, [in] ULONG ulUserId);
+	[propget, id(2)] HRESULT Name([out, retval] BSTR* pVal);
+	[propget, id(3)] HRESULT FullName([out, retval] BSTR* pVal);
+	[propget, id(4)] HRESULT Comment([out, retval] BSTR* pVal);
+	[propget, id(5)] HRESULT Flags([out, retval] ULONG* pVal);
+	[propget, id(6)] HRESULT UserId([out, retval] ULONG* pVal);
+};
+[
+	object,
+	uuid(B4E3A17B-9F3E-4ECD-B11A-C8F51E568F19),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo21 : IDispatch {
+	[id(1)] HRESULT Initialise([in] BSTR bsPassword);
+	[propget, id(2)] HRESULT Password([out, retval] BSTR* pVal);
+};
+[
+	object,
+	uuid(70A46238-A56B-44DB-A067-E1D6BAC6260B),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo22 : IDispatch {
+	[id(1)] HRESULT Initialise(
+		[in] BSTR bsName
+		, [in] BSTR bsPassword
+		, [in] ULONG ulPasswordAge
+		, [in] ULONG ulPrivilege
+		, [in] BSTR bsHomeDir
+		, [in] BSTR bsComment
+		, [in] ULONG ulFlags
+		, [in] BSTR bsScriptPath
+		, [in] ULONG ulAuthFlags
+		, [in] BSTR bsFullName
+		, [in] BSTR bsUsrComment
+		, [in] BSTR bsParams
+		, [in] BSTR bsWorkstations
+		, [in] ULONG ulLastLogon
+		, [in] ULONG ulLastLogoff
+		, [in] ULONG ulAccntExpires
+		, [in] ULONG ulMaxStorage
+		, [in] ULONG ulUnitsPerWeek
+		, [in] BYTE bLogonHours
+		, [in] ULONG ulBadPwdCount
+		, [in] ULONG ulNumLogons
+		, [in] BSTR bsLogonServer
+		, [in] ULONG ulCountryCode
+		, [in] ULONG ulCodePage);
+	[propget, id(2)] HRESULT Name([out, retval] BSTR* pVal);
+	[propget, id(3)] HRESULT Password([out, retval] BSTR* pVal);
+	[propget, id(4)] HRESULT PasswordAge([out, retval] ULONG* pVal);
+	[propget, id(5)] HRESULT Privilege([out, retval] ULONG* pVal);
+	[propget, id(6)] HRESULT HomeDirectory([out, retval] BSTR* pVal);
+	[propget, id(7)] HRESULT Comment([out, retval] BSTR* pVal);
+	[propget, id(8)] HRESULT Flags([out, retval] ULONG* pVal);
+	[propget, id(9)] HRESULT ScriptPath([out, retval] BSTR* pVal);
+	[propget, id(10)] HRESULT AuthFlags([out, retval] ULONG* pVal);
+	[propget, id(11)] HRESULT FullName([out, retval] BSTR* pVal);
+	[propget, id(12)] HRESULT UsrComment([out, retval] BSTR* pVal);
+	[propget, id(13)] HRESULT Params([out, retval] BSTR* pVal);
+	[propget, id(14)] HRESULT Workstations([out, retval] BSTR* pVal);
+	[propget, id(15)] HRESULT LastLogon([out, retval] ULONG* pVal);
+	[propget, id(16)] HRESULT LastLogoff([out, retval] ULONG* pVal);
+	[propget, id(17)] HRESULT AccntExpires([out, retval] ULONG* pVal);
+	[propget, id(18)] HRESULT MaxStorage([out, retval] ULONG* pVal);
+	[propget, id(19)] HRESULT UnitsPerWeek([out, retval] ULONG* pVal);
+	[propget, id(20)] HRESULT LogonHours([out, retval] BYTE* pVal);
+	[propget, id(21)] HRESULT BadPwdCount([out, retval] ULONG* pVal);
+	[propget, id(22)] HRESULT NumLogons([out, retval] ULONG* pVal);
+	[propget, id(23)] HRESULT LogonServer([out, retval] BSTR* pVal);
+	[propget, id(24)] HRESULT CountryCode([out, retval] ULONG* pVal);
+	[propget, id(25)] HRESULT CodePage([out, retval] ULONG* pVal);
+};
+[
+	object,
+	uuid(43413C5A-4F4A-4974-9117-6F232FE44F26),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo23 : IDispatch {
+	[id(1)] HRESULT Initialise(
+		[in] BSTR bsName
+		, [in] BSTR bsFullName
+		, [in] BSTR bsComment
+		, [in] ULONG ulFlags
+		, [in] BSTR bsUserSid);
+	[propget, id(2)] HRESULT Name([out, retval] BSTR* pVal);
+	[propget, id(3)] HRESULT FullName([out, retval] BSTR* pVal);
+	[propget, id(4)] HRESULT Comment([out, retval] BSTR* pVal);
+	[propget, id(5)] HRESULT Flags([out, retval] ULONG* pVal);
+	[propget, id(6)] HRESULT UserSid([out, retval] BSTR* pVal);
+};
+[
+	object,
+	uuid(CFAEE563-8B1F-4E0D-84EA-5146114960EE),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo24 : IDispatch {
+	[id(1)] HRESULT Initialise(
+		[in] SHORT shInternetIdentity
+		, [in] ULONG ulFlags
+		, [in] BSTR bsInternetProviderName
+		, [in] BSTR bsInternetPrincipleName
+		, [in] BSTR bsUserSid);
+	[propget, id(2)] HRESULT InternetIdentity([out, retval] SHORT* pVal);
+	[propget, id(3)] HRESULT Flags([out, retval] ULONG* pVal);
+	[propget, id(4)] HRESULT InternetProviderName([out, retval] BSTR* pVal);
+	[propget, id(5)] HRESULT InternetPrincipleName([out, retval] BSTR* pVal);
+	[propget, id(6)] HRESULT UserSid([out, retval] BSTR* pVal);
+};
+[
+	object,
+	uuid(900AA31A-F912-4AB7-B569-AA4A60F4FCE0),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1003 : IDispatch {
+	[id(1)] HRESULT Initialise([in] BSTR bsPassword);
+	[propget, id(2)] HRESULT Password([out, retval] BSTR* pVal);
 };
 [
 	object,
@@ -57,12 +469,255 @@ interface ICUserInfo2 : IDispatch {
 	pointer_default(unique)
 ]
 interface ICNetUser : IDispatch{
-	[id(1)] HRESULT GetUserInfo1([in] BSTR bsName, [in] BSTR bsPwd, [in] ULONG ulPwdAge, [in] ULONG ulPriv, [in] BSTR bsHomeDir, [in] BSTR bsComment, [in] ULONG ulFlags, [in] BSTR bsScriptPath, [out, retval] ICUserInfo1** ppUserInfo1);
-	[id(2)] HRESULT NetUserAdd([in] BSTR bsServerName, [in] IUnknown* pUserInfo);
-	[id(3)] HRESULT NetUserDel([in] BSTR bsServerName, [in] BSTR bsUserName);
-	[id(4)] HRESULT NetUserGetInfo([in] BSTR bsServerName, [in] BSTR bsUserName, [in] eUserInfoType userInfoType, [out, retval] IUnknown** ppUserInfo);
-	[id(5)] HRESULT CastToUserInfo1([in] IUnknown* pUnk, [out, retval] ICUserInfo1** ppUserInfo1);
-	[id(6)] HRESULT GetNetUserInfo2([in] BSTR bsName, [in] BSTR bsPassword, [in] ULONG ulPasswordAge, [in] ULONG ulPrivilege, [in] BSTR bsHomeDir, [in] BSTR bsComment, [in] ULONG ulFlags, [in] BSTR bsScriptPath, [in] ULONG ulAuthFlags, [in] BSTR bsFullName, [in] BSTR bsUsrComment, [in] BSTR bsParams, [in] BSTR bsWorkstations, [in] ULONG ulLastLogon, [in] ULONG ulLastLogoff, [in] ULONG ulAccntExpires, [in] ULONG ulMaxStorage, [in] ULONG ulUnitsPerWeek, [in] BYTE bLogonHours, [in] ULONG ulBadPwdCount, [in] ULONG ulNumLogons, [in] BSTR bsLogonServer, [in] ULONG ulCountryCode, [in] ULONG ulCodePage, [out, retval] ICUserInfo2** ppUserInfo2);
+	[id(1)] HRESULT GetUserInfo0(
+		[in] BSTR bsName
+		, [out, retval] ICUserInfo0** ppUserInfo0);
+	[id(2)] HRESULT GetUserInfo1(
+		[in] BSTR bsName
+		, [in] BSTR bsPwd
+		, [in] ULONG ulPwdAge
+		, [in] ULONG ulPriv
+		, [in] BSTR bsHomeDir
+		, [in] BSTR bsComment
+		, [in] ULONG ulFlags
+		, [in] BSTR bsScriptPath
+		, [out, retval] ICUserInfo1** ppUserInfo1);
+	[id(3)] HRESULT GetUserInfo2(
+		[in] BSTR bsName
+		, [in] BSTR bsPassword
+		, [in] ULONG ulPasswordAge
+		, [in] ULONG ulPrivilege
+		, [in] BSTR bsHomeDir
+		, [in] BSTR bsComment
+		, [in] ULONG ulFlags
+		, [in] BSTR bsScriptPath
+		, [in] ULONG ulAuthFlags
+		, [in] BSTR bsFullName
+		, [in] BSTR bsUsrComment
+		, [in] BSTR bsParams
+		, [in] BSTR bsWorkstations
+		, [in] ULONG ulLastLogon
+		, [in] ULONG ulLastLogoff
+		, [in] ULONG ulAccntExpires
+		, [in] ULONG ulMaxStorage
+		, [in] ULONG ulUnitsPerWeek
+		, [in] BYTE bLogonHours
+		, [in] ULONG ulBadPwdCount
+		, [in] ULONG ulNumLogons
+		, [in] BSTR bsLogonServer
+		, [in] ULONG ulCountryCode
+		, [in] ULONG ulCodePage
+		, [out, retval] ICUserInfo2** ppUserInfo2);
+	[id(4)] HRESULT GetUserInfo3(
+		[in] BSTR bsName
+		, [in] BSTR bsPassword
+		, [in] ULONG ulPasswordAge
+		, [in] ULONG ulPrivilege
+		, [in] BSTR bsHomeDir
+		, [in] BSTR bsComment
+		, [in] ULONG ulFlags
+		, [in] BSTR bsScriptPath
+		, [in] ULONG ulAuthFlags
+		, [in] BSTR bsFullName
+		, [in] BSTR bsUsrComment
+		, [in] BSTR bsParams
+		, [in] BSTR bsWorkstations
+		, [in] ULONG ulLastLogon
+		, [in] ULONG ulLastLogoff
+		, [in] ULONG ulAccntExpires
+		, [in] ULONG ulMaxStorage
+		, [in] ULONG ulUnitsPerWeek
+		, [in] BYTE bLogonHours
+		, [in] ULONG ulBadPwdCount
+		, [in] ULONG ulNumLogons
+		, [in] BSTR bsLogonServer
+		, [in] ULONG ulCountryCode
+		, [in] ULONG ulCodePage
+		, [in] ULONG ulUserId
+		, [in] ULONG ulPrimaryGrpId
+		, [in] BSTR bsProfile
+		, [in] BSTR bsHomeDirDrive
+		, [in] ULONG ulPwdExpired
+		, [out, retval] ICUserInfo3** ppUserInfo3);
+	[id(5)] HRESULT GetUserInfo4(
+		[in] BSTR bsName
+		, [in] BSTR bsPassword
+		, [in] ULONG ulPasswordAge
+		, [in] ULONG ulPrivilege
+		, [in] BSTR bsHomeDir
+		, [in] BSTR bsComment
+		, [in] ULONG ulFlags
+		, [in] BSTR bsScriptPath
+		, [in] ULONG ulAuthFlags
+		, [in] BSTR bsFullName
+		, [in] BSTR bsUsrComment
+		, [in] BSTR bsParams
+		, [in] BSTR bsWorkstations
+		, [in] ULONG ulLastLogon
+		, [in] ULONG ulLastLogoff
+		, [in] ULONG ulAccntExpires
+		, [in] ULONG ulMaxStorage
+		, [in] ULONG ulUnitsPerWeek
+		, [in] BYTE bLogonHours
+		, [in] ULONG ulBadPwdCount
+		, [in] ULONG ulNumLogons
+		, [in] BSTR bsLogonServer
+		, [in] ULONG ulCountryCode
+		, [in] ULONG ulCodePage
+		, [in] BSTR bsUserSid
+		, [in] ULONG ulPrimaryGrpId
+		, [in] BSTR bsProfile
+		, [in] BSTR bsHomeDirDrive
+		, [in] ULONG ulPwdExpired
+		, [out, retval] ICUserInfo4** ppUserInfo4);
+	[id(6)] HRESULT GetUserInfo10(
+		[in] BSTR bsName
+		, [in] BSTR bsComment
+		, [in] BSTR bsUsrComment
+		, [in] BSTR bsFullName
+		, [out, retval] ICUserInfo10** ppUserInfo10);
+	[id(7)] HRESULT GetUserInfo11(
+		[in] BSTR bsName
+		, [in] BSTR bsComment
+		, [in] BSTR bsUsrComment
+		, [in] BSTR bsFullName
+		, [in] ULONG ulPrivilege
+		, [in] ULONG ulAuthFlags
+		, [in] ULONG ulPasswordAge
+		, [in] BSTR bsHomeDir
+		, [in] BSTR bsParams
+		, [in] ULONG ulLastLogon
+		, [in] ULONG ulLastLogoff
+		, [in] ULONG ulBadPwdCount
+		, [in] ULONG ulNumLogons
+		, [in] BSTR bsLogonServer
+		, [in] ULONG ulCountryCode
+		, [in] BSTR bsWorkstations
+		, [in] ULONG ulMaxStorage
+		, [in] ULONG ulUnitsPerWeek
+		, [in] BYTE bLogonHours
+		, [in] ULONG ulCodePage
+		, [out, retval] ICUserInfo11** ppUserInfo11);
+	[id(8)] HRESULT GetUserInfo20(
+		[in] BSTR bsName
+		, [in] BSTR bsFullName
+		, [in] BSTR bsComment
+		, [in] ULONG ulFlags
+		, [in] ULONG ulUserId
+		, [out, retval] ICUserInfo20** ppUserInfo20);
+	[id(9)] HRESULT GetUserInfo21([in] BSTR bsPassword, [out, retval] ICUserInfo21** ppUserInfo21);
+	[id(10)] HRESULT GetUserInfo22(
+		[in] BSTR bsName
+		, [in] BSTR bsPassword
+		, [in] ULONG ulPasswordAge
+		, [in] ULONG ulPrivilege
+		, [in] BSTR bsHomeDir
+		, [in] BSTR bsComment
+		, [in] ULONG ulFlags
+		, [in] BSTR bsScriptPath
+		, [in] ULONG ulAuthFlags
+		, [in] BSTR bsFullName
+		, [in] BSTR bsUsrComment
+		, [in] BSTR bsParams
+		, [in] BSTR bsWorkstations
+		, [in] ULONG ulLastLogon
+		, [in] ULONG ulLastLogoff
+		, [in] ULONG ulAccntExpires
+		, [in] ULONG ulMaxStorage
+		, [in] ULONG ulUnitsPerWeek
+		, [in] BYTE bLogonHours
+		, [in] ULONG ulBadPwdCount
+		, [in] ULONG ulNumLogons
+		, [in] BSTR bsLogonServer
+		, [in] ULONG ulCountryCode
+		, [in] ULONG ulCodePage
+		, [out, retval] ICUserInfo22** ppUserInfo22);
+	[id(11)] HRESULT GetUserInfo23(
+		[in] BSTR bsName
+		, [in] BSTR bsFullName
+		, [in] BSTR bsComment
+		, [in] ULONG ulFlags
+		, [in] BSTR bsUserSid
+		, [out, retval] ICUserInfo23** ppUserInfo23);
+	[id(12)] HRESULT GetUserInfo24(
+		[in] SHORT shInternetIdentity
+		, [in] ULONG ulFlags
+		, [in] BSTR bsInternetProviderName
+		, [in] BSTR bsInternetPrincipleName
+		, [in] BSTR bsUserSid
+		, [out, retval] ICUserInfo24** ppUserInfo24);
+	[id(13)] HRESULT GetUserInfo1003([in] BSTR bsPassword, [out, retval] ICUserInfo1003** ppUserInfo1003);
+	[id(14)] HRESULT GetUserInfo1005([in] ULONG ulPrivilege, [out, retval] ICUserInfo1005** ppUserInfo1005);
+	[id(15)] HRESULT GetUserInfo1006([in] BSTR bsHomeDir, [out, retval] ICUserInfo1006** ppUserInfo1006);
+	[id(16)] HRESULT GetUserInfo1007([in] BSTR bsComment, [out, retval] ICUserInfo1007** ppUserInfo1007);
+	[id(17)] HRESULT GetUserInfo1008([in] ULONG ulFlags, [out, retval] ICUserInfo1008** ppUserInfo1008);
+	[id(18)] HRESULT GetUserInfo1009([in] BSTR bsScriptPath, [out, retval] ICUserInfo1009** ppUserInfo1009);
+	[id(19)] HRESULT GetUserInfo1010([in] ULONG ulAuthFlags, [out, retval] ICUserInfo1010** ppUserInfo1010);
+	[id(20)] HRESULT GetUserInfo1011([in] BSTR bsFullName, [out, retval] ICUserInfo1011** ppUserInfo1011);
+	[id(21)] HRESULT GetUserInfo1012([in] BSTR bsUsrComment, [out, retval] ICUserInfo1012** ppUserInfo1012);
+	[id(22)] HRESULT GetUserInfo1013([in] BSTR bsParams, [out, retval] ICUserInfo1013** ppUserInfo1013);
+	[id(23)] HRESULT GetUserInfo1014([in] BSTR bsWorkstations, [out, retval] ICUserInfo1014** ppUserInfo1014);
+	[id(24)] HRESULT GetUserInfo1017([in] ULONG ulAccntExpires, [out, retval] ICUserInfo1017** ppUserInfo1017);
+	[id(25)] HRESULT GetUserInfo1018([in] ULONG ulMaxStorage, [out, retval] ICUserInfo1018** ppUserInfo1018);
+	[id(26)] HRESULT GetUserInfo1020(
+		[in] ULONG ulUnitsPerWeek
+		, [in] BYTE bLogonHours
+		, [out, retval] ICUserInfo1020** ppUserInfo1020);
+	[id(27)] HRESULT GetUserInfo1023([in] BSTR bsLogonServer, [out, retval] ICUserInfo1023** ppUserInfo1023);
+	[id(28)] HRESULT GetUserInfo1024([in] ULONG ulCountryCode, [out, retval] ICUserInfo1024** ppUserInfo1024);
+	[id(29)] HRESULT GetUserInfo1025([in] ULONG ulCodePage, [out, retval] ICUserInfo1025** ppUserInfo1025);
+	[id(30)] HRESULT GetUserInfo1051([in] ULONG ulPrimaryGrpId, [out, retval] ICUserInfo1051** ppUserInfo1051);
+	[id(31)] HRESULT GetUserInfo1052([in] BSTR bsProfile, [out, retval] ICUserInfo1052** ppUserInfo1052);
+	[id(32)] HRESULT GetUserInfo1053([in] BSTR bsHomeDirDrive, [out, retval] ICUserInfo1053** ppUserInfo1053);
+	[id(34)] HRESULT NetUserAdd([in] BSTR bsServerName, [in] IUnknown* pUserInfo);
+	[id(35)] HRESULT NetUserDel([in] BSTR bsServerName, [in] BSTR bsUserName);
+	[id(36)] HRESULT NetUserGetInfo([in] BSTR bsServerName, [in] BSTR bsUserName, [in] eUserInfoType userInfoType, [out, retval] IUnknown** ppUserInfo);
+	[id(37)] HRESULT CastToUserInfo1([in] IUnknown* pUnk, [out, retval] ICUserInfo1** ppUserInfo1);
+};
+[
+	object,
+	uuid(498D44B8-FE78-4B58-8416-CF42D2886D83),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1005 : IDispatch{
+};
+[
+	object,
+	uuid(C74F8FA9-D9E1-4784-ACD8-0F86544D8BB4),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1006 : IDispatch{
+};
+[
+	object,
+	uuid(B392B22C-C613-4B4E-8381-1047C66345CB),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1007 : IDispatch{
+};
+[
+	object,
+	uuid(BB1F392D-DABF-4FDE-B8C7-6280255AC507),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1008 : IDispatch{
+};
+[
+	object,
+	uuid(FF9CC675-C817-4F55-8B3C-C96E6EDA54E3),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1009 : IDispatch{
 };
 [
 	uuid(F53A3EDB-3D55-4E7B-8687-F0759A72FBCA),
@@ -92,5 +747,118 @@ library CWinNetManagerLib
 	{
 		[default] interface ICUserInfo2;
 	};
+	[
+		uuid(F5DBD051-1A62-42E5-9969-68B9CEBC7883)		
+	]
+	coclass CUserInfo3
+	{
+		[default] interface ICUserInfo3;
+	};
+	[
+		uuid(787E4219-89B2-4F4E-90D1-30D072670F97)		
+	]
+	coclass CUserInfo4
+	{
+		[default] interface ICUserInfo4;
+	};
+	[
+		uuid(C037BEF2-BEBD-49E0-9DB6-4D4794779D7E)		
+	]
+	coclass CUserInfo0
+	{
+		[default] interface ICUserInfo0;
+	};
+	[
+		uuid(8B3BBA8F-DA8F-42F0-AC4E-B2683F532288)		
+	]
+	coclass CUserInfo10
+	{
+		[default] interface ICUserInfo10;
+	};
+	[
+		uuid(8CEBAEB7-C22C-4991-8EB0-C76C0B7AFD22)		
+	]
+	coclass CUserInfo11
+	{
+		[default] interface ICUserInfo11;
+	};
+	[
+		uuid(7593B81E-BF5B-4891-A3C7-AAB1312EA8B1)		
+	]
+	coclass CUserInfo20
+	{
+		[default] interface ICUserInfo20;
+	};
+	[
+		uuid(31B91AEE-9B62-4A72-B6C2-E52237599FB4)		
+	]
+	coclass CUserInfo23
+	{
+		[default] interface ICUserInfo23;
+	};
+	[
+		uuid(8B9ECA46-8580-4938-A7DB-F43178B3CEDA)		
+	]
+	coclass CUserInfo24
+	{
+		[default] interface ICUserInfo24;
+	};
+	[
+		uuid(9DE3BA70-1AA7-4285-B99F-6FC85D61DC8E)		
+	]
+	coclass CUserInfo21
+	{
+		[default] interface ICUserInfo21;
+	};
+	[
+		uuid(0C3057B8-1401-4BC1-9FAE-963C8888A448)		
+	]
+	coclass CUserInfo22
+	{
+		[default] interface ICUserInfo22;
+	};
+	[
+		uuid(0BDA0AF5-05A3-4C15-AAEA-416D6A4012F5)		
+	]
+	coclass CUserInfo1003
+	{
+		[default] interface ICUserInfo1003;
+	};
+	[
+		uuid(2179D331-C313-4F5F-BE6E-F1DF0CDCC5F2)		
+	]
+	coclass CUserInfo1005
+	{
+		[default] interface ICUserInfo1005;
+	};
+	[
+		uuid(36F830BD-D6D5-40DF-B67F-FCBFFF22FF28)		
+	]
+	coclass CUserInfo1006
+	{
+		[default] interface ICUserInfo1006;
+	};
+	[
+		uuid(1393F0E0-389E-46C0-863B-804404CD09EB)		
+	]
+	coclass CUserInfo1007
+	{
+		[default] interface ICUserInfo1007;
+	};
+	[
+		uuid(D424BA6C-EA4B-45B7-B54A-4C1ECB8B9B23)		
+	]
+	coclass CUserInfo1008
+	{
+		[default] interface ICUserInfo1008;
+	};
+	[
+		uuid(6D68995C-6E27-48B7-86D7-19FB43FE0158)		
+	]
+	coclass CUserInfo1009
+	{
+		[default] interface ICUserInfo1009;
+	};
 };
+
 
