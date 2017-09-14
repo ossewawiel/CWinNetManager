@@ -6,3 +6,12 @@
 
 // CCUserInfo1007
 
+STDMETHODIMP CCUserInfo1007::Initialise(BSTR bsComment)
+{
+	return E_NOTIMPL;
+}
+
+STDMETHODIMP CCUserInfo1007::get_Comment(BSTR * pVal)
+{
+	return E_NOTIMPL;
+}

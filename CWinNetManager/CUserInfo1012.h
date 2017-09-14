@@ -57,9 +57,10 @@ END_COM_MAP()
 	CComPtr<IUnknown> m_pUnkMarshaler;
 
 public:
-
+	STDMETHOD(Initialise)(BSTR bsUsrComment);
+	STDMETHOD(get_UsrComment)(BSTR* pVal);
 
 
 };
 
-OBJECT_ENTRY_AUTO(__uuidof(CUserInfo1012), CCUserInfo1012)
+OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserInfo1012), CCUserInfo1012)

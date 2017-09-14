@@ -604,20 +604,6 @@ TEST_F(TestCNetUser, when_getuserinfo1011_with_proper_parameters_then_return_no_
 
 // WHEN GETUSERINFO1011 WITH PROPER PARAMETERS THEN RETURN NO EXCEPTION
 ///////////////////////////////////////////////////////////////////////////////
-/// When calling GetUserInfo1011 with proper parameters then it will return a 
-/// UserInfo11 structure with the correct proeprty values.
-TEST_F(TestCNetUser, when_getuserinfo1011_with_proper_parameters_then_return_no_exception)
-{
-	CComPtr<ICUserInfo1011> pUserInfo1011;
-	HRESULT hr = mpCNetUser->GetUserInfo1011(PAR_UINF_FULLNAME, &pUserInfo1011);
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
-
-	// now check if all the properties have the correct values
-	ASSERT_UINF_FULLNAME(pUserInfo1011);
-}
-
-// WHEN GETUSERINFO1011 WITH PROPER PARAMETERS THEN RETURN NO EXCEPTION
-///////////////////////////////////////////////////////////////////////////////
 /// When calling GetUserInfo1012 with proper parameters then it will return a 
 /// UserInfo11 structure with the correct proeprty values.
 TEST_F(TestCNetUser, when_getuserinfo1012_with_proper_parameters_then_return_no_exception)

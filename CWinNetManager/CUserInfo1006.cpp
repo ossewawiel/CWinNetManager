@@ -6,3 +6,12 @@
 
 // CCUserInfo1006
 
+STDMETHODIMP CCUserInfo1006::Initialise(BSTR bsHomeDir)
+{
+	return E_NOTIMPL;
+}
+
+STDMETHODIMP CCUserInfo1006::get_HomeDirectory(BSTR * pVal)
+{
+	return E_NOTIMPL;
+}

@@ -6,3 +6,12 @@
 
 // CCUserInfo1010
 
+STDMETHODIMP CCUserInfo1010::Initialise(ULONG ulAuthFlags)
+{
+	return E_NOTIMPL;
+}
+
+STDMETHODIMP CCUserInfo1010::get_AuthFlags(ULONG * pVal)
+{
+	return E_NOTIMPL;
+}

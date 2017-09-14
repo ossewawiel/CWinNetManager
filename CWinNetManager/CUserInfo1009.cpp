@@ -6,3 +6,12 @@
 
 // CCUserInfo1009
 
+STDMETHODIMP CCUserInfo1009::Initialise(BSTR bsScriptPath)
+{
+	return E_NOTIMPL;
+}
+
+STDMETHODIMP CCUserInfo1009::get_ScriptPath(BSTR * pVal)
+{
+	return E_NOTIMPL;
+}

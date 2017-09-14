@@ -6,3 +6,12 @@
 
 // CCUserInfo1011
 
+STDMETHODIMP CCUserInfo1011::Initialise(BSTR bsFullName)
+{
+	return E_NOTIMPL;
+}
+
+STDMETHODIMP CCUserInfo1011::get_FullName(BSTR * pVal)
+{
+	return E_NOTIMPL;
+}

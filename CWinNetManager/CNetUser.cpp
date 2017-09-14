@@ -425,6 +425,158 @@ STDMETHODIMP CCNetUser::GetUserInfo1003(BSTR bsPassword, ICUserInfo1003 ** ppUse
 	return (*ppUserInfo1003)->Initialise(bsPassword);
 }
 
+STDMETHODIMP CCNetUser::GetUserInfo1005(ULONG ulPrivilege, ICUserInfo1005 ** ppUserInfo1005)
+{
+	HRESULT hr = ICUserInfo1005::CreateInstance(ppUserInfo1005);
+	if (hr) return hr;
+
+	return (*ppUserInfo1005)->Initialise(ulPrivilege);
+}
+
+STDMETHODIMP CCNetUser::GetUserInfo1006(BSTR bsHomeDir, ICUserInfo1006 ** ppUserInfo1006)
+{
+	HRESULT hr = ICUserInfo1006::CreateInstance(ppUserInfo1006);
+	if (hr) return hr;
+
+	return (*ppUserInfo1006)->Initialise(bsHomeDir);
+}
+
+STDMETHODIMP CCNetUser::GetUserInfo1007(BSTR bsComment, ICUserInfo1007 ** ppUserInfo1007)
+{
+	HRESULT hr = ICUserInfo1007::CreateInstance(ppUserInfo1007);
+	if (hr) return hr;
+
+	return (*ppUserInfo1007)->Initialise(bsComment);
+}
+
+STDMETHODIMP CCNetUser::GetUserInfo1008(ULONG ulFlags, ICUserInfo1008 ** ppUserInfo1008)
+{
+	HRESULT hr = ICUserInfo1008::CreateInstance(ppUserInfo1008);
+	if (hr) return hr;
+
+	return (*ppUserInfo1008)->Initialise(ulFlags);
+}
+
+STDMETHODIMP CCNetUser::GetUserInfo1009(BSTR bsScriptPath, ICUserInfo1009 ** ppUserInfo1009)
+{
+	HRESULT hr = ICUserInfo1009::CreateInstance(ppUserInfo1009);
+	if (hr) return hr;
+
+	return (*ppUserInfo1009)->Initialise(bsScriptPath);
+}
+
+STDMETHODIMP CCNetUser::GetUserInfo1010(ULONG ulAuthFlags, ICUserInfo1010 ** ppUserInfo1010)
+{
+	HRESULT hr = ICUserInfo1010::CreateInstance(ppUserInfo1010);
+	if (hr) return hr;
+
+	return (*ppUserInfo1010)->Initialise(ulAuthFlags);
+}
+
+STDMETHODIMP CCNetUser::GetUserInfo1011(BSTR bsFullName, ICUserInfo1011 ** ppUserInfo1011)
+{
+	HRESULT hr = ICUserInfo1011::CreateInstance(ppUserInfo1011);
+	if (hr) return hr;
+
+	return (*ppUserInfo1011)->Initialise(bsFullName);
+}
+
+STDMETHODIMP CCNetUser::GetUserInfo1012(BSTR bsUsrComment, ICUserInfo1012 ** ppUserInfo1012)
+{
+	HRESULT hr = ICUserInfo1012::CreateInstance(ppUserInfo1012);
+	if (hr) return hr;
+
+	return (*ppUserInfo1012)->Initialise(bsUsrComment);
+}
+
+STDMETHODIMP CCNetUser::GetUserInfo1013(BSTR bsParams, ICUserInfo1013 ** ppUserInfo1013)
+{
+	HRESULT hr = ICUserInfo1013::CreateInstance(ppUserInfo1013);
+	if (hr) return hr;
+
+	return (*ppUserInfo1013)->Initialise(bsParams);
+}
+
+STDMETHODIMP CCNetUser::GetUserInfo1014(BSTR bsWorkstations, ICUserInfo1014 ** ppUserInfo1014)
+{
+	HRESULT hr = ICUserInfo1014::CreateInstance(ppUserInfo1014);
+	if (hr) return hr;
+
+	return (*ppUserInfo1014)->Initialise(bsWorkstations);
+}
+
+STDMETHODIMP CCNetUser::GetUserInfo1017(ULONG ulAccntExpires, ICUserInfo1017 ** ppUserInfo1017)
+{
+	HRESULT hr = ICUserInfo1017::CreateInstance(ppUserInfo1017);
+	if (hr) return hr;
+
+	return (*ppUserInfo1017)->Initialise(ulAccntExpires);
+}
+
+STDMETHODIMP CCNetUser::GetUserInfo1018(ULONG ulMaxStorage, ICUserInfo1018 ** ppUserInfo1018)
+{
+	HRESULT hr = ICUserInfo1018::CreateInstance(ppUserInfo1018);
+	if (hr) return hr;
+
+	return (*ppUserInfo1018)->Initialise(ulMaxStorage);
+}
+
+STDMETHODIMP CCNetUser::GetUserInfo1020(ULONG ulUnitsPerWeek, BYTE bLogonHours, ICUserInfo1020 ** ppUserInfo1020)
+{
+	HRESULT hr = ICUserInfo1020::CreateInstance(ppUserInfo1020);
+	if (hr) return hr;
+
+	return (*ppUserInfo1020)->Initialise(ulUnitsPerWeek, bLogonHours);
+}
+
+STDMETHODIMP CCNetUser::GetUserInfo1023(BSTR bsLogonServer, ICUserInfo1023 ** ppUserInfo1023)
+{
+	HRESULT hr = ICUserInfo1023::CreateInstance(ppUserInfo1023);
+	if (hr) return hr;
+
+	return (*ppUserInfo1023)->Initialise(bsLogonServer);
+}
+
+STDMETHODIMP CCNetUser::GetUserInfo1024(ULONG ulCountryCode, ICUserInfo1024 ** ppUserInfo1024)
+{
+	HRESULT hr = ICUserInfo1024::CreateInstance(ppUserInfo1024);
+	if (hr) return hr;
+
+	return (*ppUserInfo1024)->Initialise(ulCountryCode);
+}
+
+STDMETHODIMP CCNetUser::GetUserInfo1025(ULONG ulCodePage, ICUserInfo1025 ** ppUserInfo1025)
+{
+	HRESULT hr = ICUserInfo1025::CreateInstance(ppUserInfo1025);
+	if (hr) return hr;
+
+	return (*ppUserInfo1025)->Initialise(ulCodePage);
+}
+
+STDMETHODIMP CCNetUser::GetUserInfo1051(ULONG ulPrimaryGrpId, ICUserInfo1051 ** ppUserInfo1051)
+{
+	HRESULT hr = ICUserInfo1051::CreateInstance(ppUserInfo1051);
+	if (hr) return hr;
+
+	return (*ppUserInfo1051)->Initialise(ulPrimaryGrpId);
+}
+
+STDMETHODIMP CCNetUser::GetUserInfo1052(BSTR bsProfile, ICUserInfo1052 ** ppUserInfo1052)
+{
+	HRESULT hr = ICUserInfo1052::CreateInstance(ppUserInfo1052);
+	if (hr) return hr;
+
+	return (*ppUserInfo1052)->Initialise(bsProfile);
+}
+
+STDMETHODIMP CCNetUser::GetUserInfo1053(BSTR bsHomeDirDrive, ICUserInfo1053 ** ppUserInfo1053)
+{
+	HRESULT hr = ICUserInfo1053::CreateInstance(ppUserInfo1053);
+	if (hr) return hr;
+
+	return (*ppUserInfo1053)->Initialise(bsHomeDirDrive);
+}
+
 STDMETHODIMP CCNetUser::NetUserAdd(BSTR bsServerName, IUnknown* pUserInfo)
 {
 	HRESULT hr(S_OK);

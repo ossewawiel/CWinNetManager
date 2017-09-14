@@ -463,6 +463,216 @@ interface ICUserInfo1003 : IDispatch {
 };
 [
 	object,
+	uuid(498D44B8-FE78-4B58-8416-CF42D2886D83),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1005 : IDispatch {
+	[id(1)] HRESULT Initialise([in] ULONG ulPrivilege);
+	[propget, id(2)] HRESULT Privilege([out, retval] ULONG* pVal);
+};
+[
+	object,
+	uuid(C74F8FA9-D9E1-4784-ACD8-0F86544D8BB4),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1006 : IDispatch {
+	[id(1)] HRESULT Initialise([in] BSTR bsHomeDir);
+	[propget, id(2)] HRESULT HomeDirectory([out, retval] BSTR* pVal);
+};
+[
+	object,
+	uuid(B392B22C-C613-4B4E-8381-1047C66345CB),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1007 : IDispatch {
+	[id(1)] HRESULT Initialise([in] BSTR bsComment);
+	[propget, id(2)] HRESULT Comment([out, retval] BSTR* pVal);
+};
+[
+	object,
+	uuid(BB1F392D-DABF-4FDE-B8C7-6280255AC507),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1008 : IDispatch {
+	[id(1)] HRESULT Initialise([in] ULONG ulFlags);
+	[propget, id(2)] HRESULT Flags([out, retval] ULONG* pVal);
+};
+[
+	object,
+	uuid(FF9CC675-C817-4F55-8B3C-C96E6EDA54E3),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1009 : IDispatch {
+	[id(1)] HRESULT Initialise([in] BSTR bsScriptPath);
+	[propget, id(2)] HRESULT ScriptPath([out, retval] BSTR* pVal);
+};
+[
+	object,
+	uuid(F0C88122-26CB-4014-A042-1BE26AE67ECA),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1010 : IDispatch {
+	[id(1)] HRESULT Initialise([in] ULONG ulAuthFlags);
+	[propget, id(2)] HRESULT AuthFlags([out, retval] ULONG* pVal);
+};
+[
+	object,
+	uuid(8440219B-EB30-491B-9B31-30A4ED848401),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1011 : IDispatch {
+	[id(1)] HRESULT Initialise([in] BSTR bsFullName);
+	[propget, id(2)] HRESULT FullName([out, retval] BSTR* pVal);
+};
+[
+	object,
+	uuid(F9277CC9-E27C-4DF0-8228-15459415CAD6),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1012 : IDispatch {
+	[id(1)] HRESULT Initialise([in] BSTR bsUsrComment);
+	[propget, id(2)] HRESULT UsrComment([out, retval] BSTR* pVal);
+};
+[
+	object,
+	uuid(072BCA73-A103-4B92-B5FA-35DCDA81A2D5),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1013 : IDispatch {
+	[id(1)] HRESULT Initialise([in] BSTR bsParams);
+	[propget, id(2)] HRESULT Params([out, retval] BSTR* pVal);
+};
+[
+	object,
+	uuid(078DBB8D-B9AD-4FC1-B19F-4350E6D342C7),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1014 : IDispatch {
+	[id(1)] HRESULT Initialise([in] BSTR bsWorkstations);
+	[propget, id(2)] HRESULT Workstations([out, retval] BSTR* pVal);
+};
+[
+	object,
+	uuid(C2F6CF6A-C02B-4E60-880A-8D03F2C1D0F9),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1017 : IDispatch {
+	[id(1)] HRESULT Initialise([in] ULONG ulAccntExpires);
+	[propget, id(2)] HRESULT AccntExpires([out, retval] ULONG* pVal);
+};
+[
+	object,
+	uuid(84B7C76D-ED3D-4D0B-A753-5512C17A709B),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1018 : IDispatch {
+	[id(1)] HRESULT Initialise([in] ULONG ulMaxStorage);
+	[propget, id(2)] HRESULT MaxStorage([out, retval] ULONG* pVal);
+};
+[
+	object,
+	uuid(91E5BE48-571B-4478-ABC8-BFB0D698785B),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1020 : IDispatch {
+	[id(1)] HRESULT Initialise([in] ULONG ulUnitsPerWeek, [in] BYTE bLogonHours);
+	[propget, id(2)] HRESULT UnitsPerWeek([out, retval] ULONG* pVal);
+	[propget, id(3)] HRESULT LogonHours([out, retval] BYTE* pVal);
+};
+[
+	object,
+	uuid(DD330CEA-13DD-4D3E-841E-E559CD5F6F7D),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1023 : IDispatch {
+	[id(1)] HRESULT Initialise([in] BSTR bsLogonServer);
+	[propget, id(2)] HRESULT LogonServer([out, retval] BSTR* pVal);
+};
+[
+	object,
+	uuid(18695385-BE01-44FF-9962-7F1F8EB57AE2),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1024 : IDispatch {
+	[id(1)] HRESULT Initialise([in] ULONG ulCountryCode);
+	[propget, id(2)] HRESULT CountryCode([out, retval] ULONG* pVal);
+};
+[
+	object,
+	uuid(A08D86C4-47EE-4C75-B844-71D66B532760),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1025 : IDispatch {
+	[id(1)] HRESULT Initialise([in] ULONG ulCodePage);
+	[propget, id(2)] HRESULT CodePage([out, retval] ULONG* pVal);
+};
+[
+	object,
+	uuid(03BF198D-2AC8-49DF-B657-610B3879DBEB),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1051 : IDispatch {
+	[id(1)] HRESULT Initialise([in] ULONG ulPrimaryGrpId);
+	[propget, id(2)] HRESULT PrimaryGrpId([out, retval] ULONG* pVal);
+};
+[
+	object,
+	uuid(0AF7CBB8-DBA4-4AD4-B633-5B50958849D6),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1052 : IDispatch {
+	[id(1)] HRESULT Initialise([in] BSTR bsProfile);
+	[propget, id(2)] HRESULT Profile([out, retval] BSTR* pVal);
+};
+[
+	object,
+	uuid(81BB6120-B547-4025-8F18-807F6895D984),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserInfo1053 : IDispatch {
+	[id(1)] HRESULT Initialise([in] BSTR bsHomeDirDrive);
+	[propget, id(2)] HRESULT HomeDirDrive([out, retval] BSTR* pVal);
+};
+[
+	object,
 	uuid(6F0101CF-7948-4472-8542-044189587EFB),
 	dual,
 	nonextensible,
@@ -673,177 +883,6 @@ interface ICNetUser : IDispatch{
 	[id(35)] HRESULT NetUserDel([in] BSTR bsServerName, [in] BSTR bsUserName);
 	[id(36)] HRESULT NetUserGetInfo([in] BSTR bsServerName, [in] BSTR bsUserName, [in] eUserInfoType userInfoType, [out, retval] IUnknown** ppUserInfo);
 	[id(37)] HRESULT CastToUserInfo1([in] IUnknown* pUnk, [out, retval] ICUserInfo1** ppUserInfo1);
-};
-[
-	object,
-	uuid(498D44B8-FE78-4B58-8416-CF42D2886D83),
-	dual,
-	nonextensible,
-	pointer_default(unique)
-]
-interface ICUserInfo1005 : IDispatch{
-};
-[
-	object,
-	uuid(C74F8FA9-D9E1-4784-ACD8-0F86544D8BB4),
-	dual,
-	nonextensible,
-	pointer_default(unique)
-]
-interface ICUserInfo1006 : IDispatch{
-};
-[
-	object,
-	uuid(B392B22C-C613-4B4E-8381-1047C66345CB),
-	dual,
-	nonextensible,
-	pointer_default(unique)
-]
-interface ICUserInfo1007 : IDispatch{
-};
-[
-	object,
-	uuid(BB1F392D-DABF-4FDE-B8C7-6280255AC507),
-	dual,
-	nonextensible,
-	pointer_default(unique)
-]
-interface ICUserInfo1008 : IDispatch{
-};
-[
-	object,
-	uuid(FF9CC675-C817-4F55-8B3C-C96E6EDA54E3),
-	dual,
-	nonextensible,
-	pointer_default(unique)
-]
-interface ICUserInfo1009 : IDispatch{
-};
-[
-	object,
-	uuid(F0C88122-26CB-4014-A042-1BE26AE67ECA),
-	dual,
-	nonextensible,
-	pointer_default(unique)
-]
-interface ICUserInfo1010 : IDispatch{
-};
-[
-	object,
-	uuid(8440219B-EB30-491B-9B31-30A4ED848401),
-	dual,
-	nonextensible,
-	pointer_default(unique)
-]
-interface ICUserInfo1011 : IDispatch{
-};
-[
-	object,
-	uuid(F9277CC9-E27C-4DF0-8228-15459415CAD6),
-	dual,
-	nonextensible,
-	pointer_default(unique)
-]
-interface ICUserInfo1012 : IDispatch{
-};
-[
-	object,
-	uuid(072BCA73-A103-4B92-B5FA-35DCDA81A2D5),
-	dual,
-	nonextensible,
-	pointer_default(unique)
-]
-interface ICUserInfo1013 : IDispatch{
-};
-[
-	object,
-	uuid(078DBB8D-B9AD-4FC1-B19F-4350E6D342C7),
-	dual,
-	nonextensible,
-	pointer_default(unique)
-]
-interface ICUserInfo1014 : IDispatch{
-};
-[
-	object,
-	uuid(C2F6CF6A-C02B-4E60-880A-8D03F2C1D0F9),
-	dual,
-	nonextensible,
-	pointer_default(unique)
-]
-interface ICUserInfo1017 : IDispatch{
-};
-[
-	object,
-	uuid(84B7C76D-ED3D-4D0B-A753-5512C17A709B),
-	dual,
-	nonextensible,
-	pointer_default(unique)
-]
-interface ICUserInfo1018 : IDispatch{
-};
-[
-	object,
-	uuid(91E5BE48-571B-4478-ABC8-BFB0D698785B),
-	dual,
-	nonextensible,
-	pointer_default(unique)
-]
-interface ICUserInfo1020 : IDispatch{
-};
-[
-	object,
-	uuid(DD330CEA-13DD-4D3E-841E-E559CD5F6F7D),
-	dual,
-	nonextensible,
-	pointer_default(unique)
-]
-interface ICUserInfo1023 : IDispatch{
-};
-[
-	object,
-	uuid(A08D86C4-47EE-4C75-B844-71D66B532760),
-	dual,
-	nonextensible,
-	pointer_default(unique)
-]
-interface ICUserInfo1025 : IDispatch{
-};
-[
-	object,
-	uuid(18695385-BE01-44FF-9962-7F1F8EB57AE2),
-	dual,
-	nonextensible,
-	pointer_default(unique)
-]
-interface ICUserInfo1024 : IDispatch{
-};
-[
-	object,
-	uuid(03BF198D-2AC8-49DF-B657-610B3879DBEB),
-	dual,
-	nonextensible,
-	pointer_default(unique)
-]
-interface ICUserInfo1051 : IDispatch{
-};
-[
-	object,
-	uuid(0AF7CBB8-DBA4-4AD4-B633-5B50958849D6),
-	dual,
-	nonextensible,
-	pointer_default(unique)
-]
-interface ICUserInfo1052 : IDispatch{
-};
-[
-	object,
-	uuid(81BB6120-B547-4025-8F18-807F6895D984),
-	dual,
-	nonextensible,
-	pointer_default(unique)
-]
-interface ICUserInfo1053 : IDispatch{
 };
 [
 	uuid(F53A3EDB-3D55-4E7B-8687-F0759A72FBCA),

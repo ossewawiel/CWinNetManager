@@ -57,9 +57,11 @@ END_COM_MAP()
 	CComPtr<IUnknown> m_pUnkMarshaler;
 
 public:
-
+	STDMETHOD(Initialise)(ULONG ulUnitsPerWeek, BYTE bLogonHours);
+	STDMETHOD(get_UnitsPerWeek)(ULONG* pVal);
+	STDMETHOD(get_LogonHours)(BYTE* pVal);
 
 
 };
 
-OBJECT_ENTRY_AUTO(__uuidof(CUserInfo1020), CCUserInfo1020)
+OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserInfo1020), CCUserInfo1020)

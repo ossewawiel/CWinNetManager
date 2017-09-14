@@ -57,9 +57,10 @@ END_COM_MAP()
 	CComPtr<IUnknown> m_pUnkMarshaler;
 
 public:
-
+	STDMETHOD(Initialise)(ULONG ulCountryCode);
+	STDMETHOD(get_CountryCode)(ULONG* pVal);
 
 
 };
 
-OBJECT_ENTRY_AUTO(__uuidof(CUserInfo1024), CCUserInfo1024)
+OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserInfo1024), CCUserInfo1024)

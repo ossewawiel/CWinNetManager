@@ -57,9 +57,10 @@ END_COM_MAP()
 	CComPtr<IUnknown> m_pUnkMarshaler;
 
 public:
-
+	STDMETHOD(Initialise)(ULONG ulAuthFlags);
+	STDMETHOD(get_AuthFlags)(ULONG* pVal);
 
 
 };
 
-OBJECT_ENTRY_AUTO(__uuidof(CUserInfo1010), CCUserInfo1010)
+OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserInfo1010), CCUserInfo1010)

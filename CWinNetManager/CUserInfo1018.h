@@ -57,9 +57,10 @@ END_COM_MAP()
 	CComPtr<IUnknown> m_pUnkMarshaler;
 
 public:
-
+	STDMETHOD(Initialise)(ULONG ulMaxStorage);
+	STDMETHOD(get_MaxStorage)(ULONG* pVal);
 
 
 };
 
-OBJECT_ENTRY_AUTO(__uuidof(CUserInfo1018), CCUserInfo1018)
+OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserInfo1018), CCUserInfo1018)

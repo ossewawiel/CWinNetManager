@@ -6,3 +6,12 @@
 
 // CCUserInfo1023
 
+STDMETHODIMP CCUserInfo1023::Initialise(BSTR bsLogonServer)
+{
+	return E_NOTIMPL;
+}
+
+STDMETHODIMP CCUserInfo1023::get_LogonServer(BSTR * pVal)
+{
+	return E_NOTIMPL;
+}
