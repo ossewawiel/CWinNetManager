@@ -8,10 +8,12 @@
 
 STDMETHODIMP CCUserInfo1007::Initialise(BSTR bsComment)
 {
-	return E_NOTIMPL;
+	m_bsComment.Assign(bsComment);
+	return S_OK;
 }
 
 STDMETHODIMP CCUserInfo1007::get_Comment(BSTR * pVal)
 {
-	return E_NOTIMPL;
+	*pVal = m_bsComment.copy();
+	return S_OK;
 }

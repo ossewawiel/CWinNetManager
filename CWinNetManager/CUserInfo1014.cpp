@@ -8,10 +8,12 @@
 
 STDMETHODIMP CCUserInfo1014::Initialise(BSTR bsWorkstations)
 {
-	return E_NOTIMPL;
+	m_bsWorkstations.Assign(bsWorkstations);
+	return S_OK;
 }
 
 STDMETHODIMP CCUserInfo1014::get_Workstations(BSTR * pVal)
 {
-	return E_NOTIMPL;
+	*pVal = m_bsWorkstations.copy();
+	return S_OK;
 }

@@ -25,6 +25,7 @@ class ATL_NO_VTABLE CCUserInfo1053 :
 {
 public:
 	CCUserInfo1053()
+		: m_bsHomeDirDrive(L"")
 	{
 		m_pUnkMarshaler = NULL;
 	}
@@ -60,7 +61,8 @@ public:
 	STDMETHOD(Initialise)(BSTR bsHomeDirDrive);
 	STDMETHOD(get_HomeDirDrive)(BSTR* pVal);
 
-
+private:
+	_bstr_t m_bsHomeDirDrive;
 };
 
 OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserInfo1053), CCUserInfo1053)

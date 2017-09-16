@@ -8,10 +8,12 @@
 
 STDMETHODIMP CCUserInfo1006::Initialise(BSTR bsHomeDir)
 {
-	return E_NOTIMPL;
+	m_bsHomeDir.Assign(bsHomeDir);
+	return S_OK;
 }
 
 STDMETHODIMP CCUserInfo1006::get_HomeDirectory(BSTR * pVal)
 {
-	return E_NOTIMPL;
+	*pVal = m_bsHomeDir.copy();
+	return S_OK;
 }

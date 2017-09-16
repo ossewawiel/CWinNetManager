@@ -8,15 +8,19 @@
 
 STDMETHODIMP CCUserInfo1020::Initialise(ULONG ulUnitsPerWeek, BYTE bLogonHours)
 {
-	return E_NOTIMPL;
+	m_ulUnitsPerWeek = ulUnitsPerWeek;
+	m_bLogonHours = bLogonHours;
+	return S_OK;
 }
 
 STDMETHODIMP CCUserInfo1020::get_UnitsPerWeek(ULONG * pVal)
 {
-	return E_NOTIMPL;
+	*pVal = m_ulUnitsPerWeek;
+	return S_OK;
 }
 
 STDMETHODIMP CCUserInfo1020::get_LogonHours(BYTE * pVal)
 {
-	return E_NOTIMPL;
+	*pVal = m_bLogonHours;
+	return S_OK;
 }

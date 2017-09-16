@@ -25,6 +25,7 @@ class ATL_NO_VTABLE CCUserInfo1005 :
 {
 public:
 	CCUserInfo1005()
+		: m_ulPrivilege(0)
 	{
 		m_pUnkMarshaler = NULL;
 	}
@@ -60,7 +61,8 @@ public:
 	STDMETHOD(Initialise)(ULONG ulPrivilege);
 	STDMETHOD(get_Privilege)(ULONG* pVal);
 
-
+private:
+	ULONG m_ulPrivilege;
 };
 
 OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserInfo1005), CCUserInfo1005)

@@ -8,10 +8,12 @@
 
 STDMETHODIMP CCUserInfo1005::Initialise(ULONG ulPrivilege)
 {
-	return E_NOTIMPL;
+	m_ulPrivilege = ulPrivilege;
+	return S_OK;
 }
 
 STDMETHODIMP CCUserInfo1005::get_Privilege(ULONG * pVal)
 {
-	return E_NOTIMPL;
+	*pVal =m_ulPrivilege;
+	return S_OK;
 }

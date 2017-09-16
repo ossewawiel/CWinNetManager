@@ -25,6 +25,7 @@ class ATL_NO_VTABLE CCUserInfo1011 :
 {
 public:
 	CCUserInfo1011()
+		: m_bsFullName(L"")
 	{
 		m_pUnkMarshaler = NULL;
 	}
@@ -60,6 +61,8 @@ public:
 	STDMETHOD(Initialise)(BSTR bsFullName);
 	STDMETHOD(get_FullName)(BSTR* pVal);
 
+private:
+	_bstr_t m_bsFullName;
 
 };
 

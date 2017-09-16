@@ -8,10 +8,12 @@
 
 STDMETHODIMP CCUserInfo1052::Initialise(BSTR bsProfile)
 {
-	return E_NOTIMPL;
+	m_bsProfile.Assign(bsProfile);
+	return S_OK;
 }
 
 STDMETHODIMP CCUserInfo1052::get_Profile(BSTR * pVal)
 {
-	return E_NOTIMPL;
+	*pVal = m_bsProfile.copy();
+	return S_OK;
 }

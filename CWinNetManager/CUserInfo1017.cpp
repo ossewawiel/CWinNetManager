@@ -8,10 +8,12 @@
 
 STDMETHODIMP CCUserInfo1017::Initialise(ULONG ulAccntExpires)
 {
-	return E_NOTIMPL;
+	m_ulAccntExpires = ulAccntExpires;
+	return S_OK;
 }
 
 STDMETHODIMP CCUserInfo1017::get_AccntExpires(ULONG * pVal)
 {
-	return E_NOTIMPL;
+	*pVal = m_ulAccntExpires;
+	return S_OK;
 }

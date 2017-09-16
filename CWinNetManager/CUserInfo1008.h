@@ -25,6 +25,7 @@ class ATL_NO_VTABLE CCUserInfo1008 :
 {
 public:
 	CCUserInfo1008()
+		: m_ulFlags(0)
 	{
 		m_pUnkMarshaler = NULL;
 	}
@@ -60,7 +61,8 @@ public:
 	STDMETHOD(Initialise)(ULONG ulFlags);
 	STDMETHOD(get_Flags)(ULONG* pVal);
 
-
+private:
+	ULONG m_ulFlags;
 };
 
 OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserInfo1008), CCUserInfo1008)

@@ -25,6 +25,7 @@ class ATL_NO_VTABLE CCUserInfo1051 :
 {
 public:
 	CCUserInfo1051()
+		: m_ulPrimaryGrpId(0)
 	{
 		m_pUnkMarshaler = NULL;
 	}
@@ -60,7 +61,8 @@ public:
 	STDMETHOD(Initialise)(ULONG ulPrimaryGrpId);
 	STDMETHOD(get_PrimaryGrpId)(ULONG* pVal);
 
-
+private:
+	ULONG m_ulPrimaryGrpId;
 };
 
 OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserInfo1051), CCUserInfo1051)

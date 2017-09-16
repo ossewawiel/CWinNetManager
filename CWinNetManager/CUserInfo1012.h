@@ -25,6 +25,7 @@ class ATL_NO_VTABLE CCUserInfo1012 :
 {
 public:
 	CCUserInfo1012()
+		: m_bsUsrComment(L"")
 	{
 		m_pUnkMarshaler = NULL;
 	}
@@ -60,7 +61,8 @@ public:
 	STDMETHOD(Initialise)(BSTR bsUsrComment);
 	STDMETHOD(get_UsrComment)(BSTR* pVal);
 
-
+private:
+	_bstr_t m_bsUsrComment;
 };
 
 OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserInfo1012), CCUserInfo1012)

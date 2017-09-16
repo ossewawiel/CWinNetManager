@@ -25,6 +25,7 @@ class ATL_NO_VTABLE CCUserInfo1025 :
 {
 public:
 	CCUserInfo1025()
+		: m_ulCodePage(0)
 	{
 		m_pUnkMarshaler = NULL;
 	}
@@ -60,7 +61,8 @@ public:
 	STDMETHOD(Initialise)(ULONG ulCodePage);
 	STDMETHOD(get_CodePage)(ULONG* pVal);
 
-
+private:
+	ULONG m_ulCodePage;
 };
 
 OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserInfo1025), CCUserInfo1025)

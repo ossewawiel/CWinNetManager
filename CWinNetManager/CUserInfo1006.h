@@ -25,6 +25,7 @@ class ATL_NO_VTABLE CCUserInfo1006 :
 {
 public:
 	CCUserInfo1006()
+		: m_bsHomeDir(L"")
 	{
 		m_pUnkMarshaler = NULL;
 	}
@@ -60,7 +61,8 @@ public:
 	STDMETHOD(Initialise)(BSTR bsHomeDir);
 	STDMETHOD(get_HomeDirectory)(BSTR* pVal);
 
-
+private:
+	_bstr_t m_bsHomeDir;
 };
 
 OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserInfo1006), CCUserInfo1006)

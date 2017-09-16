@@ -8,10 +8,12 @@
 
 STDMETHODIMP CCUserInfo1053::Initialise(BSTR bsHomeDirDrive)
 {
-	return E_NOTIMPL;
+	m_bsHomeDirDrive.Assign(bsHomeDirDrive);
+	return S_OK;
 }
 
 STDMETHODIMP CCUserInfo1053::get_HomeDirDrive(BSTR * pVal)
 {
-	return E_NOTIMPL;
+	*pVal = m_bsHomeDirDrive.copy();
+	return S_OK;
 }

@@ -8,10 +8,12 @@
 
 STDMETHODIMP CCUserInfo1009::Initialise(BSTR bsScriptPath)
 {
-	return E_NOTIMPL;
+	m_bsScriptPath.Assign(bsScriptPath);
+	return S_OK;
 }
 
 STDMETHODIMP CCUserInfo1009::get_ScriptPath(BSTR * pVal)
 {
-	return E_NOTIMPL;
+	*pVal = m_bsScriptPath.copy();
+	return S_OK;
 }

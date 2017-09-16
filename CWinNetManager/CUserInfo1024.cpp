@@ -8,10 +8,12 @@
 
 STDMETHODIMP CCUserInfo1024::Initialise(ULONG ulCountryCode)
 {
-	return E_NOTIMPL;
+	m_ulCountryCode = ulCountryCode;
+	return S_OK;
 }
 
 STDMETHODIMP CCUserInfo1024::get_CountryCode(ULONG * pVal)
 {
-	return E_NOTIMPL;
+	*pVal = m_ulCountryCode;
+	return S_OK;
 }

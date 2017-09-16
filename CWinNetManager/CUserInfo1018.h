@@ -25,6 +25,7 @@ class ATL_NO_VTABLE CCUserInfo1018 :
 {
 public:
 	CCUserInfo1018()
+		: m_ulMaxStorage(0)
 	{
 		m_pUnkMarshaler = NULL;
 	}
@@ -60,7 +61,8 @@ public:
 	STDMETHOD(Initialise)(ULONG ulMaxStorage);
 	STDMETHOD(get_MaxStorage)(ULONG* pVal);
 
-
+private:
+	ULONG m_ulMaxStorage;
 };
 
 OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserInfo1018), CCUserInfo1018)

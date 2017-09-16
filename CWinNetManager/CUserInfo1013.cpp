@@ -8,10 +8,12 @@
 
 STDMETHODIMP CCUserInfo1013::Initialise(BSTR bsParams)
 {
-	return E_NOTIMPL;
+	m_bsParams.Assign(bsParams);
+	return S_OK;
 }
 
 STDMETHODIMP CCUserInfo1013::get_Params(BSTR * pVal)
 {
-	return E_NOTIMPL;
+	*pVal = m_bsParams.copy();
+	return S_OK;
 }

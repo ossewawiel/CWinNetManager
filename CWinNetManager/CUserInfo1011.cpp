@@ -8,10 +8,12 @@
 
 STDMETHODIMP CCUserInfo1011::Initialise(BSTR bsFullName)
 {
-	return E_NOTIMPL;
+	m_bsFullName.Assign(bsFullName);
+	return S_OK;
 }
 
 STDMETHODIMP CCUserInfo1011::get_FullName(BSTR * pVal)
 {
-	return E_NOTIMPL;
+	*pVal = m_bsFullName.copy();
+	return S_OK;
 }

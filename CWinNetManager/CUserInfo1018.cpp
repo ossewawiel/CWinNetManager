@@ -8,10 +8,12 @@
 
 STDMETHODIMP CCUserInfo1018::Initialise(ULONG ulMaxStorage)
 {
-	return E_NOTIMPL;
+	m_ulMaxStorage = ulMaxStorage;
+	return S_OK;
 }
 
 STDMETHODIMP CCUserInfo1018::get_MaxStorage(ULONG * pVal)
 {
-	return E_NOTIMPL;
+	*pVal = m_ulMaxStorage;
+	return S_OK;
 }

@@ -8,10 +8,12 @@
 
 STDMETHODIMP CCUserInfo1023::Initialise(BSTR bsLogonServer)
 {
-	return E_NOTIMPL;
+	m_bsLogonServer.Assign(bsLogonServer);
+	return S_OK;
 }
 
 STDMETHODIMP CCUserInfo1023::get_LogonServer(BSTR * pVal)
 {
-	return E_NOTIMPL;
+	*pVal = m_bsLogonServer.copy();
+	return S_OK;
 }

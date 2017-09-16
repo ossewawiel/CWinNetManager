@@ -8,10 +8,12 @@
 
 STDMETHODIMP CCUserInfo1051::Initialise(ULONG ulPrimaryGrpId)
 {
-	return E_NOTIMPL;
+	m_ulPrimaryGrpId = ulPrimaryGrpId;
+	return S_OK;
 }
 
 STDMETHODIMP CCUserInfo1051::get_PrimaryGrpId(ULONG * pVal)
 {
-	return E_NOTIMPL;
+	*pVal = m_ulPrimaryGrpId;
+	return S_OK;
 }

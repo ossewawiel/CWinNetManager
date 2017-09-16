@@ -8,10 +8,12 @@
 
 STDMETHODIMP CCUserInfo1008::Initialise(ULONG ulFlags)
 {
-	return E_NOTIMPL;
+	m_ulFlags = ulFlags;
+	return S_OK;
 }
 
 STDMETHODIMP CCUserInfo1008::get_Flags(ULONG * pVal)
 {
-	return E_NOTIMPL;
+	*pVal = m_ulFlags;
+	return S_OK;
 }

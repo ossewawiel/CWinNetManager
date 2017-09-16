@@ -25,6 +25,7 @@ class ATL_NO_VTABLE CCUserInfo1009 :
 {
 public:
 	CCUserInfo1009()
+		: m_bsScriptPath(L"")
 	{
 		m_pUnkMarshaler = NULL;
 	}
@@ -60,7 +61,8 @@ public:
 	STDMETHOD(Initialise)(BSTR bsScriptPath);
 	STDMETHOD(get_ScriptPath)(BSTR* pVal);
 
-
+private:
+	_bstr_t m_bsScriptPath;
 };
 
 OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserInfo1009), CCUserInfo1009)

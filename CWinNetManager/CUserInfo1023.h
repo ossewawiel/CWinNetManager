@@ -25,6 +25,7 @@ class ATL_NO_VTABLE CCUserInfo1023 :
 {
 public:
 	CCUserInfo1023()
+		: m_bsLogonServer(L"")
 	{
 		m_pUnkMarshaler = NULL;
 	}
@@ -60,7 +61,8 @@ public:
 	STDMETHOD(Initialise)(BSTR bsLogonServer);
 	STDMETHOD(get_LogonServer)(BSTR* pVal);
 
-
+private:
+	_bstr_t m_bsLogonServer;
 };
 
 OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserInfo1023), CCUserInfo1023)

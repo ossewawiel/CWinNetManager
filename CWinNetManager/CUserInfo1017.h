@@ -25,6 +25,7 @@ class ATL_NO_VTABLE CCUserInfo1017 :
 {
 public:
 	CCUserInfo1017()
+		: m_ulAccntExpires(0)
 	{
 		m_pUnkMarshaler = NULL;
 	}
@@ -60,7 +61,8 @@ public:
 	STDMETHOD(Initialise)(ULONG ulAccntExpires);
 	STDMETHOD(get_AccntExpires)(ULONG* pVal);
 
-
+private:
+	ULONG m_ulAccntExpires;
 };
 
 OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserInfo1017), CCUserInfo1017)

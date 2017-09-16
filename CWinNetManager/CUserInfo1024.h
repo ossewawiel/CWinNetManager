@@ -25,6 +25,7 @@ class ATL_NO_VTABLE CCUserInfo1024 :
 {
 public:
 	CCUserInfo1024()
+		: m_ulCountryCode(0)
 	{
 		m_pUnkMarshaler = NULL;
 	}
@@ -60,7 +61,8 @@ public:
 	STDMETHOD(Initialise)(ULONG ulCountryCode);
 	STDMETHOD(get_CountryCode)(ULONG* pVal);
 
-
+private:
+	ULONG m_ulCountryCode;
 };
 
 OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserInfo1024), CCUserInfo1024)

@@ -25,6 +25,8 @@ class ATL_NO_VTABLE CCUserInfo1020 :
 {
 public:
 	CCUserInfo1020()
+		: m_ulUnitsPerWeek(0)
+		, m_bLogonHours(0)
 	{
 		m_pUnkMarshaler = NULL;
 	}
@@ -61,7 +63,9 @@ public:
 	STDMETHOD(get_UnitsPerWeek)(ULONG* pVal);
 	STDMETHOD(get_LogonHours)(BYTE* pVal);
 
-
+private:
+	ULONG m_ulUnitsPerWeek;
+	BYTE m_bLogonHours;
 };
 
 OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserInfo1020), CCUserInfo1020)

@@ -8,10 +8,12 @@
 
 STDMETHODIMP CCUserInfo1025::Initialise(ULONG ulCodePage)
 {
-	return E_NOTIMPL;
+	m_ulCodePage = ulCodePage;
+	return S_OK;
 }
 
 STDMETHODIMP CCUserInfo1025::get_CodePage(ULONG * pVal)
 {
-	return E_NOTIMPL;
+	*pVal = m_ulCodePage;
+	return S_OK;
 }

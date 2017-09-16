@@ -25,6 +25,7 @@ class ATL_NO_VTABLE CCUserInfo1010 :
 {
 public:
 	CCUserInfo1010()
+		: m_ulAuthFlags(0)
 	{
 		m_pUnkMarshaler = NULL;
 	}
@@ -60,6 +61,8 @@ public:
 	STDMETHOD(Initialise)(ULONG ulAuthFlags);
 	STDMETHOD(get_AuthFlags)(ULONG* pVal);
 
+private:
+	ULONG m_ulAuthFlags;
 
 };
 
