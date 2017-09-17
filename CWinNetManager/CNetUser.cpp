@@ -577,57 +577,28 @@ STDMETHODIMP CCNetUser::GetUserInfo1053(BSTR bsHomeDirDrive, ICUserInfo1053 ** p
 	return (*ppUserInfo1053)->Initialise(bsHomeDirDrive);
 }
 
-STDMETHODIMP CCNetUser::NetUserAdd(BSTR bsServerName, IUnknown* pUserInfo)
+STDMETHODIMP CCNetUser::NetUserAdd(BSTR bsServerName, eUserInfoType userInfoType, IUnknown* pUserInfo)
 {
 	HRESULT hr(S_OK);
+	DWORD dwError;
 	//check for supported UserInfo Interfaces and convert to 
-	if (!(hr = pUserInfo->QueryInterface(IID_ICUserInfo1, (void**)&pUserInfo)))
+	
+	if (userInfoType == eUserInfoType::uiType1)
 	{
 		CComPtr<ICUserInfo1> pUserInfo1 = static_cast<ICUserInfo1*>(pUserInfo);
-		//convert ICUserInfo1 to USER_INFO_1
 		USER_INFO_1 ui1;
-		_bstr_t bsVal(L"");
-		if (hr = pUserInfo1->get_Name(bsVal.GetAddress())) return hr;
-		ui1.usri1_name = (bsVal.length() == 0) ? NULL : (LPWSTR)bsVal.copy();
-
-		bsVal = L"";
-		if (hr = pUserInfo1->get_Password(bsVal.GetAddress())) return hr;
-		ui1.usri1_password = (bsVal.length() == 0) ? NULL : (LPWSTR)bsVal.copy();
-
-		ULONG ulVal(0);
-		if (hr = pUserInfo1->get_PasswordAge(&ulVal)) return hr;
-		ui1.usri1_password_age = ulVal;
-
-		ulVal = 0;
-		if (hr = pUserInfo1->get_Privilege(&ulVal)) return hr;
-		ui1.usri1_priv = ulVal;
-
-		bsVal = L"";
-		if (hr = pUserInfo1->get_HomeDirectory(bsVal.GetAddress())) return hr;
-		ui1.usri1_home_dir = (bsVal.length() == 0) ? NULL : (LPWSTR)bsVal.copy();
-
-		bsVal = L"";
-		if (hr = pUserInfo1->get_Comment(bsVal.GetAddress())) return hr;
-		ui1.usri1_comment = (bsVal.length() == 0) ? NULL : (LPWSTR)bsVal.copy();
-
-		ulVal = 0;
-		if (hr = pUserInfo1->get_Flags(&ulVal)) return hr;
-		ui1.usri1_flags = ulVal;
-
-		bsVal = L"";
-		if (hr = pUserInfo1->get_ScriptPath(bsVal.GetAddress())) return hr;
-		ui1.usri1_script_path = (bsVal.length() == 0) ? NULL : (LPWSTR)bsVal.copy();
-
-		DWORD dwError;
-		return ::NetUserAdd(
-			bsServerName
-			,
-			1
-			, (LPBYTE)&ui1
-			, &dwError);
+		CCUserInfo1::TranslateToUserInfo(pUserInfo1, ui1);
+		return ::NetUserAdd(bsServerName, 1, (LPBYTE)&ui1, &dwError);
+	}
+	else if (userInfoType == eUserInfoType::uiType2)
+	{
+		CComPtr<ICUserInfo2> pUserInfo2 = static_cast<ICUserInfo2*>(pUserInfo);
+		USER_INFO_2 ui2;
+		if (hr = CCUserInfo2::TranslateToUserInfo(pUserInfo2, ui2)) return hr;
+		return ::NetUserAdd(bsServerName, 2, (LPBYTE)&ui2, &dwError);
 	}
 	else
-		return hr;
+		return E_NOINTERFACE;
 		
 	return S_OK;
 }

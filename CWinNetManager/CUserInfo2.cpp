@@ -2,7 +2,7 @@
 
 #include "stdafx.h"
 #include "CUserInfo2.h"
-
+#include "CUserInfoUtils.h"
 
 // CCUserInfo2
 
@@ -227,6 +227,37 @@ STDMETHODIMP CCUserInfo2::Initialise (
 	m_ulCountryCode      = ulCountryCode;
 	m_ulCodePage         = ulCodePage;
 	return S_OK;
+}
+
+HRESULT CCUserInfo2::TranslateToUserInfo(ICUserInfo2 * pFrom, USER_INFO_2 &pTo)
+{
+	//convert ICUserInfo2 to USER_INFO_2
+	HRESULT hr(S_OK);
+	if (hr = ToUserInfoName			<ICUserInfo2>(pFrom, pTo.usri2_name))			return hr;
+	if (hr = ToUserInfoPassword		<ICUserInfo2>(pFrom, pTo.usri2_password))		return hr;
+	if (hr = ToUserInfoPasswordAge	<ICUserInfo2>(pFrom, pTo.usri2_password_age))	return hr;
+	if (hr = ToUserInfoPrivilege	<ICUserInfo2>(pFrom, pTo.usri2_priv))			return hr;
+	if (hr = ToUserInfoHomeDirectory<ICUserInfo2>(pFrom, pTo.usri2_home_dir))		return hr;
+	if (hr = ToUserInfoComment		<ICUserInfo2>(pFrom, pTo.usri2_comment))		return hr;
+	if (hr = ToUserInfoFlags		<ICUserInfo2>(pFrom, pTo.usri2_flags))			return hr;
+	if (hr = ToUserInfoScriptPath	<ICUserInfo2>(pFrom, pTo.usri2_script_path))	return hr;
+	if (hr = ToUserInfoAuthFlags	<ICUserInfo2>(pFrom, pTo.usri2_auth_flags))		return hr;
+	if (hr = ToUserInfoFullName		<ICUserInfo2>(pFrom, pTo.usri2_full_name))		return hr;
+	if (hr = ToUserInfoUsrComment	<ICUserInfo2>(pFrom, pTo.usri2_comment))		return hr;
+	if (hr = ToUserInfoParams		<ICUserInfo2>(pFrom, pTo.usri2_parms))			return hr;
+	if (hr = ToUserInfoWorkstations	<ICUserInfo2>(pFrom, pTo.usri2_workstations))	return hr;
+	if (hr = ToUserInfoLastLogon	<ICUserInfo2>(pFrom, pTo.usri2_last_logon))		return hr;
+	if (hr = ToUserInfoLastLogoff	<ICUserInfo2>(pFrom, pTo.usri2_last_logoff))	return hr;
+	if (hr = ToUserInfoAccntExpires	<ICUserInfo2>(pFrom, pTo.usri2_acct_expires))	return hr;
+	if (hr = ToUserInfoMaxStorage	<ICUserInfo2>(pFrom, pTo.usri2_acct_expires))	return hr;
+	if (hr = ToUserInfoUnitsPerWeek	<ICUserInfo2>(pFrom, pTo.usri2_acct_expires))	return hr;
+	/*m_bLogonHours = bLogonHours;
+	m_ulBadPwdCount = ulBadPwdCount;
+	m_ulNumLogons = ulNumLogons;
+	m_bsLogonServer.Assign(bsLogonServer);
+	m_ulCountryCode = ulCountryCode;
+	m_ulCodePage = ulCodePage;*/
+	return hr;
 }
 
 

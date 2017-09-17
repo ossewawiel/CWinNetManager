@@ -775,119 +775,91 @@ TEST_F(TestCNetUser_Get, when_getuserinfo1053_with_proper_parameters_then_return
 }
 
 
-
-// WHEN NETUSERADD WITH USERINFO1 THEN RETURN NO EXCEPTION
-///////////////////////////////////////////////////////////////////////////////
-/// Whenadding a test user with NetUserAdd and UserInfo1 no exception should be 
-/// returned
-TEST_F(TestCNetUser, when_netuseradd_with_userinfo1_then_return_no_exception)
-{
-	CComPtr<ICUserInfo1> pUserInfo1;
-	HRESULT hr = mpCNetUser->GetUserInfo1(
-		PAR_UINF_NAME
-		, PAR_UINF_PWD
-		, 0
-		, PAR_UINF_PRIV
-		, PAR_UINF_HOMEDIR
-		, PAR_UINF_COMNT
-		, PAR_UINF_FLGS
-		, PAR_UINF_SCRPATH
-		, &pUserInfo1);
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
-
-	hr = mpCNetUser->NetUserAdd(NULL, pUserInfo1);
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
-
-	//Now delete the user
-	hr = mpCNetUser->NetUserDel(NULL, PAR_UINF_NAME);
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
-}
-
-// WHEN_NETUSERADD_WITH_USERINFO1_THEN_RETURN_NETUSERGETINFO_WITH_USERINFO1_AND_SAME_VALUES
-///////////////////////////////////////////////////////////////////////////////
-/// When adding a test user with NetUserAdd and UserInfo1 no exception should be 
-/// returned and NetUserGetInfo with UserInfo1 should have the same values
-TEST_F(TestCNetUser, when_netuseradd_with_userinfo1_then_return_netusergetinfo_with_userinfo1_and_same_values)
-{
-	CComPtr<ICUserInfo1> pUserInfo1;
-	HRESULT hr = mpCNetUser->GetUserInfo1(
-		  PAR_UINF_NAME
-		, PAR_UINF_PWD
-		, 0
-		, PAR_UINF_PRIV
-		, PAR_UINF_HOMEDIR
-		, PAR_UINF_COMNT
-		, PAR_UINF_FLGS
-		, PAR_UINF_SCRPATH
-		, &pUserInfo1);
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
-
-	hr = mpCNetUser->NetUserAdd(NULL, pUserInfo1);
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
-
-	//Now Clear UserInfo1
-	pUserInfo1.Release();
-	//ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
-
-	//Now Get the user details
-	CComPtr<IUnknown> pUnk;
-	hr = mpCNetUser->NetUserGetInfo(NULL, PAR_UINF_NAME, eUserInfoType::uiType1, (IUnknown**)&pUserInfo1); // &pUnk);
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
-
-	// now compaire if it is the same
-	_bstr_t bsTemp(L"*");
-	hr = pUserInfo1->get_Name(bsTemp.GetAddress());
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
-	ASSERT_EQ(PAR_UINF_NAME, bsTemp);
-
-	bsTemp = L"*";
-	hr = pUserInfo1->get_Password(bsTemp.GetAddress());
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
-	ASSERT_EQ(PAR_EMPTY, bsTemp);
-
-	//Pasdword age can be changed by the system, do not test
-
-	//Privilege can be changed by the system, do not test
-
-	bsTemp = L"*";
-	hr = pUserInfo1->get_HomeDirectory(bsTemp.GetAddress());
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
-	ASSERT_EQ(PAR_UINF_HOMEDIR, bsTemp);
-
-	bsTemp = L"*";
-	hr = pUserInfo1->get_Comment(bsTemp.GetAddress());
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
-	ASSERT_EQ(PAR_UINF_COMNT, bsTemp);
-
-	// Flags can be changed by the system, do not test
-
-	bsTemp = L"*";
-	hr = pUserInfo1->get_ScriptPath(bsTemp.GetAddress());
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
-	ASSERT_EQ(PAR_UINF_SCRPATH, bsTemp);
-	
-	//Now delete the user
-	hr = mpCNetUser->NetUserDel(NULL, PAR_UINF_NAME);
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
-}
-
-// WHEN_NETUSERDEL_WITH_NON_EXISTING_USER_THEN_RETURN_EXCEPTION
-///////////////////////////////////////////////////////////////////////////////
-/// When deleting a non existing test user with NetUserDel an exception should be 
-/// returned
-TEST_F(TestCNetUser, when_netuserdel_with_non_existing_user_then_return_exception)
-{
-	HRESULT hr = mpCNetUser->NetUserDel(NULL, PAR_UINF_NAME);
-	ASSERT_TRUE(hr == NERR_UserNotFound) << TUtils::GetLastErrorAsString(hr);
-}
-
-// WHEN_NETUSERGETINFO_WITH_NON_EXISTING_USER_THEN_RETURN_EXCEPTION
-///////////////////////////////////////////////////////////////////////////////
-/// When getting info on a non existing test user with NetUserGetInfo an exception should be 
-/// returned
-TEST_F(TestCNetUser, when_netusergetinfo_with_non_existing_user_then_return_exception)
-{
-	CComPtr<IUnknown> pUnk;
-	HRESULT hr = mpCNetUser->NetUserGetInfo(NULL, PAR_UINF_NAME, eUserInfoType::uiType1, &pUnk);
-	ASSERT_TRUE(hr == NERR_UserNotFound) << TUtils::GetLastErrorAsString(hr);
-}
+//// WHEN_NETUSERADD_WITH_USERINFO1_THEN_RETURN_NETUSERGETINFO_WITH_USERINFO1_AND_SAME_VALUES
+/////////////////////////////////////////////////////////////////////////////////
+///// When adding a test user with NetUserAdd and UserInfo1 no exception should be 
+///// returned and NetUserGetInfo with UserInfo1 should have the same values
+//TEST_F(TestCNetUser, when_netuseradd_with_userinfo1_then_return_netusergetinfo_with_userinfo1_and_same_values)
+//{
+//	CComPtr<ICUserInfo1> pUserInfo1;
+//	HRESULT hr = mpCNetUser->GetUserInfo1(
+//		  PAR_UINF_NAME
+//		, PAR_UINF_PWD
+//		, 0
+//		, PAR_UINF_PRIV
+//		, PAR_UINF_HOMEDIR
+//		, PAR_UINF_COMNT
+//		, PAR_UINF_FLGS
+//		, PAR_UINF_SCRPATH
+//		, &pUserInfo1);
+//	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+//
+//	hr = mpCNetUser->NetUserAdd(NULL, eUserInfoType::uiType1, pUserInfo1);
+//	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+//
+//	//Now Clear UserInfo1
+//	pUserInfo1.Release();
+//	//ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+//
+//	//Now Get the user details
+//	CComPtr<IUnknown> pUnk;
+//	hr = mpCNetUser->NetUserGetInfo(NULL, PAR_UINF_NAME, eUserInfoType::uiType1, (IUnknown**)&pUserInfo1); // &pUnk);
+//	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+//
+//	// now compaire if it is the same
+//	_bstr_t bsTemp(L"*");
+//	hr = pUserInfo1->get_Name(bsTemp.GetAddress());
+//	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+//	ASSERT_EQ(PAR_UINF_NAME, bsTemp);
+//
+//	bsTemp = L"*";
+//	hr = pUserInfo1->get_Password(bsTemp.GetAddress());
+//	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+//	ASSERT_EQ(PAR_EMPTY, bsTemp);
+//
+//	//Pasdword age can be changed by the system, do not test
+//
+//	//Privilege can be changed by the system, do not test
+//
+//	bsTemp = L"*";
+//	hr = pUserInfo1->get_HomeDirectory(bsTemp.GetAddress());
+//	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+//	ASSERT_EQ(PAR_UINF_HOMEDIR, bsTemp);
+//
+//	bsTemp = L"*";
+//	hr = pUserInfo1->get_Comment(bsTemp.GetAddress());
+//	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+//	ASSERT_EQ(PAR_UINF_COMNT, bsTemp);
+//
+//	// Flags can be changed by the system, do not test
+//
+//	bsTemp = L"*";
+//	hr = pUserInfo1->get_ScriptPath(bsTemp.GetAddress());
+//	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+//	ASSERT_EQ(PAR_UINF_SCRPATH, bsTemp);
+//	
+//	//Now delete the user
+//	hr = mpCNetUser->NetUserDel(NULL, PAR_UINF_NAME);
+//	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+//}
+//
+//// WHEN_NETUSERDEL_WITH_NON_EXISTING_USER_THEN_RETURN_EXCEPTION
+/////////////////////////////////////////////////////////////////////////////////
+///// When deleting a non existing test user with NetUserDel an exception should be 
+///// returned
+//TEST_F(TestCNetUser, when_netuserdel_with_non_existing_user_then_return_exception)
+//{
+//	HRESULT hr = mpCNetUser->NetUserDel(NULL, PAR_UINF_NAME);
+//	ASSERT_TRUE(hr == NERR_UserNotFound) << TUtils::GetLastErrorAsString(hr);
+//}
+//
+//// WHEN_NETUSERGETINFO_WITH_NON_EXISTING_USER_THEN_RETURN_EXCEPTION
+/////////////////////////////////////////////////////////////////////////////////
+///// When getting info on a non existing test user with NetUserGetInfo an exception should be 
+///// returned
+//TEST_F(TestCNetUser, when_netusergetinfo_with_non_existing_user_then_return_exception)
+//{
+//	CComPtr<IUnknown> pUnk;
+//	HRESULT hr = mpCNetUser->NetUserGetInfo(NULL, PAR_UINF_NAME, eUserInfoType::uiType1, &pUnk);
+//	ASSERT_TRUE(hr == NERR_UserNotFound) << TUtils::GetLastErrorAsString(hr);
+//}

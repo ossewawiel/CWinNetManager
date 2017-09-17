@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Sun Sep 17 09:45:57 2017
+/* at Sun Sep 17 13:09:11 2017
  */
 /* Compiler settings for CWinNetManager.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 
@@ -7457,6 +7457,7 @@ EXTERN_C const IID IID_ICNetUser;
         
         virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserAdd( 
             /* [in] */ BSTR bsServerName,
+            /* [in] */ eUserInfoType userInfoType,
             /* [in] */ IUnknown *pUserInfo) = 0;
         
         virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserDel( 
@@ -7838,6 +7839,7 @@ EXTERN_C const IID IID_ICNetUser;
         /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserAdd )( 
             ICNetUser * This,
             /* [in] */ BSTR bsServerName,
+            /* [in] */ eUserInfoType userInfoType,
             /* [in] */ IUnknown *pUserInfo);
         
         /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserDel )( 
@@ -7989,8 +7991,8 @@ EXTERN_C const IID IID_ICNetUser;
 #define ICNetUser_GetUserInfo1053(This,bsHomeDirDrive,ppUserInfo1053)	\
     ( (This)->lpVtbl -> GetUserInfo1053(This,bsHomeDirDrive,ppUserInfo1053) ) 
 
-#define ICNetUser_NetUserAdd(This,bsServerName,pUserInfo)	\
-    ( (This)->lpVtbl -> NetUserAdd(This,bsServerName,pUserInfo) ) 
+#define ICNetUser_NetUserAdd(This,bsServerName,userInfoType,pUserInfo)	\
+    ( (This)->lpVtbl -> NetUserAdd(This,bsServerName,userInfoType,pUserInfo) ) 
 
 #define ICNetUser_NetUserDel(This,bsServerName,bsUserName)	\
     ( (This)->lpVtbl -> NetUserDel(This,bsServerName,bsUserName) ) 

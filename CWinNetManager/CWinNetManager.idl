@@ -910,7 +910,7 @@ interface ICNetUser : IDispatch{
 	[id(30)] HRESULT GetUserInfo1051([in] ULONG ulPrimaryGrpId, [out, retval] ICUserInfo1051** ppUserInfo1051);
 	[id(31)] HRESULT GetUserInfo1052([in] BSTR bsProfile, [out, retval] ICUserInfo1052** ppUserInfo1052);
 	[id(32)] HRESULT GetUserInfo1053([in] BSTR bsHomeDirDrive, [out, retval] ICUserInfo1053** ppUserInfo1053);
-	[id(34)] HRESULT NetUserAdd([in] BSTR bsServerName, [in] IUnknown* pUserInfo);
+	[id(34)] HRESULT NetUserAdd([in] BSTR bsServerName, [in] eUserInfoType userInfoType, [in] IUnknown* pUserInfo);
 	[id(35)] HRESULT NetUserDel([in] BSTR bsServerName, [in] BSTR bsUserName);
 	[id(36)] HRESULT NetUserGetInfo([in] BSTR bsServerName, [in] BSTR bsUserName, [in] eUserInfoType userInfoType, [out, retval] IUnknown** ppUserInfo);
 	[id(37)] HRESULT CastToUserInfo1([in] IUnknown* pUnk, [out, retval] ICUserInfo1** ppUserInfo1);

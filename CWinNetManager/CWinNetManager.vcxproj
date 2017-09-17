@@ -328,6 +328,7 @@
     <ClInclude Include="CuserInfo24.h" />
     <ClInclude Include="CUserInfo3.h" />
     <ClInclude Include="CUserInfo4.h" />
+    <ClInclude Include="CUserInfoUtils.h" />
     <ClInclude Include="CWinNetManager.h" />
     <ClInclude Include="dllmain.h" />
     <ClInclude Include="Resource.h" />

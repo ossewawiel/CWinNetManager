@@ -2,7 +2,7 @@
 
 #include "stdafx.h"
 #include "CUserInfo1.h"
-
+#include "CUserInfoUtils.h"
 
 // CCUserInfo1
 
@@ -103,4 +103,19 @@ STDMETHODIMP CCUserInfo1::Clear()
 	m_ulPriv		= 0;
 	m_ulPwdAge		= 0;
 	return			S_OK;
+}
+
+HRESULT CCUserInfo1::TranslateToUserInfo(ICUserInfo1 * pFrom, USER_INFO_1 &pTo)
+{
+	//convert ICUserInfo1 to USER_INFO_1
+	HRESULT hr(S_OK);
+	if (hr = ToUserInfoName			<ICUserInfo1>(pFrom, pTo.usri1_name))			return hr;
+	if (hr = ToUserInfoPassword		<ICUserInfo1>(pFrom, pTo.usri1_password))		return hr;
+	if (hr = ToUserInfoPasswordAge	<ICUserInfo1>(pFrom, pTo.usri1_password_age))	return hr;
+	if (hr = ToUserInfoPrivilege	<ICUserInfo1>(pFrom, pTo.usri1_priv))			return hr;
+	if (hr = ToUserInfoHomeDirectory<ICUserInfo1>(pFrom, pTo.usri1_home_dir))		return hr;
+	if (hr = ToUserInfoComment		<ICUserInfo1>(pFrom, pTo.usri1_comment))		return hr;
+	if (hr = ToUserInfoFlags		<ICUserInfo1>(pFrom, pTo.usri1_flags))			return hr;
+	if (hr = ToUserInfoScriptPath	<ICUserInfo1>(pFrom, pTo.usri1_script_path))	return hr;
+	return hr;
 }

@@ -300,10 +300,13 @@ public:
 	STDMETHOD(GetUserInfo1053)(BSTR bsHomeDirDrive, ICUserInfo1053** ppUserInfo1053);
 
 
-	STDMETHOD(NetUserAdd)(BSTR bsServerName, IUnknown* pUserInfo);
+	STDMETHOD(NetUserAdd)(BSTR bsServerName, eUserInfoType userInfoType, IUnknown* pUserInfo);
 	STDMETHOD(NetUserDel)(BSTR bsServerName, BSTR bsUserName);
 	STDMETHOD(NetUserGetInfo)(BSTR bsServerName, BSTR bsUserName, eUserInfoType userInfoType, IUnknown** ppUserInfo);
 	STDMETHOD(CastToUserInfo1)(IUnknown* pUnk, ICUserInfo1** ppUserInfo1);
+
+	private:
+		HRESULT TranslateToUserInfo1(ICUserInfo1* pICUserInfo1, PUSER_INFO_1 pUserInfo1);
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(CNetUser), CCNetUser)

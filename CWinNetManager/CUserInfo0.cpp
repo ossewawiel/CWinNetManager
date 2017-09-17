@@ -19,6 +19,11 @@ STDMETHODIMP CCUserInfo0::get_Name(BSTR* pVal)
 	return S_OK;
 }
 
+USER_INFO_0 CCUserInfo0::TranslateToUserInfo(ICUserInfo0 * pICUserInfo0)
+{
+	return USER_INFO_0();
+}
+
 STDMETHODIMP CCUserInfo0::Clear()
 {
 	m_bsName = L"";

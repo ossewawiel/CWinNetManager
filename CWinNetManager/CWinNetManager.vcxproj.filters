@@ -255,6 +255,9 @@
     <ClInclude Include="CUserInfo0.h">
       <Filter>CUserInfo</Filter>
     </ClInclude>
+    <ClInclude Include="CUserInfoUtils.h">
+      <Filter>CUserInfo</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="CWinNetManager.rc">
