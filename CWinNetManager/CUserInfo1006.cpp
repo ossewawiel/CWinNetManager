@@ -17,3 +17,10 @@ STDMETHODIMP CCUserInfo1006::get_HomeDirectory(BSTR * pVal)
 	*pVal = m_bsHomeDir.copy();
 	return S_OK;
 }
+
+
+STDMETHODIMP CCUserInfo1006::Clear()
+{
+	m_bsHomeDir = L"";
+	return S_OK;
+}

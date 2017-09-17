@@ -47,3 +47,13 @@ STDMETHODIMP CCUserInfo10::get_FullName(BSTR* pVal)
 
 
 
+
+
+STDMETHODIMP CCUserInfo10::Clear()
+{
+	m_bsName = L"";
+	m_bsComment = L"";
+	m_bsUsrComment = L"";
+	m_bsFullName = L"";
+	return S_OK;
+}

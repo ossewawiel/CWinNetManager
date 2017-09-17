@@ -17,3 +17,10 @@ STDMETHODIMP CCUserInfo1007::get_Comment(BSTR * pVal)
 	*pVal = m_bsComment.copy();
 	return S_OK;
 }
+
+
+STDMETHODIMP CCUserInfo1007::Clear()
+{
+	m_bsComment = L"";
+	return S_OK;
+}

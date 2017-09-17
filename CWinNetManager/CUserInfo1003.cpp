@@ -16,3 +16,10 @@ STDMETHODIMP CCUserInfo1003::get_Password(BSTR * pVal)
 	*pVal = m_bsPassword.copy();
 	return S_OK;
 }
+
+
+STDMETHODIMP CCUserInfo1003::Clear()
+{
+	m_bsPassword = L"";
+	return S_OK;
+}

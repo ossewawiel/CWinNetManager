@@ -63,6 +63,8 @@ public:
 
 private:
 	ULONG m_ulMaxStorage;
+public:
+	STDMETHOD(Clear)();
 };
 
 OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserInfo1018), CCUserInfo1018)

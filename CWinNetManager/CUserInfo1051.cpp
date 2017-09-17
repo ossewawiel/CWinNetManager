@@ -17,3 +17,10 @@ STDMETHODIMP CCUserInfo1051::get_PrimaryGrpId(ULONG * pVal)
 	*pVal = m_ulPrimaryGrpId;
 	return S_OK;
 }
+
+
+STDMETHODIMP CCUserInfo1051::Clear()
+{
+	m_ulPrimaryGrpId = 0;
+	return S_OK;
+}

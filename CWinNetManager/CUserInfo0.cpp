@@ -18,3 +18,9 @@ STDMETHODIMP CCUserInfo0::get_Name(BSTR* pVal)
 	*pVal = m_bsName.copy();
 	return S_OK;
 }
+
+STDMETHODIMP CCUserInfo0::Clear()
+{
+	m_bsName = L"";
+	return S_OK;
+}

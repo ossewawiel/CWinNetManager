@@ -17,3 +17,10 @@ STDMETHODIMP CCUserInfo1017::get_AccntExpires(ULONG * pVal)
 	*pVal = m_ulAccntExpires;
 	return S_OK;
 }
+
+
+STDMETHODIMP CCUserInfo1017::Clear()
+{
+	m_ulAccntExpires = 0;
+	return S_OK;
+}

@@ -72,6 +72,8 @@ private:
 	_bstr_t m_bsComment;
 	_bstr_t m_bsUsrComment;
 	_bstr_t m_bsFullName;
+public:
+	STDMETHOD(Clear)();
 };
 
 OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserInfo10), CCUserInfo10)

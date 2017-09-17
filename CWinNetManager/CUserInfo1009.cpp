@@ -17,3 +17,10 @@ STDMETHODIMP CCUserInfo1009::get_ScriptPath(BSTR * pVal)
 	*pVal = m_bsScriptPath.copy();
 	return S_OK;
 }
+
+
+STDMETHODIMP CCUserInfo1009::Clear()
+{
+	m_bsScriptPath = L"";
+	return S_OK;
+}

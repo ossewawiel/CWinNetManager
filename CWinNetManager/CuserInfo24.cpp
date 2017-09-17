@@ -50,3 +50,14 @@ STDMETHODIMP CCUserInfo24::get_UserSid(BSTR * pVal)
 	*pVal = m_bsUserSid.copy();
 	return S_OK;
 }
+
+
+STDMETHODIMP CCUserInfo24::Clear()
+{
+	m_shInternetIdentity = 0;
+	m_ulFlags = 0;
+	m_bsInternetProviderName = L"";
+	m_bsInternetPrincipleName = L"";
+	m_bsUserSid = L"";
+	return S_OK;
+}

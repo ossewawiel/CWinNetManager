@@ -50,3 +50,14 @@ STDMETHODIMP CCUserInfo20::get_UserId(ULONG * pVal)
 	*pVal = ULONG(m_ulUserId);
 	return S_OK;
 }
+
+
+STDMETHODIMP CCUserInfo20::Clear()
+{
+	m_bsName = L"";
+		m_bsFullName = L"";
+		m_bsComment = L"";
+		m_ulFlags = 0;
+		m_ulUserId = 0;
+	return S_OK;
+}

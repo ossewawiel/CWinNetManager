@@ -50,3 +50,14 @@ STDMETHODIMP CCUserInfo23::get_UserSid(BSTR * pVal)
 	*pVal = m_bsUserSid.copy();
 	return S_OK;
 }
+
+
+STDMETHODIMP CCUserInfo23::Clear()
+{
+	m_bsName = L"";
+	m_bsFullName = L"";
+	m_bsComment = L"";
+	m_ulFlags = 0;
+	m_bsUserSid = L"";
+	return S_OK;
+}

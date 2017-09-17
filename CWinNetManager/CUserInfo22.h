@@ -156,6 +156,8 @@ public:
 		_bstr_t m_bsLogonServer;
 		ULONG   m_ulCountryCode;
 		ULONG   m_ulCodePage;
+public:
+	STDMETHOD(Clear)();
 };
 
 OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserInfo22), CCUserInfo22)

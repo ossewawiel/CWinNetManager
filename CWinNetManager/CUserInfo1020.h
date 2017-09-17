@@ -66,6 +66,8 @@ public:
 private:
 	ULONG m_ulUnitsPerWeek;
 	BYTE m_bLogonHours;
+public:
+	STDMETHOD(Clear)();
 };
 
 OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserInfo1020), CCUserInfo1020)

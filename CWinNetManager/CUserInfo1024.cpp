@@ -17,3 +17,10 @@ STDMETHODIMP CCUserInfo1024::get_CountryCode(ULONG * pVal)
 	*pVal = m_ulCountryCode;
 	return S_OK;
 }
+
+
+STDMETHODIMP CCUserInfo1024::Clear()
+{
+	m_ulCountryCode = 0;
+	return S_OK;
+}

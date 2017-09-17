@@ -64,6 +64,8 @@ public:
 private:
 	_bstr_t m_bsPassword;
 
+public:
+	STDMETHOD(Clear)();
 };
 
 OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserInfo21), CCUserInfo21)

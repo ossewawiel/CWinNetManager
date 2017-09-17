@@ -63,6 +63,8 @@ public:
 
 private:
 	ULONG m_ulCountryCode;
+public:
+	STDMETHOD(Clear)();
 };
 
 OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserInfo1024), CCUserInfo1024)

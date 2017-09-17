@@ -17,3 +17,10 @@ STDMETHODIMP CCUserInfo1005::get_Privilege(ULONG * pVal)
 	*pVal =m_ulPrivilege;
 	return S_OK;
 }
+
+
+STDMETHODIMP CCUserInfo1005::Clear()
+{
+	m_ulPrivilege = 0;
+	return S_OK;
+}

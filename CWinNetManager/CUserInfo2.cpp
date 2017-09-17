@@ -228,3 +228,33 @@ STDMETHODIMP CCUserInfo2::Initialise (
 	m_ulCodePage         = ulCodePage;
 	return S_OK;
 }
+
+
+STDMETHODIMP CCUserInfo2::Clear()
+{
+	m_bsName = L"";
+	m_bsPassword = L"";
+	m_ulPasswordAge = 0;
+	m_ulPrivilege = 0;
+	m_bsHomeDir = L"";
+	m_bsComment = L"";
+	m_ulFlags = 0;
+	m_bsScriptPath = L"";
+	m_ulAuthFlags = 0;
+	m_bsFullName = L"";
+	m_bsUsrComment = L"";
+	m_bsParams = L"";
+	m_bsWorkstations = L"";
+	m_ulLastLogon = 0;
+	m_ulLastLogoff = 0;
+	m_ulAccntExpires = 0;
+	m_ulMaxStorage = 0;
+	m_ulUnitsPerWeek = 0;
+	m_bLogonHours = 0;
+	m_ulBadPwdCount = 0;
+	m_ulNumLogons = 0;
+	m_bsLogonServer = L"";
+	m_ulCountryCode = 0;
+	m_ulCodePage = 0;
+	return S_OK;
+}

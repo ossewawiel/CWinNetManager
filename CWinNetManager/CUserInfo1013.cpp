@@ -17,3 +17,10 @@ STDMETHODIMP CCUserInfo1013::get_Params(BSTR * pVal)
 	*pVal = m_bsParams.copy();
 	return S_OK;
 }
+
+
+STDMETHODIMP CCUserInfo1013::Clear()
+{
+	m_bsParams = L"";
+	return S_OK;
+}

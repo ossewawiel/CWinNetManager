@@ -80,6 +80,8 @@ private:
 	_bstr_t m_bsInternetProviderName;
 	_bstr_t m_bsInternetPrincipleName;
 	_bstr_t m_bsUserSid;
+public:
+	STDMETHOD(Clear)();
 };
 
 OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserInfo24), CCUserInfo24)

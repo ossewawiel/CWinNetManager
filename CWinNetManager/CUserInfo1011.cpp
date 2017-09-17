@@ -17,3 +17,10 @@ STDMETHODIMP CCUserInfo1011::get_FullName(BSTR * pVal)
 	*pVal = m_bsFullName.copy();
 	return S_OK;
 }
+
+
+STDMETHODIMP CCUserInfo1011::Clear()
+{
+	m_bsFullName = L"";
+	return S_OK;
+}

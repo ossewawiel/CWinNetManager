@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Thu Sep 14 20:48:18 2017
+/* at Sun Sep 17 09:45:57 2017
  */
 /* Compiler settings for CWinNetManager.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 
@@ -725,6 +725,8 @@ EXTERN_C const IID IID_ICUserInfo0;
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_Name( 
             /* [retval][out] */ BSTR *pVal) = 0;
         
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Clear( void) = 0;
+        
     };
     
     
@@ -791,6 +793,9 @@ EXTERN_C const IID IID_ICUserInfo0;
             ICUserInfo0 * This,
             /* [retval][out] */ BSTR *pVal);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Clear )( 
+            ICUserInfo0 * This);
+        
         END_INTERFACE
     } ICUserInfo0Vtbl;
 
@@ -832,6 +837,9 @@ EXTERN_C const IID IID_ICUserInfo0;
 
 #define ICUserInfo0_get_Name(This,pVal)	\
     ( (This)->lpVtbl -> get_Name(This,pVal) ) 
+
+#define ICUserInfo0_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -1189,6 +1197,8 @@ EXTERN_C const IID IID_ICUserInfo2;
             /* [in] */ ULONG ulCountryCode,
             /* [in] */ ULONG ulCodePage) = 0;
         
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Clear( void) = 0;
+        
     };
     
     
@@ -1370,6 +1380,9 @@ EXTERN_C const IID IID_ICUserInfo2;
             /* [in] */ ULONG ulCountryCode,
             /* [in] */ ULONG ulCodePage);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Clear )( 
+            ICUserInfo2 * This);
+        
         END_INTERFACE
     } ICUserInfo2Vtbl;
 
@@ -1480,6 +1493,9 @@ EXTERN_C const IID IID_ICUserInfo2;
 
 #define ICUserInfo2_Initialise(This,bsName,bsPassword,ulPasswordAge,ulPrivilege,bsHomeDir,bsComment,ulFlags,bsScriptPath,ulAuthFlags,bsFullName,bsUsrComment,bsParams,bsWorkstations,ulLastLogon,ulLastLogoff,ulAccntExpires,ulMaxStorage,ulUnitsPerWeek,bLogonHours,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,ulCodePage)	\
     ( (This)->lpVtbl -> Initialise(This,bsName,bsPassword,ulPasswordAge,ulPrivilege,bsHomeDir,bsComment,ulFlags,bsScriptPath,ulAuthFlags,bsFullName,bsUsrComment,bsParams,bsWorkstations,ulLastLogon,ulLastLogoff,ulAccntExpires,ulMaxStorage,ulUnitsPerWeek,bLogonHours,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,ulCodePage) ) 
+
+#define ICUserInfo2_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -1624,6 +1640,8 @@ EXTERN_C const IID IID_ICUserInfo3;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_PwdExpired( 
             /* [retval][out] */ ULONG *pVal) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Clear( void) = 0;
         
     };
     
@@ -1831,6 +1849,9 @@ EXTERN_C const IID IID_ICUserInfo3;
             ICUserInfo3 * This,
             /* [retval][out] */ ULONG *pVal);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Clear )( 
+            ICUserInfo3 * This);
+        
         END_INTERFACE
     } ICUserInfo3Vtbl;
 
@@ -1956,6 +1977,9 @@ EXTERN_C const IID IID_ICUserInfo3;
 
 #define ICUserInfo3_get_PwdExpired(This,pVal)	\
     ( (This)->lpVtbl -> get_PwdExpired(This,pVal) ) 
+
+#define ICUserInfo3_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -2100,6 +2124,8 @@ EXTERN_C const IID IID_ICUserInfo4;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_PwdExpired( 
             /* [retval][out] */ ULONG *pVal) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Clear( void) = 0;
         
     };
     
@@ -2307,6 +2333,9 @@ EXTERN_C const IID IID_ICUserInfo4;
             ICUserInfo4 * This,
             /* [retval][out] */ ULONG *pVal);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Clear )( 
+            ICUserInfo4 * This);
+        
         END_INTERFACE
     } ICUserInfo4Vtbl;
 
@@ -2433,6 +2462,9 @@ EXTERN_C const IID IID_ICUserInfo4;
 #define ICUserInfo4_get_PwdExpired(This,pVal)	\
     ( (This)->lpVtbl -> get_PwdExpired(This,pVal) ) 
 
+#define ICUserInfo4_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -2476,6 +2508,8 @@ EXTERN_C const IID IID_ICUserInfo10;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_FullName( 
             /* [retval][out] */ BSTR *pVal) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Clear( void) = 0;
         
     };
     
@@ -2558,6 +2592,9 @@ EXTERN_C const IID IID_ICUserInfo10;
             ICUserInfo10 * This,
             /* [retval][out] */ BSTR *pVal);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Clear )( 
+            ICUserInfo10 * This);
+        
         END_INTERFACE
     } ICUserInfo10Vtbl;
 
@@ -2608,6 +2645,9 @@ EXTERN_C const IID IID_ICUserInfo10;
 
 #define ICUserInfo10_get_FullName(This,pVal)	\
     ( (This)->lpVtbl -> get_FullName(This,pVal) ) 
+
+#define ICUserInfo10_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -2716,6 +2756,8 @@ EXTERN_C const IID IID_ICUserInfo11;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_CodePage( 
             /* [retval][out] */ ULONG *pVal) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Clear( void) = 0;
         
     };
     
@@ -2878,6 +2920,9 @@ EXTERN_C const IID IID_ICUserInfo11;
             ICUserInfo11 * This,
             /* [retval][out] */ ULONG *pVal);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Clear )( 
+            ICUserInfo11 * This);
+        
         END_INTERFACE
     } ICUserInfo11Vtbl;
 
@@ -2977,6 +3022,9 @@ EXTERN_C const IID IID_ICUserInfo11;
 #define ICUserInfo11_get_CodePage(This,pVal)	\
     ( (This)->lpVtbl -> get_CodePage(This,pVal) ) 
 
+#define ICUserInfo11_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -3024,6 +3072,8 @@ EXTERN_C const IID IID_ICUserInfo20;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_UserId( 
             /* [retval][out] */ ULONG *pVal) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Clear( void) = 0;
         
     };
     
@@ -3111,6 +3161,9 @@ EXTERN_C const IID IID_ICUserInfo20;
             ICUserInfo20 * This,
             /* [retval][out] */ ULONG *pVal);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Clear )( 
+            ICUserInfo20 * This);
+        
         END_INTERFACE
     } ICUserInfo20Vtbl;
 
@@ -3165,6 +3218,9 @@ EXTERN_C const IID IID_ICUserInfo20;
 #define ICUserInfo20_get_UserId(This,pVal)	\
     ( (This)->lpVtbl -> get_UserId(This,pVal) ) 
 
+#define ICUserInfo20_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -3196,6 +3252,8 @@ EXTERN_C const IID IID_ICUserInfo21;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_Password( 
             /* [retval][out] */ BSTR *pVal) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Clear( void) = 0;
         
     };
     
@@ -3263,6 +3321,9 @@ EXTERN_C const IID IID_ICUserInfo21;
             ICUserInfo21 * This,
             /* [retval][out] */ BSTR *pVal);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Clear )( 
+            ICUserInfo21 * This);
+        
         END_INTERFACE
     } ICUserInfo21Vtbl;
 
@@ -3304,6 +3365,9 @@ EXTERN_C const IID IID_ICUserInfo21;
 
 #define ICUserInfo21_get_Password(This,pVal)	\
     ( (This)->lpVtbl -> get_Password(This,pVal) ) 
+
+#define ICUserInfo21_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
 
 #endif /* COBJMACROS */
 
@@ -3428,6 +3492,8 @@ EXTERN_C const IID IID_ICUserInfo22;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_CodePage( 
             /* [retval][out] */ ULONG *pVal) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Clear( void) = 0;
         
     };
     
@@ -3610,6 +3676,9 @@ EXTERN_C const IID IID_ICUserInfo22;
             ICUserInfo22 * This,
             /* [retval][out] */ ULONG *pVal);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Clear )( 
+            ICUserInfo22 * This);
+        
         END_INTERFACE
     } ICUserInfo22Vtbl;
 
@@ -3721,6 +3790,9 @@ EXTERN_C const IID IID_ICUserInfo22;
 #define ICUserInfo22_get_CodePage(This,pVal)	\
     ( (This)->lpVtbl -> get_CodePage(This,pVal) ) 
 
+#define ICUserInfo22_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -3768,6 +3840,8 @@ EXTERN_C const IID IID_ICUserInfo23;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_UserSid( 
             /* [retval][out] */ BSTR *pVal) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Clear( void) = 0;
         
     };
     
@@ -3855,6 +3929,9 @@ EXTERN_C const IID IID_ICUserInfo23;
             ICUserInfo23 * This,
             /* [retval][out] */ BSTR *pVal);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Clear )( 
+            ICUserInfo23 * This);
+        
         END_INTERFACE
     } ICUserInfo23Vtbl;
 
@@ -3909,6 +3986,9 @@ EXTERN_C const IID IID_ICUserInfo23;
 #define ICUserInfo23_get_UserSid(This,pVal)	\
     ( (This)->lpVtbl -> get_UserSid(This,pVal) ) 
 
+#define ICUserInfo23_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -3956,6 +4036,8 @@ EXTERN_C const IID IID_ICUserInfo24;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_UserSid( 
             /* [retval][out] */ BSTR *pVal) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Clear( void) = 0;
         
     };
     
@@ -4043,6 +4125,9 @@ EXTERN_C const IID IID_ICUserInfo24;
             ICUserInfo24 * This,
             /* [retval][out] */ BSTR *pVal);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Clear )( 
+            ICUserInfo24 * This);
+        
         END_INTERFACE
     } ICUserInfo24Vtbl;
 
@@ -4097,6 +4182,9 @@ EXTERN_C const IID IID_ICUserInfo24;
 #define ICUserInfo24_get_UserSid(This,pVal)	\
     ( (This)->lpVtbl -> get_UserSid(This,pVal) ) 
 
+#define ICUserInfo24_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -4128,6 +4216,8 @@ EXTERN_C const IID IID_ICUserInfo1003;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_Password( 
             /* [retval][out] */ BSTR *pVal) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Clear( void) = 0;
         
     };
     
@@ -4195,6 +4285,9 @@ EXTERN_C const IID IID_ICUserInfo1003;
             ICUserInfo1003 * This,
             /* [retval][out] */ BSTR *pVal);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Clear )( 
+            ICUserInfo1003 * This);
+        
         END_INTERFACE
     } ICUserInfo1003Vtbl;
 
@@ -4237,6 +4330,9 @@ EXTERN_C const IID IID_ICUserInfo1003;
 #define ICUserInfo1003_get_Password(This,pVal)	\
     ( (This)->lpVtbl -> get_Password(This,pVal) ) 
 
+#define ICUserInfo1003_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -4268,6 +4364,8 @@ EXTERN_C const IID IID_ICUserInfo1005;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_Privilege( 
             /* [retval][out] */ ULONG *pVal) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Clear( void) = 0;
         
     };
     
@@ -4335,6 +4433,9 @@ EXTERN_C const IID IID_ICUserInfo1005;
             ICUserInfo1005 * This,
             /* [retval][out] */ ULONG *pVal);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Clear )( 
+            ICUserInfo1005 * This);
+        
         END_INTERFACE
     } ICUserInfo1005Vtbl;
 
@@ -4377,6 +4478,9 @@ EXTERN_C const IID IID_ICUserInfo1005;
 #define ICUserInfo1005_get_Privilege(This,pVal)	\
     ( (This)->lpVtbl -> get_Privilege(This,pVal) ) 
 
+#define ICUserInfo1005_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -4408,6 +4512,8 @@ EXTERN_C const IID IID_ICUserInfo1006;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_HomeDirectory( 
             /* [retval][out] */ BSTR *pVal) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Clear( void) = 0;
         
     };
     
@@ -4475,6 +4581,9 @@ EXTERN_C const IID IID_ICUserInfo1006;
             ICUserInfo1006 * This,
             /* [retval][out] */ BSTR *pVal);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Clear )( 
+            ICUserInfo1006 * This);
+        
         END_INTERFACE
     } ICUserInfo1006Vtbl;
 
@@ -4517,6 +4626,9 @@ EXTERN_C const IID IID_ICUserInfo1006;
 #define ICUserInfo1006_get_HomeDirectory(This,pVal)	\
     ( (This)->lpVtbl -> get_HomeDirectory(This,pVal) ) 
 
+#define ICUserInfo1006_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -4548,6 +4660,8 @@ EXTERN_C const IID IID_ICUserInfo1007;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_Comment( 
             /* [retval][out] */ BSTR *pVal) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Clear( void) = 0;
         
     };
     
@@ -4615,6 +4729,9 @@ EXTERN_C const IID IID_ICUserInfo1007;
             ICUserInfo1007 * This,
             /* [retval][out] */ BSTR *pVal);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Clear )( 
+            ICUserInfo1007 * This);
+        
         END_INTERFACE
     } ICUserInfo1007Vtbl;
 
@@ -4657,6 +4774,9 @@ EXTERN_C const IID IID_ICUserInfo1007;
 #define ICUserInfo1007_get_Comment(This,pVal)	\
     ( (This)->lpVtbl -> get_Comment(This,pVal) ) 
 
+#define ICUserInfo1007_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -4688,6 +4808,8 @@ EXTERN_C const IID IID_ICUserInfo1008;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_Flags( 
             /* [retval][out] */ ULONG *pVal) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Clear( void) = 0;
         
     };
     
@@ -4755,6 +4877,9 @@ EXTERN_C const IID IID_ICUserInfo1008;
             ICUserInfo1008 * This,
             /* [retval][out] */ ULONG *pVal);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Clear )( 
+            ICUserInfo1008 * This);
+        
         END_INTERFACE
     } ICUserInfo1008Vtbl;
 
@@ -4797,6 +4922,9 @@ EXTERN_C const IID IID_ICUserInfo1008;
 #define ICUserInfo1008_get_Flags(This,pVal)	\
     ( (This)->lpVtbl -> get_Flags(This,pVal) ) 
 
+#define ICUserInfo1008_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -4828,6 +4956,8 @@ EXTERN_C const IID IID_ICUserInfo1009;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_ScriptPath( 
             /* [retval][out] */ BSTR *pVal) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Clear( void) = 0;
         
     };
     
@@ -4895,6 +5025,9 @@ EXTERN_C const IID IID_ICUserInfo1009;
             ICUserInfo1009 * This,
             /* [retval][out] */ BSTR *pVal);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Clear )( 
+            ICUserInfo1009 * This);
+        
         END_INTERFACE
     } ICUserInfo1009Vtbl;
 
@@ -4937,6 +5070,9 @@ EXTERN_C const IID IID_ICUserInfo1009;
 #define ICUserInfo1009_get_ScriptPath(This,pVal)	\
     ( (This)->lpVtbl -> get_ScriptPath(This,pVal) ) 
 
+#define ICUserInfo1009_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -4968,6 +5104,8 @@ EXTERN_C const IID IID_ICUserInfo1010;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_AuthFlags( 
             /* [retval][out] */ ULONG *pVal) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Clear( void) = 0;
         
     };
     
@@ -5035,6 +5173,9 @@ EXTERN_C const IID IID_ICUserInfo1010;
             ICUserInfo1010 * This,
             /* [retval][out] */ ULONG *pVal);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Clear )( 
+            ICUserInfo1010 * This);
+        
         END_INTERFACE
     } ICUserInfo1010Vtbl;
 
@@ -5077,6 +5218,9 @@ EXTERN_C const IID IID_ICUserInfo1010;
 #define ICUserInfo1010_get_AuthFlags(This,pVal)	\
     ( (This)->lpVtbl -> get_AuthFlags(This,pVal) ) 
 
+#define ICUserInfo1010_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -5108,6 +5252,8 @@ EXTERN_C const IID IID_ICUserInfo1011;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_FullName( 
             /* [retval][out] */ BSTR *pVal) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Clear( void) = 0;
         
     };
     
@@ -5175,6 +5321,9 @@ EXTERN_C const IID IID_ICUserInfo1011;
             ICUserInfo1011 * This,
             /* [retval][out] */ BSTR *pVal);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Clear )( 
+            ICUserInfo1011 * This);
+        
         END_INTERFACE
     } ICUserInfo1011Vtbl;
 
@@ -5217,6 +5366,9 @@ EXTERN_C const IID IID_ICUserInfo1011;
 #define ICUserInfo1011_get_FullName(This,pVal)	\
     ( (This)->lpVtbl -> get_FullName(This,pVal) ) 
 
+#define ICUserInfo1011_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -5248,6 +5400,8 @@ EXTERN_C const IID IID_ICUserInfo1012;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_UsrComment( 
             /* [retval][out] */ BSTR *pVal) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Clear( void) = 0;
         
     };
     
@@ -5315,6 +5469,9 @@ EXTERN_C const IID IID_ICUserInfo1012;
             ICUserInfo1012 * This,
             /* [retval][out] */ BSTR *pVal);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Clear )( 
+            ICUserInfo1012 * This);
+        
         END_INTERFACE
     } ICUserInfo1012Vtbl;
 
@@ -5357,6 +5514,9 @@ EXTERN_C const IID IID_ICUserInfo1012;
 #define ICUserInfo1012_get_UsrComment(This,pVal)	\
     ( (This)->lpVtbl -> get_UsrComment(This,pVal) ) 
 
+#define ICUserInfo1012_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -5388,6 +5548,8 @@ EXTERN_C const IID IID_ICUserInfo1013;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_Params( 
             /* [retval][out] */ BSTR *pVal) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Clear( void) = 0;
         
     };
     
@@ -5455,6 +5617,9 @@ EXTERN_C const IID IID_ICUserInfo1013;
             ICUserInfo1013 * This,
             /* [retval][out] */ BSTR *pVal);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Clear )( 
+            ICUserInfo1013 * This);
+        
         END_INTERFACE
     } ICUserInfo1013Vtbl;
 
@@ -5497,6 +5662,9 @@ EXTERN_C const IID IID_ICUserInfo1013;
 #define ICUserInfo1013_get_Params(This,pVal)	\
     ( (This)->lpVtbl -> get_Params(This,pVal) ) 
 
+#define ICUserInfo1013_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -5528,6 +5696,8 @@ EXTERN_C const IID IID_ICUserInfo1014;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_Workstations( 
             /* [retval][out] */ BSTR *pVal) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Clear( void) = 0;
         
     };
     
@@ -5595,6 +5765,9 @@ EXTERN_C const IID IID_ICUserInfo1014;
             ICUserInfo1014 * This,
             /* [retval][out] */ BSTR *pVal);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Clear )( 
+            ICUserInfo1014 * This);
+        
         END_INTERFACE
     } ICUserInfo1014Vtbl;
 
@@ -5637,6 +5810,9 @@ EXTERN_C const IID IID_ICUserInfo1014;
 #define ICUserInfo1014_get_Workstations(This,pVal)	\
     ( (This)->lpVtbl -> get_Workstations(This,pVal) ) 
 
+#define ICUserInfo1014_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -5668,6 +5844,8 @@ EXTERN_C const IID IID_ICUserInfo1017;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_AccntExpires( 
             /* [retval][out] */ ULONG *pVal) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Clear( void) = 0;
         
     };
     
@@ -5735,6 +5913,9 @@ EXTERN_C const IID IID_ICUserInfo1017;
             ICUserInfo1017 * This,
             /* [retval][out] */ ULONG *pVal);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Clear )( 
+            ICUserInfo1017 * This);
+        
         END_INTERFACE
     } ICUserInfo1017Vtbl;
 
@@ -5777,6 +5958,9 @@ EXTERN_C const IID IID_ICUserInfo1017;
 #define ICUserInfo1017_get_AccntExpires(This,pVal)	\
     ( (This)->lpVtbl -> get_AccntExpires(This,pVal) ) 
 
+#define ICUserInfo1017_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -5808,6 +5992,8 @@ EXTERN_C const IID IID_ICUserInfo1018;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_MaxStorage( 
             /* [retval][out] */ ULONG *pVal) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Clear( void) = 0;
         
     };
     
@@ -5875,6 +6061,9 @@ EXTERN_C const IID IID_ICUserInfo1018;
             ICUserInfo1018 * This,
             /* [retval][out] */ ULONG *pVal);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Clear )( 
+            ICUserInfo1018 * This);
+        
         END_INTERFACE
     } ICUserInfo1018Vtbl;
 
@@ -5917,6 +6106,9 @@ EXTERN_C const IID IID_ICUserInfo1018;
 #define ICUserInfo1018_get_MaxStorage(This,pVal)	\
     ( (This)->lpVtbl -> get_MaxStorage(This,pVal) ) 
 
+#define ICUserInfo1018_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -5952,6 +6144,8 @@ EXTERN_C const IID IID_ICUserInfo1020;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_LogonHours( 
             /* [retval][out] */ BYTE *pVal) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Clear( void) = 0;
         
     };
     
@@ -6024,6 +6218,9 @@ EXTERN_C const IID IID_ICUserInfo1020;
             ICUserInfo1020 * This,
             /* [retval][out] */ BYTE *pVal);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Clear )( 
+            ICUserInfo1020 * This);
+        
         END_INTERFACE
     } ICUserInfo1020Vtbl;
 
@@ -6069,6 +6266,9 @@ EXTERN_C const IID IID_ICUserInfo1020;
 #define ICUserInfo1020_get_LogonHours(This,pVal)	\
     ( (This)->lpVtbl -> get_LogonHours(This,pVal) ) 
 
+#define ICUserInfo1020_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -6100,6 +6300,8 @@ EXTERN_C const IID IID_ICUserInfo1023;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_LogonServer( 
             /* [retval][out] */ BSTR *pVal) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Clear( void) = 0;
         
     };
     
@@ -6167,6 +6369,9 @@ EXTERN_C const IID IID_ICUserInfo1023;
             ICUserInfo1023 * This,
             /* [retval][out] */ BSTR *pVal);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Clear )( 
+            ICUserInfo1023 * This);
+        
         END_INTERFACE
     } ICUserInfo1023Vtbl;
 
@@ -6209,6 +6414,9 @@ EXTERN_C const IID IID_ICUserInfo1023;
 #define ICUserInfo1023_get_LogonServer(This,pVal)	\
     ( (This)->lpVtbl -> get_LogonServer(This,pVal) ) 
 
+#define ICUserInfo1023_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -6240,6 +6448,8 @@ EXTERN_C const IID IID_ICUserInfo1024;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_CountryCode( 
             /* [retval][out] */ ULONG *pVal) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Clear( void) = 0;
         
     };
     
@@ -6307,6 +6517,9 @@ EXTERN_C const IID IID_ICUserInfo1024;
             ICUserInfo1024 * This,
             /* [retval][out] */ ULONG *pVal);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Clear )( 
+            ICUserInfo1024 * This);
+        
         END_INTERFACE
     } ICUserInfo1024Vtbl;
 
@@ -6349,6 +6562,9 @@ EXTERN_C const IID IID_ICUserInfo1024;
 #define ICUserInfo1024_get_CountryCode(This,pVal)	\
     ( (This)->lpVtbl -> get_CountryCode(This,pVal) ) 
 
+#define ICUserInfo1024_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -6380,6 +6596,8 @@ EXTERN_C const IID IID_ICUserInfo1025;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_CodePage( 
             /* [retval][out] */ ULONG *pVal) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Clear( void) = 0;
         
     };
     
@@ -6447,6 +6665,9 @@ EXTERN_C const IID IID_ICUserInfo1025;
             ICUserInfo1025 * This,
             /* [retval][out] */ ULONG *pVal);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Clear )( 
+            ICUserInfo1025 * This);
+        
         END_INTERFACE
     } ICUserInfo1025Vtbl;
 
@@ -6489,6 +6710,9 @@ EXTERN_C const IID IID_ICUserInfo1025;
 #define ICUserInfo1025_get_CodePage(This,pVal)	\
     ( (This)->lpVtbl -> get_CodePage(This,pVal) ) 
 
+#define ICUserInfo1025_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -6520,6 +6744,8 @@ EXTERN_C const IID IID_ICUserInfo1051;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_PrimaryGrpId( 
             /* [retval][out] */ ULONG *pVal) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Clear( void) = 0;
         
     };
     
@@ -6587,6 +6813,9 @@ EXTERN_C const IID IID_ICUserInfo1051;
             ICUserInfo1051 * This,
             /* [retval][out] */ ULONG *pVal);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Clear )( 
+            ICUserInfo1051 * This);
+        
         END_INTERFACE
     } ICUserInfo1051Vtbl;
 
@@ -6629,6 +6858,9 @@ EXTERN_C const IID IID_ICUserInfo1051;
 #define ICUserInfo1051_get_PrimaryGrpId(This,pVal)	\
     ( (This)->lpVtbl -> get_PrimaryGrpId(This,pVal) ) 
 
+#define ICUserInfo1051_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -6660,6 +6892,8 @@ EXTERN_C const IID IID_ICUserInfo1052;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_Profile( 
             /* [retval][out] */ BSTR *pVal) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Clear( void) = 0;
         
     };
     
@@ -6727,6 +6961,9 @@ EXTERN_C const IID IID_ICUserInfo1052;
             ICUserInfo1052 * This,
             /* [retval][out] */ BSTR *pVal);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Clear )( 
+            ICUserInfo1052 * This);
+        
         END_INTERFACE
     } ICUserInfo1052Vtbl;
 
@@ -6769,6 +7006,9 @@ EXTERN_C const IID IID_ICUserInfo1052;
 #define ICUserInfo1052_get_Profile(This,pVal)	\
     ( (This)->lpVtbl -> get_Profile(This,pVal) ) 
 
+#define ICUserInfo1052_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
 #endif /* COBJMACROS */
 
 
@@ -6800,6 +7040,8 @@ EXTERN_C const IID IID_ICUserInfo1053;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_HomeDirDrive( 
             /* [retval][out] */ BSTR *pVal) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Clear( void) = 0;
         
     };
     
@@ -6867,6 +7109,9 @@ EXTERN_C const IID IID_ICUserInfo1053;
             ICUserInfo1053 * This,
             /* [retval][out] */ BSTR *pVal);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Clear )( 
+            ICUserInfo1053 * This);
+        
         END_INTERFACE
     } ICUserInfo1053Vtbl;
 
@@ -6908,6 +7153,9 @@ EXTERN_C const IID IID_ICUserInfo1053;
 
 #define ICUserInfo1053_get_HomeDirDrive(This,pVal)	\
     ( (This)->lpVtbl -> get_HomeDirDrive(This,pVal) ) 
+
+#define ICUserInfo1053_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
 
 #endif /* COBJMACROS */
 

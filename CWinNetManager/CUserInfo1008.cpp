@@ -17,3 +17,10 @@ STDMETHODIMP CCUserInfo1008::get_Flags(ULONG * pVal)
 	*pVal = m_ulFlags;
 	return S_OK;
 }
+
+
+STDMETHODIMP CCUserInfo1008::Clear()
+{
+	m_ulFlags = 0;
+	return S_OK;
+}

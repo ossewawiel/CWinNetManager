@@ -146,6 +146,8 @@ private:
 	_bstr_t m_bsProfile;
 	_bstr_t m_bsHomeDirDrive;
 	ULONG   m_ulPwdExpired;
+public:
+	STDMETHOD(Clear)();
 };
 
 OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserInfo3), CCUserInfo3)

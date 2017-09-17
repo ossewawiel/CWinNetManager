@@ -140,6 +140,8 @@ private:
 	ULONG m_ulUnitsPerWeek;
 	BYTE m_bLogonHours;
 	ULONG m_ulCodePage;
+public:
+	STDMETHOD(Clear)();
 };
 
 OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserInfo11), CCUserInfo11)

@@ -63,6 +63,8 @@ public:
 
 private:
 	_bstr_t m_bsParams;
+public:
+	STDMETHOD(Clear)();
 };
 
 OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserInfo1013), CCUserInfo1013)

@@ -17,3 +17,10 @@ STDMETHODIMP CCUserInfo1053::get_HomeDirDrive(BSTR * pVal)
 	*pVal = m_bsHomeDirDrive.copy();
 	return S_OK;
 }
+
+
+STDMETHODIMP CCUserInfo1053::Clear()
+{
+	m_bsHomeDirDrive = L"";
+	return S_OK;
+}

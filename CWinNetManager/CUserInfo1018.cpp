@@ -17,3 +17,10 @@ STDMETHODIMP CCUserInfo1018::get_MaxStorage(ULONG * pVal)
 	*pVal = m_ulMaxStorage;
 	return S_OK;
 }
+
+
+STDMETHODIMP CCUserInfo1018::Clear()
+{
+	m_ulMaxStorage = 0;
+	return S_OK;
+}

@@ -38,5 +38,8 @@ const ULONG		PAR_UINF_USERID(0);
 const SHORT		PAR_UINF_INTRNETID(true);
 const _bstr_t	PAR_UINF_INTRNETPROVNAME(L"TestInternetProviderName");
 const _bstr_t	PAR_UINF_INTRNETPRNCPLNAME(L"TestInternetPrincipleName");
-const _bstr_t PAR_EMPTY(L"");
+const _bstr_t	PAR_EMPTY(L"");
+const _bstr_t	PAR_NOT_EMPTY(L"***");
+const ULONG		PAR_NOT_ZERO(50);
+const BYTE		PAR_NOT_NULLBYTE(3);
 

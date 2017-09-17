@@ -17,3 +17,10 @@ STDMETHODIMP CCUserInfo1010::get_AuthFlags(ULONG * pVal)
 	*pVal = m_ulAuthFlags;
 	return S_OK;
 }
+
+
+STDMETHODIMP CCUserInfo1010::Clear()
+{
+	m_ulAuthFlags = 0;
+	return S_OK;
+}

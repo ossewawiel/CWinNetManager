@@ -17,3 +17,10 @@ STDMETHODIMP CCUserInfo1052::get_Profile(BSTR * pVal)
 	*pVal = m_bsProfile.copy();
 	return S_OK;
 }
+
+
+STDMETHODIMP CCUserInfo1052::Clear()
+{
+	m_bsProfile = L"";
+	return S_OK;
+}

@@ -17,3 +17,10 @@ STDMETHODIMP CCUserInfo1023::get_LogonServer(BSTR * pVal)
 	*pVal = m_bsLogonServer.copy();
 	return S_OK;
 }
+
+
+STDMETHODIMP CCUserInfo1023::Clear()
+{
+	m_bsLogonServer = L"";
+	return S_OK;
+}

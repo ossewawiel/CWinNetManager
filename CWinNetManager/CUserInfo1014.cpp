@@ -17,3 +17,10 @@ STDMETHODIMP CCUserInfo1014::get_Workstations(BSTR * pVal)
 	*pVal = m_bsWorkstations.copy();
 	return S_OK;
 }
+
+
+STDMETHODIMP CCUserInfo1014::Clear()
+{
+	m_bsWorkstations = L"";
+	return S_OK;
+}

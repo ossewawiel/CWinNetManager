@@ -31,6 +31,7 @@ typedef [public, v1_enum] enum eUserInfoType
 interface ICUserInfo0 : IDispatch {
 	[id(1)] HRESULT Initialise([in] BSTR bsName);
 	[propget, id(2)] HRESULT Name([out, retval] BSTR* pVal);
+	[id(3)] HRESULT Clear();
 };
 [
 	object,
@@ -116,6 +117,7 @@ interface ICUserInfo2 : IDispatch {
 		, [in] BSTR bsLogonServer
 		, [in] ULONG ulCountryCode
 		, [in] ULONG ulCodePage);
+	[id(26)] HRESULT Clear();
 };
 [
 	object,
@@ -184,6 +186,7 @@ interface ICUserInfo3 : IDispatch {
 	[propget, id(28)] HRESULT Profile([out, retval] BSTR* pVal);
 	[propget, id(29)] HRESULT HomeDirDrive([out, retval] BSTR* pVal);
 	[propget, id(30)] HRESULT PwdExpired([out, retval] ULONG* pVal);
+	[id(31)] HRESULT Clear();
 };
 [
 	object,
@@ -252,6 +255,7 @@ interface ICUserInfo4 : IDispatch {
 	[propget, id(28)] HRESULT Profile([out, retval] BSTR* pVal);
 	[propget, id(29)] HRESULT HomeDirDrive([out, retval] BSTR* pVal);
 	[propget, id(30)] HRESULT PwdExpired([out, retval] ULONG* pVal);
+	[id(31)] HRESULT Clear();
 };
 [
 	object,
@@ -270,6 +274,7 @@ interface ICUserInfo10 : IDispatch {
 	[propget, id(3)] HRESULT Comment([out, retval] BSTR* pVal);
 	[propget, id(4)] HRESULT UsrComment([out, retval] BSTR* pVal);
 	[propget, id(5)] HRESULT FullName([out, retval] BSTR* pVal);
+	[id(6)] HRESULT Clear();
 };
 [
 	object,
@@ -320,6 +325,7 @@ interface ICUserInfo11 : IDispatch {
 	[propget, id(19)] HRESULT UnitsPerWeek([out, retval] ULONG* pVal);
 	[propget, id(20)] HRESULT LogonHours([out, retval] BYTE* pVal);
 	[propget, id(21)] HRESULT CodePage([out, retval] ULONG* pVal);
+	[id(22)] HRESULT Clear();
 };
 [
 	object,
@@ -340,6 +346,7 @@ interface ICUserInfo20 : IDispatch {
 	[propget, id(4)] HRESULT Comment([out, retval] BSTR* pVal);
 	[propget, id(5)] HRESULT Flags([out, retval] ULONG* pVal);
 	[propget, id(6)] HRESULT UserId([out, retval] ULONG* pVal);
+	[id(7)] HRESULT Clear();
 };
 [
 	object,
@@ -351,6 +358,7 @@ interface ICUserInfo20 : IDispatch {
 interface ICUserInfo21 : IDispatch {
 	[id(1)] HRESULT Initialise([in] BSTR bsPassword);
 	[propget, id(2)] HRESULT Password([out, retval] BSTR* pVal);
+	[id(3)] HRESULT Clear();
 };
 [
 	object,
@@ -409,6 +417,7 @@ interface ICUserInfo22 : IDispatch {
 	[propget, id(23)] HRESULT LogonServer([out, retval] BSTR* pVal);
 	[propget, id(24)] HRESULT CountryCode([out, retval] ULONG* pVal);
 	[propget, id(25)] HRESULT CodePage([out, retval] ULONG* pVal);
+	[id(26)] HRESULT Clear();
 };
 [
 	object,
@@ -429,6 +438,7 @@ interface ICUserInfo23 : IDispatch {
 	[propget, id(4)] HRESULT Comment([out, retval] BSTR* pVal);
 	[propget, id(5)] HRESULT Flags([out, retval] ULONG* pVal);
 	[propget, id(6)] HRESULT UserSid([out, retval] BSTR* pVal);
+	[id(7)] HRESULT Clear();
 };
 [
 	object,
@@ -449,6 +459,7 @@ interface ICUserInfo24 : IDispatch {
 	[propget, id(4)] HRESULT InternetProviderName([out, retval] BSTR* pVal);
 	[propget, id(5)] HRESULT InternetPrincipleName([out, retval] BSTR* pVal);
 	[propget, id(6)] HRESULT UserSid([out, retval] BSTR* pVal);
+	[id(7)] HRESULT Clear();
 };
 [
 	object,
@@ -460,6 +471,7 @@ interface ICUserInfo24 : IDispatch {
 interface ICUserInfo1003 : IDispatch {
 	[id(1)] HRESULT Initialise([in] BSTR bsPassword);
 	[propget, id(2)] HRESULT Password([out, retval] BSTR* pVal);
+	[id(3)] HRESULT Clear();
 };
 [
 	object,
@@ -471,6 +483,7 @@ interface ICUserInfo1003 : IDispatch {
 interface ICUserInfo1005 : IDispatch {
 	[id(1)] HRESULT Initialise([in] ULONG ulPrivilege);
 	[propget, id(2)] HRESULT Privilege([out, retval] ULONG* pVal);
+	[id(3)] HRESULT Clear();
 };
 [
 	object,
@@ -482,6 +495,7 @@ interface ICUserInfo1005 : IDispatch {
 interface ICUserInfo1006 : IDispatch {
 	[id(1)] HRESULT Initialise([in] BSTR bsHomeDir);
 	[propget, id(2)] HRESULT HomeDirectory([out, retval] BSTR* pVal);
+	[id(3)] HRESULT Clear();
 };
 [
 	object,
@@ -493,6 +507,7 @@ interface ICUserInfo1006 : IDispatch {
 interface ICUserInfo1007 : IDispatch {
 	[id(1)] HRESULT Initialise([in] BSTR bsComment);
 	[propget, id(2)] HRESULT Comment([out, retval] BSTR* pVal);
+	[id(3)] HRESULT Clear();
 };
 [
 	object,
@@ -504,6 +519,7 @@ interface ICUserInfo1007 : IDispatch {
 interface ICUserInfo1008 : IDispatch {
 	[id(1)] HRESULT Initialise([in] ULONG ulFlags);
 	[propget, id(2)] HRESULT Flags([out, retval] ULONG* pVal);
+	[id(3)] HRESULT Clear();
 };
 [
 	object,
@@ -515,6 +531,7 @@ interface ICUserInfo1008 : IDispatch {
 interface ICUserInfo1009 : IDispatch {
 	[id(1)] HRESULT Initialise([in] BSTR bsScriptPath);
 	[propget, id(2)] HRESULT ScriptPath([out, retval] BSTR* pVal);
+	[id(3)] HRESULT Clear();
 };
 [
 	object,
@@ -526,6 +543,7 @@ interface ICUserInfo1009 : IDispatch {
 interface ICUserInfo1010 : IDispatch {
 	[id(1)] HRESULT Initialise([in] ULONG ulAuthFlags);
 	[propget, id(2)] HRESULT AuthFlags([out, retval] ULONG* pVal);
+	[id(3)] HRESULT Clear();
 };
 [
 	object,
@@ -537,6 +555,7 @@ interface ICUserInfo1010 : IDispatch {
 interface ICUserInfo1011 : IDispatch {
 	[id(1)] HRESULT Initialise([in] BSTR bsFullName);
 	[propget, id(2)] HRESULT FullName([out, retval] BSTR* pVal);
+	[id(3)] HRESULT Clear();
 };
 [
 	object,
@@ -548,6 +567,7 @@ interface ICUserInfo1011 : IDispatch {
 interface ICUserInfo1012 : IDispatch {
 	[id(1)] HRESULT Initialise([in] BSTR bsUsrComment);
 	[propget, id(2)] HRESULT UsrComment([out, retval] BSTR* pVal);
+	[id(3)] HRESULT Clear();
 };
 [
 	object,
@@ -559,6 +579,7 @@ interface ICUserInfo1012 : IDispatch {
 interface ICUserInfo1013 : IDispatch {
 	[id(1)] HRESULT Initialise([in] BSTR bsParams);
 	[propget, id(2)] HRESULT Params([out, retval] BSTR* pVal);
+	[id(3)] HRESULT Clear();
 };
 [
 	object,
@@ -570,6 +591,7 @@ interface ICUserInfo1013 : IDispatch {
 interface ICUserInfo1014 : IDispatch {
 	[id(1)] HRESULT Initialise([in] BSTR bsWorkstations);
 	[propget, id(2)] HRESULT Workstations([out, retval] BSTR* pVal);
+	[id(3)] HRESULT Clear();
 };
 [
 	object,
@@ -581,6 +603,7 @@ interface ICUserInfo1014 : IDispatch {
 interface ICUserInfo1017 : IDispatch {
 	[id(1)] HRESULT Initialise([in] ULONG ulAccntExpires);
 	[propget, id(2)] HRESULT AccntExpires([out, retval] ULONG* pVal);
+	[id(3)] HRESULT Clear();
 };
 [
 	object,
@@ -592,6 +615,7 @@ interface ICUserInfo1017 : IDispatch {
 interface ICUserInfo1018 : IDispatch {
 	[id(1)] HRESULT Initialise([in] ULONG ulMaxStorage);
 	[propget, id(2)] HRESULT MaxStorage([out, retval] ULONG* pVal);
+	[id(3)] HRESULT Clear();
 };
 [
 	object,
@@ -604,6 +628,7 @@ interface ICUserInfo1020 : IDispatch {
 	[id(1)] HRESULT Initialise([in] ULONG ulUnitsPerWeek, [in] BYTE bLogonHours);
 	[propget, id(2)] HRESULT UnitsPerWeek([out, retval] ULONG* pVal);
 	[propget, id(3)] HRESULT LogonHours([out, retval] BYTE* pVal);
+	[id(4)] HRESULT Clear();
 };
 [
 	object,
@@ -615,6 +640,7 @@ interface ICUserInfo1020 : IDispatch {
 interface ICUserInfo1023 : IDispatch {
 	[id(1)] HRESULT Initialise([in] BSTR bsLogonServer);
 	[propget, id(2)] HRESULT LogonServer([out, retval] BSTR* pVal);
+	[id(3)] HRESULT Clear();
 };
 [
 	object,
@@ -626,6 +652,7 @@ interface ICUserInfo1023 : IDispatch {
 interface ICUserInfo1024 : IDispatch {
 	[id(1)] HRESULT Initialise([in] ULONG ulCountryCode);
 	[propget, id(2)] HRESULT CountryCode([out, retval] ULONG* pVal);
+	[id(3)] HRESULT Clear();
 };
 [
 	object,
@@ -637,6 +664,7 @@ interface ICUserInfo1024 : IDispatch {
 interface ICUserInfo1025 : IDispatch {
 	[id(1)] HRESULT Initialise([in] ULONG ulCodePage);
 	[propget, id(2)] HRESULT CodePage([out, retval] ULONG* pVal);
+	[id(3)] HRESULT Clear();
 };
 [
 	object,
@@ -648,6 +676,7 @@ interface ICUserInfo1025 : IDispatch {
 interface ICUserInfo1051 : IDispatch {
 	[id(1)] HRESULT Initialise([in] ULONG ulPrimaryGrpId);
 	[propget, id(2)] HRESULT PrimaryGrpId([out, retval] ULONG* pVal);
+	[id(3)] HRESULT Clear();
 };
 [
 	object,
@@ -659,6 +688,7 @@ interface ICUserInfo1051 : IDispatch {
 interface ICUserInfo1052 : IDispatch {
 	[id(1)] HRESULT Initialise([in] BSTR bsProfile);
 	[propget, id(2)] HRESULT Profile([out, retval] BSTR* pVal);
+	[id(3)] HRESULT Clear();
 };
 [
 	object,
@@ -670,6 +700,7 @@ interface ICUserInfo1052 : IDispatch {
 interface ICUserInfo1053 : IDispatch {
 	[id(1)] HRESULT Initialise([in] BSTR bsHomeDirDrive);
 	[propget, id(2)] HRESULT HomeDirDrive([out, retval] BSTR* pVal);
+	[id(3)] HRESULT Clear();
 };
 [
 	object,
