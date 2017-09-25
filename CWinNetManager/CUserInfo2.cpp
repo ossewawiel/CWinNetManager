@@ -134,9 +134,9 @@ STDMETHODIMP CCUserInfo2::get_UnitsPerWeek(ULONG* pVal)
 }
 
 
-STDMETHODIMP CCUserInfo2::get_LogonHours(BYTE* pVal)
+STDMETHODIMP CCUserInfo2::get_LogonHours(ICLogonHours** pVal)
 {
-	*pVal = BYTE(m_bLogonHours);
+	m_bLogonHours.CopyTo(pVal);
 	return S_OK;
 }
 
@@ -195,7 +195,7 @@ STDMETHODIMP CCUserInfo2::Initialise (
 	, ULONG ulAccntExpires
 	, ULONG ulMaxStorage
 	, ULONG ulUnitsPerWeek
-	, BYTE  bLogonHours
+	, ICLogonHours*  bLogonHours
 	, ULONG ulBadPwdCount
 	, ULONG ulNumLogons
 	, BSTR  bsLogonServer
@@ -249,14 +249,14 @@ HRESULT CCUserInfo2::TranslateToUserInfo(ICUserInfo2 * pFrom, USER_INFO_2 &pTo)
 	if (hr = ToUserInfoLastLogon	<ICUserInfo2>(pFrom, pTo.usri2_last_logon))		return hr;
 	if (hr = ToUserInfoLastLogoff	<ICUserInfo2>(pFrom, pTo.usri2_last_logoff))	return hr;
 	if (hr = ToUserInfoAccntExpires	<ICUserInfo2>(pFrom, pTo.usri2_acct_expires))	return hr;
-	if (hr = ToUserInfoMaxStorage	<ICUserInfo2>(pFrom, pTo.usri2_acct_expires))	return hr;
-	if (hr = ToUserInfoUnitsPerWeek	<ICUserInfo2>(pFrom, pTo.usri2_acct_expires))	return hr;
-	/*m_bLogonHours = bLogonHours;
-	m_ulBadPwdCount = ulBadPwdCount;
-	m_ulNumLogons = ulNumLogons;
-	m_bsLogonServer.Assign(bsLogonServer);
-	m_ulCountryCode = ulCountryCode;
-	m_ulCodePage = ulCodePage;*/
+	if (hr = ToUserInfoMaxStorage	<ICUserInfo2>(pFrom, pTo.usri2_max_storage))	return hr;
+	if (hr = ToUserInfoUnitsPerWeek	<ICUserInfo2>(pFrom, pTo.usri2_units_per_week))	return hr;
+	if (hr = ToUserInfoLogonHours	<ICUserInfo2>(pFrom, pTo.usri2_logon_hours))	return hr;
+	if (hr = ToUserInfoBadPwdCount	<ICUserInfo2>(pFrom, pTo.usri2_bad_pw_count))	return hr;
+	if (hr = ToUserInfoNumLogons	<ICUserInfo2>(pFrom, pTo.usri2_num_logons))	return hr;
+	if (hr = ToUserInfoLogonServer	<ICUserInfo2>(pFrom, pTo.usri2_logon_server))	return hr;
+	if (hr = ToUserInfoCountryCode	<ICUserInfo2>(pFrom, pTo.usri2_country_code))	return hr;
+	if (hr = ToUserInfoCodePage		<ICUserInfo2>(pFrom, pTo.usri2_code_page))	return hr;
 	return hr;
 }
 
@@ -281,7 +281,7 @@ STDMETHODIMP CCUserInfo2::Clear()
 	m_ulAccntExpires = 0;
 	m_ulMaxStorage = 0;
 	m_ulUnitsPerWeek = 0;
-	m_bLogonHours = 0;
+	m_bLogonHours->ClearAll();
 	m_ulBadPwdCount = 0;
 	m_ulNumLogons = 0;
 	m_bsLogonServer = L"";

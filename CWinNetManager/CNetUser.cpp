@@ -57,7 +57,7 @@ STDMETHODIMP CCNetUser::GetUserInfo2(
 	, ULONG ulAccntExpires
 	, ULONG ulMaxStorage
 	, ULONG ulUnitsPerWeek
-	, BYTE  bLogonHours
+	, ICLogonHours*  bLogonHours
 	, ULONG ulBadPwdCount
 	, ULONG ulNumLogons
 	, BSTR  bsLogonServer
@@ -114,7 +114,7 @@ STDMETHODIMP CCNetUser::GetUserInfo3(
 	, ULONG ulAccntExpires
 	, ULONG ulMaxStorage
 	, ULONG ulUnitsPerWeek
-	, BYTE  bLogonHours
+	, ICLogonHours*  bLogonHours
 	, ULONG ulBadPwdCount
 	, ULONG ulNumLogons
 	, BSTR  bsLogonServer
@@ -181,7 +181,7 @@ STDMETHODIMP CCNetUser::GetUserInfo4(
 	, ULONG ulAccntExpires
 	, ULONG ulMaxStorage
 	, ULONG ulUnitsPerWeek
-	, BYTE  bLogonHours
+	, ICLogonHours*  bLogonHours
 	, ULONG ulBadPwdCount
 	, ULONG ulNumLogons
 	, BSTR  bsLogonServer
@@ -265,7 +265,7 @@ STDMETHODIMP CCNetUser::GetUserInfo11 (
 	, BSTR bsWorkstations
 	, ULONG ulMaxStorage
 	, ULONG ulUnitsPerWeek
-	, BYTE bLogonHours
+	, ICLogonHours* bLogonHours
 	, ULONG ulCodePage
 	, ICUserInfo11** ppUserInfo11)
 {
@@ -341,7 +341,7 @@ STDMETHODIMP CCNetUser::GetUserInfo22(
 	, ULONG ulAccntExpires
 	, ULONG ulMaxStorage
 	, ULONG ulUnitsPerWeek
-	, BYTE  bLogonHours
+	, ICLogonHours*  bLogonHours
 	, ULONG ulBadPwdCount
 	, ULONG ulNumLogons
 	, BSTR  bsLogonServer
@@ -521,7 +521,7 @@ STDMETHODIMP CCNetUser::GetUserInfo1018(ULONG ulMaxStorage, ICUserInfo1018 ** pp
 	return (*ppUserInfo1018)->Initialise(ulMaxStorage);
 }
 
-STDMETHODIMP CCNetUser::GetUserInfo1020(ULONG ulUnitsPerWeek, BYTE bLogonHours, ICUserInfo1020 ** ppUserInfo1020)
+STDMETHODIMP CCNetUser::GetUserInfo1020(ULONG ulUnitsPerWeek, ICLogonHours* bLogonHours, ICUserInfo1020 ** ppUserInfo1020)
 {
 	HRESULT hr = CCUserInfo1020::CreateInstance(ppUserInfo1020);
 	if (hr) return hr;
@@ -652,3 +652,11 @@ STDMETHODIMP CCNetUser::CastToUserInfo1(IUnknown* pUnk, ICUserInfo1** ppUserInfo
 }
 
 
+
+
+STDMETHODIMP CCNetUser::GetLogonHoursAllActive(ICLogonHours** ppLogonHours)
+{
+	HRESULT hr = CCLogonHours::CreateInstance(ppLogonHours);
+	if (hr) return hr;
+	return (*ppLogonHours)->InitialiseAllActive();
+}

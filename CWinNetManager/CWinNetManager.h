@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Sun Sep 17 13:09:11 2017
+/* at Mon Sep 25 18:13:49 2017
  */
 /* Compiler settings for CWinNetManager.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 
@@ -44,6 +44,20 @@
 #endif
 
 /* Forward Declarations */ 
+
+#ifndef __ICLogonHour_FWD_DEFINED__
+#define __ICLogonHour_FWD_DEFINED__
+typedef interface ICLogonHour ICLogonHour;
+
+#endif 	/* __ICLogonHour_FWD_DEFINED__ */
+
+
+#ifndef __ICLogonHours_FWD_DEFINED__
+#define __ICLogonHours_FWD_DEFINED__
+typedef interface ICLogonHours ICLogonHours;
+
+#endif 	/* __ICLogonHours_FWD_DEFINED__ */
+
 
 #ifndef __ICUserInfo0_FWD_DEFINED__
 #define __ICUserInfo0_FWD_DEFINED__
@@ -672,6 +686,30 @@ typedef struct CUserInfo1053 CUserInfo1053;
 #endif 	/* __CUserInfo1053_FWD_DEFINED__ */
 
 
+#ifndef __CLogonHour_FWD_DEFINED__
+#define __CLogonHour_FWD_DEFINED__
+
+#ifdef __cplusplus
+typedef class CLogonHour CLogonHour;
+#else
+typedef struct CLogonHour CLogonHour;
+#endif /* __cplusplus */
+
+#endif 	/* __CLogonHour_FWD_DEFINED__ */
+
+
+#ifndef __CLogonHours_FWD_DEFINED__
+#define __CLogonHours_FWD_DEFINED__
+
+#ifdef __cplusplus
+typedef class CLogonHours CLogonHours;
+#else
+typedef struct CLogonHours CLogonHours;
+#endif /* __cplusplus */
+
+#endif 	/* __CLogonHours_FWD_DEFINED__ */
+
+
 /* header files for imported files */
 #include "oaidl.h"
 #include "ocidl.h"
@@ -703,6 +741,364 @@ enum eUserInfoType
 
 extern RPC_IF_HANDLE __MIDL_itf_CWinNetManager_0000_0000_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_CWinNetManager_0000_0000_v0_0_s_ifspec;
+
+#ifndef __ICLogonHour_INTERFACE_DEFINED__
+#define __ICLogonHour_INTERFACE_DEFINED__
+
+/* interface ICLogonHour */
+/* [unique][nonextensible][dual][uuid][object] */ 
+
+
+EXTERN_C const IID IID_ICLogonHour;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("FFB824F6-E615-4DCC-BCFC-4068E2B442F8")
+    ICLogonHour : public IDispatch
+    {
+    public:
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Initialise( 
+            /* [in] */ SHORT shDay,
+            /* [in] */ SHORT shHour,
+            /* [in] */ SHORT shActive) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Activate( void) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Deactivate( void) = 0;
+        
+        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_Day( 
+            /* [retval][out] */ SHORT *pVal) = 0;
+        
+        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_Hour( 
+            /* [retval][out] */ SHORT *pVal) = 0;
+        
+        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_State( 
+            /* [retval][out] */ SHORT *pVal) = 0;
+        
+        virtual /* [id][propput] */ HRESULT STDMETHODCALLTYPE put_State( 
+            /* [in] */ SHORT newVal) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct ICLogonHourVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            ICLogonHour * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            ICLogonHour * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            ICLogonHour * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            ICLogonHour * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            ICLogonHour * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            ICLogonHour * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            ICLogonHour * This,
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Initialise )( 
+            ICLogonHour * This,
+            /* [in] */ SHORT shDay,
+            /* [in] */ SHORT shHour,
+            /* [in] */ SHORT shActive);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Activate )( 
+            ICLogonHour * This);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Deactivate )( 
+            ICLogonHour * This);
+        
+        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_Day )( 
+            ICLogonHour * This,
+            /* [retval][out] */ SHORT *pVal);
+        
+        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_Hour )( 
+            ICLogonHour * This,
+            /* [retval][out] */ SHORT *pVal);
+        
+        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_State )( 
+            ICLogonHour * This,
+            /* [retval][out] */ SHORT *pVal);
+        
+        /* [id][propput] */ HRESULT ( STDMETHODCALLTYPE *put_State )( 
+            ICLogonHour * This,
+            /* [in] */ SHORT newVal);
+        
+        END_INTERFACE
+    } ICLogonHourVtbl;
+
+    interface ICLogonHour
+    {
+        CONST_VTBL struct ICLogonHourVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define ICLogonHour_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define ICLogonHour_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define ICLogonHour_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define ICLogonHour_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define ICLogonHour_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define ICLogonHour_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define ICLogonHour_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define ICLogonHour_Initialise(This,shDay,shHour,shActive)	\
+    ( (This)->lpVtbl -> Initialise(This,shDay,shHour,shActive) ) 
+
+#define ICLogonHour_Activate(This)	\
+    ( (This)->lpVtbl -> Activate(This) ) 
+
+#define ICLogonHour_Deactivate(This)	\
+    ( (This)->lpVtbl -> Deactivate(This) ) 
+
+#define ICLogonHour_get_Day(This,pVal)	\
+    ( (This)->lpVtbl -> get_Day(This,pVal) ) 
+
+#define ICLogonHour_get_Hour(This,pVal)	\
+    ( (This)->lpVtbl -> get_Hour(This,pVal) ) 
+
+#define ICLogonHour_get_State(This,pVal)	\
+    ( (This)->lpVtbl -> get_State(This,pVal) ) 
+
+#define ICLogonHour_put_State(This,newVal)	\
+    ( (This)->lpVtbl -> put_State(This,newVal) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __ICLogonHour_INTERFACE_DEFINED__ */
+
+
+#ifndef __ICLogonHours_INTERFACE_DEFINED__
+#define __ICLogonHours_INTERFACE_DEFINED__
+
+/* interface ICLogonHours */
+/* [unique][nonextensible][dual][uuid][object] */ 
+
+
+EXTERN_C const IID IID_ICLogonHours;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("4DFC52BD-D969-4B4F-AC01-CA24EA013CD8")
+    ICLogonHours : public IDispatch
+    {
+    public:
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE ClearAll( void) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE InitialiseAllActive( void) = 0;
+        
+        virtual /* [propget][id] */ HRESULT STDMETHODCALLTYPE get__NewEnum( 
+            /* [retval][out] */ IUnknown **ppUnk) = 0;
+        
+        virtual /* [propget][id] */ HRESULT STDMETHODCALLTYPE get_Item( 
+            /* [in] */ long n,
+            /* [retval][out] */ ICLogonHour **ppLogonHour) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Count( 
+            /* [retval][out] */ long *pnCount) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct ICLogonHoursVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            ICLogonHours * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            ICLogonHours * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            ICLogonHours * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            ICLogonHours * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            ICLogonHours * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            ICLogonHours * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            ICLogonHours * This,
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *ClearAll )( 
+            ICLogonHours * This);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *InitialiseAllActive )( 
+            ICLogonHours * This);
+        
+        /* [propget][id] */ HRESULT ( STDMETHODCALLTYPE *get__NewEnum )( 
+            ICLogonHours * This,
+            /* [retval][out] */ IUnknown **ppUnk);
+        
+        /* [propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_Item )( 
+            ICLogonHours * This,
+            /* [in] */ long n,
+            /* [retval][out] */ ICLogonHour **ppLogonHour);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Count )( 
+            ICLogonHours * This,
+            /* [retval][out] */ long *pnCount);
+        
+        END_INTERFACE
+    } ICLogonHoursVtbl;
+
+    interface ICLogonHours
+    {
+        CONST_VTBL struct ICLogonHoursVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define ICLogonHours_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define ICLogonHours_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define ICLogonHours_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define ICLogonHours_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define ICLogonHours_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define ICLogonHours_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define ICLogonHours_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define ICLogonHours_ClearAll(This)	\
+    ( (This)->lpVtbl -> ClearAll(This) ) 
+
+#define ICLogonHours_InitialiseAllActive(This)	\
+    ( (This)->lpVtbl -> InitialiseAllActive(This) ) 
+
+#define ICLogonHours_get__NewEnum(This,ppUnk)	\
+    ( (This)->lpVtbl -> get__NewEnum(This,ppUnk) ) 
+
+#define ICLogonHours_get_Item(This,n,ppLogonHour)	\
+    ( (This)->lpVtbl -> get_Item(This,n,ppLogonHour) ) 
+
+#define ICLogonHours_get_Count(This,pnCount)	\
+    ( (This)->lpVtbl -> get_Count(This,pnCount) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __ICLogonHours_INTERFACE_DEFINED__ */
+
 
 #ifndef __ICUserInfo0_INTERFACE_DEFINED__
 #define __ICUserInfo0_INTERFACE_DEFINED__
@@ -1154,7 +1550,7 @@ EXTERN_C const IID IID_ICUserInfo2;
             /* [retval][out] */ ULONG *pVal) = 0;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_LogonHours( 
-            /* [retval][out] */ BYTE *pVal) = 0;
+            /* [retval][out] */ ICLogonHours **pVal) = 0;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_BadPwdCount( 
             /* [retval][out] */ ULONG *pVal) = 0;
@@ -1190,7 +1586,7 @@ EXTERN_C const IID IID_ICUserInfo2;
             /* [in] */ ULONG ulAccntExpires,
             /* [in] */ ULONG ulMaxStorage,
             /* [in] */ ULONG ulUnitsPerWeek,
-            /* [in] */ BYTE bLogonHours,
+            /* [in] */ ICLogonHours *pLogonHours,
             /* [in] */ ULONG ulBadPwdCount,
             /* [in] */ ULONG ulNumLogons,
             /* [in] */ BSTR bsLogonServer,
@@ -1331,7 +1727,7 @@ EXTERN_C const IID IID_ICUserInfo2;
         
         /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_LogonHours )( 
             ICUserInfo2 * This,
-            /* [retval][out] */ BYTE *pVal);
+            /* [retval][out] */ ICLogonHours **pVal);
         
         /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_BadPwdCount )( 
             ICUserInfo2 * This,
@@ -1373,7 +1769,7 @@ EXTERN_C const IID IID_ICUserInfo2;
             /* [in] */ ULONG ulAccntExpires,
             /* [in] */ ULONG ulMaxStorage,
             /* [in] */ ULONG ulUnitsPerWeek,
-            /* [in] */ BYTE bLogonHours,
+            /* [in] */ ICLogonHours *pLogonHours,
             /* [in] */ ULONG ulBadPwdCount,
             /* [in] */ ULONG ulNumLogons,
             /* [in] */ BSTR bsLogonServer,
@@ -1491,8 +1887,8 @@ EXTERN_C const IID IID_ICUserInfo2;
 #define ICUserInfo2_get_CodePage(This,pVal)	\
     ( (This)->lpVtbl -> get_CodePage(This,pVal) ) 
 
-#define ICUserInfo2_Initialise(This,bsName,bsPassword,ulPasswordAge,ulPrivilege,bsHomeDir,bsComment,ulFlags,bsScriptPath,ulAuthFlags,bsFullName,bsUsrComment,bsParams,bsWorkstations,ulLastLogon,ulLastLogoff,ulAccntExpires,ulMaxStorage,ulUnitsPerWeek,bLogonHours,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,ulCodePage)	\
-    ( (This)->lpVtbl -> Initialise(This,bsName,bsPassword,ulPasswordAge,ulPrivilege,bsHomeDir,bsComment,ulFlags,bsScriptPath,ulAuthFlags,bsFullName,bsUsrComment,bsParams,bsWorkstations,ulLastLogon,ulLastLogoff,ulAccntExpires,ulMaxStorage,ulUnitsPerWeek,bLogonHours,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,ulCodePage) ) 
+#define ICUserInfo2_Initialise(This,bsName,bsPassword,ulPasswordAge,ulPrivilege,bsHomeDir,bsComment,ulFlags,bsScriptPath,ulAuthFlags,bsFullName,bsUsrComment,bsParams,bsWorkstations,ulLastLogon,ulLastLogoff,ulAccntExpires,ulMaxStorage,ulUnitsPerWeek,pLogonHours,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,ulCodePage)	\
+    ( (This)->lpVtbl -> Initialise(This,bsName,bsPassword,ulPasswordAge,ulPrivilege,bsHomeDir,bsComment,ulFlags,bsScriptPath,ulAuthFlags,bsFullName,bsUsrComment,bsParams,bsWorkstations,ulLastLogon,ulLastLogoff,ulAccntExpires,ulMaxStorage,ulUnitsPerWeek,pLogonHours,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,ulCodePage) ) 
 
 #define ICUserInfo2_Clear(This)	\
     ( (This)->lpVtbl -> Clear(This) ) 
@@ -1542,7 +1938,7 @@ EXTERN_C const IID IID_ICUserInfo3;
             /* [in] */ ULONG ulAccntExpires,
             /* [in] */ ULONG ulMaxStorage,
             /* [in] */ ULONG ulUnitsPerWeek,
-            /* [in] */ BYTE bLogonHours,
+            /* [in] */ ICLogonHours *pLogonHours,
             /* [in] */ ULONG ulBadPwdCount,
             /* [in] */ ULONG ulNumLogons,
             /* [in] */ BSTR bsLogonServer,
@@ -1609,7 +2005,7 @@ EXTERN_C const IID IID_ICUserInfo3;
             /* [retval][out] */ ULONG *pVal) = 0;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_LogonHours( 
-            /* [retval][out] */ BYTE *pVal) = 0;
+            /* [retval][out] */ ICLogonHours **pVal) = 0;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_BadPwdCount( 
             /* [retval][out] */ ULONG *pVal) = 0;
@@ -1721,7 +2117,7 @@ EXTERN_C const IID IID_ICUserInfo3;
             /* [in] */ ULONG ulAccntExpires,
             /* [in] */ ULONG ulMaxStorage,
             /* [in] */ ULONG ulUnitsPerWeek,
-            /* [in] */ BYTE bLogonHours,
+            /* [in] */ ICLogonHours *pLogonHours,
             /* [in] */ ULONG ulBadPwdCount,
             /* [in] */ ULONG ulNumLogons,
             /* [in] */ BSTR bsLogonServer,
@@ -1807,7 +2203,7 @@ EXTERN_C const IID IID_ICUserInfo3;
         
         /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_LogonHours )( 
             ICUserInfo3 * This,
-            /* [retval][out] */ BYTE *pVal);
+            /* [retval][out] */ ICLogonHours **pVal);
         
         /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_BadPwdCount )( 
             ICUserInfo3 * This,
@@ -1888,8 +2284,8 @@ EXTERN_C const IID IID_ICUserInfo3;
     ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
-#define ICUserInfo3_Initialise(This,bsName,bsPassword,ulPasswordAge,ulPrivilege,bsHomeDir,bsComment,ulFlags,bsScriptPath,ulAuthFlags,bsFullName,bsUsrComment,bsParams,bsWorkstations,ulLastLogon,ulLastLogoff,ulAccntExpires,ulMaxStorage,ulUnitsPerWeek,bLogonHours,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,ulCodePage,ulUserId,ulPrimaryGrpId,bsProfile,bsHomeDirDrive,ulPwdExpired)	\
-    ( (This)->lpVtbl -> Initialise(This,bsName,bsPassword,ulPasswordAge,ulPrivilege,bsHomeDir,bsComment,ulFlags,bsScriptPath,ulAuthFlags,bsFullName,bsUsrComment,bsParams,bsWorkstations,ulLastLogon,ulLastLogoff,ulAccntExpires,ulMaxStorage,ulUnitsPerWeek,bLogonHours,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,ulCodePage,ulUserId,ulPrimaryGrpId,bsProfile,bsHomeDirDrive,ulPwdExpired) ) 
+#define ICUserInfo3_Initialise(This,bsName,bsPassword,ulPasswordAge,ulPrivilege,bsHomeDir,bsComment,ulFlags,bsScriptPath,ulAuthFlags,bsFullName,bsUsrComment,bsParams,bsWorkstations,ulLastLogon,ulLastLogoff,ulAccntExpires,ulMaxStorage,ulUnitsPerWeek,pLogonHours,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,ulCodePage,ulUserId,ulPrimaryGrpId,bsProfile,bsHomeDirDrive,ulPwdExpired)	\
+    ( (This)->lpVtbl -> Initialise(This,bsName,bsPassword,ulPasswordAge,ulPrivilege,bsHomeDir,bsComment,ulFlags,bsScriptPath,ulAuthFlags,bsFullName,bsUsrComment,bsParams,bsWorkstations,ulLastLogon,ulLastLogoff,ulAccntExpires,ulMaxStorage,ulUnitsPerWeek,pLogonHours,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,ulCodePage,ulUserId,ulPrimaryGrpId,bsProfile,bsHomeDirDrive,ulPwdExpired) ) 
 
 #define ICUserInfo3_get_Name(This,pVal)	\
     ( (This)->lpVtbl -> get_Name(This,pVal) ) 
@@ -2026,7 +2422,7 @@ EXTERN_C const IID IID_ICUserInfo4;
             /* [in] */ ULONG ulAccntExpires,
             /* [in] */ ULONG ulMaxStorage,
             /* [in] */ ULONG ulUnitsPerWeek,
-            /* [in] */ BYTE bLogonHours,
+            /* [in] */ ICLogonHours *pLogonHours,
             /* [in] */ ULONG ulBadPwdCount,
             /* [in] */ ULONG ulNumLogons,
             /* [in] */ BSTR bsLogonServer,
@@ -2093,7 +2489,7 @@ EXTERN_C const IID IID_ICUserInfo4;
             /* [retval][out] */ ULONG *pVal) = 0;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_LogonHours( 
-            /* [retval][out] */ BYTE *pVal) = 0;
+            /* [retval][out] */ ICLogonHours **pVal) = 0;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_BadPwdCount( 
             /* [retval][out] */ ULONG *pVal) = 0;
@@ -2205,7 +2601,7 @@ EXTERN_C const IID IID_ICUserInfo4;
             /* [in] */ ULONG ulAccntExpires,
             /* [in] */ ULONG ulMaxStorage,
             /* [in] */ ULONG ulUnitsPerWeek,
-            /* [in] */ BYTE bLogonHours,
+            /* [in] */ ICLogonHours *pLogonHours,
             /* [in] */ ULONG ulBadPwdCount,
             /* [in] */ ULONG ulNumLogons,
             /* [in] */ BSTR bsLogonServer,
@@ -2291,7 +2687,7 @@ EXTERN_C const IID IID_ICUserInfo4;
         
         /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_LogonHours )( 
             ICUserInfo4 * This,
-            /* [retval][out] */ BYTE *pVal);
+            /* [retval][out] */ ICLogonHours **pVal);
         
         /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_BadPwdCount )( 
             ICUserInfo4 * This,
@@ -2372,8 +2768,8 @@ EXTERN_C const IID IID_ICUserInfo4;
     ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
-#define ICUserInfo4_Initialise(This,bsName,bsPassword,ulPasswordAge,ulPrivilege,bsHomeDir,bsComment,ulFlags,bsScriptPath,ulAuthFlags,bsFullName,bsUsrComment,bsParams,bsWorkstations,ulLastLogon,ulLastLogoff,ulAccntExpires,ulMaxStorage,ulUnitsPerWeek,bLogonHours,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,ulCodePage,bsUserSid,ulPrimaryGrpId,bsProfile,bsHomeDirDrive,ulPwdExpired)	\
-    ( (This)->lpVtbl -> Initialise(This,bsName,bsPassword,ulPasswordAge,ulPrivilege,bsHomeDir,bsComment,ulFlags,bsScriptPath,ulAuthFlags,bsFullName,bsUsrComment,bsParams,bsWorkstations,ulLastLogon,ulLastLogoff,ulAccntExpires,ulMaxStorage,ulUnitsPerWeek,bLogonHours,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,ulCodePage,bsUserSid,ulPrimaryGrpId,bsProfile,bsHomeDirDrive,ulPwdExpired) ) 
+#define ICUserInfo4_Initialise(This,bsName,bsPassword,ulPasswordAge,ulPrivilege,bsHomeDir,bsComment,ulFlags,bsScriptPath,ulAuthFlags,bsFullName,bsUsrComment,bsParams,bsWorkstations,ulLastLogon,ulLastLogoff,ulAccntExpires,ulMaxStorage,ulUnitsPerWeek,pLogonHours,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,ulCodePage,bsUserSid,ulPrimaryGrpId,bsProfile,bsHomeDirDrive,ulPwdExpired)	\
+    ( (This)->lpVtbl -> Initialise(This,bsName,bsPassword,ulPasswordAge,ulPrivilege,bsHomeDir,bsComment,ulFlags,bsScriptPath,ulAuthFlags,bsFullName,bsUsrComment,bsParams,bsWorkstations,ulLastLogon,ulLastLogoff,ulAccntExpires,ulMaxStorage,ulUnitsPerWeek,pLogonHours,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,ulCodePage,bsUserSid,ulPrimaryGrpId,bsProfile,bsHomeDirDrive,ulPwdExpired) ) 
 
 #define ICUserInfo4_get_Name(This,pVal)	\
     ( (This)->lpVtbl -> get_Name(This,pVal) ) 
@@ -2694,7 +3090,7 @@ EXTERN_C const IID IID_ICUserInfo11;
             /* [in] */ BSTR bsWorkstations,
             /* [in] */ ULONG ulMaxStorage,
             /* [in] */ ULONG ulUnitsPerWeek,
-            /* [in] */ BYTE bLogonHours,
+            /* [in] */ ICLogonHours *pLogonHours,
             /* [in] */ ULONG ulCodePage) = 0;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_Name( 
@@ -2752,7 +3148,7 @@ EXTERN_C const IID IID_ICUserInfo11;
             /* [retval][out] */ ULONG *pVal) = 0;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_LogonHours( 
-            /* [retval][out] */ BYTE *pVal) = 0;
+            /* [retval][out] */ ICLogonHours **pVal) = 0;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_CodePage( 
             /* [retval][out] */ ULONG *pVal) = 0;
@@ -2837,7 +3233,7 @@ EXTERN_C const IID IID_ICUserInfo11;
             /* [in] */ BSTR bsWorkstations,
             /* [in] */ ULONG ulMaxStorage,
             /* [in] */ ULONG ulUnitsPerWeek,
-            /* [in] */ BYTE bLogonHours,
+            /* [in] */ ICLogonHours *pLogonHours,
             /* [in] */ ULONG ulCodePage);
         
         /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_Name )( 
@@ -2914,7 +3310,7 @@ EXTERN_C const IID IID_ICUserInfo11;
         
         /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_LogonHours )( 
             ICUserInfo11 * This,
-            /* [retval][out] */ BYTE *pVal);
+            /* [retval][out] */ ICLogonHours **pVal);
         
         /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_CodePage )( 
             ICUserInfo11 * This,
@@ -2959,8 +3355,8 @@ EXTERN_C const IID IID_ICUserInfo11;
     ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
-#define ICUserInfo11_Initialise(This,bsName,bsComment,bsUsrComment,bsFullName,ulPrivilege,ulAuthFlags,ulPasswordAge,bsHomeDir,bsParams,ulLastLogon,ulLastLogoff,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,bsWorkstations,ulMaxStorage,ulUnitsPerWeek,bLogonHours,ulCodePage)	\
-    ( (This)->lpVtbl -> Initialise(This,bsName,bsComment,bsUsrComment,bsFullName,ulPrivilege,ulAuthFlags,ulPasswordAge,bsHomeDir,bsParams,ulLastLogon,ulLastLogoff,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,bsWorkstations,ulMaxStorage,ulUnitsPerWeek,bLogonHours,ulCodePage) ) 
+#define ICUserInfo11_Initialise(This,bsName,bsComment,bsUsrComment,bsFullName,ulPrivilege,ulAuthFlags,ulPasswordAge,bsHomeDir,bsParams,ulLastLogon,ulLastLogoff,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,bsWorkstations,ulMaxStorage,ulUnitsPerWeek,pLogonHours,ulCodePage)	\
+    ( (This)->lpVtbl -> Initialise(This,bsName,bsComment,bsUsrComment,bsFullName,ulPrivilege,ulAuthFlags,ulPasswordAge,bsHomeDir,bsParams,ulLastLogon,ulLastLogoff,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,bsWorkstations,ulMaxStorage,ulUnitsPerWeek,pLogonHours,ulCodePage) ) 
 
 #define ICUserInfo11_get_Name(This,pVal)	\
     ( (This)->lpVtbl -> get_Name(This,pVal) ) 
@@ -3414,7 +3810,7 @@ EXTERN_C const IID IID_ICUserInfo22;
             /* [in] */ ULONG ulAccntExpires,
             /* [in] */ ULONG ulMaxStorage,
             /* [in] */ ULONG ulUnitsPerWeek,
-            /* [in] */ BYTE bLogonHours,
+            /* [in] */ ICLogonHours *pLogonHours,
             /* [in] */ ULONG ulBadPwdCount,
             /* [in] */ ULONG ulNumLogons,
             /* [in] */ BSTR bsLogonServer,
@@ -3476,7 +3872,7 @@ EXTERN_C const IID IID_ICUserInfo22;
             /* [retval][out] */ ULONG *pVal) = 0;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_LogonHours( 
-            /* [retval][out] */ BYTE *pVal) = 0;
+            /* [retval][out] */ ICLogonHours **pVal) = 0;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_BadPwdCount( 
             /* [retval][out] */ ULONG *pVal) = 0;
@@ -3573,7 +3969,7 @@ EXTERN_C const IID IID_ICUserInfo22;
             /* [in] */ ULONG ulAccntExpires,
             /* [in] */ ULONG ulMaxStorage,
             /* [in] */ ULONG ulUnitsPerWeek,
-            /* [in] */ BYTE bLogonHours,
+            /* [in] */ ICLogonHours *pLogonHours,
             /* [in] */ ULONG ulBadPwdCount,
             /* [in] */ ULONG ulNumLogons,
             /* [in] */ BSTR bsLogonServer,
@@ -3654,7 +4050,7 @@ EXTERN_C const IID IID_ICUserInfo22;
         
         /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_LogonHours )( 
             ICUserInfo22 * This,
-            /* [retval][out] */ BYTE *pVal);
+            /* [retval][out] */ ICLogonHours **pVal);
         
         /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_BadPwdCount )( 
             ICUserInfo22 * This,
@@ -3715,8 +4111,8 @@ EXTERN_C const IID IID_ICUserInfo22;
     ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
-#define ICUserInfo22_Initialise(This,bsName,bsPassword,ulPasswordAge,ulPrivilege,bsHomeDir,bsComment,ulFlags,bsScriptPath,ulAuthFlags,bsFullName,bsUsrComment,bsParams,bsWorkstations,ulLastLogon,ulLastLogoff,ulAccntExpires,ulMaxStorage,ulUnitsPerWeek,bLogonHours,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,ulCodePage)	\
-    ( (This)->lpVtbl -> Initialise(This,bsName,bsPassword,ulPasswordAge,ulPrivilege,bsHomeDir,bsComment,ulFlags,bsScriptPath,ulAuthFlags,bsFullName,bsUsrComment,bsParams,bsWorkstations,ulLastLogon,ulLastLogoff,ulAccntExpires,ulMaxStorage,ulUnitsPerWeek,bLogonHours,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,ulCodePage) ) 
+#define ICUserInfo22_Initialise(This,bsName,bsPassword,ulPasswordAge,ulPrivilege,bsHomeDir,bsComment,ulFlags,bsScriptPath,ulAuthFlags,bsFullName,bsUsrComment,bsParams,bsWorkstations,ulLastLogon,ulLastLogoff,ulAccntExpires,ulMaxStorage,ulUnitsPerWeek,pLogonHours,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,ulCodePage)	\
+    ( (This)->lpVtbl -> Initialise(This,bsName,bsPassword,ulPasswordAge,ulPrivilege,bsHomeDir,bsComment,ulFlags,bsScriptPath,ulAuthFlags,bsFullName,bsUsrComment,bsParams,bsWorkstations,ulLastLogon,ulLastLogoff,ulAccntExpires,ulMaxStorage,ulUnitsPerWeek,pLogonHours,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,ulCodePage) ) 
 
 #define ICUserInfo22_get_Name(This,pVal)	\
     ( (This)->lpVtbl -> get_Name(This,pVal) ) 
@@ -6137,13 +6533,13 @@ EXTERN_C const IID IID_ICUserInfo1020;
     public:
         virtual /* [id] */ HRESULT STDMETHODCALLTYPE Initialise( 
             /* [in] */ ULONG ulUnitsPerWeek,
-            /* [in] */ BYTE bLogonHours) = 0;
+            /* [in] */ ICLogonHours *pLogonHours) = 0;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_UnitsPerWeek( 
             /* [retval][out] */ ULONG *pVal) = 0;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_LogonHours( 
-            /* [retval][out] */ BYTE *pVal) = 0;
+            /* [retval][out] */ ICLogonHours **pVal) = 0;
         
         virtual /* [id] */ HRESULT STDMETHODCALLTYPE Clear( void) = 0;
         
@@ -6208,7 +6604,7 @@ EXTERN_C const IID IID_ICUserInfo1020;
         /* [id] */ HRESULT ( STDMETHODCALLTYPE *Initialise )( 
             ICUserInfo1020 * This,
             /* [in] */ ULONG ulUnitsPerWeek,
-            /* [in] */ BYTE bLogonHours);
+            /* [in] */ ICLogonHours *pLogonHours);
         
         /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_UnitsPerWeek )( 
             ICUserInfo1020 * This,
@@ -6216,7 +6612,7 @@ EXTERN_C const IID IID_ICUserInfo1020;
         
         /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_LogonHours )( 
             ICUserInfo1020 * This,
-            /* [retval][out] */ BYTE *pVal);
+            /* [retval][out] */ ICLogonHours **pVal);
         
         /* [id] */ HRESULT ( STDMETHODCALLTYPE *Clear )( 
             ICUserInfo1020 * This);
@@ -6257,8 +6653,8 @@ EXTERN_C const IID IID_ICUserInfo1020;
     ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
-#define ICUserInfo1020_Initialise(This,ulUnitsPerWeek,bLogonHours)	\
-    ( (This)->lpVtbl -> Initialise(This,ulUnitsPerWeek,bLogonHours) ) 
+#define ICUserInfo1020_Initialise(This,ulUnitsPerWeek,pLogonHours)	\
+    ( (This)->lpVtbl -> Initialise(This,ulUnitsPerWeek,pLogonHours) ) 
 
 #define ICUserInfo1020_get_UnitsPerWeek(This,pVal)	\
     ( (This)->lpVtbl -> get_UnitsPerWeek(This,pVal) ) 
@@ -7217,7 +7613,7 @@ EXTERN_C const IID IID_ICNetUser;
             /* [in] */ ULONG ulAccntExpires,
             /* [in] */ ULONG ulMaxStorage,
             /* [in] */ ULONG ulUnitsPerWeek,
-            /* [in] */ BYTE bLogonHours,
+            /* [in] */ ICLogonHours *pLogonHours,
             /* [in] */ ULONG ulBadPwdCount,
             /* [in] */ ULONG ulNumLogons,
             /* [in] */ BSTR bsLogonServer,
@@ -7244,7 +7640,7 @@ EXTERN_C const IID IID_ICNetUser;
             /* [in] */ ULONG ulAccntExpires,
             /* [in] */ ULONG ulMaxStorage,
             /* [in] */ ULONG ulUnitsPerWeek,
-            /* [in] */ BYTE bLogonHours,
+            /* [in] */ ICLogonHours *pLogonHours,
             /* [in] */ ULONG ulBadPwdCount,
             /* [in] */ ULONG ulNumLogons,
             /* [in] */ BSTR bsLogonServer,
@@ -7276,7 +7672,7 @@ EXTERN_C const IID IID_ICNetUser;
             /* [in] */ ULONG ulAccntExpires,
             /* [in] */ ULONG ulMaxStorage,
             /* [in] */ ULONG ulUnitsPerWeek,
-            /* [in] */ BYTE bLogonHours,
+            /* [in] */ ICLogonHours *pLogonHours,
             /* [in] */ ULONG ulBadPwdCount,
             /* [in] */ ULONG ulNumLogons,
             /* [in] */ BSTR bsLogonServer,
@@ -7315,7 +7711,7 @@ EXTERN_C const IID IID_ICNetUser;
             /* [in] */ BSTR bsWorkstations,
             /* [in] */ ULONG ulMaxStorage,
             /* [in] */ ULONG ulUnitsPerWeek,
-            /* [in] */ BYTE bLogonHours,
+            /* [in] */ ICLogonHours *pLogonHours,
             /* [in] */ ULONG ulCodePage,
             /* [retval][out] */ ICUserInfo11 **ppUserInfo11) = 0;
         
@@ -7350,7 +7746,7 @@ EXTERN_C const IID IID_ICNetUser;
             /* [in] */ ULONG ulAccntExpires,
             /* [in] */ ULONG ulMaxStorage,
             /* [in] */ ULONG ulUnitsPerWeek,
-            /* [in] */ BYTE bLogonHours,
+            /* [in] */ ICLogonHours *pLogonHours,
             /* [in] */ ULONG ulBadPwdCount,
             /* [in] */ ULONG ulNumLogons,
             /* [in] */ BSTR bsLogonServer,
@@ -7428,7 +7824,7 @@ EXTERN_C const IID IID_ICNetUser;
         
         virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetUserInfo1020( 
             /* [in] */ ULONG ulUnitsPerWeek,
-            /* [in] */ BYTE bLogonHours,
+            /* [in] */ ICLogonHours *pLogonHours,
             /* [retval][out] */ ICUserInfo1020 **ppUserInfo1020) = 0;
         
         virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetUserInfo1023( 
@@ -7473,6 +7869,9 @@ EXTERN_C const IID IID_ICNetUser;
         virtual /* [id] */ HRESULT STDMETHODCALLTYPE CastToUserInfo1( 
             /* [in] */ IUnknown *pUnk,
             /* [retval][out] */ ICUserInfo1 **ppUserInfo1) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetLogonHoursAllActive( 
+            /* [retval][out] */ ICLogonHours **pLogonHours) = 0;
         
     };
     
@@ -7569,7 +7968,7 @@ EXTERN_C const IID IID_ICNetUser;
             /* [in] */ ULONG ulAccntExpires,
             /* [in] */ ULONG ulMaxStorage,
             /* [in] */ ULONG ulUnitsPerWeek,
-            /* [in] */ BYTE bLogonHours,
+            /* [in] */ ICLogonHours *pLogonHours,
             /* [in] */ ULONG ulBadPwdCount,
             /* [in] */ ULONG ulNumLogons,
             /* [in] */ BSTR bsLogonServer,
@@ -7597,7 +7996,7 @@ EXTERN_C const IID IID_ICNetUser;
             /* [in] */ ULONG ulAccntExpires,
             /* [in] */ ULONG ulMaxStorage,
             /* [in] */ ULONG ulUnitsPerWeek,
-            /* [in] */ BYTE bLogonHours,
+            /* [in] */ ICLogonHours *pLogonHours,
             /* [in] */ ULONG ulBadPwdCount,
             /* [in] */ ULONG ulNumLogons,
             /* [in] */ BSTR bsLogonServer,
@@ -7630,7 +8029,7 @@ EXTERN_C const IID IID_ICNetUser;
             /* [in] */ ULONG ulAccntExpires,
             /* [in] */ ULONG ulMaxStorage,
             /* [in] */ ULONG ulUnitsPerWeek,
-            /* [in] */ BYTE bLogonHours,
+            /* [in] */ ICLogonHours *pLogonHours,
             /* [in] */ ULONG ulBadPwdCount,
             /* [in] */ ULONG ulNumLogons,
             /* [in] */ BSTR bsLogonServer,
@@ -7671,7 +8070,7 @@ EXTERN_C const IID IID_ICNetUser;
             /* [in] */ BSTR bsWorkstations,
             /* [in] */ ULONG ulMaxStorage,
             /* [in] */ ULONG ulUnitsPerWeek,
-            /* [in] */ BYTE bLogonHours,
+            /* [in] */ ICLogonHours *pLogonHours,
             /* [in] */ ULONG ulCodePage,
             /* [retval][out] */ ICUserInfo11 **ppUserInfo11);
         
@@ -7709,7 +8108,7 @@ EXTERN_C const IID IID_ICNetUser;
             /* [in] */ ULONG ulAccntExpires,
             /* [in] */ ULONG ulMaxStorage,
             /* [in] */ ULONG ulUnitsPerWeek,
-            /* [in] */ BYTE bLogonHours,
+            /* [in] */ ICLogonHours *pLogonHours,
             /* [in] */ ULONG ulBadPwdCount,
             /* [in] */ ULONG ulNumLogons,
             /* [in] */ BSTR bsLogonServer,
@@ -7803,7 +8202,7 @@ EXTERN_C const IID IID_ICNetUser;
         /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetUserInfo1020 )( 
             ICNetUser * This,
             /* [in] */ ULONG ulUnitsPerWeek,
-            /* [in] */ BYTE bLogonHours,
+            /* [in] */ ICLogonHours *pLogonHours,
             /* [retval][out] */ ICUserInfo1020 **ppUserInfo1020);
         
         /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetUserInfo1023 )( 
@@ -7859,6 +8258,10 @@ EXTERN_C const IID IID_ICNetUser;
             /* [in] */ IUnknown *pUnk,
             /* [retval][out] */ ICUserInfo1 **ppUserInfo1);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetLogonHoursAllActive )( 
+            ICNetUser * This,
+            /* [retval][out] */ ICLogonHours **pLogonHours);
+        
         END_INTERFACE
     } ICNetUserVtbl;
 
@@ -7901,20 +8304,20 @@ EXTERN_C const IID IID_ICNetUser;
 #define ICNetUser_GetUserInfo1(This,bsName,bsPwd,ulPwdAge,ulPriv,bsHomeDir,bsComment,ulFlags,bsScriptPath,ppUserInfo1)	\
     ( (This)->lpVtbl -> GetUserInfo1(This,bsName,bsPwd,ulPwdAge,ulPriv,bsHomeDir,bsComment,ulFlags,bsScriptPath,ppUserInfo1) ) 
 
-#define ICNetUser_GetUserInfo2(This,bsName,bsPassword,ulPasswordAge,ulPrivilege,bsHomeDir,bsComment,ulFlags,bsScriptPath,ulAuthFlags,bsFullName,bsUsrComment,bsParams,bsWorkstations,ulLastLogon,ulLastLogoff,ulAccntExpires,ulMaxStorage,ulUnitsPerWeek,bLogonHours,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,ulCodePage,ppUserInfo2)	\
-    ( (This)->lpVtbl -> GetUserInfo2(This,bsName,bsPassword,ulPasswordAge,ulPrivilege,bsHomeDir,bsComment,ulFlags,bsScriptPath,ulAuthFlags,bsFullName,bsUsrComment,bsParams,bsWorkstations,ulLastLogon,ulLastLogoff,ulAccntExpires,ulMaxStorage,ulUnitsPerWeek,bLogonHours,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,ulCodePage,ppUserInfo2) ) 
+#define ICNetUser_GetUserInfo2(This,bsName,bsPassword,ulPasswordAge,ulPrivilege,bsHomeDir,bsComment,ulFlags,bsScriptPath,ulAuthFlags,bsFullName,bsUsrComment,bsParams,bsWorkstations,ulLastLogon,ulLastLogoff,ulAccntExpires,ulMaxStorage,ulUnitsPerWeek,pLogonHours,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,ulCodePage,ppUserInfo2)	\
+    ( (This)->lpVtbl -> GetUserInfo2(This,bsName,bsPassword,ulPasswordAge,ulPrivilege,bsHomeDir,bsComment,ulFlags,bsScriptPath,ulAuthFlags,bsFullName,bsUsrComment,bsParams,bsWorkstations,ulLastLogon,ulLastLogoff,ulAccntExpires,ulMaxStorage,ulUnitsPerWeek,pLogonHours,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,ulCodePage,ppUserInfo2) ) 
 
-#define ICNetUser_GetUserInfo3(This,bsName,bsPassword,ulPasswordAge,ulPrivilege,bsHomeDir,bsComment,ulFlags,bsScriptPath,ulAuthFlags,bsFullName,bsUsrComment,bsParams,bsWorkstations,ulLastLogon,ulLastLogoff,ulAccntExpires,ulMaxStorage,ulUnitsPerWeek,bLogonHours,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,ulCodePage,ulUserId,ulPrimaryGrpId,bsProfile,bsHomeDirDrive,ulPwdExpired,ppUserInfo3)	\
-    ( (This)->lpVtbl -> GetUserInfo3(This,bsName,bsPassword,ulPasswordAge,ulPrivilege,bsHomeDir,bsComment,ulFlags,bsScriptPath,ulAuthFlags,bsFullName,bsUsrComment,bsParams,bsWorkstations,ulLastLogon,ulLastLogoff,ulAccntExpires,ulMaxStorage,ulUnitsPerWeek,bLogonHours,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,ulCodePage,ulUserId,ulPrimaryGrpId,bsProfile,bsHomeDirDrive,ulPwdExpired,ppUserInfo3) ) 
+#define ICNetUser_GetUserInfo3(This,bsName,bsPassword,ulPasswordAge,ulPrivilege,bsHomeDir,bsComment,ulFlags,bsScriptPath,ulAuthFlags,bsFullName,bsUsrComment,bsParams,bsWorkstations,ulLastLogon,ulLastLogoff,ulAccntExpires,ulMaxStorage,ulUnitsPerWeek,pLogonHours,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,ulCodePage,ulUserId,ulPrimaryGrpId,bsProfile,bsHomeDirDrive,ulPwdExpired,ppUserInfo3)	\
+    ( (This)->lpVtbl -> GetUserInfo3(This,bsName,bsPassword,ulPasswordAge,ulPrivilege,bsHomeDir,bsComment,ulFlags,bsScriptPath,ulAuthFlags,bsFullName,bsUsrComment,bsParams,bsWorkstations,ulLastLogon,ulLastLogoff,ulAccntExpires,ulMaxStorage,ulUnitsPerWeek,pLogonHours,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,ulCodePage,ulUserId,ulPrimaryGrpId,bsProfile,bsHomeDirDrive,ulPwdExpired,ppUserInfo3) ) 
 
-#define ICNetUser_GetUserInfo4(This,bsName,bsPassword,ulPasswordAge,ulPrivilege,bsHomeDir,bsComment,ulFlags,bsScriptPath,ulAuthFlags,bsFullName,bsUsrComment,bsParams,bsWorkstations,ulLastLogon,ulLastLogoff,ulAccntExpires,ulMaxStorage,ulUnitsPerWeek,bLogonHours,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,ulCodePage,bsUserSid,ulPrimaryGrpId,bsProfile,bsHomeDirDrive,ulPwdExpired,ppUserInfo4)	\
-    ( (This)->lpVtbl -> GetUserInfo4(This,bsName,bsPassword,ulPasswordAge,ulPrivilege,bsHomeDir,bsComment,ulFlags,bsScriptPath,ulAuthFlags,bsFullName,bsUsrComment,bsParams,bsWorkstations,ulLastLogon,ulLastLogoff,ulAccntExpires,ulMaxStorage,ulUnitsPerWeek,bLogonHours,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,ulCodePage,bsUserSid,ulPrimaryGrpId,bsProfile,bsHomeDirDrive,ulPwdExpired,ppUserInfo4) ) 
+#define ICNetUser_GetUserInfo4(This,bsName,bsPassword,ulPasswordAge,ulPrivilege,bsHomeDir,bsComment,ulFlags,bsScriptPath,ulAuthFlags,bsFullName,bsUsrComment,bsParams,bsWorkstations,ulLastLogon,ulLastLogoff,ulAccntExpires,ulMaxStorage,ulUnitsPerWeek,pLogonHours,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,ulCodePage,bsUserSid,ulPrimaryGrpId,bsProfile,bsHomeDirDrive,ulPwdExpired,ppUserInfo4)	\
+    ( (This)->lpVtbl -> GetUserInfo4(This,bsName,bsPassword,ulPasswordAge,ulPrivilege,bsHomeDir,bsComment,ulFlags,bsScriptPath,ulAuthFlags,bsFullName,bsUsrComment,bsParams,bsWorkstations,ulLastLogon,ulLastLogoff,ulAccntExpires,ulMaxStorage,ulUnitsPerWeek,pLogonHours,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,ulCodePage,bsUserSid,ulPrimaryGrpId,bsProfile,bsHomeDirDrive,ulPwdExpired,ppUserInfo4) ) 
 
 #define ICNetUser_GetUserInfo10(This,bsName,bsComment,bsUsrComment,bsFullName,ppUserInfo10)	\
     ( (This)->lpVtbl -> GetUserInfo10(This,bsName,bsComment,bsUsrComment,bsFullName,ppUserInfo10) ) 
 
-#define ICNetUser_GetUserInfo11(This,bsName,bsComment,bsUsrComment,bsFullName,ulPrivilege,ulAuthFlags,ulPasswordAge,bsHomeDir,bsParams,ulLastLogon,ulLastLogoff,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,bsWorkstations,ulMaxStorage,ulUnitsPerWeek,bLogonHours,ulCodePage,ppUserInfo11)	\
-    ( (This)->lpVtbl -> GetUserInfo11(This,bsName,bsComment,bsUsrComment,bsFullName,ulPrivilege,ulAuthFlags,ulPasswordAge,bsHomeDir,bsParams,ulLastLogon,ulLastLogoff,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,bsWorkstations,ulMaxStorage,ulUnitsPerWeek,bLogonHours,ulCodePage,ppUserInfo11) ) 
+#define ICNetUser_GetUserInfo11(This,bsName,bsComment,bsUsrComment,bsFullName,ulPrivilege,ulAuthFlags,ulPasswordAge,bsHomeDir,bsParams,ulLastLogon,ulLastLogoff,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,bsWorkstations,ulMaxStorage,ulUnitsPerWeek,pLogonHours,ulCodePage,ppUserInfo11)	\
+    ( (This)->lpVtbl -> GetUserInfo11(This,bsName,bsComment,bsUsrComment,bsFullName,ulPrivilege,ulAuthFlags,ulPasswordAge,bsHomeDir,bsParams,ulLastLogon,ulLastLogoff,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,bsWorkstations,ulMaxStorage,ulUnitsPerWeek,pLogonHours,ulCodePage,ppUserInfo11) ) 
 
 #define ICNetUser_GetUserInfo20(This,bsName,bsFullName,bsComment,ulFlags,ulUserId,ppUserInfo20)	\
     ( (This)->lpVtbl -> GetUserInfo20(This,bsName,bsFullName,bsComment,ulFlags,ulUserId,ppUserInfo20) ) 
@@ -7922,8 +8325,8 @@ EXTERN_C const IID IID_ICNetUser;
 #define ICNetUser_GetUserInfo21(This,bsPassword,ppUserInfo21)	\
     ( (This)->lpVtbl -> GetUserInfo21(This,bsPassword,ppUserInfo21) ) 
 
-#define ICNetUser_GetUserInfo22(This,bsName,bsPassword,ulPasswordAge,ulPrivilege,bsHomeDir,bsComment,ulFlags,bsScriptPath,ulAuthFlags,bsFullName,bsUsrComment,bsParams,bsWorkstations,ulLastLogon,ulLastLogoff,ulAccntExpires,ulMaxStorage,ulUnitsPerWeek,bLogonHours,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,ulCodePage,ppUserInfo22)	\
-    ( (This)->lpVtbl -> GetUserInfo22(This,bsName,bsPassword,ulPasswordAge,ulPrivilege,bsHomeDir,bsComment,ulFlags,bsScriptPath,ulAuthFlags,bsFullName,bsUsrComment,bsParams,bsWorkstations,ulLastLogon,ulLastLogoff,ulAccntExpires,ulMaxStorage,ulUnitsPerWeek,bLogonHours,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,ulCodePage,ppUserInfo22) ) 
+#define ICNetUser_GetUserInfo22(This,bsName,bsPassword,ulPasswordAge,ulPrivilege,bsHomeDir,bsComment,ulFlags,bsScriptPath,ulAuthFlags,bsFullName,bsUsrComment,bsParams,bsWorkstations,ulLastLogon,ulLastLogoff,ulAccntExpires,ulMaxStorage,ulUnitsPerWeek,pLogonHours,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,ulCodePage,ppUserInfo22)	\
+    ( (This)->lpVtbl -> GetUserInfo22(This,bsName,bsPassword,ulPasswordAge,ulPrivilege,bsHomeDir,bsComment,ulFlags,bsScriptPath,ulAuthFlags,bsFullName,bsUsrComment,bsParams,bsWorkstations,ulLastLogon,ulLastLogoff,ulAccntExpires,ulMaxStorage,ulUnitsPerWeek,pLogonHours,ulBadPwdCount,ulNumLogons,bsLogonServer,ulCountryCode,ulCodePage,ppUserInfo22) ) 
 
 #define ICNetUser_GetUserInfo23(This,bsName,bsFullName,bsComment,ulFlags,bsUserSid,ppUserInfo23)	\
     ( (This)->lpVtbl -> GetUserInfo23(This,bsName,bsFullName,bsComment,ulFlags,bsUserSid,ppUserInfo23) ) 
@@ -7970,8 +8373,8 @@ EXTERN_C const IID IID_ICNetUser;
 #define ICNetUser_GetUserInfo1018(This,ulMaxStorage,ppUserInfo1018)	\
     ( (This)->lpVtbl -> GetUserInfo1018(This,ulMaxStorage,ppUserInfo1018) ) 
 
-#define ICNetUser_GetUserInfo1020(This,ulUnitsPerWeek,bLogonHours,ppUserInfo1020)	\
-    ( (This)->lpVtbl -> GetUserInfo1020(This,ulUnitsPerWeek,bLogonHours,ppUserInfo1020) ) 
+#define ICNetUser_GetUserInfo1020(This,ulUnitsPerWeek,pLogonHours,ppUserInfo1020)	\
+    ( (This)->lpVtbl -> GetUserInfo1020(This,ulUnitsPerWeek,pLogonHours,ppUserInfo1020) ) 
 
 #define ICNetUser_GetUserInfo1023(This,bsLogonServer,ppUserInfo1023)	\
     ( (This)->lpVtbl -> GetUserInfo1023(This,bsLogonServer,ppUserInfo1023) ) 
@@ -8002,6 +8405,9 @@ EXTERN_C const IID IID_ICNetUser;
 
 #define ICNetUser_CastToUserInfo1(This,pUnk,ppUserInfo1)	\
     ( (This)->lpVtbl -> CastToUserInfo1(This,pUnk,ppUserInfo1) ) 
+
+#define ICNetUser_GetLogonHoursAllActive(This,pLogonHours)	\
+    ( (This)->lpVtbl -> GetLogonHoursAllActive(This,pLogonHours) ) 
 
 #endif /* COBJMACROS */
 
@@ -8286,6 +8692,22 @@ EXTERN_C const CLSID CLSID_CUserInfo1053;
 
 class DECLSPEC_UUID("EE03A171-E0C5-41EA-A6F5-7C4707EAD7FD")
 CUserInfo1053;
+#endif
+
+EXTERN_C const CLSID CLSID_CLogonHour;
+
+#ifdef __cplusplus
+
+class DECLSPEC_UUID("93C17FF1-D1E9-48F4-AE76-C95382A12B86")
+CLogonHour;
+#endif
+
+EXTERN_C const CLSID CLSID_CLogonHours;
+
+#ifdef __cplusplus
+
+class DECLSPEC_UUID("A6C10DD1-C14C-4429-BB6A-CF2FC55E6073")
+CLogonHours;
 #endif
 #endif /* __CWinNetManagerLib_LIBRARY_DEFINED__ */
 

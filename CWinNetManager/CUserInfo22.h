@@ -100,7 +100,7 @@ public:
 		, ULONG ulAccntExpires
 		, ULONG ulMaxStorage
 		, ULONG ulUnitsPerWeek
-		, BYTE bLogonHours
+		, ICLogonHours* bLogonHours
 		, ULONG ulBadPwdCount
 		, ULONG ulNumLogons
 		, BSTR bsLogonServer
@@ -124,7 +124,7 @@ public:
 	STDMETHOD(get_AccntExpires)(ULONG* pVal);
 	STDMETHOD(get_MaxStorage)(ULONG* pVal);
 	STDMETHOD(get_UnitsPerWeek)(ULONG* pVal);
-	STDMETHOD(get_LogonHours)(BYTE* pVal);
+	STDMETHOD(get_LogonHours)(ICLogonHours** pVal);
 	STDMETHOD(get_BadPwdCount)(ULONG* pVal);
 	STDMETHOD(get_NumLogons)(ULONG* pVal);
 	STDMETHOD(get_LogonServer)(BSTR* pVal);
@@ -150,7 +150,7 @@ public:
 		ULONG   m_ulAccntExpires;
 		ULONG   m_ulMaxStorage;
 		ULONG   m_ulUnitsPerWeek;
-		BYTE    m_bLogonHours;
+		CComPtr<ICLogonHours>    m_bLogonHours;
 		ULONG   m_ulBadPwdCount;
 		ULONG   m_ulNumLogons;
 		_bstr_t m_bsLogonServer;

@@ -136,6 +136,12 @@
     <ClCompile Include="CUserInfo1053.cpp">
       <Filter>CUserInfo</Filter>
     </ClCompile>
+    <ClCompile Include="CLogonHour.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLogonHours.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -258,6 +264,12 @@
     <ClInclude Include="CUserInfoUtils.h">
       <Filter>CUserInfo</Filter>
     </ClInclude>
+    <ClInclude Include="CLogonHour.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLogonHours.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="CWinNetManager.rc">
@@ -371,6 +383,12 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="CUserInfo1053.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CLogonHour.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CLogonHours.rgs">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

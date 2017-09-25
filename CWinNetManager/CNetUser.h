@@ -35,6 +35,7 @@
 #include "CUserInfo1051.h"
 #include "CUserInfo1052.h"
 #include "CUserInfo1053.h"
+#include "CLogonHours.h"
 
 #if defined(_WIN32_WCE) && !defined(_CE_DCOM) && !defined(_CE_ALLOW_SINGLE_THREADED_OBJECTS_IN_MTA)
 #error "Single-threaded COM objects are not properly supported on Windows CE platform, such as the Windows Mobile platforms that do not include full DCOM support. Define _CE_ALLOW_SINGLE_THREADED_OBJECTS_IN_MTA to force ATL to support creating single-thread COM object's and allow use of it's single-threaded COM object implementations. The threading model in your rgs file was set to 'Free' as that is the only threading model supported in non DCOM Windows CE platforms."
@@ -120,7 +121,7 @@ public:
 		, ULONG ulAccntExpires
 		, ULONG ulMaxStorage
 		, ULONG ulUnitsPerWeek
-		, BYTE bLogonHours
+		, ICLogonHours* bLogonHours
 		, ULONG ulBadPwdCount
 		, ULONG ulNumLogons
 		, BSTR bsLogonServer
@@ -147,7 +148,7 @@ public:
 		, ULONG ulAccntExpires
 		, ULONG ulMaxStorage
 		, ULONG ulUnitsPerWeek
-		, BYTE bLogonHours
+		, ICLogonHours* bLogonHours
 		, ULONG ulBadPwdCount
 		, ULONG ulNumLogons
 		, BSTR bsLogonServer
@@ -179,7 +180,7 @@ public:
 		, ULONG ulAccntExpires
 		, ULONG ulMaxStorage
 		, ULONG ulUnitsPerWeek
-		, BYTE bLogonHours
+		, ICLogonHours* bLogonHours
 		, ULONG ulBadPwdCount
 		, ULONG ulNumLogons
 		, BSTR bsLogonServer
@@ -218,7 +219,7 @@ public:
 		, BSTR bsWorkstations
 		, ULONG ulMaxStorage
 		, ULONG ulUnitsPerWeek
-		, BYTE bLogonHours
+		, ICLogonHours* bLogonHours
 		, ULONG ulCodePage
 		, ICUserInfo11** ppUserInfo11);
 
@@ -251,7 +252,7 @@ public:
 		, ULONG ulAccntExpires
 		, ULONG ulMaxStorage
 		, ULONG ulUnitsPerWeek
-		, BYTE bLogonHours
+		, ICLogonHours* bLogonHours
 		, ULONG ulBadPwdCount
 		, ULONG ulNumLogons
 		, BSTR bsLogonServer
@@ -290,7 +291,7 @@ public:
 	STDMETHOD(GetUserInfo1018)(ULONG ulMaxStorage, ICUserInfo1018** ppUserInfo1018);
 	STDMETHOD(GetUserInfo1020)(
 		ULONG ulUnitsPerWeek
-		, BYTE bLogonHours
+		, ICLogonHours* bLogonHours
 		, ICUserInfo1020** ppUserInfo1020);
 	STDMETHOD(GetUserInfo1023)(BSTR bsLogonServer, ICUserInfo1023** ppUserInfo1023);
 	STDMETHOD(GetUserInfo1024)(ULONG ulCountryCode, ICUserInfo1024** ppUserInfo1024);
@@ -307,6 +308,8 @@ public:
 
 	private:
 		HRESULT TranslateToUserInfo1(ICUserInfo1* pICUserInfo1, PUSER_INFO_1 pUserInfo1);
+public:
+	STDMETHOD(GetLogonHoursAllActive)(ICLogonHours** ppLogonHours);
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(CNetUser), CCNetUser)

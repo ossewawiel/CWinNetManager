@@ -56,8 +56,11 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo1_then_return_no_exception_a
 /// UserInfo2 structure with the default property values.
 TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo2_then_return_no_exception_and_values_set_to_default)
 {
-	CComPtr<ICUserInfo2> pUserInfo2;
-	HRESULT hr = mpCNetUser->GetUserInfo2(
+	CComPtr<ICUserInfo2> pUserInfo2; 
+	CComPtr<ICLogonHours> pLogonHours;
+	HRESULT hr = mpCNetUser->GetLogonHoursAllActive(&pLogonHours);
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	hr = mpCNetUser->GetUserInfo2(
 		PAR_UINF_NAME
 		, PAR_UINF_PWD
 		, PAR_NOT_ZERO
@@ -76,7 +79,7 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo2_then_return_no_exception_a
 		, PAR_UINF_ACCNTEXPIRES
 		, PAR_UINF_MAXSTORAGE
 		, PAR_NOT_ZERO
-		, PAR_NOT_NULLBYTE
+		, pLogonHours
 		, PAR_NOT_ZERO
 		, PAR_NOT_ZERO
 		, PAR_UINF_LOGONSERVER
@@ -87,6 +90,9 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo2_then_return_no_exception_a
 
 	//Clear the structure
 	hr = pUserInfo2->Clear();
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+
+	hr = pLogonHours->ClearAll();
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
 	// now check if all the properties have the correct values
@@ -108,7 +114,7 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo2_then_return_no_exception_a
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo2, get_AccntExpires, 0);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo2, get_MaxStorage, 0);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo2, get_UnitsPerWeek, 0);
-	ASSERT_EQ_PROP_GET_BYTE(pUserInfo2, get_LogonHours, 0);
+	ASSERT_EQ_PROP_GET_CLOGONHOURS(pUserInfo2, get_LogonHours, pLogonHours);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo2, get_BadPwdCount, 0);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo2, get_NumLogons, 0);
 	ASSERT_EQ_PROP_GET_BSTR(pUserInfo2, get_LogonServer, PAR_EMPTY);
@@ -124,7 +130,10 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo2_then_return_no_exception_a
 TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo3_then_return_no_exception_and_values_set_to_default)
 {
 	CComPtr<ICUserInfo3> pUserInfo3;
-	HRESULT hr = mpCNetUser->GetUserInfo3(
+	CComPtr<ICLogonHours> pLogonHours;
+	HRESULT hr = mpCNetUser->GetLogonHoursAllActive(&pLogonHours);
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	hr = mpCNetUser->GetUserInfo3(
 		PAR_UINF_NAME
 		, PAR_UINF_PWD
 		, PAR_NOT_ZERO
@@ -143,7 +152,7 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo3_then_return_no_exception_a
 		, PAR_UINF_ACCNTEXPIRES
 		, PAR_UINF_MAXSTORAGE
 		, PAR_NOT_ZERO
-		, PAR_NOT_NULLBYTE
+		, pLogonHours
 		, PAR_NOT_ZERO
 		, PAR_NOT_ZERO
 		, PAR_UINF_LOGONSERVER
@@ -159,6 +168,9 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo3_then_return_no_exception_a
 
 	//Clear the structure
 	hr = pUserInfo3->Clear();
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+
+	hr = pLogonHours->ClearAll();
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
 	// now check if all the properties have the correct values
@@ -180,7 +192,7 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo3_then_return_no_exception_a
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo3, get_AccntExpires, 0);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo3, get_MaxStorage, 0);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo3, get_UnitsPerWeek, 0);
-	ASSERT_EQ_PROP_GET_BYTE(pUserInfo3, get_LogonHours, 0);
+	ASSERT_EQ_PROP_GET_CLOGONHOURS(pUserInfo3, get_LogonHours, pLogonHours);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo3, get_BadPwdCount, 0);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo3, get_NumLogons, 0);
 	ASSERT_EQ_PROP_GET_BSTR(pUserInfo3, get_LogonServer, PAR_EMPTY);
@@ -201,7 +213,10 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo3_then_return_no_exception_a
 TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo4_then_return_no_exception_and_values_set_to_default)
 {
 	CComPtr<ICUserInfo4> pUserInfo4;
-	HRESULT hr = mpCNetUser->GetUserInfo4(
+	CComPtr<ICLogonHours> pLogonHours;
+	HRESULT hr = mpCNetUser->GetLogonHoursAllActive(&pLogonHours);
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	hr = mpCNetUser->GetUserInfo4(
 		PAR_UINF_NAME
 		, PAR_UINF_PWD
 		, PAR_NOT_ZERO
@@ -220,7 +235,7 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo4_then_return_no_exception_a
 		, PAR_UINF_ACCNTEXPIRES
 		, PAR_UINF_MAXSTORAGE
 		, PAR_NOT_ZERO
-		, PAR_NOT_NULLBYTE
+		, pLogonHours
 		, PAR_NOT_ZERO
 		, PAR_NOT_ZERO
 		, PAR_UINF_LOGONSERVER
@@ -236,6 +251,9 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo4_then_return_no_exception_a
 
 	//Clear the structure
 	hr = pUserInfo4->Clear();
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+
+	hr = pLogonHours->ClearAll();
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
 	// now check if all the properties have the correct values
@@ -257,7 +275,7 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo4_then_return_no_exception_a
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo4, get_AccntExpires, 0);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo4, get_MaxStorage, 0);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo4, get_UnitsPerWeek, 0);
-	ASSERT_EQ_PROP_GET_BYTE(pUserInfo4, get_LogonHours, 0);
+	ASSERT_EQ_PROP_GET_CLOGONHOURS(pUserInfo4, get_LogonHours, pLogonHours);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo4, get_BadPwdCount, 0);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo4, get_NumLogons, 0);
 	ASSERT_EQ_PROP_GET_BSTR(pUserInfo4, get_LogonServer, PAR_EMPTY);
@@ -304,7 +322,10 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo10_then_return_no_exception_
 TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo11_then_return_no_exception_and_values_set_to_default)
 {
 	CComPtr<ICUserInfo11> pUserInfo11;
-	HRESULT hr = mpCNetUser->GetUserInfo11(
+	CComPtr<ICLogonHours> pLogonHours;
+	HRESULT hr = mpCNetUser->GetLogonHoursAllActive(&pLogonHours);
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	hr = mpCNetUser->GetUserInfo11(
 		PAR_UINF_NAME
 		, PAR_UINF_COMNT
 		, PAR_UINF_USRCOMMENT
@@ -323,13 +344,16 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo11_then_return_no_exception_
 		, PAR_UINF_WORKSTATIONS
 		, PAR_UINF_MAXSTORAGE
 		, PAR_NOT_ZERO
-		, PAR_NOT_NULLBYTE
+		, pLogonHours
 		, PAR_UINF_CODEPAGE
 		, &pUserInfo11);
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
 	//Clear the structure
 	hr = pUserInfo11->Clear();
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+
+	hr = pLogonHours->ClearAll();
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
 	// now check if all the properties have the correct values
@@ -351,7 +375,7 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo11_then_return_no_exception_
 	ASSERT_EQ_PROP_GET_BSTR(pUserInfo11, get_Workstations, PAR_EMPTY);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo11, get_MaxStorage, 0);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo11, get_UnitsPerWeek, 0);
-	ASSERT_EQ_PROP_GET_BYTE(pUserInfo11, get_LogonHours, 0);
+	ASSERT_EQ_PROP_GET_CLOGONHOURS(pUserInfo11, get_LogonHours, pLogonHours);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo11, get_CodePage, 0);
 }
 
@@ -408,7 +432,10 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo21_then_return_no_exception_
 TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo22_then_return_no_exception_and_values_set_to_default)
 {
 	CComPtr<ICUserInfo22> pUserInfo22;
-	HRESULT hr = mpCNetUser->GetUserInfo22(
+	CComPtr<ICLogonHours> pLogonHours;
+	HRESULT hr = mpCNetUser->GetLogonHoursAllActive(&pLogonHours);
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	hr = mpCNetUser->GetUserInfo22(
 		PAR_UINF_NAME
 		, PAR_UINF_PWD
 		, PAR_NOT_ZERO
@@ -427,7 +454,7 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo22_then_return_no_exception_
 		, PAR_UINF_ACCNTEXPIRES
 		, PAR_UINF_MAXSTORAGE
 		, PAR_NOT_ZERO
-		, PAR_NOT_NULLBYTE
+		, pLogonHours
 		, PAR_NOT_ZERO
 		, PAR_NOT_ZERO
 		, PAR_UINF_LOGONSERVER
@@ -438,6 +465,9 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo22_then_return_no_exception_
 
 	//Clear the structure
 	hr = pUserInfo22->Clear();
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+
+	hr = pLogonHours->ClearAll();
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
 	// now check if all the properties have the correct values
@@ -459,7 +489,7 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo22_then_return_no_exception_
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo22, get_AccntExpires, 0);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo22, get_MaxStorage, 0);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo22, get_UnitsPerWeek, 0);
-	ASSERT_EQ_PROP_GET_BYTE(pUserInfo22, get_LogonHours, 0);
+	ASSERT_EQ_PROP_GET_CLOGONHOURS(pUserInfo22, get_LogonHours, pLogonHours);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo22, get_BadPwdCount, 0);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo22, get_NumLogons, 0);
 	ASSERT_EQ_PROP_GET_BSTR(pUserInfo22, get_LogonServer, PAR_EMPTY);
@@ -764,9 +794,12 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo1018_then_return_no_exceptio
 TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo1020_then_return_no_exception_and_values_set_to_default)
 {
 	CComPtr<ICUserInfo1020> pUserInfo1020;
-	HRESULT hr = mpCNetUser->GetUserInfo1020(
+	CComPtr<ICLogonHours> pLogonHours;
+	HRESULT hr = mpCNetUser->GetLogonHoursAllActive(&pLogonHours);
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	hr = mpCNetUser->GetUserInfo1020(
 		PAR_NOT_ZERO
-		, PAR_NOT_NULLBYTE
+		, pLogonHours
 		, &pUserInfo1020);
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
@@ -774,9 +807,12 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo1020_then_return_no_exceptio
 	hr = pUserInfo1020->Clear();
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
+	hr = pLogonHours->ClearAll();
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo1020, get_UnitsPerWeek, 0);
-	ASSERT_EQ_PROP_GET_BYTE(pUserInfo1020, get_LogonHours, 0);
+	ASSERT_EQ_PROP_GET_CLOGONHOURS(pUserInfo1020, get_LogonHours, pLogonHours);
 }
 
 // WHEN_CLEARING_GETUSERINFO1023_THEN_RETURN_NO_EXCEPTION_AND_VALUES_SET_TO_DEFAULT

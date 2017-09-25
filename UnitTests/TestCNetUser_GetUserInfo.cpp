@@ -64,7 +64,10 @@ TEST_F(TestCNetUser_Get, when_getuserinfo1_with_proper_parameters_then_return_no
 TEST_F(TestCNetUser_Get, when_getuserinfo2_with_proper_parameters_then_return_no_exception)
 {
 	CComPtr<ICUserInfo2> pUserInfo2;
-	HRESULT hr = mpCNetUser->GetUserInfo2(
+	CComPtr<ICLogonHours> pLogonHours;
+	HRESULT hr = mpCNetUser->GetLogonHoursAllActive(&pLogonHours);
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	hr = mpCNetUser->GetUserInfo2(
 		  PAR_UINF_NAME
 		, PAR_UINF_PWD
 		, PAR_NOT_ZERO
@@ -83,7 +86,7 @@ TEST_F(TestCNetUser_Get, when_getuserinfo2_with_proper_parameters_then_return_no
 		, PAR_UINF_ACCNTEXPIRES
 		, PAR_UINF_MAXSTORAGE
 		, PAR_NOT_ZERO
-		, PAR_NOT_NULLBYTE
+		, pLogonHours
 		, PAR_NOT_ZERO
 		, PAR_NOT_ZERO
 		, PAR_UINF_LOGONSERVER
@@ -111,7 +114,7 @@ TEST_F(TestCNetUser_Get, when_getuserinfo2_with_proper_parameters_then_return_no
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo2, get_AccntExpires,	PAR_UINF_ACCNTEXPIRES);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo2, get_MaxStorage,	PAR_UINF_MAXSTORAGE);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo2, get_UnitsPerWeek,	PAR_NOT_ZERO);
-	ASSERT_EQ_PROP_GET_BYTE	(pUserInfo2, get_LogonHours,	PAR_NOT_NULLBYTE);
+	ASSERT_EQ_PROP_GET_CLOGONHOURS(pUserInfo2, get_LogonHours, pLogonHours);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo2, get_BadPwdCount,	PAR_NOT_ZERO);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo2, get_NumLogons,		PAR_NOT_ZERO);
 	ASSERT_EQ_PROP_GET_BSTR	(pUserInfo2, get_LogonServer,	PAR_UINF_LOGONSERVER);
@@ -127,7 +130,10 @@ TEST_F(TestCNetUser_Get, when_getuserinfo2_with_proper_parameters_then_return_no
 TEST_F(TestCNetUser_Get, when_getuserinfo3_with_proper_parameters_then_return_no_exception)
 {
 	CComPtr<ICUserInfo3> pUserInfo3;
-	HRESULT hr = mpCNetUser->GetUserInfo3(
+	CComPtr<ICLogonHours> pLogonHours;
+	HRESULT hr = mpCNetUser->GetLogonHoursAllActive(&pLogonHours);
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	hr = mpCNetUser->GetUserInfo3(
 		  PAR_UINF_NAME
 		, PAR_UINF_PWD
 		, PAR_NOT_ZERO
@@ -146,7 +152,7 @@ TEST_F(TestCNetUser_Get, when_getuserinfo3_with_proper_parameters_then_return_no
 		, PAR_UINF_ACCNTEXPIRES
 		, PAR_UINF_MAXSTORAGE
 		, PAR_NOT_ZERO
-		, PAR_NOT_NULLBYTE
+		, pLogonHours
 		, PAR_NOT_ZERO
 		, PAR_NOT_ZERO
 		, PAR_UINF_LOGONSERVER
@@ -179,7 +185,7 @@ TEST_F(TestCNetUser_Get, when_getuserinfo3_with_proper_parameters_then_return_no
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo3, get_AccntExpires, PAR_UINF_ACCNTEXPIRES);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo3, get_MaxStorage, PAR_UINF_MAXSTORAGE);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo3, get_UnitsPerWeek, PAR_NOT_ZERO);
-	ASSERT_EQ_PROP_GET_BYTE(pUserInfo3, get_LogonHours, PAR_NOT_NULLBYTE);
+	ASSERT_EQ_PROP_GET_CLOGONHOURS(pUserInfo3, get_LogonHours, pLogonHours);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo3, get_BadPwdCount, PAR_NOT_ZERO);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo3, get_NumLogons, PAR_NOT_ZERO);
 	ASSERT_EQ_PROP_GET_BSTR(pUserInfo3, get_LogonServer, PAR_UINF_LOGONSERVER);
@@ -200,7 +206,10 @@ TEST_F(TestCNetUser_Get, when_getuserinfo3_with_proper_parameters_then_return_no
 TEST_F(TestCNetUser_Get, when_getuserinfo4_with_proper_parameters_then_return_no_exception)
 {
 	CComPtr<ICUserInfo4> pUserInfo4;
-	HRESULT hr = mpCNetUser->GetUserInfo4(
+	CComPtr<ICLogonHours> pLogonHours;
+	HRESULT hr = mpCNetUser->GetLogonHoursAllActive(&pLogonHours); 
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr); 
+	hr = mpCNetUser->GetUserInfo4(
 		PAR_UINF_NAME
 		, PAR_UINF_PWD
 		, PAR_NOT_ZERO
@@ -219,7 +228,7 @@ TEST_F(TestCNetUser_Get, when_getuserinfo4_with_proper_parameters_then_return_no
 		, PAR_UINF_ACCNTEXPIRES
 		, PAR_UINF_MAXSTORAGE
 		, PAR_NOT_ZERO
-		, PAR_NOT_NULLBYTE
+		, pLogonHours
 		, PAR_NOT_ZERO
 		, PAR_NOT_ZERO
 		, PAR_UINF_LOGONSERVER
@@ -252,7 +261,7 @@ TEST_F(TestCNetUser_Get, when_getuserinfo4_with_proper_parameters_then_return_no
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo4, get_AccntExpires, PAR_UINF_ACCNTEXPIRES);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo4, get_MaxStorage, PAR_UINF_MAXSTORAGE);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo4, get_UnitsPerWeek, PAR_NOT_ZERO);
-	ASSERT_EQ_PROP_GET_BYTE(pUserInfo4, get_LogonHours, PAR_NOT_NULLBYTE);
+	ASSERT_EQ_PROP_GET_CLOGONHOURS(pUserInfo4, get_LogonHours, pLogonHours);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo4, get_BadPwdCount, PAR_NOT_ZERO);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo4, get_NumLogons, PAR_NOT_ZERO);
 	ASSERT_EQ_PROP_GET_BSTR(pUserInfo4, get_LogonServer, PAR_UINF_LOGONSERVER);
@@ -295,7 +304,10 @@ TEST_F(TestCNetUser_Get, when_getuserinfo10_with_proper_parameters_then_return_n
 TEST_F(TestCNetUser_Get, when_getuserinfo11_with_proper_parameters_then_return_no_exception)
 {
 	CComPtr<ICUserInfo11> pUserInfo11;
-	HRESULT hr = mpCNetUser->GetUserInfo11(
+	CComPtr<ICLogonHours> pLogonHours;
+	HRESULT hr = mpCNetUser->GetLogonHoursAllActive(&pLogonHours);
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	hr = mpCNetUser->GetUserInfo11(
 		PAR_UINF_NAME
 		, PAR_UINF_COMNT
 		, PAR_UINF_USRCOMMENT
@@ -314,7 +326,7 @@ TEST_F(TestCNetUser_Get, when_getuserinfo11_with_proper_parameters_then_return_n
 		, PAR_UINF_WORKSTATIONS
 		, PAR_UINF_MAXSTORAGE
 		, PAR_NOT_ZERO
-		, PAR_NOT_NULLBYTE
+		, pLogonHours
 		, PAR_UINF_CODEPAGE
 		, &pUserInfo11);
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
@@ -338,7 +350,7 @@ TEST_F(TestCNetUser_Get, when_getuserinfo11_with_proper_parameters_then_return_n
 	ASSERT_EQ_PROP_GET_BSTR(pUserInfo11, get_Workstations, PAR_UINF_WORKSTATIONS);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo11, get_MaxStorage, PAR_UINF_MAXSTORAGE);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo11, get_UnitsPerWeek, PAR_NOT_ZERO);
-	ASSERT_EQ_PROP_GET_BYTE(pUserInfo11, get_LogonHours, PAR_NOT_NULLBYTE);
+	ASSERT_EQ_PROP_GET_CLOGONHOURS(pUserInfo11, get_LogonHours, pLogonHours);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo11, get_CodePage, PAR_UINF_CODEPAGE);
 }
 
@@ -387,7 +399,10 @@ TEST_F(TestCNetUser_Get, when_getuserinfo21_with_proper_parameters_then_return_n
 TEST_F(TestCNetUser_Get, when_getuserinfo22_with_proper_parameters_then_return_no_exception)
 {
 	CComPtr<ICUserInfo22> pUserInfo22;
-	HRESULT hr = mpCNetUser->GetUserInfo22(
+	CComPtr<ICLogonHours> pLogonHours;
+	HRESULT hr = mpCNetUser->GetLogonHoursAllActive(&pLogonHours);
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	hr = mpCNetUser->GetUserInfo22(
 		PAR_UINF_NAME
 		, PAR_UINF_PWD
 		, PAR_NOT_ZERO
@@ -406,7 +421,7 @@ TEST_F(TestCNetUser_Get, when_getuserinfo22_with_proper_parameters_then_return_n
 		, PAR_UINF_ACCNTEXPIRES
 		, PAR_UINF_MAXSTORAGE
 		, PAR_NOT_ZERO
-		, PAR_NOT_NULLBYTE
+		, pLogonHours
 		, PAR_NOT_ZERO
 		, PAR_NOT_ZERO
 		, PAR_UINF_LOGONSERVER
@@ -434,7 +449,7 @@ TEST_F(TestCNetUser_Get, when_getuserinfo22_with_proper_parameters_then_return_n
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo22, get_AccntExpires, PAR_UINF_ACCNTEXPIRES);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo22, get_MaxStorage, PAR_UINF_MAXSTORAGE);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo22, get_UnitsPerWeek, PAR_NOT_ZERO);
-	ASSERT_EQ_PROP_GET_BYTE(pUserInfo22, get_LogonHours, PAR_NOT_NULLBYTE);
+	ASSERT_EQ_PROP_GET_CLOGONHOURS(pUserInfo22, get_LogonHours, pLogonHours);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo22, get_BadPwdCount, PAR_NOT_ZERO);
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo22, get_NumLogons, PAR_NOT_ZERO);
 	ASSERT_EQ_PROP_GET_BSTR(pUserInfo22, get_LogonServer, PAR_UINF_LOGONSERVER);
@@ -679,15 +694,18 @@ TEST_F(TestCNetUser_Get, when_getuserinfo1018_with_proper_parameters_then_return
 TEST_F(TestCNetUser_Get, when_getuserinfo1020_with_proper_parameters_then_return_no_exception)
 {
 	CComPtr<ICUserInfo1020> pUserInfo1020;
-	HRESULT hr = mpCNetUser->GetUserInfo1020(
+	CComPtr<ICLogonHours> pLogonHours;
+	HRESULT hr = mpCNetUser->GetLogonHoursAllActive(&pLogonHours);
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	hr = mpCNetUser->GetUserInfo1020(
 		PAR_NOT_ZERO
-		, PAR_NOT_NULLBYTE
+		, pLogonHours
 		, &pUserInfo1020);
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo1020, get_UnitsPerWeek, PAR_NOT_ZERO);
-	ASSERT_EQ_PROP_GET_BYTE(pUserInfo1020, get_LogonHours, PAR_NOT_NULLBYTE);
+	ASSERT_EQ_PROP_GET_CLOGONHOURS(pUserInfo1020, get_LogonHours, pLogonHours);
 }
 
 // WHEN GETUSERINFO1023 WITH PROPER PARAMETERS THEN RETURN NO EXCEPTION

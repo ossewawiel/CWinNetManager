@@ -59,13 +59,13 @@ END_COM_MAP()
 	CComPtr<IUnknown> m_pUnkMarshaler;
 
 public:
-	STDMETHOD(Initialise)(ULONG ulUnitsPerWeek, BYTE bLogonHours);
+	STDMETHOD(Initialise)(ULONG ulUnitsPerWeek, ICLogonHours* bLogonHours);
 	STDMETHOD(get_UnitsPerWeek)(ULONG* pVal);
-	STDMETHOD(get_LogonHours)(BYTE* pVal);
+	STDMETHOD(get_LogonHours)(ICLogonHours** pVal);
 
 private:
 	ULONG m_ulUnitsPerWeek;
-	BYTE m_bLogonHours;
+	ICLogonHours* m_bLogonHours;
 public:
 	STDMETHOD(Clear)();
 };

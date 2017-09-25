@@ -20,7 +20,36 @@ typedef [public, v1_enum] enum eUserInfoType
 	, uiTYpe23 = 0x23
 	, uiTYpe24 = 0x24
 } eUserInfoType;
-
+[
+	object,
+	uuid(FFB824F6-E615-4DCC-BCFC-4068E2B442F8),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICLogonHour : IDispatch {
+	[id(1)] HRESULT Initialise([in] SHORT shDay, [in] SHORT shHour, [in] SHORT shActive);
+	[id(2)] HRESULT Activate();
+	[id(3)] HRESULT Deactivate();
+	[propget, id(4)] HRESULT Day([out, retval] SHORT* pVal);
+	[propget, id(5)] HRESULT Hour([out, retval] SHORT* pVal);
+	[propget, id(6)] HRESULT State([out, retval] SHORT* pVal);
+	[propput, id(6)] HRESULT State([in] SHORT newVal);
+};
+[
+	object,
+	uuid(4DFC52BD-D969-4B4F-AC01-CA24EA013CD8),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICLogonHours : IDispatch {
+	[id(1)] HRESULT ClearAll();
+	[id(2)] HRESULT InitialiseAllActive();
+	[id(DISPID_NEWENUM), propget] HRESULT _NewEnum([out, retval] IUnknown** ppUnk);
+	[id(DISPID_VALUE), propget] HRESULT Item([in] long n, [out, retval] ICLogonHour** ppLogonHour);
+	[propget] HRESULT Count([out, retval] long* pnCount);
+};
 [
 	object,
 	uuid(FAF36C28-4EF0-4108-9AE3-269D46CFEC48),
@@ -86,7 +115,7 @@ interface ICUserInfo2 : IDispatch {
 	[propget, id(16)] HRESULT AccntExpires([out, retval] ULONG* pVal);
 	[propget, id(17)] HRESULT MaxStorage([out, retval] ULONG* pVal);
 	[propget, id(18)] HRESULT UnitsPerWeek([out, retval] ULONG* pVal);
-	[propget, id(19)] HRESULT LogonHours([out, retval] BYTE* pVal);
+	[propget, id(19)] HRESULT LogonHours([out, retval] ICLogonHours** pVal);
 	[propget, id(20)] HRESULT BadPwdCount([out, retval] ULONG* pVal);
 	[propget, id(21)] HRESULT NumLogons([out, retval] ULONG* pVal);
 	[propget, id(22)] HRESULT LogonServer([out, retval] BSTR* pVal);
@@ -111,7 +140,7 @@ interface ICUserInfo2 : IDispatch {
 		, [in] ULONG ulAccntExpires
 		, [in] ULONG ulMaxStorage
 		, [in] ULONG ulUnitsPerWeek
-		, [in] BYTE bLogonHours
+		, [in] ICLogonHours* pLogonHours
 		, [in] ULONG ulBadPwdCount
 		, [in] ULONG ulNumLogons
 		, [in] BSTR bsLogonServer
@@ -146,7 +175,7 @@ interface ICUserInfo3 : IDispatch {
 		, [in] ULONG ulAccntExpires
 		, [in] ULONG ulMaxStorage
 		, [in] ULONG ulUnitsPerWeek
-		, [in] BYTE bLogonHours
+		, [in] ICLogonHours* pLogonHours
 		, [in] ULONG ulBadPwdCount
 		, [in] ULONG ulNumLogons
 		, [in] BSTR bsLogonServer
@@ -175,7 +204,7 @@ interface ICUserInfo3 : IDispatch {
 	[propget, id(17)] HRESULT AccntExpires([out, retval] ULONG* pVal);
 	[propget, id(18)] HRESULT MaxStorage([out, retval] ULONG* pVal);
 	[propget, id(19)] HRESULT UnitsPerWeek([out, retval] ULONG* pVal);
-	[propget, id(20)] HRESULT LogonHours([out, retval] BYTE* pVal);
+	[propget, id(20)] HRESULT LogonHours([out, retval] ICLogonHours** pVal);
 	[propget, id(21)] HRESULT BadPwdCount([out, retval] ULONG* pVal);
 	[propget, id(22)] HRESULT NumLogons([out, retval] ULONG* pVal);
 	[propget, id(23)] HRESULT LogonServer([out, retval] BSTR* pVal);
@@ -215,7 +244,7 @@ interface ICUserInfo4 : IDispatch {
 		, [in] ULONG ulAccntExpires
 		, [in] ULONG ulMaxStorage
 		, [in] ULONG ulUnitsPerWeek
-		, [in] BYTE bLogonHours
+		, [in] ICLogonHours* pLogonHours
 		, [in] ULONG ulBadPwdCount
 		, [in] ULONG ulNumLogons
 		, [in] BSTR bsLogonServer
@@ -244,7 +273,7 @@ interface ICUserInfo4 : IDispatch {
 	[propget, id(17)] HRESULT AccntExpires([out, retval] ULONG* pVal);
 	[propget, id(18)] HRESULT MaxStorage([out, retval] ULONG* pVal);
 	[propget, id(19)] HRESULT UnitsPerWeek([out, retval] ULONG* pVal);
-	[propget, id(20)] HRESULT LogonHours([out, retval] BYTE* pVal);
+	[propget, id(20)] HRESULT LogonHours([out, retval] ICLogonHours** pVal);
 	[propget, id(21)] HRESULT BadPwdCount([out, retval] ULONG* pVal);
 	[propget, id(22)] HRESULT NumLogons([out, retval] ULONG* pVal);
 	[propget, id(23)] HRESULT LogonServer([out, retval] BSTR* pVal);
@@ -303,7 +332,7 @@ interface ICUserInfo11 : IDispatch {
 		, [in] BSTR bsWorkstations
 		, [in] ULONG ulMaxStorage
 		, [in] ULONG ulUnitsPerWeek
-		, [in] BYTE bLogonHours
+		, [in] ICLogonHours* pLogonHours
 		, [in] ULONG ulCodePage);
 	[propget, id(2)] HRESULT Name([out, retval] BSTR* pVal);
 	[propget, id(3)] HRESULT Comment([out, retval] BSTR* pVal);
@@ -323,7 +352,7 @@ interface ICUserInfo11 : IDispatch {
 	[propget, id(17)] HRESULT Workstations([out, retval] BSTR* pVal);
 	[propget, id(18)] HRESULT MaxStorage([out, retval] ULONG* pVal);
 	[propget, id(19)] HRESULT UnitsPerWeek([out, retval] ULONG* pVal);
-	[propget, id(20)] HRESULT LogonHours([out, retval] BYTE* pVal);
+	[propget, id(20)] HRESULT LogonHours([out, retval] ICLogonHours** pVal);
 	[propget, id(21)] HRESULT CodePage([out, retval] ULONG* pVal);
 	[id(22)] HRESULT Clear();
 };
@@ -387,7 +416,7 @@ interface ICUserInfo22 : IDispatch {
 		, [in] ULONG ulAccntExpires
 		, [in] ULONG ulMaxStorage
 		, [in] ULONG ulUnitsPerWeek
-		, [in] BYTE bLogonHours
+		, [in] ICLogonHours* pLogonHours
 		, [in] ULONG ulBadPwdCount
 		, [in] ULONG ulNumLogons
 		, [in] BSTR bsLogonServer
@@ -411,7 +440,7 @@ interface ICUserInfo22 : IDispatch {
 	[propget, id(17)] HRESULT AccntExpires([out, retval] ULONG* pVal);
 	[propget, id(18)] HRESULT MaxStorage([out, retval] ULONG* pVal);
 	[propget, id(19)] HRESULT UnitsPerWeek([out, retval] ULONG* pVal);
-	[propget, id(20)] HRESULT LogonHours([out, retval] BYTE* pVal);
+	[propget, id(20)] HRESULT LogonHours([out, retval] ICLogonHours** pVal);
 	[propget, id(21)] HRESULT BadPwdCount([out, retval] ULONG* pVal);
 	[propget, id(22)] HRESULT NumLogons([out, retval] ULONG* pVal);
 	[propget, id(23)] HRESULT LogonServer([out, retval] BSTR* pVal);
@@ -625,9 +654,9 @@ interface ICUserInfo1018 : IDispatch {
 	pointer_default(unique)
 ]
 interface ICUserInfo1020 : IDispatch {
-	[id(1)] HRESULT Initialise([in] ULONG ulUnitsPerWeek, [in] BYTE bLogonHours);
+	[id(1)] HRESULT Initialise([in] ULONG ulUnitsPerWeek, [in] ICLogonHours* pLogonHours);
 	[propget, id(2)] HRESULT UnitsPerWeek([out, retval] ULONG* pVal);
-	[propget, id(3)] HRESULT LogonHours([out, retval] BYTE* pVal);
+	[propget, id(3)] HRESULT LogonHours([out, retval] ICLogonHours** pVal);
 	[id(4)] HRESULT Clear();
 };
 [
@@ -742,7 +771,7 @@ interface ICNetUser : IDispatch{
 		, [in] ULONG ulAccntExpires
 		, [in] ULONG ulMaxStorage
 		, [in] ULONG ulUnitsPerWeek
-		, [in] BYTE bLogonHours
+		, [in] ICLogonHours* pLogonHours
 		, [in] ULONG ulBadPwdCount
 		, [in] ULONG ulNumLogons
 		, [in] BSTR bsLogonServer
@@ -768,7 +797,7 @@ interface ICNetUser : IDispatch{
 		, [in] ULONG ulAccntExpires
 		, [in] ULONG ulMaxStorage
 		, [in] ULONG ulUnitsPerWeek
-		, [in] BYTE bLogonHours
+		, [in] ICLogonHours* pLogonHours
 		, [in] ULONG ulBadPwdCount
 		, [in] ULONG ulNumLogons
 		, [in] BSTR bsLogonServer
@@ -799,7 +828,7 @@ interface ICNetUser : IDispatch{
 		, [in] ULONG ulAccntExpires
 		, [in] ULONG ulMaxStorage
 		, [in] ULONG ulUnitsPerWeek
-		, [in] BYTE bLogonHours
+		, [in] ICLogonHours* pLogonHours
 		, [in] ULONG ulBadPwdCount
 		, [in] ULONG ulNumLogons
 		, [in] BSTR bsLogonServer
@@ -836,7 +865,7 @@ interface ICNetUser : IDispatch{
 		, [in] BSTR bsWorkstations
 		, [in] ULONG ulMaxStorage
 		, [in] ULONG ulUnitsPerWeek
-		, [in] BYTE bLogonHours
+		, [in] ICLogonHours* pLogonHours
 		, [in] ULONG ulCodePage
 		, [out, retval] ICUserInfo11** ppUserInfo11);
 	[id(8)] HRESULT GetUserInfo20(
@@ -866,7 +895,7 @@ interface ICNetUser : IDispatch{
 		, [in] ULONG ulAccntExpires
 		, [in] ULONG ulMaxStorage
 		, [in] ULONG ulUnitsPerWeek
-		, [in] BYTE bLogonHours
+		, [in] ICLogonHours* pLogonHours
 		, [in] ULONG ulBadPwdCount
 		, [in] ULONG ulNumLogons
 		, [in] BSTR bsLogonServer
@@ -902,7 +931,7 @@ interface ICNetUser : IDispatch{
 	[id(25)] HRESULT GetUserInfo1018([in] ULONG ulMaxStorage, [out, retval] ICUserInfo1018** ppUserInfo1018);
 	[id(26)] HRESULT GetUserInfo1020(
 		[in] ULONG ulUnitsPerWeek
-		, [in] BYTE bLogonHours
+		, [in] ICLogonHours* pLogonHours
 		, [out, retval] ICUserInfo1020** ppUserInfo1020);
 	[id(27)] HRESULT GetUserInfo1023([in] BSTR bsLogonServer, [out, retval] ICUserInfo1023** ppUserInfo1023);
 	[id(28)] HRESULT GetUserInfo1024([in] ULONG ulCountryCode, [out, retval] ICUserInfo1024** ppUserInfo1024);
@@ -914,6 +943,7 @@ interface ICNetUser : IDispatch{
 	[id(35)] HRESULT NetUserDel([in] BSTR bsServerName, [in] BSTR bsUserName);
 	[id(36)] HRESULT NetUserGetInfo([in] BSTR bsServerName, [in] BSTR bsUserName, [in] eUserInfoType userInfoType, [out, retval] IUnknown** ppUserInfo);
 	[id(37)] HRESULT CastToUserInfo1([in] IUnknown* pUnk, [out, retval] ICUserInfo1** ppUserInfo1);
+	[id(38)] HRESULT GetLogonHoursAllActive([out, retval] ICLogonHours** pLogonHours);
 };
 [
 	uuid(F53A3EDB-3D55-4E7B-8687-F0759A72FBCA),
@@ -1152,6 +1182,20 @@ library CWinNetManagerLib
 	coclass CUserInfo1053
 	{
 		[default] interface ICUserInfo1053;
+	};
+	[
+		uuid(93C17FF1-D1E9-48F4-AE76-C95382A12B86)		
+	]
+	coclass CLogonHour
+	{
+		[default] interface ICLogonHour;
+	};
+	[
+		uuid(A6C10DD1-C14C-4429-BB6A-CF2FC55E6073)		
+	]
+	coclass CLogonHours
+	{
+		[default] interface ICLogonHours;
 	};
 };
 

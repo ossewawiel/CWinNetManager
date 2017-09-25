@@ -24,7 +24,7 @@ STDMETHODIMP CCUserInfo11::Initialise(
 	, BSTR bsWorkstations
 	, ULONG ulMaxStorage
 	, ULONG ulUnitsPerWeek
-	, BYTE bLogonHours
+	, ICLogonHours* bLogonHours
 	, ULONG ulCodePage)
 {
 	m_bsName.Assign(bsName);
@@ -158,10 +158,9 @@ STDMETHODIMP CCUserInfo11::get_UnitsPerWeek(ULONG * pVal)
 	return S_OK;
 }
 
-STDMETHODIMP CCUserInfo11::get_LogonHours(BYTE * pVal)
+STDMETHODIMP CCUserInfo11::get_LogonHours(ICLogonHours* * pVal)
 {
-	*pVal = BYTE(m_bLogonHours);
-	return S_OK;
+	return m_bLogonHours.CopyTo(pVal);
 }
 
 STDMETHODIMP CCUserInfo11::get_CodePage(ULONG * pVal)

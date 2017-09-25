@@ -1,9 +1,12 @@
-// CUserInfo0.h : Declaration of the CCUserInfo0
+// CLogonHour.h : Declaration of the CCLogonHour
 
 #pragma once
 #include "resource.h"       // main symbols
 
+
+
 #include "CWinNetManager.h"
+
 
 
 #if defined(_WIN32_WCE) && !defined(_CE_DCOM) && !defined(_CE_ALLOW_SINGLE_THREADED_OBJECTS_IN_MTA)
@@ -13,24 +16,24 @@
 using namespace ATL;
 
 
-// CCUserInfo0
+// CCLogonHour
 
-class ATL_NO_VTABLE CCUserInfo0 :
+class ATL_NO_VTABLE CCLogonHour :
 	public CComObjectRootEx<CComMultiThreadModel>,
-	public CComCoClass<CCUserInfo0, &CLSID_CUserInfo0>,
-	public IDispatchImpl<ICUserInfo0, &IID_ICUserInfo0, &LIBID_CWinNetManagerLib, /*wMajor =*/ 1, /*wMinor =*/ 0>
+	public CComCoClass<CCLogonHour, &CLSID_CLogonHour>,
+	public IDispatchImpl<ICLogonHour, &IID_ICLogonHour, &LIBID_CWinNetManagerLib, /*wMajor =*/ 1, /*wMinor =*/ 0>
 {
 public:
-	CCUserInfo0()
+	CCLogonHour()
 	{
 		m_pUnkMarshaler = NULL;
 	}
 
-DECLARE_REGISTRY_RESOURCEID(IDR_CUSERINFO0)
+DECLARE_REGISTRY_RESOURCEID(IDR_CLOGONHOUR)
 
 
-BEGIN_COM_MAP(CCUserInfo0)
-	COM_INTERFACE_ENTRY(ICUserInfo0)
+BEGIN_COM_MAP(CCLogonHour)
+	COM_INTERFACE_ENTRY(ICLogonHour)
 	COM_INTERFACE_ENTRY(IDispatch)
 	COM_INTERFACE_ENTRY_AGGREGATE(IID_IMarshal, m_pUnkMarshaler.p)
 END_COM_MAP()
@@ -54,15 +57,16 @@ END_COM_MAP()
 	CComPtr<IUnknown> m_pUnkMarshaler;
 
 public:
-	STDMETHOD(Initialise)(BSTR bsName);
-	STDMETHOD(get_Name)(BSTR* pVal);
 
-	static USER_INFO_0 TranslateToUserInfo(ICUserInfo0 *pICUserInfo0);
-private:
-	_bstr_t m_bsName;
 
-public:
-	STDMETHOD(Clear)();
+
+	STDMETHOD(Initialise)(SHORT shDay, SHORT shHour, SHORT shActive);
+	STDMETHOD(Activate)();
+	STDMETHOD(Deactivate)();
+	STDMETHOD(get_Day)(SHORT* pVal);
+	STDMETHOD(get_Hour)(SHORT* pVal);
+	STDMETHOD(get_State)(SHORT* pVal);
+	STDMETHOD(put_State)(SHORT newVal);
 };
 
-OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserInfo0), CCUserInfo0)
+OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CLogonHour), CCLogonHour)

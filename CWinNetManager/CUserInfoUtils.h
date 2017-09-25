@@ -22,7 +22,7 @@ HRESULT ToUserInfoPassword(T *pFrom, LPWSTR &pTo)
 }
 
 template<typename T>
-HRESULT ToUserInfoPasswordAge(T *pFrom, DWORD& pTo)
+HRESULT ToUserInfoPasswordAge(T *pFrom, DWORD &pTo)
 {
 	HRESULT hr(S_OK);
 	ULONG ulVal(0);
@@ -32,7 +32,7 @@ HRESULT ToUserInfoPasswordAge(T *pFrom, DWORD& pTo)
 }
 
 template<typename T>
-HRESULT ToUserInfoPrivilege(T *pFrom, DWORD& pTo)
+HRESULT ToUserInfoPrivilege(T *pFrom, DWORD &pTo)
 {
 	HRESULT hr(S_OK);
 	ULONG ulVal(0);
@@ -62,7 +62,7 @@ HRESULT ToUserInfoComment(T *pFrom, LPWSTR &pTo)
 }
 
 template<typename T>
-HRESULT ToUserInfoFlags(T *pFrom, DWORD& pTo)
+HRESULT ToUserInfoFlags(T *pFrom, DWORD &pTo)
 {
 	HRESULT hr(S_OK);
 	ULONG ulVal(0);
@@ -82,7 +82,7 @@ HRESULT ToUserInfoScriptPath(T *pFrom, LPWSTR &pTo)
 }
 
 template<typename T>
-HRESULT ToUserInfoAuthFlags(T *pFrom, DWORD& pTo)
+HRESULT ToUserInfoAuthFlags(T *pFrom, DWORD &pTo)
 {
 	HRESULT hr(S_OK);
 	ULONG ulVal(0);
@@ -132,7 +132,7 @@ HRESULT ToUserInfoWorkstations(T *pFrom, LPWSTR &pTo)
 }
 //m_ulLastLogon
 template<typename T>
-HRESULT ToUserInfoLastLogon(T *pFrom, DWORD& pTo)
+HRESULT ToUserInfoLastLogon(T *pFrom, DWORD &pTo)
 {
 	HRESULT hr(S_OK);
 	ULONG ulVal(0);
@@ -142,7 +142,7 @@ HRESULT ToUserInfoLastLogon(T *pFrom, DWORD& pTo)
 }
 //m_ulLastLogoff
 template<typename T>
-HRESULT ToUserInfoLastLogoff(T *pFrom, DWORD& pTo)
+HRESULT ToUserInfoLastLogoff(T *pFrom, DWORD &pTo)
 {
 	HRESULT hr(S_OK);
 	ULONG ulVal(0);
@@ -152,7 +152,7 @@ HRESULT ToUserInfoLastLogoff(T *pFrom, DWORD& pTo)
 }
 //m_ulAccntExpires
 template<typename T>
-HRESULT ToUserInfoAccntExpires(T *pFrom, DWORD& pTo)
+HRESULT ToUserInfoAccntExpires(T *pFrom, DWORD &pTo)
 {
 	HRESULT hr(S_OK);
 	ULONG ulVal(0);
@@ -162,7 +162,7 @@ HRESULT ToUserInfoAccntExpires(T *pFrom, DWORD& pTo)
 }
 //m_ulMaxStorage
 template<typename T>
-HRESULT ToUserInfoMaxStorage(T *pFrom, DWORD& pTo)
+HRESULT ToUserInfoMaxStorage(T *pFrom, DWORD &pTo)
 {
 	HRESULT hr(S_OK);
 	ULONG ulVal(0);
@@ -172,11 +172,71 @@ HRESULT ToUserInfoMaxStorage(T *pFrom, DWORD& pTo)
 }
 //m_ulUnitsPerWeek
 template<typename T>
-HRESULT ToUserInfoUnitsPerWeek(T *pFrom, DWORD& pTo)
+HRESULT ToUserInfoUnitsPerWeek(T *pFrom, DWORD &pTo)
 {
 	HRESULT hr(S_OK);
 	ULONG ulVal(0);
 	if (hr = pFrom->get_UnitsPerWeek(&ulVal)) return hr;
+	pTo = ulVal;
+	return hr;
+}
+//m_bLogonHours
+template<typename T>
+HRESULT ToUserInfoLogonHours(T *pFrom, PBYTE &pTo)
+{
+	HRESULT hr(S_OK);
+	//ICLogonHours* bVal(0);
+	//if (hr = pFrom->get_LogonHours(pTo)) return hr;
+	//*pTo = bVal;
+	return E_FAIL;
+}
+//m_ulBadPwdCount
+template<typename T>
+HRESULT ToUserInfoBadPwdCount(T *pFrom, DWORD &pTo)
+{
+	HRESULT hr(S_OK);
+	ULONG ulVal(0);
+	if (hr = pFrom->get_BadPwdCount(&ulVal)) return hr;
+	pTo = ulVal;
+	return hr;
+}
+//m_ulNumLogons
+template<typename T>
+HRESULT ToUserInfoNumLogons(T *pFrom, DWORD &pTo)
+{
+	HRESULT hr(S_OK);
+	ULONG ulVal(0);
+	if (hr = pFrom->get_NumLogons(&ulVal)) return hr;
+	pTo = ulVal;
+	return hr;
+}
+//m_bsLogonServer
+template<typename T>
+HRESULT ToUserInfoLogonServer(T *pFrom, LPWSTR &pTo)
+{
+	HRESULT hr(S_OK);
+	_bstr_t bsVal(L"");
+	if (hr = pFrom->get_LogonServer(bsVal.GetAddress())) return hr;
+	pTo = (bsVal.length() == 0) ? NULL : bsVal.copy();
+	return hr;
+}
+//m_ulCountryCode
+template<typename T>
+HRESULT ToUserInfoCountryCode(T *pFrom, DWORD &pTo)
+{
+	HRESULT hr(S_OK);
+	ULONG ulVal(0);
+	if (hr = pFrom->get_CountryCode(&ulVal)) return hr;
+	pTo = ulVal;
+	return hr;
+}
+//m_ulCodePage
+template<typename T>
+HRESULT ToUserInfoCodePage(T *pFrom, DWORD &pTo)
+{
+	HRESULT hr(S_OK);
+	ULONG ulVal(0);
+	if (hr = pFrom->get_CodePage(&ulVal)) return hr;
 	pTo = ulVal;
 	return hr;
 }

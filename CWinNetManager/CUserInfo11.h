@@ -96,7 +96,7 @@ public:
 		, BSTR bsWorkstations
 		, ULONG ulMaxStorage
 		, ULONG ulUnitsPerWeek
-		, BYTE bLogonHours
+		, ICLogonHours* bLogonHours
 		, ULONG ulCodePage);
 	STDMETHOD(get_Name)(BSTR* pVal);
 	STDMETHOD(get_Comment)(BSTR* pVal);
@@ -116,7 +116,7 @@ public:
 	STDMETHOD(get_Workstations)(BSTR* pVal);
 	STDMETHOD(get_MaxStorage)(ULONG* pVal);
 	STDMETHOD(get_UnitsPerWeek)(ULONG* pVal);
-	STDMETHOD(get_LogonHours)(BYTE* pVal);
+	STDMETHOD(get_LogonHours)(ICLogonHours** pVal);
 	STDMETHOD(get_CodePage)(ULONG* pVal);
 
 private:
@@ -138,7 +138,7 @@ private:
 	_bstr_t m_bsWorkstations;
 	ULONG m_ulMaxStorage;
 	ULONG m_ulUnitsPerWeek;
-	BYTE m_bLogonHours;
+	CComPtr<ICLogonHours> m_bLogonHours;
 	ULONG m_ulCodePage;
 public:
 	STDMETHOD(Clear)();

@@ -211,6 +211,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CLogonHour.cpp" />
+    <ClCompile Include="CLogonHours.cpp" />
     <ClCompile Include="CNetUser.cpp" />
     <ClCompile Include="CUserInfo0.cpp" />
     <ClCompile Include="CUserInfo1.cpp" />
@@ -295,6 +297,8 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CLogonHour.h" />
+    <ClInclude Include="CLogonHours.h" />
     <ClInclude Include="CNetUser.h" />
     <ClInclude Include="CUserInfo0.h" />
     <ClInclude Include="CUserInfo1.h" />
@@ -343,6 +347,8 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="CLogonHour.rgs" />
+    <None Include="CLogonHours.rgs" />
     <None Include="CNetUser.rgs" />
     <None Include="CUserInfo0.rgs" />
     <None Include="CUserInfo1.rgs" />

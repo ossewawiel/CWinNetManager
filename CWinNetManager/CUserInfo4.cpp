@@ -24,7 +24,7 @@ STDMETHODIMP CCUserInfo4::Initialise(
 	, ULONG ulAccntExpires
 	, ULONG ulMaxStorage
 	, ULONG ulUnitsPerWeek
-	, BYTE  bLogonHours
+	, ICLogonHours*  bLogonHours
 	, ULONG ulBadPwdCount
 	, ULONG ulNumLogons
 	, BSTR  bsLogonServer
@@ -194,9 +194,9 @@ STDMETHODIMP CCUserInfo4::get_UnitsPerWeek(ULONG* pVal)
 }
 
 
-STDMETHODIMP CCUserInfo4::get_LogonHours(BYTE* pVal)
+STDMETHODIMP CCUserInfo4::get_LogonHours(ICLogonHours** pVal)
 {
-	*pVal = BYTE(m_bLogonHours);
+	m_bLogonHours.CopyTo(pVal);
 	return S_OK;
 }
 

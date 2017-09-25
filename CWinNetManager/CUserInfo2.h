@@ -81,7 +81,7 @@ END_COM_MAP()
 	CComPtr<IUnknown> m_pUnkMarshaler;
 
 public:
-
+	//still looking for more elegant solution regarding hoards of same properties in different classes
 
 
 	STDMETHOD(get_Name)(BSTR* pVal);
@@ -102,13 +102,13 @@ public:
 	STDMETHOD(get_AccntExpires)(ULONG* pVal);
 	STDMETHOD(get_MaxStorage)(ULONG* pVal);
 	STDMETHOD(get_UnitsPerWeek)(ULONG* pVal);
-	STDMETHOD(get_LogonHours)(BYTE* pVal);
+	STDMETHOD(get_LogonHours)(ICLogonHours** pVal);
 	STDMETHOD(get_BadPwdCount)(ULONG* pVal);
 	STDMETHOD(get_NumLogons)(ULONG* pVal);
 	STDMETHOD(get_LogonServer)(BSTR* pVal);
 	STDMETHOD(get_CountryCode)(ULONG* pVal);
 	STDMETHOD(get_CodePage)(ULONG* pVal);
-	STDMETHOD(Initialise)(BSTR bsName, BSTR bsPassword, ULONG ulPasswordAge, ULONG ulPrivilege, BSTR bsHomeDir, BSTR bsComment, ULONG ulFlags, BSTR bsScriptPath, ULONG ulAuthFlags, BSTR bsFullName, BSTR bsUsrComment, BSTR bsParams, BSTR bsWorkstations, ULONG ulLastLogon, ULONG ulLastLogoff, ULONG ulAccntExpires, ULONG ulMaxStorage, ULONG ulUnitsPerWeek, BYTE bLogonHours, ULONG ulBadPwdCount, ULONG ulNumLogons, BSTR bsLogonServer, ULONG ulCountryCode, ULONG ulCodePage);
+	STDMETHOD(Initialise)(BSTR bsName, BSTR bsPassword, ULONG ulPasswordAge, ULONG ulPrivilege, BSTR bsHomeDir, BSTR bsComment, ULONG ulFlags, BSTR bsScriptPath, ULONG ulAuthFlags, BSTR bsFullName, BSTR bsUsrComment, BSTR bsParams, BSTR bsWorkstations, ULONG ulLastLogon, ULONG ulLastLogoff, ULONG ulAccntExpires, ULONG ulMaxStorage, ULONG ulUnitsPerWeek, ICLogonHours* bLogonHours, ULONG ulBadPwdCount, ULONG ulNumLogons, BSTR bsLogonServer, ULONG ulCountryCode, ULONG ulCodePage);
 
 	static HRESULT TranslateToUserInfo(ICUserInfo2 * pFrom, USER_INFO_2 &pTo);
 
@@ -131,7 +131,7 @@ private:
 	ULONG   m_ulAccntExpires;
 	ULONG   m_ulMaxStorage;
 	ULONG   m_ulUnitsPerWeek;
-	BYTE    m_bLogonHours;
+	CComPtr<ICLogonHours>    m_bLogonHours;
 	ULONG   m_ulBadPwdCount;
 	ULONG   m_ulNumLogons;
 	_bstr_t m_bsLogonServer;

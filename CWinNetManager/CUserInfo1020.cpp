@@ -6,7 +6,7 @@
 
 // CCUserInfo1020
 
-STDMETHODIMP CCUserInfo1020::Initialise(ULONG ulUnitsPerWeek, BYTE bLogonHours)
+STDMETHODIMP CCUserInfo1020::Initialise(ULONG ulUnitsPerWeek, ICLogonHours* bLogonHours)
 {
 	m_ulUnitsPerWeek = ulUnitsPerWeek;
 	m_bLogonHours = bLogonHours;
@@ -19,7 +19,7 @@ STDMETHODIMP CCUserInfo1020::get_UnitsPerWeek(ULONG * pVal)
 	return S_OK;
 }
 
-STDMETHODIMP CCUserInfo1020::get_LogonHours(BYTE * pVal)
+STDMETHODIMP CCUserInfo1020::get_LogonHours(ICLogonHours* * pVal)
 {
 	*pVal = m_bLogonHours;
 	return S_OK;
