@@ -25,6 +25,9 @@ class ATL_NO_VTABLE CCLogonHour :
 {
 public:
 	CCLogonHour()
+		: mshDay(0)
+		, mshHour(0)
+		, mbState(0)
 	{
 		m_pUnkMarshaler = NULL;
 	}
@@ -57,16 +60,17 @@ END_COM_MAP()
 	CComPtr<IUnknown> m_pUnkMarshaler;
 
 public:
-
-
-
 	STDMETHOD(Initialise)(SHORT shDay, SHORT shHour, SHORT shActive);
 	STDMETHOD(Activate)();
 	STDMETHOD(Deactivate)();
 	STDMETHOD(get_Day)(SHORT* pVal);
 	STDMETHOD(get_Hour)(SHORT* pVal);
 	STDMETHOD(get_State)(SHORT* pVal);
-	STDMETHOD(put_State)(SHORT newVal);
+
+private:
+	SHORT mshDay;
+	SHORT mshHour;
+	SHORT mbState;
 };
 
 OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CLogonHour), CCLogonHour)

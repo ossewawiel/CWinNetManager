@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Mon Sep 25 18:13:49 2017
+/* at Tue Sep 26 06:58:52 2017
  */
 /* Compiler settings for CWinNetManager.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 
@@ -775,9 +775,6 @@ EXTERN_C const IID IID_ICLogonHour;
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_State( 
             /* [retval][out] */ SHORT *pVal) = 0;
         
-        virtual /* [id][propput] */ HRESULT STDMETHODCALLTYPE put_State( 
-            /* [in] */ SHORT newVal) = 0;
-        
     };
     
     
@@ -860,10 +857,6 @@ EXTERN_C const IID IID_ICLogonHour;
             ICLogonHour * This,
             /* [retval][out] */ SHORT *pVal);
         
-        /* [id][propput] */ HRESULT ( STDMETHODCALLTYPE *put_State )( 
-            ICLogonHour * This,
-            /* [in] */ SHORT newVal);
-        
         END_INTERFACE
     } ICLogonHourVtbl;
 
@@ -917,9 +910,6 @@ EXTERN_C const IID IID_ICLogonHour;
 
 #define ICLogonHour_get_State(This,pVal)	\
     ( (This)->lpVtbl -> get_State(This,pVal) ) 
-
-#define ICLogonHour_put_State(This,newVal)	\
-    ( (This)->lpVtbl -> put_State(This,newVal) ) 
 
 #endif /* COBJMACROS */
 

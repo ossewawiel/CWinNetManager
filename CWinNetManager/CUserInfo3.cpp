@@ -55,7 +55,7 @@ STDMETHODIMP CCUserInfo3::Initialise(
 	m_ulAccntExpires = ulAccntExpires;
 	m_ulMaxStorage = ulMaxStorage;
 	m_ulUnitsPerWeek = ulUnitsPerWeek;
-	m_bLogonHours = bLogonHours;
+	CComPtr<ICLogonHours>(bLogonHours).CopyTo(&m_bLogonHours);
 	m_ulBadPwdCount = ulBadPwdCount;
 	m_ulNumLogons = ulNumLogons;
 	m_bsLogonServer.Assign(bsLogonServer);
