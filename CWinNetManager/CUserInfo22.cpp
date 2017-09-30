@@ -246,7 +246,7 @@ STDMETHODIMP CCUserInfo22::Clear()
 		m_ulAccntExpires = 0;
 		m_ulMaxStorage = 0;
 		m_ulUnitsPerWeek = 0;
-		m_bLogonHours = 0;
+		m_bLogonHours->ClearAll();
 		m_ulBadPwdCount = 0;
 		m_ulNumLogons = 0;
 		m_bsLogonServer = L"";

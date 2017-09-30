@@ -30,3 +30,9 @@ STDMETHODIMP CCLogonHours::InitialiseAllActive()
 	});
 	return hr;
 }
+
+STDMETHODIMP CCLogonHours::put_Item(long n, ICLogonHour * pLogonHour)
+{
+	m_coll[n] = pLogonHour;
+	return S_OK;
+}

@@ -582,7 +582,6 @@ STDMETHODIMP CCNetUser::NetUserAdd(BSTR bsServerName, eUserInfoType userInfoType
 	HRESULT hr(S_OK);
 	DWORD dwError;
 	//check for supported UserInfo Interfaces and convert to 
-	
 	if (userInfoType == eUserInfoType::uiType1)
 	{
 		CComPtr<ICUserInfo1> pUserInfo1 = static_cast<ICUserInfo1*>(pUserInfo);
@@ -596,6 +595,20 @@ STDMETHODIMP CCNetUser::NetUserAdd(BSTR bsServerName, eUserInfoType userInfoType
 		USER_INFO_2 ui2;
 		if (hr = CCUserInfo2::TranslateToUserInfo(pUserInfo2, ui2)) return hr;
 		return ::NetUserAdd(bsServerName, 2, (LPBYTE)&ui2, &dwError);
+	}
+	else if (userInfoType == eUserInfoType::uiType3)
+	{
+		CComPtr<ICUserInfo3> pUserInfo3 = static_cast<ICUserInfo3*>(pUserInfo);
+		USER_INFO_3 ui3;
+		if (hr = CCUserInfo3::TranslateToUserInfo(pUserInfo3, ui3)) return hr;
+		return ::NetUserAdd(bsServerName, 3, (LPBYTE)&ui3, &dwError);
+	}
+	else if (userInfoType == eUserInfoType::uiType4)
+	{
+		CComPtr<ICUserInfo4> pUserInfo4 = static_cast<ICUserInfo4*>(pUserInfo);
+		USER_INFO_4 ui4;
+		if (hr = CCUserInfo4::TranslateToUserInfo(pUserInfo4, ui4)) return hr;
+		return ::NetUserAdd(bsServerName, 4, (LPBYTE)&ui4, &dwError);
 	}
 	else
 		return E_NOINTERFACE;

@@ -2,7 +2,7 @@
 
 #include "stdafx.h"
 #include "CUserInfo4.h"
-
+#include "CUserInfoUtils.h"
 
 // CCUserInfo4
 STDMETHODIMP CCUserInfo4::Initialise(
@@ -265,6 +265,41 @@ STDMETHODIMP CCUserInfo4::get_PwdExpired(ULONG* pVal)
 	return S_OK;
 }
 
+HRESULT CCUserInfo4::TranslateToUserInfo(ICUserInfo4 * pFrom, USER_INFO_4 &pTo)
+{
+	//convert ICUserInfo4 to USER_INFO_4
+	HRESULT hr(S_OK);
+	if (hr = ToUserInfoName			<ICUserInfo4>(pFrom, pTo.usri4_name))			return hr;
+	if (hr = ToUserInfoPassword		<ICUserInfo4>(pFrom, pTo.usri4_password))		return hr;
+	if (hr = ToUserInfoPasswordAge	<ICUserInfo4>(pFrom, pTo.usri4_password_age))	return hr;
+	if (hr = ToUserInfoPrivilege	<ICUserInfo4>(pFrom, pTo.usri4_priv))			return hr;
+	if (hr = ToUserInfoHomeDirectory<ICUserInfo4>(pFrom, pTo.usri4_home_dir))		return hr;
+	if (hr = ToUserInfoComment		<ICUserInfo4>(pFrom, pTo.usri4_comment))		return hr;
+	if (hr = ToUserInfoFlags		<ICUserInfo4>(pFrom, pTo.usri4_flags))			return hr;
+	if (hr = ToUserInfoScriptPath	<ICUserInfo4>(pFrom, pTo.usri4_script_path))	return hr;
+	if (hr = ToUserInfoAuthFlags	<ICUserInfo4>(pFrom, pTo.usri4_auth_flags))		return hr;
+	if (hr = ToUserInfoFullName		<ICUserInfo4>(pFrom, pTo.usri4_full_name))		return hr;
+	if (hr = ToUserInfoUsrComment	<ICUserInfo4>(pFrom, pTo.usri4_usr_comment))	return hr;
+	if (hr = ToUserInfoParams		<ICUserInfo4>(pFrom, pTo.usri4_parms))			return hr;
+	if (hr = ToUserInfoWorkstations	<ICUserInfo4>(pFrom, pTo.usri4_workstations))	return hr;
+	if (hr = ToUserInfoLastLogon	<ICUserInfo4>(pFrom, pTo.usri4_last_logon))		return hr;
+	if (hr = ToUserInfoLastLogoff	<ICUserInfo4>(pFrom, pTo.usri4_last_logoff))	return hr;
+	if (hr = ToUserInfoAccntExpires	<ICUserInfo4>(pFrom, pTo.usri4_acct_expires))	return hr;
+	if (hr = ToUserInfoMaxStorage	<ICUserInfo4>(pFrom, pTo.usri4_max_storage))	return hr;
+	if (hr = ToUserInfoUnitsPerWeek	<ICUserInfo4>(pFrom, pTo.usri4_units_per_week))	return hr;
+	if (hr = ToUserInfoLogonHours	<ICUserInfo4>(pFrom, pTo.usri4_logon_hours))	return hr;
+	if (hr = ToUserInfoBadPwdCount	<ICUserInfo4>(pFrom, pTo.usri4_bad_pw_count))	return hr;
+	if (hr = ToUserInfoNumLogons	<ICUserInfo4>(pFrom, pTo.usri4_num_logons))		return hr;
+	if (hr = ToUserInfoLogonServer	<ICUserInfo4>(pFrom, pTo.usri4_logon_server))	return hr;
+	if (hr = ToUserInfoCountryCode	<ICUserInfo4>(pFrom, pTo.usri4_country_code))	return hr;
+	if (hr = ToUserInfoCodePage		<ICUserInfo4>(pFrom, pTo.usri4_code_page))		return hr;
+	if (hr = ToUserInfoUserSid		<ICUserInfo4>(pFrom, pTo.usri4_user_sid))		return hr;
+	if (hr = ToUserInfoPrimaryGrpId	<ICUserInfo4>(pFrom, pTo.usri4_primary_group_id)) return hr;
+	if (hr = ToUserInfoProfile		<ICUserInfo4>(pFrom, pTo.usri4_profile))		return hr;
+	if (hr = ToUserInfoHomeDirDrive	<ICUserInfo4>(pFrom, pTo.usri4_home_dir_drive))	return hr;
+	if (hr = ToUserInfoPwdExpired	<ICUserInfo4>(pFrom, pTo.usri4_password_expired)) return hr;
+	return hr;
+}
 
 STDMETHODIMP CCUserInfo4::Clear()
 {
@@ -286,7 +321,7 @@ STDMETHODIMP CCUserInfo4::Clear()
 		m_ulAccntExpires = 0;
 		m_ulMaxStorage = 0;
 		m_ulUnitsPerWeek = 0;
-		m_bLogonHours = 0;
+		m_bLogonHours->ClearAll();
 		m_ulBadPwdCount = 0;
 		m_ulNumLogons = 0;
 		m_bsLogonServer = L"";

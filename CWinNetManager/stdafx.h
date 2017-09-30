@@ -25,6 +25,9 @@
 #include <atlctl.h>
 #include <comdef.h>
 #include <lm.h>
+#include <sddl.h>
+
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <bitset>

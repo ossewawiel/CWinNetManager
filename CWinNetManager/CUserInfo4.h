@@ -117,6 +117,8 @@ public:
 	STDMETHOD(get_HomeDirDrive)(BSTR* pVal);
 	STDMETHOD(get_PwdExpired)(ULONG* pVal);
 
+	static HRESULT TranslateToUserInfo(ICUserInfo4 * pFrom, USER_INFO_4 &pTo);
+
 private:
 	_bstr_t m_bsName;
 	_bstr_t m_bsPassword;

@@ -116,6 +116,8 @@ public:
 	STDMETHOD(get_Profile)(BSTR* pVal);
 	STDMETHOD(get_HomeDirDrive)(BSTR* pVal);
 	STDMETHOD(get_PwdExpired)(ULONG* pVal);
+
+	static HRESULT TranslateToUserInfo(ICUserInfo3 * pFrom, USER_INFO_3 &pTo);
 private:
 	_bstr_t m_bsName;
 	_bstr_t m_bsPassword;

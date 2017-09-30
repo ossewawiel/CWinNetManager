@@ -57,7 +57,7 @@ public:
 	STDMETHOD(Initialise)(BSTR bsName);
 	STDMETHOD(get_Name)(BSTR* pVal);
 
-	static USER_INFO_0 TranslateToUserInfo(ICUserInfo0 *pICUserInfo0);
+	static HRESULT TranslateToUserInfo(ICUserInfo0 * pFrom, USER_INFO_0 &pTo);
 private:
 	_bstr_t m_bsName;
 

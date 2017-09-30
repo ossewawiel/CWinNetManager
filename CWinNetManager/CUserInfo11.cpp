@@ -190,7 +190,7 @@ STDMETHODIMP CCUserInfo11::Clear()
 	m_bsWorkstations = L"";
 	m_ulMaxStorage = 0;
 	m_ulUnitsPerWeek = 0;
-	m_bLogonHours = 0;
+	m_bLogonHours->ClearAll();
 	m_ulCodePage = 0;
 	return S_OK;
 }

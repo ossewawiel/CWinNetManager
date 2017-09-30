@@ -243,7 +243,7 @@ HRESULT CCUserInfo2::TranslateToUserInfo(ICUserInfo2 * pFrom, USER_INFO_2 &pTo)
 	if (hr = ToUserInfoScriptPath	<ICUserInfo2>(pFrom, pTo.usri2_script_path))	return hr;
 	if (hr = ToUserInfoAuthFlags	<ICUserInfo2>(pFrom, pTo.usri2_auth_flags))		return hr;
 	if (hr = ToUserInfoFullName		<ICUserInfo2>(pFrom, pTo.usri2_full_name))		return hr;
-	if (hr = ToUserInfoUsrComment	<ICUserInfo2>(pFrom, pTo.usri2_comment))		return hr;
+	if (hr = ToUserInfoUsrComment	<ICUserInfo2>(pFrom, pTo.usri2_usr_comment))	return hr;
 	if (hr = ToUserInfoParams		<ICUserInfo2>(pFrom, pTo.usri2_parms))			return hr;
 	if (hr = ToUserInfoWorkstations	<ICUserInfo2>(pFrom, pTo.usri2_workstations))	return hr;
 	if (hr = ToUserInfoLastLogon	<ICUserInfo2>(pFrom, pTo.usri2_last_logon))		return hr;

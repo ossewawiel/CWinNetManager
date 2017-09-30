@@ -2,7 +2,7 @@
 
 #include "stdafx.h"
 #include "CUserInfo3.h"
-
+#include "CUserInfoUtils.h"
 
 // CCUserInfo3
 
@@ -266,6 +266,42 @@ STDMETHODIMP CCUserInfo3::get_PwdExpired(ULONG* pVal)
 	return S_OK;
 }
 
+HRESULT CCUserInfo3::TranslateToUserInfo(ICUserInfo3 * pFrom, USER_INFO_3 &pTo)
+{
+	//convert ICUserInfo3 to USER_INFO_3
+	HRESULT hr(S_OK);
+	if (hr = ToUserInfoName			<ICUserInfo3>(pFrom, pTo.usri3_name))			return hr;
+	if (hr = ToUserInfoPassword		<ICUserInfo3>(pFrom, pTo.usri3_password))		return hr;
+	if (hr = ToUserInfoPasswordAge	<ICUserInfo3>(pFrom, pTo.usri3_password_age))	return hr;
+	if (hr = ToUserInfoPrivilege	<ICUserInfo3>(pFrom, pTo.usri3_priv))			return hr;
+	if (hr = ToUserInfoHomeDirectory<ICUserInfo3>(pFrom, pTo.usri3_home_dir))		return hr;
+	if (hr = ToUserInfoComment		<ICUserInfo3>(pFrom, pTo.usri3_comment))		return hr;
+	if (hr = ToUserInfoFlags		<ICUserInfo3>(pFrom, pTo.usri3_flags))			return hr;
+	if (hr = ToUserInfoScriptPath	<ICUserInfo3>(pFrom, pTo.usri3_script_path))	return hr;
+	if (hr = ToUserInfoAuthFlags	<ICUserInfo3>(pFrom, pTo.usri3_auth_flags))		return hr;
+	if (hr = ToUserInfoFullName		<ICUserInfo3>(pFrom, pTo.usri3_full_name))		return hr;
+	if (hr = ToUserInfoUsrComment	<ICUserInfo3>(pFrom, pTo.usri3_usr_comment))	return hr;
+	if (hr = ToUserInfoParams		<ICUserInfo3>(pFrom, pTo.usri3_parms))			return hr;
+	if (hr = ToUserInfoWorkstations	<ICUserInfo3>(pFrom, pTo.usri3_workstations))	return hr;
+	if (hr = ToUserInfoLastLogon	<ICUserInfo3>(pFrom, pTo.usri3_last_logon))		return hr;
+	if (hr = ToUserInfoLastLogoff	<ICUserInfo3>(pFrom, pTo.usri3_last_logoff))	return hr;
+	if (hr = ToUserInfoAccntExpires	<ICUserInfo3>(pFrom, pTo.usri3_acct_expires))	return hr;
+	if (hr = ToUserInfoMaxStorage	<ICUserInfo3>(pFrom, pTo.usri3_max_storage))	return hr;
+	if (hr = ToUserInfoUnitsPerWeek	<ICUserInfo3>(pFrom, pTo.usri3_units_per_week))	return hr;
+	if (hr = ToUserInfoLogonHours	<ICUserInfo3>(pFrom, pTo.usri3_logon_hours))	return hr;
+	if (hr = ToUserInfoBadPwdCount	<ICUserInfo3>(pFrom, pTo.usri3_bad_pw_count))	return hr;
+	if (hr = ToUserInfoNumLogons	<ICUserInfo3>(pFrom, pTo.usri3_num_logons))		return hr;
+	if (hr = ToUserInfoLogonServer	<ICUserInfo3>(pFrom, pTo.usri3_logon_server))	return hr;
+	if (hr = ToUserInfoCountryCode	<ICUserInfo3>(pFrom, pTo.usri3_country_code))	return hr;
+	if (hr = ToUserInfoCodePage		<ICUserInfo3>(pFrom, pTo.usri3_code_page))		return hr;
+	if (hr = ToUserInfoUserId		<ICUserInfo3>(pFrom, pTo.usri3_user_id))		return hr;
+	if (hr = ToUserInfoPrimaryGrpId	<ICUserInfo3>(pFrom, pTo.usri3_primary_group_id)) return hr;
+	if (hr = ToUserInfoProfile		<ICUserInfo3>(pFrom, pTo.usri3_profile))		return hr;
+	if (hr = ToUserInfoHomeDirDrive	<ICUserInfo3>(pFrom, pTo.usri3_home_dir_drive))	return hr;
+	if (hr = ToUserInfoPwdExpired	<ICUserInfo3>(pFrom, pTo.usri3_password_expired)) return hr;
+	return hr;
+}
+
 STDMETHODIMP CCUserInfo3::Clear()
 {
 	m_bsName = L"";
@@ -286,7 +322,7 @@ STDMETHODIMP CCUserInfo3::Clear()
 	m_ulAccntExpires = 0;
 	m_ulMaxStorage = 0;
 	m_ulUnitsPerWeek = 0;
-	m_bLogonHours = 0;
+	m_bLogonHours->ClearAll();
 	m_ulBadPwdCount = 0;
 	m_ulNumLogons = 0;
 	m_bsLogonServer = L"";

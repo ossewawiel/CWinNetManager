@@ -29,6 +29,6 @@ STDMETHODIMP CCUserInfo1020::get_LogonHours(ICLogonHours* * pVal)
 STDMETHODIMP CCUserInfo1020::Clear()
 {
 	m_ulUnitsPerWeek = 0;
-	m_bLogonHours = 0;
+	m_bLogonHours->ClearAll();
 	return S_OK;
 }

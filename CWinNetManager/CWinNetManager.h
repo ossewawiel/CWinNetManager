@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Tue Sep 26 06:58:52 2017
+/* at Sat Sep 30 17:03:19 2017
  */
 /* Compiler settings for CWinNetManager.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 
@@ -948,6 +948,10 @@ EXTERN_C const IID IID_ICLogonHours;
             /* [in] */ long n,
             /* [retval][out] */ ICLogonHour **ppLogonHour) = 0;
         
+        virtual /* [propput][id] */ HRESULT STDMETHODCALLTYPE put_Item( 
+            /* [in] */ long n,
+            /* [in] */ ICLogonHour *pLogonHour) = 0;
+        
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Count( 
             /* [retval][out] */ long *pnCount) = 0;
         
@@ -1024,6 +1028,11 @@ EXTERN_C const IID IID_ICLogonHours;
             /* [in] */ long n,
             /* [retval][out] */ ICLogonHour **ppLogonHour);
         
+        /* [propput][id] */ HRESULT ( STDMETHODCALLTYPE *put_Item )( 
+            ICLogonHours * This,
+            /* [in] */ long n,
+            /* [in] */ ICLogonHour *pLogonHour);
+        
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Count )( 
             ICLogonHours * This,
             /* [retval][out] */ long *pnCount);
@@ -1075,6 +1084,9 @@ EXTERN_C const IID IID_ICLogonHours;
 
 #define ICLogonHours_get_Item(This,n,ppLogonHour)	\
     ( (This)->lpVtbl -> get_Item(This,n,ppLogonHour) ) 
+
+#define ICLogonHours_put_Item(This,n,pLogonHour)	\
+    ( (This)->lpVtbl -> put_Item(This,n,pLogonHour) ) 
 
 #define ICLogonHours_get_Count(This,pnCount)	\
     ( (This)->lpVtbl -> get_Count(This,pnCount) ) 

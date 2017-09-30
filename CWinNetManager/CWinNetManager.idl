@@ -47,6 +47,7 @@ interface ICLogonHours : IDispatch {
 	[id(2)] HRESULT InitialiseAllActive();
 	[id(DISPID_NEWENUM), propget] HRESULT _NewEnum([out, retval] IUnknown** ppUnk);
 	[id(DISPID_VALUE), propget] HRESULT Item([in] long n, [out, retval] ICLogonHour** ppLogonHour);
+	[id(DISPID_VALUE), propput] HRESULT Item([in] long n, [in] ICLogonHour* pLogonHour);
 	[propget] HRESULT Count([out, retval] long* pnCount);
 };
 [

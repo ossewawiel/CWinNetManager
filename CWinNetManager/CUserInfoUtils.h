@@ -185,10 +185,35 @@ template<typename T>
 HRESULT ToUserInfoLogonHours(T *pFrom, PBYTE &pTo)
 {
 	HRESULT hr(S_OK);
-	//ICLogonHours* bVal(0);
-	//if (hr = pFrom->get_LogonHours(pTo)) return hr;
-	//*pTo = bVal;
-	return E_FAIL;
+	long lCount;
+	CComPtr<ICLogonHours> pLogonHours;
+	if(hr = pFrom->get_LogonHours(&pLogonHours)) return hr;
+	if (hr = pLogonHours->get_Count(&lCount)) return hr;
+	BYTE bLogonHours[21];
+	int byteCounter(0);
+	int bitCounter(0);
+	int maxBit(7);
+	std::bitset<8> bits(0);
+	for (long idx = 1; idx <= lCount; idx++)
+	{
+		CComPtr<ICLogonHour> pFromItem;
+		if(hr = pLogonHours->get_Item(idx, &pFromItem)) return hr;
+		SHORT shState(0);
+		if (hr = pFromItem->get_State(&shState)) return hr;
+		if (shState == 0)
+			bits.set(bitCounter, false);
+		else
+			bits.set(bitCounter, false);
+		++bitCounter;
+		if (bitCounter > maxBit)
+		{
+			bitCounter = 0;
+			bLogonHours[byteCounter] = bits.to_ulong();
+			++byteCounter;
+		}
+	}
+	pTo = bLogonHours;
+	return S_OK;
 }
 //m_ulBadPwdCount
 template<typename T>
@@ -238,5 +263,70 @@ HRESULT ToUserInfoCodePage(T *pFrom, DWORD &pTo)
 	ULONG ulVal(0);
 	if (hr = pFrom->get_CodePage(&ulVal)) return hr;
 	pTo = ulVal;
+	return hr;
+}
+//ToUserInfoUserId
+template<typename T>
+HRESULT ToUserInfoUserId(T *pFrom, DWORD &pTo)
+{
+	HRESULT hr(S_OK);
+	ULONG ulVal(0);
+	if (hr = pFrom->get_UserId(&ulVal)) return hr;
+	pTo = ulVal;
+	return hr;
+}
+//ToUserInfoPrimaryGrpId
+template<typename T>
+HRESULT ToUserInfoPrimaryGrpId(T *pFrom, DWORD &pTo)
+{
+	HRESULT hr(S_OK);
+	ULONG ulVal(0);
+	if (hr = pFrom->get_PrimaryGrpId(&ulVal)) return hr;
+	pTo = ulVal;
+	return hr;
+}
+//ToUserInfoProfile
+template<typename T>
+HRESULT ToUserInfoProfile(T *pFrom, LPWSTR &pTo)
+{
+	HRESULT hr(S_OK);
+	_bstr_t bsVal(L"");
+	if (hr = pFrom->get_Profile(bsVal.GetAddress())) return hr;
+	pTo = (bsVal.length() == 0) ? NULL : bsVal.copy();
+	return hr;
+}
+//ToUserInfoHomeDirDrive
+template<typename T>
+HRESULT ToUserInfoHomeDirDrive(T *pFrom, LPWSTR &pTo)
+{
+	HRESULT hr(S_OK);
+	_bstr_t bsVal(L"");
+	if (hr = pFrom->get_HomeDirDrive(bsVal.GetAddress())) return hr;
+	pTo = (bsVal.length() == 0) ? NULL : bsVal.copy();
+	return hr;
+}
+//ToUserInfoPwdExpired
+template<typename T>
+HRESULT ToUserInfoPwdExpired(T *pFrom, DWORD &pTo)
+{
+	HRESULT hr(S_OK);
+	ULONG ulVal(0);
+	if (hr = pFrom->get_PwdExpired(&ulVal)) return hr;
+	pTo = ulVal;
+	return hr;
+}
+//ToUserInfoUserSid
+template<typename T>
+HRESULT ToUserInfoUserSid(T *pFrom, PSID &pTo)
+{
+	HRESULT hr(S_OK);
+	_bstr_t bsVal(L"");
+	if (hr = pFrom->get_UserSid(bsVal.GetAddress())) return hr;
+	if (bsVal.length() == 0)
+	{
+		pTo = NULL;
+		return S_OK;
+	}
+	if (!(ConvertStringSidToSid(bsVal, &pTo))) return GetLastError();
 	return hr;
 }

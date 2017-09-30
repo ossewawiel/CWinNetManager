@@ -79,7 +79,7 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo2_then_return_no_exception_a
 		, PAR_UINF_ACCNTEXPIRES
 		, PAR_UINF_MAXSTORAGE
 		, PAR_NOT_ZERO
-		, pLogonHours
+		, pLogonHours.Detach()
 		, PAR_NOT_ZERO
 		, PAR_NOT_ZERO
 		, PAR_UINF_LOGONSERVER
@@ -92,6 +92,8 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo2_then_return_no_exception_a
 	hr = pUserInfo2->Clear();
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
+	hr = mpCNetUser->GetLogonHoursAllActive(&pLogonHours);
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 	hr = pLogonHours->ClearAll();
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
@@ -152,7 +154,7 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo3_then_return_no_exception_a
 		, PAR_UINF_ACCNTEXPIRES
 		, PAR_UINF_MAXSTORAGE
 		, PAR_NOT_ZERO
-		, pLogonHours
+		, pLogonHours.Detach()
 		, PAR_NOT_ZERO
 		, PAR_NOT_ZERO
 		, PAR_UINF_LOGONSERVER
@@ -170,6 +172,8 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo3_then_return_no_exception_a
 	hr = pUserInfo3->Clear();
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
+	hr = mpCNetUser->GetLogonHoursAllActive(&pLogonHours);
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 	hr = pLogonHours->ClearAll();
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
@@ -235,7 +239,7 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo4_then_return_no_exception_a
 		, PAR_UINF_ACCNTEXPIRES
 		, PAR_UINF_MAXSTORAGE
 		, PAR_NOT_ZERO
-		, pLogonHours
+		, pLogonHours.Detach()
 		, PAR_NOT_ZERO
 		, PAR_NOT_ZERO
 		, PAR_UINF_LOGONSERVER
@@ -253,6 +257,8 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo4_then_return_no_exception_a
 	hr = pUserInfo4->Clear();
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
+	hr = mpCNetUser->GetLogonHoursAllActive(&pLogonHours);
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 	hr = pLogonHours->ClearAll();
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
@@ -344,7 +350,7 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo11_then_return_no_exception_
 		, PAR_UINF_WORKSTATIONS
 		, PAR_UINF_MAXSTORAGE
 		, PAR_NOT_ZERO
-		, pLogonHours
+		, pLogonHours.Detach()
 		, PAR_UINF_CODEPAGE
 		, &pUserInfo11);
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
@@ -353,6 +359,8 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo11_then_return_no_exception_
 	hr = pUserInfo11->Clear();
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
+	hr = mpCNetUser->GetLogonHoursAllActive(&pLogonHours);
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 	hr = pLogonHours->ClearAll();
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
@@ -454,7 +462,7 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo22_then_return_no_exception_
 		, PAR_UINF_ACCNTEXPIRES
 		, PAR_UINF_MAXSTORAGE
 		, PAR_NOT_ZERO
-		, pLogonHours
+		, pLogonHours.Detach()
 		, PAR_NOT_ZERO
 		, PAR_NOT_ZERO
 		, PAR_UINF_LOGONSERVER
@@ -467,6 +475,8 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo22_then_return_no_exception_
 	hr = pUserInfo22->Clear();
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
+	hr = mpCNetUser->GetLogonHoursAllActive(&pLogonHours);
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 	hr = pLogonHours->ClearAll();
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
@@ -799,7 +809,7 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo1020_then_return_no_exceptio
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 	hr = mpCNetUser->GetUserInfo1020(
 		PAR_NOT_ZERO
-		, pLogonHours
+		, pLogonHours.Detach()
 		, &pUserInfo1020);
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
@@ -807,6 +817,8 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo1020_then_return_no_exceptio
 	hr = pUserInfo1020->Clear();
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
+	hr = mpCNetUser->GetLogonHoursAllActive(&pLogonHours);
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 	hr = pLogonHours->ClearAll();
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 

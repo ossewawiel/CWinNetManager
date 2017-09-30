@@ -108,6 +108,7 @@ END_COM_MAP()
 public:
 	STDMETHOD(ClearAll)();
 	STDMETHOD(InitialiseAllActive)();
+	STDMETHOD(put_Item)(long n, ICLogonHour* pLogonHour);
 };
 
 OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CLogonHours), CCLogonHours)

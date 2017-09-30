@@ -1,5 +1,6 @@
 #include "TestCNetUser.h"
 
+
 // WHEN_NETUSERADD_WITH_USERINFO1_THEN_RETURN_NO_EXCEPTION
 ///////////////////////////////////////////////////////////////////////////////
 /// Whenadding a test user with NetUserAdd and UserInfo1 no exception should be 
@@ -34,7 +35,9 @@ TEST_F(TestCNetUser_Add, when_netuseradd_with_userinfo1_then_return_no_exception
 TEST_F(TestCNetUser_Add, when_netuseradd_with_userinfo2_then_return_no_exception)
 {
 	CComPtr<ICUserInfo2> pUserInfo2;
-	HRESULT hr = mpCNetUser->GetUserInfo2(
+	CComPtr<ICLogonHours> pLogonHours;
+	HRESULT hr = mpCNetUser->GetLogonHoursAllActive(&pLogonHours);
+	hr = mpCNetUser->GetUserInfo2(
 		PAR_UINF_NAME
 		, PAR_UINF_PWD
 		, 0
@@ -53,7 +56,7 @@ TEST_F(TestCNetUser_Add, when_netuseradd_with_userinfo2_then_return_no_exception
 		, PAR_UINF_ACCNTEXPIRES
 		, PAR_UINF_MAXSTORAGE
 		, 0
-		, 0
+		, pLogonHours.Detach()
 		, NULL
 		, 0
 		, PAR_UINF_LOGONSERVER
@@ -62,8 +65,11 @@ TEST_F(TestCNetUser_Add, when_netuseradd_with_userinfo2_then_return_no_exception
 		, &pUserInfo2);
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
+	//add user
 	hr = mpCNetUser->NetUserAdd(NULL, eUserInfoType::uiType2, pUserInfo2);
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+
+	//get user and check if values are the same
 
 	//Now delete the user
 	hr = mpCNetUser->NetUserDel(NULL, PAR_UINF_NAME);
@@ -77,7 +83,9 @@ TEST_F(TestCNetUser_Add, when_netuseradd_with_userinfo2_then_return_no_exception
 TEST_F(TestCNetUser_Add, when_netuseradd_with_userinfo3_then_return_no_exception)
 {
 	CComPtr<ICUserInfo3> pUserInfo3;
-	HRESULT hr = mpCNetUser->GetUserInfo3(
+	CComPtr<ICLogonHours> pLogonHours;
+	HRESULT hr = mpCNetUser->GetLogonHoursAllActive(&pLogonHours);
+	hr = mpCNetUser->GetUserInfo3(
 		PAR_UINF_NAME
 		, PAR_UINF_PWD
 		, 0
@@ -96,7 +104,7 @@ TEST_F(TestCNetUser_Add, when_netuseradd_with_userinfo3_then_return_no_exception
 		, PAR_UINF_ACCNTEXPIRES
 		, PAR_UINF_MAXSTORAGE
 		, 0
-		, 0
+		, pLogonHours.Detach()
 		, NULL
 		, 0
 		, PAR_UINF_LOGONSERVER
@@ -125,7 +133,9 @@ TEST_F(TestCNetUser_Add, when_netuseradd_with_userinfo3_then_return_no_exception
 TEST_F(TestCNetUser_Add, when_netuseradd_with_userinfo4_then_return_no_exception)
 {
 	CComPtr<ICUserInfo4> pUserInfo4;
-	HRESULT hr = mpCNetUser->GetUserInfo4(
+	CComPtr<ICLogonHours> pLogonHours;
+	HRESULT hr = mpCNetUser->GetLogonHoursAllActive(&pLogonHours);
+	hr = mpCNetUser->GetUserInfo4(
 		PAR_UINF_NAME
 		, PAR_UINF_PWD
 		, 0
@@ -144,7 +154,7 @@ TEST_F(TestCNetUser_Add, when_netuseradd_with_userinfo4_then_return_no_exception
 		, PAR_UINF_ACCNTEXPIRES
 		, PAR_UINF_MAXSTORAGE
 		, 0
-		, 0
+		, pLogonHours.Detach()
 		, NULL
 		, 0
 		, PAR_UINF_LOGONSERVER

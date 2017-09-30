@@ -2,7 +2,7 @@
 
 #include "stdafx.h"
 #include "CUserInfo0.h"
-
+#include "CUserInfoUtils.h"
 
 // CCUserInfo0
 
@@ -19,9 +19,11 @@ STDMETHODIMP CCUserInfo0::get_Name(BSTR* pVal)
 	return S_OK;
 }
 
-USER_INFO_0 CCUserInfo0::TranslateToUserInfo(ICUserInfo0 * pICUserInfo0)
+HRESULT CCUserInfo0::TranslateToUserInfo(ICUserInfo0 * pFrom, USER_INFO_0 &pTo)
 {
-	return USER_INFO_0();
+	HRESULT hr(S_OK);
+	if (hr = ToUserInfoName	<ICUserInfo0>(pFrom, pTo.usri0_name)) return hr;
+	return hr;
 }
 
 STDMETHODIMP CCUserInfo0::Clear()

@@ -699,10 +699,11 @@ TEST_F(TestCNetUser_Get, when_getuserinfo1020_with_proper_parameters_then_return
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 	hr = mpCNetUser->GetUserInfo1020(
 		PAR_NOT_ZERO
-		, pLogonHours
+		, pLogonHours.Detach()
 		, &pUserInfo1020);
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
+	hr = mpCNetUser->GetLogonHoursAllActive(&pLogonHours);
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo1020, get_UnitsPerWeek, PAR_NOT_ZERO);
 	ASSERT_EQ_PROP_GET_CLOGONHOURS(pUserInfo1020, get_LogonHours, pLogonHours);
