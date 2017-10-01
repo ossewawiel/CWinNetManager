@@ -26,6 +26,13 @@ HRESULT CCUserInfo0::TranslateToUserInfo(ICUserInfo0 * pFrom, USER_INFO_0 &pTo)
 	return hr;
 }
 
+HRESULT CCUserInfo0::TranslateFromUserInfo(LPUSER_INFO_0 & pFrom, ICUserInfo0 ** ppTo)
+{
+	HRESULT hr(S_OK);
+	if (hr = CCUserInfo0::CreateInstance(ppTo)) return hr;
+	return (*ppTo)->Initialise(_bstr_t(pFrom->usri0_name));
+}
+
 STDMETHODIMP CCUserInfo0::Clear()
 {
 	m_bsName = L"";

@@ -114,8 +114,23 @@ HRESULT CCUserInfo1::TranslateToUserInfo(ICUserInfo1 * pFrom, USER_INFO_1 &pTo)
 	if (hr = ToUserInfoPasswordAge	<ICUserInfo1>(pFrom, pTo.usri1_password_age))	return hr;
 	if (hr = ToUserInfoPrivilege	<ICUserInfo1>(pFrom, pTo.usri1_priv))			return hr;
 	if (hr = ToUserInfoHomeDirectory<ICUserInfo1>(pFrom, pTo.usri1_home_dir))		return hr;
-	if (hr = ToUserInfoComment		<ICUserInfo1>(pFrom, pTo.usri1_comment))		return hr;
+	if (hr = ToUserInfoComment		<ICUserInfo1>(pFrom, pTo.usri1_comment))			return hr;
 	if (hr = ToUserInfoFlags		<ICUserInfo1>(pFrom, pTo.usri1_flags))			return hr;
-	if (hr = ToUserInfoScriptPath	<ICUserInfo1>(pFrom, pTo.usri1_script_path))	return hr;
+	if (hr = ToUserInfoScriptPath	<ICUserInfo1>(pFrom, pTo.usri1_script_path))		return hr;
 	return hr;
+}
+
+HRESULT CCUserInfo1::TranslateFromUserInfo(LPUSER_INFO_1 pFrom, ICUserInfo1 ** ppTo)
+{
+	HRESULT hr(S_OK);
+	if (hr = CCUserInfo1::CreateInstance(ppTo)) return hr;
+	return (*ppTo)->Initialise(
+		_bstr_t(pFrom->usri1_name)
+		, _bstr_t(pFrom->usri1_password)
+		, pFrom->usri1_password_age
+		, pFrom->usri1_priv
+		, _bstr_t(pFrom->usri1_home_dir)
+		, _bstr_t(pFrom->usri1_comment)
+		, pFrom->usri1_flags
+		, _bstr_t(pFrom->usri1_script_path));
 }

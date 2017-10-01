@@ -118,6 +118,7 @@ public:
 	STDMETHOD(get_PwdExpired)(ULONG* pVal);
 
 	static HRESULT TranslateToUserInfo(ICUserInfo3 * pFrom, USER_INFO_3 &pTo);
+	static HRESULT TranslateFromUserInfo(LPUSER_INFO_3 pFrom, ICUserInfo3 ** ppTo);
 private:
 	_bstr_t m_bsName;
 	_bstr_t m_bsPassword;

@@ -288,7 +288,7 @@ HRESULT CCUserInfo3::TranslateToUserInfo(ICUserInfo3 * pFrom, USER_INFO_3 &pTo)
 	if (hr = ToUserInfoAccntExpires	<ICUserInfo3>(pFrom, pTo.usri3_acct_expires))	return hr;
 	if (hr = ToUserInfoMaxStorage	<ICUserInfo3>(pFrom, pTo.usri3_max_storage))	return hr;
 	if (hr = ToUserInfoUnitsPerWeek	<ICUserInfo3>(pFrom, pTo.usri3_units_per_week))	return hr;
-	if (hr = ToUserInfoLogonHours	<ICUserInfo3>(pFrom, pTo.usri3_logon_hours))	return hr;
+	if (hr = ToUserInfoLogonHours	<ICUserInfo3>(pFrom, &pTo.usri3_logon_hours))	return hr;
 	if (hr = ToUserInfoBadPwdCount	<ICUserInfo3>(pFrom, pTo.usri3_bad_pw_count))	return hr;
 	if (hr = ToUserInfoNumLogons	<ICUserInfo3>(pFrom, pTo.usri3_num_logons))		return hr;
 	if (hr = ToUserInfoLogonServer	<ICUserInfo3>(pFrom, pTo.usri3_logon_server))	return hr;
@@ -334,4 +334,42 @@ STDMETHODIMP CCUserInfo3::Clear()
 	m_bsHomeDirDrive = L"";
 	m_ulPwdExpired = 0;
 	return S_OK;
+}
+
+HRESULT CCUserInfo3::TranslateFromUserInfo(LPUSER_INFO_3 pFrom, ICUserInfo3 ** ppTo)
+{
+	HRESULT hr(S_OK);
+	if (hr = CCUserInfo3::CreateInstance(ppTo)) return hr;
+	CComPtr<ICLogonHours> pLogonHours;
+	if (hr = FromUserInfoLogonHours(pFrom->usri3_logon_hours, &pLogonHours)) return hr;
+	return (*ppTo)->Initialise(
+		_bstr_t(pFrom->usri3_name)
+		, _bstr_t(pFrom->usri3_password)
+		, pFrom->usri3_password_age
+		, pFrom->usri3_priv
+		, _bstr_t(pFrom->usri3_home_dir)
+		, _bstr_t(pFrom->usri3_comment)
+		, pFrom->usri3_flags
+		, _bstr_t(pFrom->usri3_script_path)
+		, pFrom->usri3_auth_flags
+		, _bstr_t(pFrom->usri3_full_name)
+		, _bstr_t(pFrom->usri3_usr_comment)
+		, _bstr_t(pFrom->usri3_parms)
+		, _bstr_t(pFrom->usri3_workstations)
+		, pFrom->usri3_last_logon
+		, pFrom->usri3_last_logoff
+		, pFrom->usri3_acct_expires
+		, pFrom->usri3_max_storage
+		, pFrom->usri3_units_per_week
+		, pLogonHours
+		, pFrom->usri3_bad_pw_count
+		, pFrom->usri3_num_logons
+		, _bstr_t(pFrom->usri3_logon_server)
+		, pFrom->usri3_country_code
+		, pFrom->usri3_code_page
+		, pFrom->usri3_user_id
+		, pFrom->usri3_primary_group_id
+		, _bstr_t(pFrom->usri3_profile)
+		, _bstr_t(pFrom->usri3_home_dir_drive)
+		, pFrom->usri3_password_expired);
 }

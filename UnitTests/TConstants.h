@@ -6,12 +6,17 @@ const _bstr_t PAR_UNK_SRV_NAME(L"UnknownServer");
 /// USER INFO CONSTANTS
 ///////////////////////////////////////////////////////////////////////////////
 const _bstr_t	PAR_UINF_NAME(L"TestUserName");
+const _bstr_t	PAR_UINF_NAME_ALT(L"TestUserNameALt");
 const _bstr_t	PAR_UINF_PWD(L"TestPassword");
+const _bstr_t	PAR_UINF_PWD_ALT(L"TestPasswordAlt");
 const ULONG		PAR_UINF_PRIV(USER_PRIV_USER);
 const _bstr_t	PAR_UINF_HOMEDIR(L"TestHomeDirectory");
 const _bstr_t	PAR_UINF_COMNT(L"TestComment");
+const _bstr_t	PAR_UINF_COMNT_ALT(L"TestCommentAlt");
 const ULONG		PAR_UINF_FLGS(UF_SCRIPT);
+const ULONG		PAR_UINF_FLGS_ALT(UF_SCRIPT | UF_ACCOUNTDISABLE);
 const _bstr_t	PAR_UINF_SCRPATH(L"TestPath");
+const _bstr_t	PAR_UINF_SCRPATH_ALT(L"TestPathAlt");
 const _bstr_t	PAR_UINF_FULLNAME(L"FullName");
 const _bstr_t	PAR_UINF_USRCOMMENT(L"UserComment");
 const _bstr_t	PAR_UINF_PARAMS(L"Parameters");
@@ -30,7 +35,7 @@ const ULONG		PAR_UINF_LASTLOGON(0);
 const ULONG		PAR_UINF_LASTLOGOFF(0);
 const ULONG		PAR_UINF_BADPWDCOUNT(0);
 const ULONG		PAR_UINF_NUMLOGONS(0);
-const _bstr_t	PAR_UINF_LOGONSERVER(L"");
+const _bstr_t	PAR_UINF_LOGONSERVER(L"\\\\*");
 const ULONG		PAR_UINF_UNITSPERWEEK(0);
 const _bstr_t	PAR_UINF_USERSID(L"");
 const ULONG		PAR_UINF_PWDEXPIRED(0);

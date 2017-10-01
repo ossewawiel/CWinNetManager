@@ -6,12 +6,11 @@
 /// UserInfo0 structure with the default property values.
 TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo0_then_return_no_exception_and_values_set_to_default)
 {
+	CUSTOM_ASSERT_SET;
 	CComPtr<ICUserInfo0> pUserInfo0;
-	HRESULT hr = mpCNetUser->GetUserInfo0(PAR_UINF_NAME, &pUserInfo0);
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_GET_USER_INFO_0(mpCNetUser, pUserInfo0);
 
-	hr = pUserInfo0->Clear();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_CLEAR_USER_INFO(pUserInfo0);
 
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_BSTR(pUserInfo0, get_Name, PAR_EMPTY);
@@ -23,21 +22,11 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo0_then_return_no_exception_a
 /// UserInfo1 structure with the default property values.
 TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo1_then_return_no_exception_and_values_set_to_default)
 {
+	CUSTOM_ASSERT_SET;
 	CComPtr<ICUserInfo1> pUserInfo1;
-	HRESULT hr = mpCNetUser->GetUserInfo1(
-		PAR_UINF_NAME
-		, PAR_UINF_PWD
-		, 0
-		, PAR_UINF_PRIV
-		, PAR_UINF_HOMEDIR
-		, PAR_UINF_COMNT
-		, PAR_UINF_FLGS
-		, PAR_UINF_SCRPATH
-		, &pUserInfo1);
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
-
-	hr = pUserInfo1->Clear();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_GET_USER_INFO_1(mpCNetUser, pUserInfo1);
+	
+	ASSERT_CLEAR_USER_INFO(pUserInfo1);
 
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_BSTR(pUserInfo1, get_Name, PAR_EMPTY);
@@ -58,44 +47,15 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo2_then_return_no_exception_a
 {
 	CComPtr<ICUserInfo2> pUserInfo2; 
 	CComPtr<ICLogonHours> pLogonHours;
-	HRESULT hr = mpCNetUser->GetLogonHoursAllActive(&pLogonHours);
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
-	hr = mpCNetUser->GetUserInfo2(
-		PAR_UINF_NAME
-		, PAR_UINF_PWD
-		, PAR_NOT_ZERO
-		, PAR_UINF_PRIV
-		, PAR_UINF_HOMEDIR
-		, PAR_UINF_COMNT
-		, PAR_UINF_FLGS
-		, PAR_UINF_SCRPATH
-		, PAR_NOT_ZERO
-		, PAR_UINF_FULLNAME
-		, PAR_UINF_USRCOMMENT
-		, PAR_UINF_PARAMS
-		, PAR_UINF_WORKSTATIONS
-		, PAR_NOT_ZERO
-		, PAR_NOT_ZERO
-		, PAR_UINF_ACCNTEXPIRES
-		, PAR_UINF_MAXSTORAGE
-		, PAR_NOT_ZERO
-		, pLogonHours.Detach()
-		, PAR_NOT_ZERO
-		, PAR_NOT_ZERO
-		, PAR_UINF_LOGONSERVER
-		, PAR_UINF_COUNTRYCODE
-		, PAR_UINF_CODEPAGE
-		, &pUserInfo2);
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	CUSTOM_ASSERT_SET;
+	ASSERT_GET_LOGONHOURS_ALL_ACTIVE(mpCNetUser, pLogonHours);
+	ASSERT_GET_USER_INFO_2(mpCNetUser, pLogonHours, pUserInfo2);
 
 	//Clear the structure
-	hr = pUserInfo2->Clear();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_CLEAR_USER_INFO(pUserInfo2);
 
-	hr = mpCNetUser->GetLogonHoursAllActive(&pLogonHours);
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
-	hr = pLogonHours->ClearAll();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_GET_LOGONHOURS_ALL_ACTIVE(mpCNetUser, pLogonHours);
+	ASSERT_LOGONHOURS_CLEAR(pLogonHours);
 
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_BSTR(pUserInfo2, get_Name, PAR_EMPTY);
@@ -131,51 +91,17 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo2_then_return_no_exception_a
 /// UserInfo3 structure with the default property values.
 TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo3_then_return_no_exception_and_values_set_to_default)
 {
+	CUSTOM_ASSERT_SET
 	CComPtr<ICUserInfo3> pUserInfo3;
 	CComPtr<ICLogonHours> pLogonHours;
-	HRESULT hr = mpCNetUser->GetLogonHoursAllActive(&pLogonHours);
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
-	hr = mpCNetUser->GetUserInfo3(
-		PAR_UINF_NAME
-		, PAR_UINF_PWD
-		, PAR_NOT_ZERO
-		, PAR_UINF_PRIV
-		, PAR_UINF_HOMEDIR
-		, PAR_UINF_COMNT
-		, PAR_UINF_FLGS
-		, PAR_UINF_SCRPATH
-		, PAR_NOT_ZERO
-		, PAR_UINF_FULLNAME
-		, PAR_UINF_USRCOMMENT
-		, PAR_UINF_PARAMS
-		, PAR_UINF_WORKSTATIONS
-		, PAR_NOT_ZERO
-		, PAR_NOT_ZERO
-		, PAR_UINF_ACCNTEXPIRES
-		, PAR_UINF_MAXSTORAGE
-		, PAR_NOT_ZERO
-		, pLogonHours.Detach()
-		, PAR_NOT_ZERO
-		, PAR_NOT_ZERO
-		, PAR_UINF_LOGONSERVER
-		, PAR_UINF_COUNTRYCODE
-		, PAR_UINF_CODEPAGE
-		, PAR_NOT_ZERO
-		, PAR_UINF_PRIMGRPID
-		, PAR_UINF_PRFL
-		, PAR_UINF_HOMEDIRDRV
-		, PAR_NOT_ZERO
-		, &pUserInfo3);
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_GET_LOGONHOURS_ALL_ACTIVE(mpCNetUser, pLogonHours);
+	ASSERT_GET_USER_INFO_3(mpCNetUser, pLogonHours, pUserInfo3)
 
 	//Clear the structure
-	hr = pUserInfo3->Clear();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_CLEAR_USER_INFO(pUserInfo3);
 
-	hr = mpCNetUser->GetLogonHoursAllActive(&pLogonHours);
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
-	hr = pLogonHours->ClearAll();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_GET_LOGONHOURS_ALL_ACTIVE(mpCNetUser, pLogonHours);
+	ASSERT_LOGONHOURS_CLEAR(pLogonHours);
 
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_BSTR(pUserInfo3, get_Name, PAR_EMPTY);
@@ -218,49 +144,15 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo4_then_return_no_exception_a
 {
 	CComPtr<ICUserInfo4> pUserInfo4;
 	CComPtr<ICLogonHours> pLogonHours;
-	HRESULT hr = mpCNetUser->GetLogonHoursAllActive(&pLogonHours);
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
-	hr = mpCNetUser->GetUserInfo4(
-		PAR_UINF_NAME
-		, PAR_UINF_PWD
-		, PAR_NOT_ZERO
-		, PAR_UINF_PRIV
-		, PAR_UINF_HOMEDIR
-		, PAR_UINF_COMNT
-		, PAR_UINF_FLGS
-		, PAR_UINF_SCRPATH
-		, PAR_NOT_ZERO
-		, PAR_UINF_FULLNAME
-		, PAR_UINF_USRCOMMENT
-		, PAR_UINF_PARAMS
-		, PAR_UINF_WORKSTATIONS
-		, PAR_NOT_ZERO
-		, PAR_NOT_ZERO
-		, PAR_UINF_ACCNTEXPIRES
-		, PAR_UINF_MAXSTORAGE
-		, PAR_NOT_ZERO
-		, pLogonHours.Detach()
-		, PAR_NOT_ZERO
-		, PAR_NOT_ZERO
-		, PAR_UINF_LOGONSERVER
-		, PAR_UINF_COUNTRYCODE
-		, PAR_UINF_CODEPAGE
-		, PAR_NOT_EMPTY
-		, PAR_UINF_PRIMGRPID
-		, PAR_UINF_PRFL
-		, PAR_UINF_HOMEDIRDRV
-		, PAR_NOT_ZERO
-		, &pUserInfo4);
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	CUSTOM_ASSERT_SET;
+	ASSERT_GET_LOGONHOURS_ALL_ACTIVE(mpCNetUser, pLogonHours);
+	ASSERT_GET_USER_INFO_4(mpCNetUser, pLogonHours, pUserInfo4)
 
 	//Clear the structure
-	hr = pUserInfo4->Clear();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_CLEAR_USER_INFO(pUserInfo4);
 
-	hr = mpCNetUser->GetLogonHoursAllActive(&pLogonHours);
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
-	hr = pLogonHours->ClearAll();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_GET_LOGONHOURS_ALL_ACTIVE(mpCNetUser, pLogonHours);
+	ASSERT_LOGONHOURS_CLEAR(pLogonHours);
 
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_BSTR(pUserInfo4, get_Name, PAR_EMPTY);
@@ -302,17 +194,11 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo4_then_return_no_exception_a
 TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo10_then_return_no_exception_and_values_set_to_default)
 {
 	CComPtr<ICUserInfo10> pUserInfo10;
-	HRESULT hr = mpCNetUser->GetUserInfo10(
-		PAR_UINF_NAME
-		, PAR_UINF_COMNT
-		, PAR_UINF_USRCOMMENT
-		, PAR_UINF_FULLNAME
-		, &pUserInfo10);
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	CUSTOM_ASSERT_SET;
+	ASSERT_GET_USER_INFO_10(mpCNetUser, pUserInfo10);
 
 	//Clear the structure
-	hr = pUserInfo10->Clear();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_CLEAR_USER_INFO(pUserInfo10);
 
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_BSTR(pUserInfo10, get_Name, PAR_EMPTY);
@@ -329,40 +215,15 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo11_then_return_no_exception_
 {
 	CComPtr<ICUserInfo11> pUserInfo11;
 	CComPtr<ICLogonHours> pLogonHours;
-	HRESULT hr = mpCNetUser->GetLogonHoursAllActive(&pLogonHours);
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
-	hr = mpCNetUser->GetUserInfo11(
-		PAR_UINF_NAME
-		, PAR_UINF_COMNT
-		, PAR_UINF_USRCOMMENT
-		, PAR_UINF_FULLNAME
-		, PAR_UINF_PRIV
-		, PAR_NOT_ZERO
-		, PAR_NOT_ZERO
-		, PAR_UINF_HOMEDIR
-		, PAR_UINF_PARAMS
-		, PAR_NOT_ZERO
-		, PAR_NOT_ZERO
-		, PAR_NOT_ZERO
-		, PAR_NOT_ZERO
-		, PAR_UINF_LOGONSERVER
-		, PAR_UINF_COUNTRYCODE
-		, PAR_UINF_WORKSTATIONS
-		, PAR_UINF_MAXSTORAGE
-		, PAR_NOT_ZERO
-		, pLogonHours.Detach()
-		, PAR_UINF_CODEPAGE
-		, &pUserInfo11);
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	CUSTOM_ASSERT_SET;
+	ASSERT_GET_LOGONHOURS_ALL_ACTIVE(mpCNetUser, pLogonHours);
+	ASSERT_GET_USER_INFO_11(mpCNetUser, pLogonHours, pUserInfo11);
 
 	//Clear the structure
-	hr = pUserInfo11->Clear();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_CLEAR_USER_INFO(pUserInfo11);
 
-	hr = mpCNetUser->GetLogonHoursAllActive(&pLogonHours);
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
-	hr = pLogonHours->ClearAll();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_GET_LOGONHOURS_ALL_ACTIVE(mpCNetUser, pLogonHours);
+	ASSERT_LOGONHOURS_CLEAR(pLogonHours);
 
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_BSTR(pUserInfo11, get_Name, PAR_EMPTY);
@@ -394,18 +255,11 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo11_then_return_no_exception_
 TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo20_then_return_no_exception_and_values_set_to_default)
 {
 	CComPtr<ICUserInfo20> pUserInfo20;
-	HRESULT hr = mpCNetUser->GetUserInfo20(
-		PAR_UINF_NAME
-		, PAR_UINF_FULLNAME
-		, PAR_UINF_COMNT
-		, PAR_UINF_FLGS
-		, PAR_NOT_ZERO
-		, &pUserInfo20);
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	CUSTOM_ASSERT_SET;
+	ASSERT_GET_USER_INFO_20(mpCNetUser, pUserInfo20);
 
 	//Clear the structure
-	hr = pUserInfo20->Clear();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_CLEAR_USER_INFO(pUserInfo20);
 
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_BSTR(pUserInfo20, get_Name, PAR_EMPTY);
@@ -422,12 +276,11 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo20_then_return_no_exception_
 TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo21_then_return_no_exception_and_values_set_to_default)
 {
 	CComPtr<ICUserInfo21> pUserInfo21;
-	HRESULT hr = mpCNetUser->GetUserInfo21(PAR_UINF_PWD, &pUserInfo21);
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	CUSTOM_ASSERT_SET;
+	ASSERT_GET_USER_INFO_21(mpCNetUser, pUserInfo21);
 
 	//Clear the structure
-	hr = pUserInfo21->Clear();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_CLEAR_USER_INFO(pUserInfo21);
 
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_BSTR(pUserInfo21, get_Password, PAR_EMPTY);
@@ -441,44 +294,15 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo22_then_return_no_exception_
 {
 	CComPtr<ICUserInfo22> pUserInfo22;
 	CComPtr<ICLogonHours> pLogonHours;
-	HRESULT hr = mpCNetUser->GetLogonHoursAllActive(&pLogonHours);
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
-	hr = mpCNetUser->GetUserInfo22(
-		PAR_UINF_NAME
-		, PAR_UINF_PWD
-		, PAR_NOT_ZERO
-		, PAR_UINF_PRIV
-		, PAR_UINF_HOMEDIR
-		, PAR_UINF_COMNT
-		, PAR_UINF_FLGS
-		, PAR_UINF_SCRPATH
-		, PAR_NOT_ZERO
-		, PAR_UINF_FULLNAME
-		, PAR_UINF_USRCOMMENT
-		, PAR_UINF_PARAMS
-		, PAR_UINF_WORKSTATIONS
-		, PAR_NOT_ZERO
-		, PAR_NOT_ZERO
-		, PAR_UINF_ACCNTEXPIRES
-		, PAR_UINF_MAXSTORAGE
-		, PAR_NOT_ZERO
-		, pLogonHours.Detach()
-		, PAR_NOT_ZERO
-		, PAR_NOT_ZERO
-		, PAR_UINF_LOGONSERVER
-		, PAR_UINF_COUNTRYCODE
-		, PAR_UINF_CODEPAGE
-		, &pUserInfo22);
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	CUSTOM_ASSERT_SET;
+	ASSERT_GET_LOGONHOURS_ALL_ACTIVE(mpCNetUser, pLogonHours);
+	ASSERT_GET_USER_INFO_22(mpCNetUser, pLogonHours, pUserInfo22);
 
 	//Clear the structure
-	hr = pUserInfo22->Clear();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_CLEAR_USER_INFO(pUserInfo22);
 
-	hr = mpCNetUser->GetLogonHoursAllActive(&pLogonHours);
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
-	hr = pLogonHours->ClearAll();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_GET_LOGONHOURS_ALL_ACTIVE(mpCNetUser, pLogonHours);
+	ASSERT_LOGONHOURS_CLEAR(pLogonHours);
 
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_BSTR(pUserInfo22, get_Name, PAR_EMPTY);
@@ -514,18 +338,11 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo22_then_return_no_exception_
 TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo23_then_return_no_exception_and_values_set_to_default)
 {
 	CComPtr<ICUserInfo23> pUserInfo23;
-	HRESULT hr = mpCNetUser->GetUserInfo23(
-		PAR_UINF_NAME
-		, PAR_UINF_FULLNAME
-		, PAR_UINF_COMNT
-		, PAR_UINF_FLGS
-		, PAR_NOT_EMPTY
-		, &pUserInfo23);
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	CUSTOM_ASSERT_SET;
+	ASSERT_GET_USER_INFO_23(mpCNetUser, pUserInfo23)
 
 	//Clear the structure
-	hr = pUserInfo23->Clear();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_CLEAR_USER_INFO(pUserInfo23);
 
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_BSTR(pUserInfo23, get_Name, PAR_EMPTY);
@@ -542,18 +359,11 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo23_then_return_no_exception_
 TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo24_then_return_no_exception_and_values_set_to_default)
 {
 	CComPtr<ICUserInfo24> pUserInfo24;
-	HRESULT hr = mpCNetUser->GetUserInfo24(
-		PAR_UINF_INTRNETID
-		, PAR_UINF_FLGS
-		, PAR_UINF_INTRNETPROVNAME
-		, PAR_UINF_INTRNETPRNCPLNAME
-		, PAR_NOT_EMPTY
-		, &pUserInfo24);
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	CUSTOM_ASSERT_SET;
+	ASSERT_GET_USER_INFO_24(mpCNetUser, pUserInfo24);
 
 	//Clear the structure
-	hr = pUserInfo24->Clear();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_CLEAR_USER_INFO(pUserInfo24);
 
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_SHORT(pUserInfo24, get_InternetIdentity, 0);
@@ -574,8 +384,7 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo1003_then_return_no_exceptio
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
 	//Clear the structure
-	hr = pUserInfo1003->Clear();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_CLEAR_USER_INFO(pUserInfo1003);
 
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_BSTR(pUserInfo1003, get_Password, PAR_EMPTY);
@@ -592,8 +401,7 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo1005_then_return_no_exceptio
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
 	//Clear the structure
-	hr = pUserInfo1005->Clear();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_CLEAR_USER_INFO(pUserInfo1005);
 
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo1005, get_Privilege, 0);
@@ -610,8 +418,7 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo1006_then_return_no_exceptio
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
 	//Clear the structure
-	hr = pUserInfo1006->Clear();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_CLEAR_USER_INFO(pUserInfo1006);
 
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_BSTR(pUserInfo1006, get_HomeDirectory, PAR_EMPTY);
@@ -628,8 +435,7 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo1007_then_return_no_exceptio
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
 	//Clear the structure
-	hr = pUserInfo1007->Clear();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_CLEAR_USER_INFO(pUserInfo1007);
 
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_BSTR(pUserInfo1007, get_Comment, PAR_EMPTY);
@@ -646,8 +452,7 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo1008_then_return_no_exceptio
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
 	//Clear the structure
-	hr = pUserInfo1008->Clear();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_CLEAR_USER_INFO(pUserInfo1008);
 
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo1008, get_Flags, 0);
@@ -664,8 +469,7 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo1009_then_return_no_exceptio
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
 	//Clear the structure
-	hr = pUserInfo1009->Clear();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_CLEAR_USER_INFO(pUserInfo1009);
 
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_BSTR(pUserInfo1009, get_ScriptPath, PAR_EMPTY);
@@ -682,8 +486,7 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo1010_then_return_no_exceptio
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
 	//Clear the structure
-	hr = pUserInfo1010->Clear();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_CLEAR_USER_INFO(pUserInfo1010);
 
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo1010, get_AuthFlags, 0);
@@ -700,8 +503,7 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo1011_then_return_no_exceptio
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
 	//Clear the structure
-	hr = pUserInfo1011->Clear();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_CLEAR_USER_INFO(pUserInfo1011);
 
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_BSTR(pUserInfo1011, get_FullName, PAR_EMPTY);
@@ -718,8 +520,7 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo1012_then_return_no_exceptio
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
 	//Clear the structure
-	hr = pUserInfo1012->Clear();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_CLEAR_USER_INFO(pUserInfo1012);
 
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_BSTR(pUserInfo1012, get_UsrComment, PAR_EMPTY);
@@ -736,8 +537,7 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo1013_then_return_no_exceptio
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
 	//Clear the structure
-	hr = pUserInfo1013->Clear();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_CLEAR_USER_INFO(pUserInfo1013);
 
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_BSTR(pUserInfo1013, get_Params, PAR_EMPTY);
@@ -754,8 +554,7 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo1014_then_return_no_exceptio
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
 	//Clear the structure
-	hr = pUserInfo1014->Clear();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_CLEAR_USER_INFO(pUserInfo1014);
 
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_BSTR(pUserInfo1014, get_Workstations, PAR_EMPTY);
@@ -772,8 +571,7 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo1017_then_return_no_exceptio
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
 	//Clear the structure
-	hr = pUserInfo1017->Clear();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_CLEAR_USER_INFO(pUserInfo1017);
 
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo1017, get_AccntExpires, 0);
@@ -790,8 +588,7 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo1018_then_return_no_exceptio
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
 	//Clear the structure
-	hr = pUserInfo1018->Clear();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_CLEAR_USER_INFO(pUserInfo1018);
 
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo1018, get_MaxStorage, 0);
@@ -805,8 +602,8 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo1020_then_return_no_exceptio
 {
 	CComPtr<ICUserInfo1020> pUserInfo1020;
 	CComPtr<ICLogonHours> pLogonHours;
-	HRESULT hr = mpCNetUser->GetLogonHoursAllActive(&pLogonHours);
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	CUSTOM_ASSERT_SET;
+	ASSERT_GET_LOGONHOURS_ALL_ACTIVE(mpCNetUser, pLogonHours);
 	hr = mpCNetUser->GetUserInfo1020(
 		PAR_NOT_ZERO
 		, pLogonHours.Detach()
@@ -814,13 +611,10 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo1020_then_return_no_exceptio
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
 	//Clear the structure
-	hr = pUserInfo1020->Clear();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_CLEAR_USER_INFO(pUserInfo1020);
 
-	hr = mpCNetUser->GetLogonHoursAllActive(&pLogonHours);
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
-	hr = pLogonHours->ClearAll();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_GET_LOGONHOURS_ALL_ACTIVE(mpCNetUser, pLogonHours);
+	ASSERT_LOGONHOURS_CLEAR(pLogonHours);
 
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo1020, get_UnitsPerWeek, 0);
@@ -838,8 +632,7 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo1023_then_return_no_exceptio
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
 	//Clear the structure
-	hr = pUserInfo1023->Clear();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_CLEAR_USER_INFO(pUserInfo1023);
 
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_BSTR(pUserInfo1023, get_LogonServer, PAR_EMPTY);
@@ -856,8 +649,7 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo1024_then_return_no_exceptio
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
 	//Clear the structure
-	hr = pUserInfo1024->Clear();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_CLEAR_USER_INFO(pUserInfo1024);
 
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo1024, get_CountryCode, 0);
@@ -874,8 +666,7 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo1025_then_return_no_exceptio
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
 	//Clear the structure
-	hr = pUserInfo1025->Clear();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_CLEAR_USER_INFO(pUserInfo1025);
 
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo1025, get_CodePage, 0);
@@ -892,8 +683,7 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo1051_then_return_no_exceptio
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
 	//Clear the structure
-	hr = pUserInfo1051->Clear();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_CLEAR_USER_INFO(pUserInfo1051);
 
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_ULONG(pUserInfo1051, get_PrimaryGrpId, 0);
@@ -910,8 +700,7 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo1052_then_return_no_exceptio
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
 	//Clear the structure
-	hr = pUserInfo1052->Clear();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_CLEAR_USER_INFO(pUserInfo1052);
 
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_BSTR(pUserInfo1052, get_Profile, PAR_EMPTY);
@@ -928,8 +717,7 @@ TEST_F(TestCNetUser_Clear, when_clearing_getuserinfo1053_then_return_no_exceptio
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
 	//Clear the structure
-	hr = pUserInfo1053->Clear();
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	ASSERT_CLEAR_USER_INFO(pUserInfo1053);
 
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_BSTR(pUserInfo1053, get_HomeDirDrive, PAR_EMPTY);

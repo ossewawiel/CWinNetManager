@@ -287,7 +287,7 @@ HRESULT CCUserInfo4::TranslateToUserInfo(ICUserInfo4 * pFrom, USER_INFO_4 &pTo)
 	if (hr = ToUserInfoAccntExpires	<ICUserInfo4>(pFrom, pTo.usri4_acct_expires))	return hr;
 	if (hr = ToUserInfoMaxStorage	<ICUserInfo4>(pFrom, pTo.usri4_max_storage))	return hr;
 	if (hr = ToUserInfoUnitsPerWeek	<ICUserInfo4>(pFrom, pTo.usri4_units_per_week))	return hr;
-	if (hr = ToUserInfoLogonHours	<ICUserInfo4>(pFrom, pTo.usri4_logon_hours))	return hr;
+	if (hr = ToUserInfoLogonHours	<ICUserInfo4>(pFrom, &pTo.usri4_logon_hours))	return hr;
 	if (hr = ToUserInfoBadPwdCount	<ICUserInfo4>(pFrom, pTo.usri4_bad_pw_count))	return hr;
 	if (hr = ToUserInfoNumLogons	<ICUserInfo4>(pFrom, pTo.usri4_num_logons))		return hr;
 	if (hr = ToUserInfoLogonServer	<ICUserInfo4>(pFrom, pTo.usri4_logon_server))	return hr;
@@ -299,6 +299,46 @@ HRESULT CCUserInfo4::TranslateToUserInfo(ICUserInfo4 * pFrom, USER_INFO_4 &pTo)
 	if (hr = ToUserInfoHomeDirDrive	<ICUserInfo4>(pFrom, pTo.usri4_home_dir_drive))	return hr;
 	if (hr = ToUserInfoPwdExpired	<ICUserInfo4>(pFrom, pTo.usri4_password_expired)) return hr;
 	return hr;
+}
+
+HRESULT CCUserInfo4::TranslateFromUserInfo(LPUSER_INFO_4 pFrom, ICUserInfo4 ** ppTo)
+{
+	HRESULT hr(S_OK);
+	if (hr = CCUserInfo4::CreateInstance(ppTo)) return hr;
+	CComPtr<ICLogonHours> pLogonHours;
+	if (hr = FromUserInfoLogonHours(pFrom->usri4_logon_hours, &pLogonHours)) return hr;
+	_bstr_t bsSid;
+	if (hr = FromUserInfoUserSid(pFrom->usri4_user_sid, bsSid.GetAddress())) return hr;
+	return (*ppTo)->Initialise(
+		_bstr_t(pFrom->usri4_name)
+		, _bstr_t(pFrom->usri4_password)
+		, pFrom->usri4_password_age
+		, pFrom->usri4_priv
+		, _bstr_t(pFrom->usri4_home_dir)
+		, _bstr_t(pFrom->usri4_comment)
+		, pFrom->usri4_flags
+		, _bstr_t(pFrom->usri4_script_path)
+		, pFrom->usri4_auth_flags
+		, _bstr_t(pFrom->usri4_full_name)
+		, _bstr_t(pFrom->usri4_usr_comment)
+		, _bstr_t(pFrom->usri4_parms)
+		, _bstr_t(pFrom->usri4_workstations)
+		, pFrom->usri4_last_logon
+		, pFrom->usri4_last_logoff
+		, pFrom->usri4_acct_expires
+		, pFrom->usri4_max_storage
+		, pFrom->usri4_units_per_week
+		, pLogonHours
+		, pFrom->usri4_bad_pw_count
+		, pFrom->usri4_num_logons
+		, _bstr_t(pFrom->usri4_logon_server)
+		, pFrom->usri4_country_code
+		, pFrom->usri4_code_page
+		, bsSid
+		, pFrom->usri4_primary_group_id
+		, _bstr_t(pFrom->usri4_profile)
+		, _bstr_t(pFrom->usri4_home_dir_drive)
+		, pFrom->usri4_password_expired);
 }
 
 STDMETHODIMP CCUserInfo4::Clear()

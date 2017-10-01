@@ -1,5 +1,7 @@
 #pragma once
 #include "stdafx.h"
+#define CUSTOM_ASSERT_SET \
+	HRESULT hr(S_OK);
 
 #define ASSERT_EQ_PROP_GET_BSTR(uinfObject, getProperty, eqTo) \
 	_bstr_t bs##getProperty(L"*"); \
@@ -28,6 +30,353 @@
 	hr##getProperty =  ##uinfObject->##getProperty(&sh##getProperty); \
 	ASSERT_FALSE(hr##getProperty) << TUtils::GetLastErrorAsString(hr##getProperty); \
 	ASSERT_EQ(##eqTo, sh##getProperty);
+
+#define ASSERT_GET_LOGONHOURS_ALL_ACTIVE(netuserObject, uinfLogonHours) \
+	hr = netuserObject->GetLogonHoursAllActive(&uinfLogonHours);		\
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);				\
+
+#define ASSERT_CLEAR_USER_INFO(uinfObect) \
+	hr = uinfObect->Clear();			\
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+
+#define ASSERT_LOGONHOURS_CLEAR(uinfLogonHours) \
+	hr = uinfLogonHours->ClearAll(); \
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+
+#define ASSERT_ADD_USER_INFO(netuserObject, uinfObject, uiType) \
+	hr = netuserObject->NetUserAdd(NULL, uiType, uinfObject); \
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+
+#define ASSERT_DELETE_USER(netuserObject, userName) \
+	hr = netuserObject->NetUserDel(NULL, userName); \
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+
+#define ASSERT_GET_USER_INFO_0(netuserObject, uinfObject)		\
+	hr = netuserObject->GetUserInfo0(PAR_UINF_NAME, &uinfObject); \
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+
+#define ASSERT_GET_USER_INFO_0_ALT(netuserObject, uinfObject)		\
+	hr = netuserObject->GetUserInfo0(PAR_UINF_NAME_ALT, &uinfObject); \
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+
+#define ASSERT_GET_USER_INFO_1(netuserObject, uinfObject)	\
+	hr = netuserObject->GetUserInfo1(						\
+		PAR_UINF_NAME										\
+		, PAR_UINF_PWD										\
+		, PAR_NOT_ZERO										\
+		, PAR_UINF_PRIV										\
+		, PAR_UINF_HOMEDIR									\
+		, PAR_UINF_COMNT									\
+		, PAR_UINF_FLGS										\
+		, PAR_UINF_SCRPATH									\
+		, &uinfObject);										\
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+
+#define ASSERT_GET_USER_INFO_1_ALT(netuserObject, uinfObject)\
+	hr = netuserObject->GetUserInfo1(						\
+		PAR_UINF_NAME_ALT									\
+		, PAR_UINF_PWD_ALT									\
+		, 0													\
+		, PAR_UINF_PRIV										\
+		, PAR_UINF_HOMEDIR									\
+		, PAR_UINF_COMNT_ALT								\
+		, PAR_UINF_FLGS_ALT									\
+		, PAR_UINF_SCRPATH_ALT								\
+		, &uinfObject);										\
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+
+#define ASSERT_GET_USER_INFO_2(netuserObject, uinfLogonHours, uinfObject)	\
+	hr = netuserObject->GetUserInfo2(										\
+		PAR_UINF_NAME														\
+		, PAR_UINF_PWD														\
+		, PAR_NOT_ZERO														\
+		, PAR_UINF_PRIV														\
+		, PAR_UINF_HOMEDIR													\
+		, PAR_UINF_COMNT													\
+		, PAR_UINF_FLGS														\
+		, PAR_UINF_SCRPATH													\
+		, PAR_NOT_ZERO														\
+		, PAR_UINF_FULLNAME													\
+		, PAR_UINF_USRCOMMENT												\
+		, PAR_UINF_PARAMS													\
+		, PAR_UINF_WORKSTATIONS												\
+		, PAR_NOT_ZERO														\
+		, PAR_NOT_ZERO														\
+		, PAR_UINF_ACCNTEXPIRES												\
+		, PAR_UINF_MAXSTORAGE												\
+		, PAR_NOT_ZERO														\
+		, uinfLogonHours.Detach()											\
+		, PAR_NOT_ZERO														\
+		, PAR_NOT_ZERO														\
+		, PAR_UINF_LOGONSERVER												\
+		, PAR_UINF_COUNTRYCODE												\
+		, PAR_UINF_CODEPAGE													\
+		, &uinfObject);														\
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+
+#define ASSERT_GET_USER_INFO_2_SET(netuserObject, uinfLogonHours, uinfObject)\
+	hr = netuserObject->GetUserInfo2(										\
+		PAR_UINF_NAME														\
+		, PAR_UINF_PWD														\
+		, PAR_NOT_ZERO														\
+		, PAR_UINF_PRIV														\
+		, PAR_UINF_HOMEDIR													\
+		, PAR_UINF_COMNT													\
+		, PAR_UINF_FLGS														\
+		, PAR_UINF_SCRPATH													\
+		, 0																	\
+		, PAR_UINF_FULLNAME													\
+		, PAR_UINF_USRCOMMENT												\
+		, PAR_UINF_PARAMS													\
+		, PAR_UINF_WORKSTATIONS												\
+		, 0																	\
+		, 0																	\
+		, PAR_UINF_ACCNTEXPIRES												\
+		, PAR_UINF_MAXSTORAGE												\
+		, 0																	\
+		, uinfLogonHours.Detach()											\
+		, 0																	\
+		, 0																	\
+		, PAR_UINF_LOGONSERVER												\
+		, PAR_UINF_COUNTRYCODE												\
+		, PAR_UINF_CODEPAGE													\
+		, &uinfObject);														\
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+
+#define ASSERT_GET_USER_INFO_3(netuserObject, uinfLogonHours, uinfObject)	\
+	hr = netuserObject->GetUserInfo3(										\
+		PAR_UINF_NAME														\
+		, PAR_UINF_PWD														\
+		, PAR_NOT_ZERO														\
+		, PAR_UINF_PRIV														\
+		, PAR_UINF_HOMEDIR													\
+		, PAR_UINF_COMNT													\
+		, PAR_UINF_FLGS														\
+		, PAR_UINF_SCRPATH													\
+		, PAR_NOT_ZERO														\
+		, PAR_UINF_FULLNAME													\
+		, PAR_UINF_USRCOMMENT												\
+		, PAR_UINF_PARAMS													\
+		, PAR_UINF_WORKSTATIONS												\
+		, PAR_NOT_ZERO														\
+		, PAR_NOT_ZERO														\
+		, PAR_UINF_ACCNTEXPIRES												\
+		, PAR_UINF_MAXSTORAGE												\
+		, PAR_NOT_ZERO														\
+		, uinfLogonHours.Detach()											\
+		, PAR_NOT_ZERO														\
+		, PAR_NOT_ZERO														\
+		, PAR_UINF_LOGONSERVER												\
+		, PAR_UINF_COUNTRYCODE												\
+		, PAR_UINF_CODEPAGE													\
+		, PAR_NOT_ZERO														\
+		, PAR_UINF_PRIMGRPID												\
+		, PAR_UINF_PRFL														\
+		, PAR_UINF_HOMEDIRDRV												\
+		, PAR_NOT_ZERO														\
+		, &uinfObject);														\
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+
+#define ASSERT_GET_USER_INFO_3_SET(netuserObject, uinfLogonHours, uinfObject)\
+	hr = netuserObject->GetUserInfo3(										\
+		PAR_UINF_NAME														\
+		, PAR_UINF_PWD														\
+		, PAR_NOT_ZERO														\
+		, PAR_UINF_PRIV														\
+		, PAR_UINF_HOMEDIR													\
+		, PAR_UINF_COMNT													\
+		, PAR_UINF_FLGS														\
+		, PAR_UINF_SCRPATH													\
+		, 0																	\
+		, PAR_UINF_FULLNAME													\
+		, PAR_UINF_USRCOMMENT												\
+		, PAR_UINF_PARAMS													\
+		, PAR_UINF_WORKSTATIONS												\
+		, 0																	\
+		, 0																	\
+		, PAR_UINF_ACCNTEXPIRES												\
+		, PAR_UINF_MAXSTORAGE												\
+		, 0																	\
+		, uinfLogonHours.Detach()											\
+		, 0																	\
+		, 0																	\
+		, PAR_UINF_LOGONSERVER												\
+		, PAR_UINF_COUNTRYCODE												\
+		, PAR_UINF_CODEPAGE													\
+		, 0																	\
+		, PAR_UINF_PRIMGRPID												\
+		, PAR_UINF_PRFL														\
+		, PAR_UINF_HOMEDIRDRV												\
+		, 0																	\
+		, &uinfObject);														\
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+
+
+#define ASSERT_GET_USER_INFO_4(netuserObject, uinfLogonHours, uinfObject)	\
+	hr = netuserObject->GetUserInfo4(										\
+		PAR_UINF_NAME														\
+		, PAR_UINF_PWD														\
+		, PAR_NOT_ZERO														\
+		, PAR_UINF_PRIV														\
+		, PAR_UINF_HOMEDIR													\
+		, PAR_UINF_COMNT													\
+		, PAR_UINF_FLGS														\
+		, PAR_UINF_SCRPATH													\
+		, PAR_NOT_ZERO														\
+		, PAR_UINF_FULLNAME													\
+		, PAR_UINF_USRCOMMENT												\
+		, PAR_UINF_PARAMS													\
+		, PAR_UINF_WORKSTATIONS												\
+		, PAR_NOT_ZERO														\
+		, PAR_NOT_ZERO														\
+		, PAR_UINF_ACCNTEXPIRES												\
+		, PAR_UINF_MAXSTORAGE												\
+		, PAR_NOT_ZERO														\
+		, pLogonHours.Detach()												\
+		, PAR_NOT_ZERO														\
+		, PAR_NOT_ZERO														\
+		, PAR_UINF_LOGONSERVER												\
+		, PAR_UINF_COUNTRYCODE												\
+		, PAR_UINF_CODEPAGE													\
+		, PAR_NOT_EMPTY														\
+		, PAR_UINF_PRIMGRPID												\
+		, PAR_UINF_PRFL														\
+		, PAR_UINF_HOMEDIRDRV												\
+		, PAR_NOT_ZERO														\
+		, &uinfObject);														\
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+
+#define ASSERT_GET_USER_INFO_4_SET(netuserObject, uinfLogonHours, uinfObject)\
+	hr = netuserObject->GetUserInfo4(										\
+		PAR_UINF_NAME														\
+		, PAR_UINF_PWD														\
+		, 0																	\
+		, PAR_UINF_PRIV														\
+		, PAR_UINF_HOMEDIR													\
+		, PAR_UINF_COMNT													\
+		, PAR_UINF_FLGS														\
+		, PAR_UINF_SCRPATH													\
+		, 0																	\
+		, PAR_UINF_FULLNAME													\
+		, PAR_UINF_USRCOMMENT												\
+		, PAR_UINF_PARAMS													\
+		, PAR_UINF_WORKSTATIONS												\
+		, 0																	\
+		, 0																	\
+		, PAR_UINF_ACCNTEXPIRES												\
+		, PAR_UINF_MAXSTORAGE												\
+		, 0																	\
+		, pLogonHours.Detach()												\
+		, NULL																\
+		, 0																	\
+		, PAR_UINF_LOGONSERVER												\
+		, PAR_UINF_COUNTRYCODE												\
+		, PAR_UINF_CODEPAGE													\
+		, PAR_EMPTY															\
+		, PAR_UINF_PRIMGRPID												\
+		, PAR_UINF_PRFL														\
+		, PAR_UINF_HOMEDIRDRV												\
+		, 0																	\
+		, &uinfObject);														\
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+
+#define ASSERT_GET_USER_INFO_10(netuserObject, uinfObject)					\
+	hr = netuserObject->GetUserInfo10(										\
+		PAR_UINF_NAME														\
+		, PAR_UINF_COMNT													\
+		, PAR_UINF_USRCOMMENT												\
+		, PAR_UINF_FULLNAME													\
+		, &uinfObject);														\
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+
+#define ASSERT_GET_USER_INFO_11(netuserObject, uinfLogonHours, uinfObject)	\
+	hr = netuserObject->GetUserInfo11(										\
+		PAR_UINF_NAME														\
+		, PAR_UINF_COMNT													\
+		, PAR_UINF_USRCOMMENT												\
+		, PAR_UINF_FULLNAME													\
+		, PAR_UINF_PRIV														\
+		, PAR_NOT_ZERO														\
+		, PAR_NOT_ZERO														\
+		, PAR_UINF_HOMEDIR													\
+		, PAR_UINF_PARAMS													\
+		, PAR_NOT_ZERO														\
+		, PAR_NOT_ZERO														\
+		, PAR_NOT_ZERO														\
+		, PAR_NOT_ZERO														\
+		, PAR_UINF_LOGONSERVER												\
+		, PAR_UINF_COUNTRYCODE												\
+		, PAR_UINF_WORKSTATIONS												\
+		, PAR_UINF_MAXSTORAGE												\
+		, PAR_NOT_ZERO														\
+		, uinfLogonHours.Detach()											\
+		, PAR_UINF_CODEPAGE													\
+		, &uinfObject);														\
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+
+#define ASSERT_GET_USER_INFO_20(netuserObject, uinfObject)					\
+	hr = netuserObject->GetUserInfo20(										\
+		PAR_UINF_NAME														\
+		, PAR_UINF_FULLNAME													\
+		, PAR_UINF_COMNT													\
+		, PAR_UINF_FLGS														\
+		, PAR_NOT_ZERO														\
+		, &uinfObject);														\
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+
+#define ASSERT_GET_USER_INFO_21(netuserObject, uinfObject)					\
+	hr = netuserObject->GetUserInfo21(PAR_UINF_PWD							\
+		, &uinfObject);														\
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+
+#define ASSERT_GET_USER_INFO_22(netuserObject, uinfLogonHours, uinfObject)	\
+	hr = netuserObject->GetUserInfo22(										\
+		PAR_UINF_NAME														\
+		, PAR_UINF_PWD														\
+		, PAR_NOT_ZERO														\
+		, PAR_UINF_PRIV														\
+		, PAR_UINF_HOMEDIR													\
+		, PAR_UINF_COMNT													\
+		, PAR_UINF_FLGS														\
+		, PAR_UINF_SCRPATH													\
+		, PAR_NOT_ZERO														\
+		, PAR_UINF_FULLNAME													\
+		, PAR_UINF_USRCOMMENT												\
+		, PAR_UINF_PARAMS													\
+		, PAR_UINF_WORKSTATIONS												\
+		, PAR_NOT_ZERO														\
+		, PAR_NOT_ZERO														\
+		, PAR_UINF_ACCNTEXPIRES												\
+		, PAR_UINF_MAXSTORAGE												\
+		, PAR_NOT_ZERO														\
+		, uinfLogonHours.Detach()											\
+		, PAR_NOT_ZERO														\
+		, PAR_NOT_ZERO														\
+		, PAR_UINF_LOGONSERVER												\
+		, PAR_UINF_COUNTRYCODE												\
+		, PAR_UINF_CODEPAGE													\
+		, &uinfObject);														\
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+
+#define ASSERT_GET_USER_INFO_23(netuserObject, uinfObject)					\
+	hr = netuserObject->GetUserInfo23(										\
+		PAR_UINF_NAME														\
+		, PAR_UINF_FULLNAME													\
+		, PAR_UINF_COMNT													\
+		, PAR_UINF_FLGS														\
+		, PAR_NOT_EMPTY														\
+		, &uinfObject);														\
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+
+#define ASSERT_GET_USER_INFO_24(netuserObject, uinfObject)					\
+	hr = netuserObject->GetUserInfo24(										\
+		PAR_UINF_INTRNETID													\
+		, PAR_UINF_FLGS														\
+		, PAR_UINF_INTRNETPROVNAME											\
+		, PAR_UINF_INTRNETPRNCPLNAME										\
+		, PAR_NOT_EMPTY														\
+		, &uinfObject);														\
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
 namespace TUtils
 {

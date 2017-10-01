@@ -303,13 +303,18 @@ public:
 
 	STDMETHOD(NetUserAdd)(BSTR bsServerName, eUserInfoType userInfoType, IUnknown* pUserInfo);
 	STDMETHOD(NetUserDel)(BSTR bsServerName, BSTR bsUserName);
-	STDMETHOD(NetUserGetInfo)(BSTR bsServerName, BSTR bsUserName, eUserInfoType userInfoType, IUnknown** ppUserInfo);
-	STDMETHOD(CastToUserInfo1)(IUnknown* pUnk, ICUserInfo1** ppUserInfo1);
+	STDMETHOD(NetUserGetInfo0)(BSTR bsServerName, BSTR bsUserName, ICUserInfo0** ppUserInfo);
+	STDMETHOD(NetUserGetInfo1)(BSTR bsServerName, BSTR bsUserName, ICUserInfo1** ppUserInfo);
+	STDMETHOD(NetUserGetInfo2)(BSTR bsServerName, BSTR bsUserName, ICUserInfo2** ppUserInfo);
+	STDMETHOD(NetUserGetInfo3)(BSTR bsServerName, BSTR bsUserName, ICUserInfo3** ppUserInfo);
+	STDMETHOD(NetUserGetInfo4)(BSTR bsServerName, BSTR bsUserName, ICUserInfo4** ppUserInfo);
+	STDMETHOD(GetLogonHoursAllActive)(ICLogonHours** ppLogonHours);
+	STDMETHOD(NetUserSetInfo)(BSTR bsServerName, BSTR bsUserName, eUserInfoType userInfoType, IUnknown* pUserInfo);
 
 	private:
-		HRESULT TranslateToUserInfo1(ICUserInfo1* pICUserInfo1, PUSER_INFO_1 pUserInfo1);
+		
 public:
-	STDMETHOD(GetLogonHoursAllActive)(ICLogonHours** ppLogonHours);
+	
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(CNetUser), CCNetUser)

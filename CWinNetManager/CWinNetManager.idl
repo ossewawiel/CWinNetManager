@@ -49,6 +49,10 @@ interface ICLogonHours : IDispatch {
 	[id(DISPID_VALUE), propget] HRESULT Item([in] long n, [out, retval] ICLogonHour** ppLogonHour);
 	[id(DISPID_VALUE), propput] HRESULT Item([in] long n, [in] ICLogonHour* pLogonHour);
 	[propget] HRESULT Count([out, retval] long* pnCount);
+	[id(3)] HRESULT ActivateLogonHour([in] SHORT shDay, [in] SHORT shHour);
+	[id(4)] HRESULT DeactivateLogonHour([in] SHORT shDay, [in] SHORT shHour);
+	[id(5)] HRESULT ActivateItem([in] long n);
+	[id(6)] HRESULT DeactivateItem([in] long n);
 };
 [
 	object,
@@ -941,9 +945,13 @@ interface ICNetUser : IDispatch{
 	[id(32)] HRESULT GetUserInfo1053([in] BSTR bsHomeDirDrive, [out, retval] ICUserInfo1053** ppUserInfo1053);
 	[id(34)] HRESULT NetUserAdd([in] BSTR bsServerName, [in] eUserInfoType userInfoType, [in] IUnknown* pUserInfo);
 	[id(35)] HRESULT NetUserDel([in] BSTR bsServerName, [in] BSTR bsUserName);
-	[id(36)] HRESULT NetUserGetInfo([in] BSTR bsServerName, [in] BSTR bsUserName, [in] eUserInfoType userInfoType, [out, retval] IUnknown** ppUserInfo);
-	[id(37)] HRESULT CastToUserInfo1([in] IUnknown* pUnk, [out, retval] ICUserInfo1** ppUserInfo1);
-	[id(38)] HRESULT GetLogonHoursAllActive([out, retval] ICLogonHours** pLogonHours);
+	[id(36)] HRESULT NetUserGetInfo0([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICUserInfo0** ppUserInfo);
+	[id(37)] HRESULT GetLogonHoursAllActive([out, retval] ICLogonHours** pLogonHours);
+	[id(38)] HRESULT NetUserSetInfo([in] BSTR bsServerName, [in] BSTR bsUserName, [in] eUserInfoType userInfoType, [in] IUnknown* pUserInfo);
+	[id(39)] HRESULT NetUserGetInfo1([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICUserInfo1** ppUserInfo);
+	[id(40)] HRESULT NetUserGetInfo2([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICUserInfo2** ppUserInfo);
+	[id(41)] HRESULT NetUserGetInfo3([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICUserInfo3** ppUserInfo);
+	[id(42)] HRESULT NetUserGetInfo4([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICUserInfo4** ppUserInfo);
 };
 [
 	uuid(F53A3EDB-3D55-4E7B-8687-F0759A72FBCA),

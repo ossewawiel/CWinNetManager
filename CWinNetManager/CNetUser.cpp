@@ -2,6 +2,7 @@
 
 #include "stdafx.h"
 #include "CNetUser.h"
+#include "CUserInfoUtils.h"
 
 // CCNetUser
 
@@ -580,36 +581,15 @@ STDMETHODIMP CCNetUser::GetUserInfo1053(BSTR bsHomeDirDrive, ICUserInfo1053 ** p
 STDMETHODIMP CCNetUser::NetUserAdd(BSTR bsServerName, eUserInfoType userInfoType, IUnknown* pUserInfo)
 {
 	HRESULT hr(S_OK);
-	DWORD dwError;
 	//check for supported UserInfo Interfaces and convert to 
-	if (userInfoType == eUserInfoType::uiType1)
-	{
-		CComPtr<ICUserInfo1> pUserInfo1 = static_cast<ICUserInfo1*>(pUserInfo);
-		USER_INFO_1 ui1;
-		CCUserInfo1::TranslateToUserInfo(pUserInfo1, ui1);
-		return ::NetUserAdd(bsServerName, 1, (LPBYTE)&ui1, &dwError);
-	}
+	if (userInfoType == eUserInfoType::uiType1) 
+		return NetUserAddFrom<ICUserInfo1, CCUserInfo1, USER_INFO_1>(bsServerName, userInfoType, pUserInfo);
 	else if (userInfoType == eUserInfoType::uiType2)
-	{
-		CComPtr<ICUserInfo2> pUserInfo2 = static_cast<ICUserInfo2*>(pUserInfo);
-		USER_INFO_2 ui2;
-		if (hr = CCUserInfo2::TranslateToUserInfo(pUserInfo2, ui2)) return hr;
-		return ::NetUserAdd(bsServerName, 2, (LPBYTE)&ui2, &dwError);
-	}
+		return NetUserAddFrom<ICUserInfo2, CCUserInfo2, USER_INFO_2>(bsServerName, userInfoType, pUserInfo);
 	else if (userInfoType == eUserInfoType::uiType3)
-	{
-		CComPtr<ICUserInfo3> pUserInfo3 = static_cast<ICUserInfo3*>(pUserInfo);
-		USER_INFO_3 ui3;
-		if (hr = CCUserInfo3::TranslateToUserInfo(pUserInfo3, ui3)) return hr;
-		return ::NetUserAdd(bsServerName, 3, (LPBYTE)&ui3, &dwError);
-	}
+		return NetUserAddFrom<ICUserInfo3, CCUserInfo3, USER_INFO_3>(bsServerName, userInfoType, pUserInfo);
 	else if (userInfoType == eUserInfoType::uiType4)
-	{
-		CComPtr<ICUserInfo4> pUserInfo4 = static_cast<ICUserInfo4*>(pUserInfo);
-		USER_INFO_4 ui4;
-		if (hr = CCUserInfo4::TranslateToUserInfo(pUserInfo4, ui4)) return hr;
-		return ::NetUserAdd(bsServerName, 4, (LPBYTE)&ui4, &dwError);
-	}
+		return NetUserAddFrom<ICUserInfo4, CCUserInfo4, USER_INFO_4>(bsServerName, userInfoType, pUserInfo);
 	else
 		return E_NOINTERFACE;
 		
@@ -623,53 +603,74 @@ STDMETHODIMP CCNetUser::NetUserDel(BSTR bsServerName, BSTR bsUserName)
 }
 
 
-STDMETHODIMP CCNetUser::NetUserGetInfo(BSTR bsServerName, BSTR bsUserName, eUserInfoType userInfoType, IUnknown** ppUserInfo)
+STDMETHODIMP CCNetUser::NetUserGetInfo0(BSTR bsServerName, BSTR bsUserName, ICUserInfo0** ppUserInfo)
 {
 	HRESULT hr(S_OK);
-	LPUSER_INFO_0 pBuf = NULL;
-	hr = ::NetUserGetInfo(bsServerName, bsUserName, userInfoType, (LPBYTE*)&pBuf);
+	LPUSER_INFO_0 pBuf;
+	hr = ::NetUserGetInfo(bsServerName, bsUserName, eUserInfoType::uiType0, (LPBYTE*)&pBuf);
 	if (hr != NERR_Success) return hr;
-
-	switch (userInfoType)
-	{
-	case eUserInfoType::uiType1:
-		{
-			LPUSER_INFO_1 pBuf1 = (LPUSER_INFO_1)pBuf;
-			CComPtr<ICUserInfo1> pUi1;
-			hr = GetUserInfo1(
-				_bstr_t(pBuf1->usri1_name)
-				, _bstr_t(pBuf1->usri1_password)
-				, pBuf1->usri1_password_age
-				, pBuf1->usri1_priv
-				, _bstr_t(pBuf1->usri1_home_dir)
-				, _bstr_t(pBuf1->usri1_comment)
-				, pBuf1->usri1_flags
-				, _bstr_t(pBuf1->usri1_script_path)
-				, &pUi1);
-			if (hr) return hr;
-			*ppUserInfo = static_cast<ICUserInfo1*>(pUi1.Detach());
-		}
-		break;
-	default: return ERROR_INVALID_LEVEL;
-	}
-	return hr;
+	return CCUserInfo0::TranslateFromUserInfo(pBuf, ppUserInfo);
 }
 
-
-STDMETHODIMP CCNetUser::CastToUserInfo1(IUnknown* pUnk, ICUserInfo1** ppUserInfo1)
+STDMETHODIMP CCNetUser::NetUserGetInfo1(BSTR bsServerName, BSTR bsUserName, ICUserInfo1** ppUserInfo)
 {
 	HRESULT hr(S_OK);
-	if (hr = pUnk->QueryInterface(IID_ICUserInfo1, (void**)&pUnk)) return hr;
-	*ppUserInfo1 = static_cast<ICUserInfo1*>(pUnk);
-	return S_OK;
+	LPUSER_INFO_1 pBuf = NULL;
+	hr = ::NetUserGetInfo(bsServerName, bsUserName, eUserInfoType::uiType1, (LPBYTE*)&pBuf);
+	if (hr != NERR_Success) return hr;
+	return CCUserInfo1::TranslateFromUserInfo(pBuf, ppUserInfo);
 }
 
+STDMETHODIMP CCNetUser::NetUserGetInfo2(BSTR bsServerName, BSTR bsUserName, ICUserInfo2** ppUserInfo)
+{
+	HRESULT hr(S_OK);
+	LPUSER_INFO_2 pBuf = NULL;
+	hr = ::NetUserGetInfo(bsServerName, bsUserName, eUserInfoType::uiType2, (LPBYTE*)&pBuf);
+	if (hr != NERR_Success) return hr;
+	return CCUserInfo2::TranslateFromUserInfo(pBuf, ppUserInfo);
+}
 
+STDMETHODIMP CCNetUser::NetUserGetInfo3(BSTR bsServerName, BSTR bsUserName, ICUserInfo3** ppUserInfo)
+{
+	HRESULT hr(S_OK);
+	LPUSER_INFO_3 pBuf = NULL;
+	hr = ::NetUserGetInfo(bsServerName, bsUserName, eUserInfoType::uiType3, (LPBYTE*)&pBuf);
+	if (hr != NERR_Success) return hr;
+	return CCUserInfo3::TranslateFromUserInfo(pBuf, ppUserInfo);
+}
 
+STDMETHODIMP CCNetUser::NetUserGetInfo4(BSTR bsServerName, BSTR bsUserName, ICUserInfo4 ** ppUserInfo)
+{
+	HRESULT hr(S_OK);
+	LPUSER_INFO_4 pBuf = NULL;
+	hr = ::NetUserGetInfo(bsServerName, bsUserName, eUserInfoType::uiType4, (LPBYTE*)&pBuf);
+	if (hr != NERR_Success) return hr;
+	return CCUserInfo4::TranslateFromUserInfo(pBuf, ppUserInfo);
+}
 
 STDMETHODIMP CCNetUser::GetLogonHoursAllActive(ICLogonHours** ppLogonHours)
 {
 	HRESULT hr = CCLogonHours::CreateInstance(ppLogonHours);
 	if (hr) return hr;
 	return (*ppLogonHours)->InitialiseAllActive();
+}
+
+STDMETHODIMP CCNetUser::NetUserSetInfo(BSTR bsServerName, BSTR bsUserName, eUserInfoType userInfoType, IUnknown * pUserInfo)
+{
+	HRESULT hr(S_OK);
+	//check for supported UserInfo Interfaces and convert to 
+	if (userInfoType == eUserInfoType::uiType0)
+		return NetUserSetInfoFrom<ICUserInfo0, CCUserInfo0, USER_INFO_0>(bsServerName, bsUserName, userInfoType, pUserInfo);
+	else if (userInfoType == eUserInfoType::uiType1)
+		return NetUserSetInfoFrom<ICUserInfo1, CCUserInfo1, USER_INFO_1>(bsServerName, bsUserName, userInfoType, pUserInfo);
+	else if (userInfoType == eUserInfoType::uiType2)
+		return NetUserSetInfoFrom<ICUserInfo2, CCUserInfo2, USER_INFO_2>(bsServerName, bsUserName, userInfoType, pUserInfo);
+	else if (userInfoType == eUserInfoType::uiType3)
+		return NetUserSetInfoFrom<ICUserInfo3, CCUserInfo3, USER_INFO_3>(bsServerName, bsUserName, userInfoType, pUserInfo);
+	else if (userInfoType == eUserInfoType::uiType4)
+		return NetUserSetInfoFrom<ICUserInfo4, CCUserInfo4, USER_INFO_4>(bsServerName, bsUserName, userInfoType, pUserInfo);
+	else
+		return E_NOINTERFACE;
+
+	return S_OK;
 }

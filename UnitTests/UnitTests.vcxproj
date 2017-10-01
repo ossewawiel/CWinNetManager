@@ -159,8 +159,10 @@
   <ItemGroup>
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="TestCNetUser_ClearUserInfo.cpp" />
+    <ClCompile Include="TestCNetUser_GetInfo.cpp" />
     <ClCompile Include="TestCNetUser_GetUserInfo.cpp" />
     <ClCompile Include="TestCNetUser_NetUserAdd.cpp" />
+    <ClCompile Include="TestCNetUser_SetUserInfo.cpp" />
     <ClCompile Include="TUtils.cpp" />
     <ClCompile Include="UnitTests.cpp" />
   </ItemGroup>

@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Sat Sep 30 17:03:19 2017
+/* at Sun Oct 01 21:12:34 2017
  */
 /* Compiler settings for CWinNetManager.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 
@@ -955,6 +955,20 @@ EXTERN_C const IID IID_ICLogonHours;
         virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Count( 
             /* [retval][out] */ long *pnCount) = 0;
         
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE ActivateLogonHour( 
+            /* [in] */ SHORT shDay,
+            /* [in] */ SHORT shHour) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE DeactivateLogonHour( 
+            /* [in] */ SHORT shDay,
+            /* [in] */ SHORT shHour) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE ActivateItem( 
+            /* [in] */ long n) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE DeactivateItem( 
+            /* [in] */ long n) = 0;
+        
     };
     
     
@@ -1037,6 +1051,24 @@ EXTERN_C const IID IID_ICLogonHours;
             ICLogonHours * This,
             /* [retval][out] */ long *pnCount);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *ActivateLogonHour )( 
+            ICLogonHours * This,
+            /* [in] */ SHORT shDay,
+            /* [in] */ SHORT shHour);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *DeactivateLogonHour )( 
+            ICLogonHours * This,
+            /* [in] */ SHORT shDay,
+            /* [in] */ SHORT shHour);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *ActivateItem )( 
+            ICLogonHours * This,
+            /* [in] */ long n);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *DeactivateItem )( 
+            ICLogonHours * This,
+            /* [in] */ long n);
+        
         END_INTERFACE
     } ICLogonHoursVtbl;
 
@@ -1090,6 +1122,18 @@ EXTERN_C const IID IID_ICLogonHours;
 
 #define ICLogonHours_get_Count(This,pnCount)	\
     ( (This)->lpVtbl -> get_Count(This,pnCount) ) 
+
+#define ICLogonHours_ActivateLogonHour(This,shDay,shHour)	\
+    ( (This)->lpVtbl -> ActivateLogonHour(This,shDay,shHour) ) 
+
+#define ICLogonHours_DeactivateLogonHour(This,shDay,shHour)	\
+    ( (This)->lpVtbl -> DeactivateLogonHour(This,shDay,shHour) ) 
+
+#define ICLogonHours_ActivateItem(This,n)	\
+    ( (This)->lpVtbl -> ActivateItem(This,n) ) 
+
+#define ICLogonHours_DeactivateItem(This,n)	\
+    ( (This)->lpVtbl -> DeactivateItem(This,n) ) 
 
 #endif /* COBJMACROS */
 
@@ -7862,18 +7906,39 @@ EXTERN_C const IID IID_ICNetUser;
             /* [in] */ BSTR bsServerName,
             /* [in] */ BSTR bsUserName) = 0;
         
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserGetInfo( 
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserGetInfo0( 
             /* [in] */ BSTR bsServerName,
             /* [in] */ BSTR bsUserName,
-            /* [in] */ eUserInfoType userInfoType,
-            /* [retval][out] */ IUnknown **ppUserInfo) = 0;
-        
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE CastToUserInfo1( 
-            /* [in] */ IUnknown *pUnk,
-            /* [retval][out] */ ICUserInfo1 **ppUserInfo1) = 0;
+            /* [retval][out] */ ICUserInfo0 **ppUserInfo) = 0;
         
         virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetLogonHoursAllActive( 
             /* [retval][out] */ ICLogonHours **pLogonHours) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserSetInfo( 
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [in] */ eUserInfoType userInfoType,
+            /* [in] */ IUnknown *pUserInfo) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserGetInfo1( 
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo1 **ppUserInfo) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserGetInfo2( 
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo2 **ppUserInfo) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserGetInfo3( 
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo3 **ppUserInfo) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserGetInfo4( 
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo4 **ppUserInfo) = 0;
         
     };
     
@@ -8248,21 +8313,46 @@ EXTERN_C const IID IID_ICNetUser;
             /* [in] */ BSTR bsServerName,
             /* [in] */ BSTR bsUserName);
         
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserGetInfo )( 
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserGetInfo0 )( 
             ICNetUser * This,
             /* [in] */ BSTR bsServerName,
             /* [in] */ BSTR bsUserName,
-            /* [in] */ eUserInfoType userInfoType,
-            /* [retval][out] */ IUnknown **ppUserInfo);
-        
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *CastToUserInfo1 )( 
-            ICNetUser * This,
-            /* [in] */ IUnknown *pUnk,
-            /* [retval][out] */ ICUserInfo1 **ppUserInfo1);
+            /* [retval][out] */ ICUserInfo0 **ppUserInfo);
         
         /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetLogonHoursAllActive )( 
             ICNetUser * This,
             /* [retval][out] */ ICLogonHours **pLogonHours);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserSetInfo )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [in] */ eUserInfoType userInfoType,
+            /* [in] */ IUnknown *pUserInfo);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserGetInfo1 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo1 **ppUserInfo);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserGetInfo2 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo2 **ppUserInfo);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserGetInfo3 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo3 **ppUserInfo);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserGetInfo4 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo4 **ppUserInfo);
         
         END_INTERFACE
     } ICNetUserVtbl;
@@ -8402,14 +8492,26 @@ EXTERN_C const IID IID_ICNetUser;
 #define ICNetUser_NetUserDel(This,bsServerName,bsUserName)	\
     ( (This)->lpVtbl -> NetUserDel(This,bsServerName,bsUserName) ) 
 
-#define ICNetUser_NetUserGetInfo(This,bsServerName,bsUserName,userInfoType,ppUserInfo)	\
-    ( (This)->lpVtbl -> NetUserGetInfo(This,bsServerName,bsUserName,userInfoType,ppUserInfo) ) 
-
-#define ICNetUser_CastToUserInfo1(This,pUnk,ppUserInfo1)	\
-    ( (This)->lpVtbl -> CastToUserInfo1(This,pUnk,ppUserInfo1) ) 
+#define ICNetUser_NetUserGetInfo0(This,bsServerName,bsUserName,ppUserInfo)	\
+    ( (This)->lpVtbl -> NetUserGetInfo0(This,bsServerName,bsUserName,ppUserInfo) ) 
 
 #define ICNetUser_GetLogonHoursAllActive(This,pLogonHours)	\
     ( (This)->lpVtbl -> GetLogonHoursAllActive(This,pLogonHours) ) 
+
+#define ICNetUser_NetUserSetInfo(This,bsServerName,bsUserName,userInfoType,pUserInfo)	\
+    ( (This)->lpVtbl -> NetUserSetInfo(This,bsServerName,bsUserName,userInfoType,pUserInfo) ) 
+
+#define ICNetUser_NetUserGetInfo1(This,bsServerName,bsUserName,ppUserInfo)	\
+    ( (This)->lpVtbl -> NetUserGetInfo1(This,bsServerName,bsUserName,ppUserInfo) ) 
+
+#define ICNetUser_NetUserGetInfo2(This,bsServerName,bsUserName,ppUserInfo)	\
+    ( (This)->lpVtbl -> NetUserGetInfo2(This,bsServerName,bsUserName,ppUserInfo) ) 
+
+#define ICNetUser_NetUserGetInfo3(This,bsServerName,bsUserName,ppUserInfo)	\
+    ( (This)->lpVtbl -> NetUserGetInfo3(This,bsServerName,bsUserName,ppUserInfo) ) 
+
+#define ICNetUser_NetUserGetInfo4(This,bsServerName,bsUserName,ppUserInfo)	\
+    ( (This)->lpVtbl -> NetUserGetInfo4(This,bsServerName,bsUserName,ppUserInfo) ) 
 
 #endif /* COBJMACROS */
 

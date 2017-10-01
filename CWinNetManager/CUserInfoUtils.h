@@ -1,5 +1,45 @@
 #pragma once
 #include "stdafx.h"
+#include "CLogonHours.h"
+
+template<typename T, typename U, typename V>
+HRESULT NetUserAddFrom(_bstr_t bsServerName, eUserInfoType userInfoType, IUnknown *pFrom)
+{
+	DWORD dwError;
+	HRESULT hr(S_OK);
+	V uiTo;
+	if (hr = NetUserTranslateFrom<T, U, V>(pFrom, uiTo))	return hr;
+	return ::NetUserAdd(bsServerName, userInfoType, (LPBYTE)&uiTo, &dwError);
+}
+
+template<typename T, typename U, typename V>
+HRESULT NetUserSetInfoFrom(_bstr_t bsServerName, _bstr_t bsUserName, eUserInfoType userInfoType, IUnknown *pFrom)
+{
+	DWORD dwError;
+	HRESULT hr(S_OK);
+	V uiTo;
+	if (hr = NetUserTranslateFrom<T, U, V>(pFrom, uiTo))	return hr;
+	return ::NetUserSetInfo(bsServerName, bsUserName, userInfoType, (LPBYTE)&uiTo, &dwError);
+	USER_LAST_LOGOFF_PARMNUM;
+}
+
+template<typename T, typename U, typename V>
+HRESULT NetUserGetInfoFrom(_bstr_t bsServerName, _bstr_t bsUserName, eUserInfoType userInfoType, IUnknown **pFrom)
+{
+	DWORD dwError;
+	HRESULT hr(S_OK);
+	V uiTo;
+	if (hr = NetUserTranslateFrom<T, U, V>(pFrom, uiTo))	return hr;
+	return ::NetUserSetInfo(bsServerName, bsUserName, userInfoType, (LPBYTE)&uiTo, &dwError);
+	USER_LAST_LOGOFF_PARMNUM;
+}
+
+template<typename T, typename U, typename V>
+HRESULT NetUserTranslateFrom(IUnknown *pFrom, V &pTo)
+{
+	CComPtr<T> pUserInfo = static_cast<T*>(pFrom);
+	return U::TranslateToUserInfo(pUserInfo, pTo);
+}
 
 template<typename T>
 HRESULT ToUserInfoName(T *pFrom, LPWSTR &pTo)
@@ -182,7 +222,7 @@ HRESULT ToUserInfoUnitsPerWeek(T *pFrom, DWORD &pTo)
 }
 //m_bLogonHours
 template<typename T>
-HRESULT ToUserInfoLogonHours(T *pFrom, PBYTE &pTo)
+HRESULT ToUserInfoLogonHours(T *pFrom, BYTE **pTo)
 {
 	HRESULT hr(S_OK);
 	long lCount;
@@ -203,16 +243,55 @@ HRESULT ToUserInfoLogonHours(T *pFrom, PBYTE &pTo)
 		if (shState == 0)
 			bits.set(bitCounter, false);
 		else
-			bits.set(bitCounter, false);
+			bits.set(bitCounter, true);
 		++bitCounter;
 		if (bitCounter > maxBit)
 		{
 			bitCounter = 0;
-			bLogonHours[byteCounter] = bits.to_ulong();
+			bLogonHours[byteCounter] = (BYTE)bits.to_ulong();
 			++byteCounter;
 		}
 	}
-	pTo = bLogonHours;
+	*pTo = bLogonHours;
+	return S_OK;
+}
+
+inline HRESULT FromUserInfoLogonHours(BYTE *pFrom, ICLogonHours **pTo)
+{
+	HRESULT hr(S_OK);
+	CCLogonHours::CreateInstance(pTo);
+	int byteCounter(0);
+	int bitCounter(0);
+	int maxBit(7);
+	std::bitset<8> bits(0);
+	bool bNewByte = true;
+	if (pFrom[0] == '\0') return (*pTo)->InitialiseAllActive();
+	for (long idx = 0; idx < 168; idx++)
+	{
+		if (bNewByte)
+		{
+			bits = std::bitset<8>(pFrom[byteCounter]);
+			bNewByte = false;
+		}
+		if (bits.test(bitCounter))
+		{
+			if (hr = (*pTo)->ActivateItem(idx))
+				return hr;
+		}
+		else
+		{
+			if (hr = (*pTo)->DeactivateItem(idx))
+				return hr;
+		}
+
+		++bitCounter;
+		if (bitCounter > maxBit)
+		{
+			bitCounter = 0;
+			++byteCounter;
+			bNewByte = true;
+		}
+	}
 	return S_OK;
 }
 //m_ulBadPwdCount
@@ -328,5 +407,14 @@ HRESULT ToUserInfoUserSid(T *pFrom, PSID &pTo)
 		return S_OK;
 	}
 	if (!(ConvertStringSidToSid(bsVal, &pTo))) return GetLastError();
+	return hr;
+}
+
+inline HRESULT FromUserInfoUserSid(PSID &pFrom, BSTR *pTo)
+{
+	HRESULT hr(S_OK);
+	LPWSTR temp;
+	if (!(ConvertSidToStringSid(pFrom, &temp))) return hr;
+	*pTo = ::SysAllocString(temp);
 	return hr;
 }

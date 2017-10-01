@@ -111,6 +111,7 @@ public:
 	STDMETHOD(Initialise)(BSTR bsName, BSTR bsPassword, ULONG ulPasswordAge, ULONG ulPrivilege, BSTR bsHomeDir, BSTR bsComment, ULONG ulFlags, BSTR bsScriptPath, ULONG ulAuthFlags, BSTR bsFullName, BSTR bsUsrComment, BSTR bsParams, BSTR bsWorkstations, ULONG ulLastLogon, ULONG ulLastLogoff, ULONG ulAccntExpires, ULONG ulMaxStorage, ULONG ulUnitsPerWeek, ICLogonHours* bLogonHours, ULONG ulBadPwdCount, ULONG ulNumLogons, BSTR bsLogonServer, ULONG ulCountryCode, ULONG ulCodePage);
 
 	static HRESULT TranslateToUserInfo(ICUserInfo2 * pFrom, USER_INFO_2 &pTo);
+	static HRESULT TranslateFromUserInfo(LPUSER_INFO_2 pFrom, ICUserInfo2 ** ppTo);
 
 private:
 	_bstr_t m_bsName;

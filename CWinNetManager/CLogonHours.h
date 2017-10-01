@@ -109,6 +109,10 @@ public:
 	STDMETHOD(ClearAll)();
 	STDMETHOD(InitialiseAllActive)();
 	STDMETHOD(put_Item)(long n, ICLogonHour* pLogonHour);
+	STDMETHOD(ActivateLogonHour)(SHORT shDay, SHORT shHour);
+	STDMETHOD(DeactivateLogonHour)(SHORT shDay, SHORT shHour);
+	STDMETHOD(ActivateItem)(long n);
+	STDMETHOD(DeactivateItem)(long n);
 };
 
 OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CLogonHours), CCLogonHours)

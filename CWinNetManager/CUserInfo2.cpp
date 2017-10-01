@@ -251,7 +251,7 @@ HRESULT CCUserInfo2::TranslateToUserInfo(ICUserInfo2 * pFrom, USER_INFO_2 &pTo)
 	if (hr = ToUserInfoAccntExpires	<ICUserInfo2>(pFrom, pTo.usri2_acct_expires))	return hr;
 	if (hr = ToUserInfoMaxStorage	<ICUserInfo2>(pFrom, pTo.usri2_max_storage))	return hr;
 	if (hr = ToUserInfoUnitsPerWeek	<ICUserInfo2>(pFrom, pTo.usri2_units_per_week))	return hr;
-	if (hr = ToUserInfoLogonHours	<ICUserInfo2>(pFrom, pTo.usri2_logon_hours))	return hr;
+	if (hr = ToUserInfoLogonHours	<ICUserInfo2>(pFrom, &pTo.usri2_logon_hours))	return hr;
 	if (hr = ToUserInfoBadPwdCount	<ICUserInfo2>(pFrom, pTo.usri2_bad_pw_count))	return hr;
 	if (hr = ToUserInfoNumLogons	<ICUserInfo2>(pFrom, pTo.usri2_num_logons))	return hr;
 	if (hr = ToUserInfoLogonServer	<ICUserInfo2>(pFrom, pTo.usri2_logon_server))	return hr;
@@ -260,6 +260,38 @@ HRESULT CCUserInfo2::TranslateToUserInfo(ICUserInfo2 * pFrom, USER_INFO_2 &pTo)
 	return hr;
 }
 
+HRESULT CCUserInfo2::TranslateFromUserInfo(LPUSER_INFO_2 pFrom, ICUserInfo2 ** ppTo)
+{
+	HRESULT hr(S_OK);
+	if (hr = CCUserInfo2::CreateInstance(ppTo)) return hr;
+	CComPtr<ICLogonHours> pLogonHours;
+	if (hr = FromUserInfoLogonHours(pFrom->usri2_logon_hours, &pLogonHours)) return hr;
+	return (*ppTo)->Initialise(
+		_bstr_t(pFrom->usri2_name)
+		, _bstr_t(pFrom->usri2_password)
+		, pFrom->usri2_password_age
+		, pFrom->usri2_priv
+		, _bstr_t(pFrom->usri2_home_dir)
+		, _bstr_t(pFrom->usri2_comment)
+		, pFrom->usri2_flags
+		, _bstr_t(pFrom->usri2_script_path)
+	, pFrom->usri2_auth_flags
+	, _bstr_t(pFrom->usri2_full_name)
+	, _bstr_t(pFrom->usri2_usr_comment)
+	, _bstr_t(pFrom->usri2_parms)
+	, _bstr_t(pFrom->usri2_workstations)
+	, pFrom->usri2_last_logon
+	, pFrom->usri2_last_logoff
+	, pFrom->usri2_acct_expires
+	, pFrom->usri2_max_storage
+	, pFrom->usri2_units_per_week
+	, pLogonHours
+	, pFrom->usri2_bad_pw_count
+	, pFrom->usri2_num_logons
+	, _bstr_t(pFrom->usri2_logon_server)
+	, pFrom->usri2_country_code
+	, pFrom->usri2_code_page);
+}
 
 STDMETHODIMP CCUserInfo2::Clear()
 {
