@@ -61,6 +61,7 @@ public:
 	STDMETHOD(Initialise)(BSTR bsUsrComment);
 	STDMETHOD(get_UsrComment)(BSTR* pVal);
 
+	static HRESULT TranslateToUserInfo(ICUserInfo1012 * pFrom, USER_INFO_1012 &pTo);
 private:
 	_bstr_t m_bsUsrComment;
 public:

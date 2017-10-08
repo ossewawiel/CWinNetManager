@@ -61,6 +61,7 @@ public:
 	STDMETHOD(Initialise)(BSTR bsScriptPath);
 	STDMETHOD(get_ScriptPath)(BSTR* pVal);
 
+	static HRESULT TranslateToUserInfo(ICUserInfo1009 * pFrom, USER_INFO_1009 &pTo);
 private:
 	_bstr_t m_bsScriptPath;
 public:

@@ -2,7 +2,7 @@
 
 #include "stdafx.h"
 #include "CUserInfo1014.h"
-
+#include "CUserInfoUtils.h"
 
 // CCUserInfo1014
 
@@ -16,6 +16,13 @@ STDMETHODIMP CCUserInfo1014::get_Workstations(BSTR * pVal)
 {
 	*pVal = m_bsWorkstations.copy();
 	return S_OK;
+}
+
+HRESULT CCUserInfo1014::TranslateToUserInfo(ICUserInfo1014 * pFrom, USER_INFO_1014 & pTo)
+{
+	HRESULT hr(S_OK);
+	if (hr = ToUserInfoWorkstations<ICUserInfo1014>(pFrom, pTo.usri1014_workstations)) return hr;
+	return hr;
 }
 
 

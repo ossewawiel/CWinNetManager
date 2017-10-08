@@ -648,6 +648,131 @@ STDMETHODIMP CCNetUser::NetUserGetInfo4(BSTR bsServerName, BSTR bsUserName, ICUs
 	return CCUserInfo4::TranslateFromUserInfo(pBuf, ppUserInfo);
 }
 
+STDMETHODIMP CCNetUser::NetUserGetInfo10(BSTR bsServerName, BSTR bsUserName, ICUserInfo10 ** ppUserInfo)
+{
+	HRESULT hr(S_OK);
+	LPUSER_INFO_10 pBuf = NULL;
+	hr = ::NetUserGetInfo(bsServerName, bsUserName, eUserInfoType::uiType10, (LPBYTE*)&pBuf);
+	if (hr != NERR_Success) return hr;
+	return CCUserInfo10::TranslateFromUserInfo(pBuf, ppUserInfo);
+}
+
+STDMETHODIMP CCNetUser::NetUserGetInfo11(BSTR bsServerName, BSTR bsUserName, ICUserInfo11 ** ppUserInfo)
+{
+	HRESULT hr(S_OK);
+	LPUSER_INFO_11 pBuf = NULL;
+	hr = ::NetUserGetInfo(bsServerName, bsUserName, eUserInfoType::uiType11, (LPBYTE*)&pBuf);
+	if (hr != NERR_Success) return hr;
+	return CCUserInfo11::TranslateFromUserInfo(pBuf, ppUserInfo);
+}
+
+STDMETHODIMP CCNetUser::NetUserGetInfo20(BSTR bsServerName, BSTR bsUserName, ICUserInfo20 ** ppUserInfo)
+{
+	HRESULT hr(S_OK);
+	LPUSER_INFO_20 pBuf = NULL;
+	hr = ::NetUserGetInfo(bsServerName, bsUserName, eUserInfoType::uiType20, (LPBYTE*)&pBuf);
+	if (hr != NERR_Success) return hr;
+	return CCUserInfo20::TranslateFromUserInfo(pBuf, ppUserInfo);
+}
+
+STDMETHODIMP CCNetUser::NetUserGetInfo23(BSTR bsServerName, BSTR bsUserName, ICUserInfo23 ** ppUserInfo)
+{
+	HRESULT hr(S_OK);
+	LPUSER_INFO_23 pBuf = NULL;
+	hr = ::NetUserGetInfo(bsServerName, bsUserName, eUserInfoType::uiType23, (LPBYTE*)&pBuf);
+	if (hr != NERR_Success) return hr;
+	return CCUserInfo23::TranslateFromUserInfo(pBuf, ppUserInfo);
+}
+
+STDMETHODIMP CCNetUser::NetUserGetInfo24(BSTR bsServerName, BSTR bsUserName, ICUserInfo24 ** ppUserInfo)
+{
+	HRESULT hr(S_OK);
+	LPUSER_INFO_24 pBuf = NULL;
+	hr = ::NetUserGetInfo(bsServerName, bsUserName, eUserInfoType::uiType24, (LPBYTE*)&pBuf);
+	if (hr != NERR_Success) return hr;
+	return CCUserInfo24::TranslateFromUserInfo(pBuf, ppUserInfo);
+}
+
+STDMETHODIMP CCNetUser::NetUserGetInfo1003(BSTR bsServerName, BSTR bsUserName, ICUserInfo1003 ** ppUserInfo)
+{
+	return E_NOTIMPL;
+}
+
+STDMETHODIMP CCNetUser::NetUserGetInfo1005(BSTR bsServerName, BSTR bsUserName, ICUserInfo1005 ** ppUserInfo)
+{
+	return E_NOTIMPL;
+}
+
+STDMETHODIMP CCNetUser::NetUserGetInfo1006(BSTR bsServerName, BSTR bsUserName, ICUserInfo1006 ** ppUserInfo)
+{
+	return E_NOTIMPL;
+}
+
+STDMETHODIMP CCNetUser::NetUserGetInfo1007(BSTR bsServerName, BSTR bsUserName, ICUserInfo1007 ** ppUserInfo)
+{
+	return E_NOTIMPL;
+}
+
+STDMETHODIMP CCNetUser::NetUserGetInfo1008(BSTR bsServerName, BSTR bsUserName, ICUserInfo1008 ** ppUserInfo)
+{
+	return E_NOTIMPL;
+}
+
+STDMETHODIMP CCNetUser::NetUserGetInfo1009(BSTR bsServerName, BSTR bsUserName, ICUserInfo1009 ** ppUserInfo)
+{
+	return E_NOTIMPL;
+}
+
+STDMETHODIMP CCNetUser::NetUserGetInfo1010(BSTR bsServerName, BSTR bsUserName, ICUserInfo1010 ** ppUserInfo)
+{
+	return E_NOTIMPL;
+}
+
+STDMETHODIMP CCNetUser::NetUserGetInfo1011(BSTR bsServerName, BSTR bsUserName, ICUserInfo1011 ** ppUserInfo)
+{
+	return E_NOTIMPL;
+}
+
+STDMETHODIMP CCNetUser::NetUserGetInfo1012(BSTR bsServerName, BSTR bsUserName, ICUserInfo1012 ** ppUserInfo)
+{
+	return E_NOTIMPL;
+}
+
+STDMETHODIMP CCNetUser::NetUserGetInfo1014(BSTR bsServerName, BSTR bsUserName, ICUserInfo1014 ** ppUserInfo)
+{
+	return E_NOTIMPL;
+}
+
+STDMETHODIMP CCNetUser::NetUserGetInfo1017(BSTR bsServerName, BSTR bsUserName, ICUserInfo1017 ** ppUserInfo)
+{
+	return E_NOTIMPL;
+}
+
+STDMETHODIMP CCNetUser::NetUserGetInfo1020(BSTR bsServerName, BSTR bsUserName, ICUserInfo1020 ** ppUserInfo)
+{
+	return E_NOTIMPL;
+}
+
+STDMETHODIMP CCNetUser::NetUserGetInfo1024(BSTR bsServerName, BSTR bsUserName, ICUserInfo1024 ** ppUserInfo)
+{
+	return E_NOTIMPL;
+}
+
+STDMETHODIMP CCNetUser::NetUserGetInfo1051(BSTR bsServerName, BSTR bsUserName, ICUserInfo1051 ** ppUserInfo)
+{
+	return E_NOTIMPL;
+}
+
+STDMETHODIMP CCNetUser::NetUserGetInfo1052(BSTR bsServerName, BSTR bsUserName, ICUserInfo1052 ** ppUserInfo)
+{
+	return E_NOTIMPL;
+}
+
+STDMETHODIMP CCNetUser::NetUserGetInfo1053(BSTR bsServerName, BSTR bsUserName, ICUserInfo1053 ** ppUserInfo)
+{
+	return E_NOTIMPL;
+}
+
 STDMETHODIMP CCNetUser::GetLogonHoursAllActive(ICLogonHours** ppLogonHours)
 {
 	HRESULT hr = CCLogonHours::CreateInstance(ppLogonHours);
@@ -669,6 +794,38 @@ STDMETHODIMP CCNetUser::NetUserSetInfo(BSTR bsServerName, BSTR bsUserName, eUser
 		return NetUserSetInfoFrom<ICUserInfo3, CCUserInfo3, USER_INFO_3>(bsServerName, bsUserName, userInfoType, pUserInfo);
 	else if (userInfoType == eUserInfoType::uiType4)
 		return NetUserSetInfoFrom<ICUserInfo4, CCUserInfo4, USER_INFO_4>(bsServerName, bsUserName, userInfoType, pUserInfo);
+	else if (userInfoType == eUserInfoType::uiType1003)
+		return NetUserSetInfoFrom<ICUserInfo1003, CCUserInfo1003, USER_INFO_1003>(bsServerName, bsUserName, userInfoType, pUserInfo);
+	else if (userInfoType == eUserInfoType::uiType1005)
+		return NetUserSetInfoFrom<ICUserInfo1005, CCUserInfo1005, USER_INFO_1005>(bsServerName, bsUserName, userInfoType, pUserInfo);
+	else if (userInfoType == eUserInfoType::uiType1006)
+		return NetUserSetInfoFrom<ICUserInfo1006, CCUserInfo1006, USER_INFO_1006>(bsServerName, bsUserName, userInfoType, pUserInfo);
+	else if (userInfoType == eUserInfoType::uiType1007)
+		return NetUserSetInfoFrom<ICUserInfo1007, CCUserInfo1007, USER_INFO_1007>(bsServerName, bsUserName, userInfoType, pUserInfo);
+	else if (userInfoType == eUserInfoType::uiType1008)
+		return NetUserSetInfoFrom<ICUserInfo1008, CCUserInfo1008, USER_INFO_1008>(bsServerName, bsUserName, userInfoType, pUserInfo);
+	else if (userInfoType == eUserInfoType::uiType1009)
+		return NetUserSetInfoFrom<ICUserInfo1009, CCUserInfo1009, USER_INFO_1009>(bsServerName, bsUserName, userInfoType, pUserInfo);
+	else if (userInfoType == eUserInfoType::uiType1010)
+		return NetUserSetInfoFrom<ICUserInfo1010, CCUserInfo1010, USER_INFO_1010>(bsServerName, bsUserName, userInfoType, pUserInfo);
+	else if (userInfoType == eUserInfoType::uiType1011)
+		return NetUserSetInfoFrom<ICUserInfo1011, CCUserInfo1011, USER_INFO_1011>(bsServerName, bsUserName, userInfoType, pUserInfo);
+	else if (userInfoType == eUserInfoType::uiType1012)
+		return NetUserSetInfoFrom<ICUserInfo1012, CCUserInfo1012, USER_INFO_1012>(bsServerName, bsUserName, userInfoType, pUserInfo);
+	else if (userInfoType == eUserInfoType::uiType1014)
+		return NetUserSetInfoFrom<ICUserInfo1014, CCUserInfo1014, USER_INFO_1014>(bsServerName, bsUserName, userInfoType, pUserInfo);
+	else if (userInfoType == eUserInfoType::uiType1017)
+		return NetUserSetInfoFrom<ICUserInfo1017, CCUserInfo1017, USER_INFO_1017>(bsServerName, bsUserName, userInfoType, pUserInfo);
+	else if (userInfoType == eUserInfoType::uiType1020)
+		return NetUserSetInfoFrom<ICUserInfo1020, CCUserInfo1020, USER_INFO_1020>(bsServerName, bsUserName, userInfoType, pUserInfo);
+	else if (userInfoType == eUserInfoType::uiType1024)
+		return NetUserSetInfoFrom<ICUserInfo1024, CCUserInfo1024, USER_INFO_1024>(bsServerName, bsUserName, userInfoType, pUserInfo);
+	else if (userInfoType == eUserInfoType::uiType1051)
+		return NetUserSetInfoFrom<ICUserInfo1051, CCUserInfo1051, USER_INFO_1051>(bsServerName, bsUserName, userInfoType, pUserInfo);
+	else if (userInfoType == eUserInfoType::uiType1052)
+		return NetUserSetInfoFrom<ICUserInfo1052, CCUserInfo1052, USER_INFO_1052>(bsServerName, bsUserName, userInfoType, pUserInfo);
+	else if (userInfoType == eUserInfoType::uiType1053)
+		return NetUserSetInfoFrom<ICUserInfo1053, CCUserInfo1053, USER_INFO_1053>(bsServerName, bsUserName, userInfoType, pUserInfo);
 	else
 		return E_NOINTERFACE;
 

@@ -51,6 +51,18 @@ STDMETHODIMP CCUserInfo20::get_UserId(ULONG * pVal)
 	return S_OK;
 }
 
+HRESULT CCUserInfo20::TranslateFromUserInfo(LPUSER_INFO_20 pFrom, ICUserInfo20 ** ppTo)
+{
+	HRESULT hr(S_OK);
+	if (hr = CCUserInfo20::CreateInstance(ppTo)) return hr;
+	return (*ppTo)->Initialise(
+		_bstr_t(pFrom->usri20_name)
+		, _bstr_t(pFrom->usri20_full_name)
+		, _bstr_t(pFrom->usri20_comment)
+		, pFrom->usri20_flags
+		, pFrom->usri20_user_id);
+}
+
 
 STDMETHODIMP CCUserInfo20::Clear()
 {

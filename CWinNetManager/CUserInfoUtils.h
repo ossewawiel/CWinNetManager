@@ -19,7 +19,8 @@ HRESULT NetUserSetInfoFrom(_bstr_t bsServerName, _bstr_t bsUserName, eUserInfoTy
 	HRESULT hr(S_OK);
 	V uiTo;
 	if (hr = NetUserTranslateFrom<T, U, V>(pFrom, uiTo))	return hr;
-	return ::NetUserSetInfo(bsServerName, bsUserName, userInfoType, (LPBYTE)&uiTo, &dwError);
+	hr = ::NetUserSetInfo(bsServerName, bsUserName, userInfoType, (LPBYTE)&uiTo, &dwError);
+	return hr;
 	USER_LAST_LOGOFF_PARMNUM;
 }
 

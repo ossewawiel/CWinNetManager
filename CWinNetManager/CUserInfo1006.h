@@ -61,6 +61,7 @@ public:
 	STDMETHOD(Initialise)(BSTR bsHomeDir);
 	STDMETHOD(get_HomeDirectory)(BSTR* pVal);
 
+	static HRESULT TranslateToUserInfo(ICUserInfo1006 * pFrom, USER_INFO_1006 &pTo);
 private:
 	_bstr_t m_bsHomeDir;
 public:

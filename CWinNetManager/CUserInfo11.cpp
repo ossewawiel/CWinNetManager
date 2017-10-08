@@ -2,7 +2,7 @@
 
 #include "stdafx.h"
 #include "CUserInfo11.h"
-
+#include "CUserInfoUtils.h"
 
 // CCUserInfo11
 STDMETHODIMP CCUserInfo11::Initialise(
@@ -169,6 +169,35 @@ STDMETHODIMP CCUserInfo11::get_CodePage(ULONG * pVal)
 	return S_OK;
 }
 
+
+HRESULT CCUserInfo11::TranslateFromUserInfo(LPUSER_INFO_11 pFrom, ICUserInfo11 ** ppTo)
+{
+	HRESULT hr(S_OK);
+	if (hr = CCUserInfo11::CreateInstance(ppTo)) return hr;
+	CComPtr<ICLogonHours> pLogonHours;
+	if (hr = FromUserInfoLogonHours(pFrom->usri11_logon_hours, &pLogonHours)) return hr;
+	return (*ppTo)->Initialise(
+		_bstr_t(pFrom->usri11_name)
+		, _bstr_t(pFrom->usri11_comment)
+		, _bstr_t(pFrom->usri11_usr_comment)
+		, _bstr_t(pFrom->usri11_full_name)
+		, pFrom->usri11_priv
+		, pFrom->usri11_auth_flags
+		, pFrom->usri11_password_age
+		, _bstr_t(pFrom->usri11_home_dir)
+		, _bstr_t(pFrom->usri11_parms)
+		, pFrom->usri11_last_logon
+		, pFrom->usri11_last_logoff
+		, pFrom->usri11_bad_pw_count
+		, pFrom->usri11_num_logons
+		, _bstr_t(pFrom->usri11_logon_server)
+		, pFrom->usri11_country_code
+		, _bstr_t(pFrom->usri11_workstations)
+		, pFrom->usri11_max_storage
+		, pFrom->usri11_units_per_week
+		, pLogonHours
+		, pFrom->usri11_code_page);
+}
 
 STDMETHODIMP CCUserInfo11::Clear()
 {

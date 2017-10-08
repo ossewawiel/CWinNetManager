@@ -61,6 +61,7 @@ public:
 	STDMETHOD(Initialise)(BSTR bsWorkstations);
 	STDMETHOD(get_Workstations)(BSTR* pVal);
 
+	static HRESULT TranslateToUserInfo(ICUserInfo1014 * pFrom, USER_INFO_1014 &pTo);
 private:
 	_bstr_t m_bsWorkstations;
 public:

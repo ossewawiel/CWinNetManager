@@ -25,3 +25,4 @@ class TestCNetUser_Get : public TestCNetUser {};
 class TestCNetUser_Clear : public TestCNetUser {};
 class TestCNetUser_Add : public TestCNetUser {};
 class TestCNetUser_GetInfo : public TestCNetUser {};
+class TestCNetUser_SetInfo : public TestCNetUser {};

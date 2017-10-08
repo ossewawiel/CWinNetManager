@@ -61,6 +61,7 @@ public:
 	STDMETHOD(Initialise)(BSTR bsProfile);
 	STDMETHOD(get_Profile)(BSTR* pVal);
 
+	static HRESULT TranslateToUserInfo(ICUserInfo1052 * pFrom, USER_INFO_1052 &pTo);
 private:
 	_bstr_t m_bsProfile;
 public:

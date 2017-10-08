@@ -61,6 +61,7 @@ public:
 	STDMETHOD(Initialise)(ULONG ulPrimaryGrpId);
 	STDMETHOD(get_PrimaryGrpId)(ULONG* pVal);
 
+	static HRESULT TranslateToUserInfo(ICUserInfo1051 * pFrom, USER_INFO_1051 &pTo);
 private:
 	ULONG m_ulPrimaryGrpId;
 public:

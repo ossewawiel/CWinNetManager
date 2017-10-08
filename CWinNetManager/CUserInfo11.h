@@ -119,6 +119,8 @@ public:
 	STDMETHOD(get_LogonHours)(ICLogonHours** pVal);
 	STDMETHOD(get_CodePage)(ULONG* pVal);
 
+	static HRESULT TranslateFromUserInfo(LPUSER_INFO_11 pFrom, ICUserInfo11 ** ppTo);
+
 private:
 	_bstr_t m_bsName;
 	_bstr_t m_bsComment;
@@ -140,6 +142,9 @@ private:
 	ULONG m_ulUnitsPerWeek;
 	CComPtr<ICLogonHours> m_bLogonHours;
 	ULONG m_ulCodePage;
+
+	
+
 public:
 	STDMETHOD(Clear)();
 };

@@ -61,6 +61,7 @@ public:
 	STDMETHOD(Initialise)(ULONG ulAuthFlags);
 	STDMETHOD(get_AuthFlags)(ULONG* pVal);
 
+	static HRESULT TranslateToUserInfo(ICUserInfo1010 * pFrom, USER_INFO_1010 &pTo);
 private:
 	ULONG m_ulAuthFlags;
 

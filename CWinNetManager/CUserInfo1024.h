@@ -61,6 +61,7 @@ public:
 	STDMETHOD(Initialise)(ULONG ulCountryCode);
 	STDMETHOD(get_CountryCode)(ULONG* pVal);
 
+	static HRESULT TranslateToUserInfo(ICUserInfo1024 * pFrom, USER_INFO_1024 &pTo);
 private:
 	ULONG m_ulCountryCode;
 public:

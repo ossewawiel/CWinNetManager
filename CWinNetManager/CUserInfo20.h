@@ -74,6 +74,8 @@ public:
 	STDMETHOD(get_Flags)(ULONG* pVal);
 	STDMETHOD(get_UserId)(ULONG* pVal);
 
+	static HRESULT TranslateFromUserInfo(LPUSER_INFO_20 pFrom, ICUserInfo20 ** ppTo);
+
 private:
 	_bstr_t m_bsName;
 	_bstr_t m_bsFullName;

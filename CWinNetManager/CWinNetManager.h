@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Sun Oct 01 21:12:34 2017
+/* at Sun Oct 08 18:02:51 2017
  */
 /* Compiler settings for CWinNetManager.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 
@@ -730,11 +730,31 @@ enum eUserInfoType
         uiType2	= 0x2,
         uiType3	= 0x3,
         uiType4	= 0x4,
-        uiTYpe10	= 0x10,
-        uiTYpe11	= 0x11,
-        uiTYpe20	= 0x20,
-        uiTYpe23	= 0x23,
-        uiTYpe24	= 0x24
+        uiType10	= 0xa,
+        uiType11	= 0xb,
+        uiType20	= 0x14,
+        uiType23	= 0x17,
+        uiType24	= 0x18,
+        uiType1003	= 0x3eb,
+        uiType1005	= 0x3ed,
+        uiType1006	= 0x3ee,
+        uiType1007	= 0x3ef,
+        uiType1008	= 0x3f0,
+        uiType1009	= 0x3f1,
+        uiType1010	= 0x3f2,
+        uiType1011	= 0x3f3,
+        uiType1012	= 0x3f4,
+        uiType1013	= 0x3f5,
+        uiType1014	= 0x3f6,
+        uiType1017	= 0x3f9,
+        uiType1018	= 0x3fa,
+        uiType1020	= 0x3fc,
+        uiType1023	= 0x3ff,
+        uiType1024	= 0x400,
+        uiType1025	= 0x401,
+        uiType1051	= 0x41b,
+        uiType1052	= 0x41c,
+        uiType1053	= 0x41d
     } 	eUserInfoType;
 
 
@@ -7940,6 +7960,111 @@ EXTERN_C const IID IID_ICNetUser;
             /* [in] */ BSTR bsUserName,
             /* [retval][out] */ ICUserInfo4 **ppUserInfo) = 0;
         
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserGetInfo10( 
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo10 **ppUserInfo) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserGetInfo11( 
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo11 **ppUserInfo) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserGetInfo20( 
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo20 **ppUserInfo) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserGetInfo23( 
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo23 **ppUserInfo) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserGetInfo24( 
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo24 **ppUserInfo) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserGetInfo1003( 
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo1003 **ppUserInfo) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserGetInfo1005( 
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo1005 **ppUserInfo) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserGetInfo1006( 
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo1006 **ppUserInfo) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserGetInfo1007( 
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo1007 **ppUserInfo) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserGetInfo1008( 
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo1008 **ppUserInfo) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserGetInfo1009( 
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo1009 **ppUserInfo) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserGetInfo1010( 
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo1010 **ppUserInfo) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserGetInfo1011( 
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo1011 **ppUserInfo) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserGetInfo1012( 
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo1012 **ppUserInfo) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserGetInfo1014( 
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo1014 **ppUserInfo) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserGetInfo1017( 
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo1017 **ppUserInfo) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserGetInfo1020( 
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo1020 **ppUserInfo) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserGetInfo1024( 
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo1024 **ppUserInfo) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserGetInfo1051( 
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo1051 **ppUserInfo) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserGetInfo1052( 
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo1052 **ppUserInfo) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserGetInfo1053( 
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo1053 **ppUserInfo) = 0;
+        
     };
     
     
@@ -8354,6 +8479,132 @@ EXTERN_C const IID IID_ICNetUser;
             /* [in] */ BSTR bsUserName,
             /* [retval][out] */ ICUserInfo4 **ppUserInfo);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserGetInfo10 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo10 **ppUserInfo);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserGetInfo11 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo11 **ppUserInfo);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserGetInfo20 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo20 **ppUserInfo);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserGetInfo23 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo23 **ppUserInfo);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserGetInfo24 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo24 **ppUserInfo);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserGetInfo1003 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo1003 **ppUserInfo);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserGetInfo1005 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo1005 **ppUserInfo);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserGetInfo1006 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo1006 **ppUserInfo);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserGetInfo1007 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo1007 **ppUserInfo);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserGetInfo1008 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo1008 **ppUserInfo);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserGetInfo1009 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo1009 **ppUserInfo);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserGetInfo1010 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo1010 **ppUserInfo);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserGetInfo1011 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo1011 **ppUserInfo);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserGetInfo1012 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo1012 **ppUserInfo);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserGetInfo1014 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo1014 **ppUserInfo);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserGetInfo1017 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo1017 **ppUserInfo);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserGetInfo1020 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo1020 **ppUserInfo);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserGetInfo1024 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo1024 **ppUserInfo);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserGetInfo1051 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo1051 **ppUserInfo);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserGetInfo1052 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo1052 **ppUserInfo);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserGetInfo1053 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICUserInfo1053 **ppUserInfo);
+        
         END_INTERFACE
     } ICNetUserVtbl;
 
@@ -8512,6 +8763,69 @@ EXTERN_C const IID IID_ICNetUser;
 
 #define ICNetUser_NetUserGetInfo4(This,bsServerName,bsUserName,ppUserInfo)	\
     ( (This)->lpVtbl -> NetUserGetInfo4(This,bsServerName,bsUserName,ppUserInfo) ) 
+
+#define ICNetUser_NetUserGetInfo10(This,bsServerName,bsUserName,ppUserInfo)	\
+    ( (This)->lpVtbl -> NetUserGetInfo10(This,bsServerName,bsUserName,ppUserInfo) ) 
+
+#define ICNetUser_NetUserGetInfo11(This,bsServerName,bsUserName,ppUserInfo)	\
+    ( (This)->lpVtbl -> NetUserGetInfo11(This,bsServerName,bsUserName,ppUserInfo) ) 
+
+#define ICNetUser_NetUserGetInfo20(This,bsServerName,bsUserName,ppUserInfo)	\
+    ( (This)->lpVtbl -> NetUserGetInfo20(This,bsServerName,bsUserName,ppUserInfo) ) 
+
+#define ICNetUser_NetUserGetInfo23(This,bsServerName,bsUserName,ppUserInfo)	\
+    ( (This)->lpVtbl -> NetUserGetInfo23(This,bsServerName,bsUserName,ppUserInfo) ) 
+
+#define ICNetUser_NetUserGetInfo24(This,bsServerName,bsUserName,ppUserInfo)	\
+    ( (This)->lpVtbl -> NetUserGetInfo24(This,bsServerName,bsUserName,ppUserInfo) ) 
+
+#define ICNetUser_NetUserGetInfo1003(This,bsServerName,bsUserName,ppUserInfo)	\
+    ( (This)->lpVtbl -> NetUserGetInfo1003(This,bsServerName,bsUserName,ppUserInfo) ) 
+
+#define ICNetUser_NetUserGetInfo1005(This,bsServerName,bsUserName,ppUserInfo)	\
+    ( (This)->lpVtbl -> NetUserGetInfo1005(This,bsServerName,bsUserName,ppUserInfo) ) 
+
+#define ICNetUser_NetUserGetInfo1006(This,bsServerName,bsUserName,ppUserInfo)	\
+    ( (This)->lpVtbl -> NetUserGetInfo1006(This,bsServerName,bsUserName,ppUserInfo) ) 
+
+#define ICNetUser_NetUserGetInfo1007(This,bsServerName,bsUserName,ppUserInfo)	\
+    ( (This)->lpVtbl -> NetUserGetInfo1007(This,bsServerName,bsUserName,ppUserInfo) ) 
+
+#define ICNetUser_NetUserGetInfo1008(This,bsServerName,bsUserName,ppUserInfo)	\
+    ( (This)->lpVtbl -> NetUserGetInfo1008(This,bsServerName,bsUserName,ppUserInfo) ) 
+
+#define ICNetUser_NetUserGetInfo1009(This,bsServerName,bsUserName,ppUserInfo)	\
+    ( (This)->lpVtbl -> NetUserGetInfo1009(This,bsServerName,bsUserName,ppUserInfo) ) 
+
+#define ICNetUser_NetUserGetInfo1010(This,bsServerName,bsUserName,ppUserInfo)	\
+    ( (This)->lpVtbl -> NetUserGetInfo1010(This,bsServerName,bsUserName,ppUserInfo) ) 
+
+#define ICNetUser_NetUserGetInfo1011(This,bsServerName,bsUserName,ppUserInfo)	\
+    ( (This)->lpVtbl -> NetUserGetInfo1011(This,bsServerName,bsUserName,ppUserInfo) ) 
+
+#define ICNetUser_NetUserGetInfo1012(This,bsServerName,bsUserName,ppUserInfo)	\
+    ( (This)->lpVtbl -> NetUserGetInfo1012(This,bsServerName,bsUserName,ppUserInfo) ) 
+
+#define ICNetUser_NetUserGetInfo1014(This,bsServerName,bsUserName,ppUserInfo)	\
+    ( (This)->lpVtbl -> NetUserGetInfo1014(This,bsServerName,bsUserName,ppUserInfo) ) 
+
+#define ICNetUser_NetUserGetInfo1017(This,bsServerName,bsUserName,ppUserInfo)	\
+    ( (This)->lpVtbl -> NetUserGetInfo1017(This,bsServerName,bsUserName,ppUserInfo) ) 
+
+#define ICNetUser_NetUserGetInfo1020(This,bsServerName,bsUserName,ppUserInfo)	\
+    ( (This)->lpVtbl -> NetUserGetInfo1020(This,bsServerName,bsUserName,ppUserInfo) ) 
+
+#define ICNetUser_NetUserGetInfo1024(This,bsServerName,bsUserName,ppUserInfo)	\
+    ( (This)->lpVtbl -> NetUserGetInfo1024(This,bsServerName,bsUserName,ppUserInfo) ) 
+
+#define ICNetUser_NetUserGetInfo1051(This,bsServerName,bsUserName,ppUserInfo)	\
+    ( (This)->lpVtbl -> NetUserGetInfo1051(This,bsServerName,bsUserName,ppUserInfo) ) 
+
+#define ICNetUser_NetUserGetInfo1052(This,bsServerName,bsUserName,ppUserInfo)	\
+    ( (This)->lpVtbl -> NetUserGetInfo1052(This,bsServerName,bsUserName,ppUserInfo) ) 
+
+#define ICNetUser_NetUserGetInfo1053(This,bsServerName,bsUserName,ppUserInfo)	\
+    ( (This)->lpVtbl -> NetUserGetInfo1053(This,bsServerName,bsUserName,ppUserInfo) ) 
 
 #endif /* COBJMACROS */
 

@@ -61,6 +61,7 @@ public:
 	STDMETHOD(Initialise)(ULONG ulFlags);
 	STDMETHOD(get_Flags)(ULONG* pVal);
 
+	static HRESULT TranslateToUserInfo(ICUserInfo1008 * pFrom, USER_INFO_1008 &pTo);
 private:
 	ULONG m_ulFlags;
 public:

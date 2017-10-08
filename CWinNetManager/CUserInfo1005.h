@@ -61,6 +61,7 @@ public:
 	STDMETHOD(Initialise)(ULONG ulPrivilege);
 	STDMETHOD(get_Privilege)(ULONG* pVal);
 
+	static HRESULT TranslateToUserInfo(ICUserInfo1005 * pFrom, USER_INFO_1005 &pTo);
 private:
 	ULONG m_ulPrivilege;
 public:

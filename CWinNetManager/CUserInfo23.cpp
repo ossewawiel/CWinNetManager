@@ -2,7 +2,7 @@
 
 #include "stdafx.h"
 #include "CUserInfo23.h"
-
+#include "CUserInfoUtils.h"
 
 // CCUserInfo23
 
@@ -49,6 +49,20 @@ STDMETHODIMP CCUserInfo23::get_UserSid(BSTR * pVal)
 {
 	*pVal = m_bsUserSid.copy();
 	return S_OK;
+}
+
+HRESULT CCUserInfo23::TranslateFromUserInfo(LPUSER_INFO_23 pFrom, ICUserInfo23 ** ppTo)
+{
+	HRESULT hr(S_OK);
+	if (hr = CCUserInfo23::CreateInstance(ppTo)) return hr;
+	_bstr_t bsSid;
+	if (hr = FromUserInfoUserSid(pFrom->usri23_user_sid, bsSid.GetAddress())) return hr;
+	return (*ppTo)->Initialise(
+		_bstr_t(pFrom->usri23_name)
+		, _bstr_t(pFrom->usri23_full_name)
+		, _bstr_t(pFrom->usri23_comment)
+		, pFrom->usri23_flags
+		, bsSid);
 }
 
 

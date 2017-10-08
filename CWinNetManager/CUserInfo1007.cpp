@@ -2,7 +2,7 @@
 
 #include "stdafx.h"
 #include "CUserInfo1007.h"
-
+#include "CUserInfoUtils.h"
 
 // CCUserInfo1007
 
@@ -16,6 +16,13 @@ STDMETHODIMP CCUserInfo1007::get_Comment(BSTR * pVal)
 {
 	*pVal = m_bsComment.copy();
 	return S_OK;
+}
+
+HRESULT CCUserInfo1007::TranslateToUserInfo(ICUserInfo1007 * pFrom, USER_INFO_1007 & pTo)
+{
+	HRESULT hr(S_OK);
+	if (hr = ToUserInfoComment<ICUserInfo1007>(pFrom, pTo.usri1007_comment)) return hr;
+	return hr;
 }
 
 

@@ -9,16 +9,36 @@ import "ocidl.idl";
 
 typedef [public, v1_enum] enum eUserInfoType
 {
-	  uiType0 = 0x00
-	, uiType1 = 0x01
-	, uiType2 = 0x02
-	, uiType3 = 0x03
-	, uiType4 = 0x04
-	, uiTYpe10 = 0x10
-	, uiTYpe11 = 0x11
-	, uiTYpe20 = 0x20
-	, uiTYpe23 = 0x23
-	, uiTYpe24 = 0x24
+	  uiType0 = 0x000
+	, uiType1 = 0x001
+	, uiType2 = 0x002
+	, uiType3 = 0x003
+	, uiType4 = 0x004
+	, uiType10 = 0x00A
+	, uiType11 = 0x00B
+	, uiType20 = 0x014
+	, uiType23 = 0x017
+	, uiType24 = 0x018
+	, uiType1003 = 0x3EB
+	, uiType1005 = 0x3ED
+	, uiType1006 = 0x3EE
+	, uiType1007 = 0x3EF
+	, uiType1008 = 0x3F0
+	, uiType1009 = 0x3F1
+	, uiType1010 = 0x3F2
+	, uiType1011 = 0x3F3
+	, uiType1012 = 0x3F4
+	, uiType1013 = 0x3F5
+	, uiType1014 = 0x3F6
+	, uiType1017 = 0x3F9
+	, uiType1018 = 0x3FA
+	, uiType1020 = 0x3FC
+	, uiType1023 = 0x3FF
+	, uiType1024 = 0x400
+	, uiType1025 = 0x401
+	, uiType1051 = 0x41B
+	, uiType1052 = 0x41C
+	, uiType1053 = 0x41D
 } eUserInfoType;
 [
 	object,
@@ -952,6 +972,27 @@ interface ICNetUser : IDispatch{
 	[id(40)] HRESULT NetUserGetInfo2([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICUserInfo2** ppUserInfo);
 	[id(41)] HRESULT NetUserGetInfo3([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICUserInfo3** ppUserInfo);
 	[id(42)] HRESULT NetUserGetInfo4([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICUserInfo4** ppUserInfo);
+	[id(43)] HRESULT NetUserGetInfo10([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICUserInfo10** ppUserInfo);
+	[id(44)] HRESULT NetUserGetInfo11([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICUserInfo11** ppUserInfo);
+	[id(45)] HRESULT NetUserGetInfo20([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICUserInfo20** ppUserInfo);
+	[id(46)] HRESULT NetUserGetInfo23([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICUserInfo23** ppUserInfo);
+	[id(47)] HRESULT NetUserGetInfo24([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICUserInfo24** ppUserInfo);
+	[id(48)] HRESULT NetUserGetInfo1003([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICUserInfo1003** ppUserInfo);
+	[id(49)] HRESULT NetUserGetInfo1005([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICUserInfo1005** ppUserInfo);
+	[id(50)] HRESULT NetUserGetInfo1006([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICUserInfo1006** ppUserInfo);
+	[id(51)] HRESULT NetUserGetInfo1007([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICUserInfo1007** ppUserInfo);
+	[id(52)] HRESULT NetUserGetInfo1008([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICUserInfo1008** ppUserInfo);
+	[id(53)] HRESULT NetUserGetInfo1009([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICUserInfo1009** ppUserInfo);
+	[id(54)] HRESULT NetUserGetInfo1010([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICUserInfo1010** ppUserInfo);
+	[id(55)] HRESULT NetUserGetInfo1011([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICUserInfo1011** ppUserInfo);
+	[id(56)] HRESULT NetUserGetInfo1012([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICUserInfo1012** ppUserInfo);
+	[id(57)] HRESULT NetUserGetInfo1014([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICUserInfo1014** ppUserInfo);
+	[id(58)] HRESULT NetUserGetInfo1017([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICUserInfo1017** ppUserInfo);
+	[id(59)] HRESULT NetUserGetInfo1020([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICUserInfo1020** ppUserInfo);
+	[id(60)] HRESULT NetUserGetInfo1024([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICUserInfo1024** ppUserInfo);
+	[id(61)] HRESULT NetUserGetInfo1051([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICUserInfo1051** ppUserInfo);
+	[id(62)] HRESULT NetUserGetInfo1052([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICUserInfo1052** ppUserInfo);
+	[id(63)] HRESULT NetUserGetInfo1053([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICUserInfo1053** ppUserInfo);
 };
 [
 	uuid(F53A3EDB-3D55-4E7B-8687-F0759A72FBCA),

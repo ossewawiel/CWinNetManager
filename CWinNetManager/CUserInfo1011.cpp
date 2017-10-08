@@ -2,7 +2,7 @@
 
 #include "stdafx.h"
 #include "CUserInfo1011.h"
-
+#include "CUserInfoUtils.h"
 
 // CCUserInfo1011
 
@@ -16,6 +16,13 @@ STDMETHODIMP CCUserInfo1011::get_FullName(BSTR * pVal)
 {
 	*pVal = m_bsFullName.copy();
 	return S_OK;
+}
+
+HRESULT CCUserInfo1011::TranslateToUserInfo(ICUserInfo1011 * pFrom, USER_INFO_1011 & pTo)
+{
+	HRESULT hr(S_OK);
+	if (hr = ToUserInfoFullName<ICUserInfo1011>(pFrom, pTo.usri1011_full_name)) return hr;
+	return hr;
 }
 
 

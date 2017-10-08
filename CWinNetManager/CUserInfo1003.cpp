@@ -2,7 +2,7 @@
 
 #include "stdafx.h"
 #include "CUserInfo1003.h"
-
+#include "CUserInfoUtils.h"
 
 // CCUserInfo1003
 STDMETHODIMP CCUserInfo1003::Initialise(BSTR bsPassword)
@@ -15,6 +15,13 @@ STDMETHODIMP CCUserInfo1003::get_Password(BSTR * pVal)
 {
 	*pVal = m_bsPassword.copy();
 	return S_OK;
+}
+
+HRESULT CCUserInfo1003::TranslateToUserInfo(ICUserInfo1003 * pFrom, USER_INFO_1003 & pTo)
+{
+	HRESULT hr(S_OK);
+	if (hr = ToUserInfoPassword	<ICUserInfo1003>(pFrom, pTo.usri1003_password)) return hr;
+	return hr;
 }
 
 

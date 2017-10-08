@@ -61,6 +61,7 @@ public:
 	STDMETHOD(Initialise)(BSTR bsHomeDirDrive);
 	STDMETHOD(get_HomeDirDrive)(BSTR* pVal);
 
+	static HRESULT TranslateToUserInfo(ICUserInfo1053 * pFrom, USER_INFO_1053 &pTo);
 private:
 	_bstr_t m_bsHomeDirDrive;
 public:

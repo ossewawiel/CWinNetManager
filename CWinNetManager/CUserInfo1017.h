@@ -61,6 +61,7 @@ public:
 	STDMETHOD(Initialise)(ULONG ulAccntExpires);
 	STDMETHOD(get_AccntExpires)(ULONG* pVal);
 
+	static HRESULT TranslateToUserInfo(ICUserInfo1017 * pFrom, USER_INFO_1017 &pTo);
 private:
 	ULONG m_ulAccntExpires;
 public:

@@ -2,7 +2,7 @@
 
 #include "stdafx.h"
 #include "CUserInfo1006.h"
-
+#include "CUserInfoUtils.h"
 
 // CCUserInfo1006
 
@@ -16,6 +16,13 @@ STDMETHODIMP CCUserInfo1006::get_HomeDirectory(BSTR * pVal)
 {
 	*pVal = m_bsHomeDir.copy();
 	return S_OK;
+}
+
+HRESULT CCUserInfo1006::TranslateToUserInfo(ICUserInfo1006 * pFrom, USER_INFO_1006 & pTo)
+{
+	HRESULT hr(S_OK);
+	if (hr = ToUserInfoHomeDirectory<ICUserInfo1006>(pFrom, pTo.usri1006_home_dir)) return hr;
+	return hr;
 }
 
 

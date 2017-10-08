@@ -355,8 +355,8 @@ TEST_F(TestCNetUser_Get, when_getuserinfo24_with_proper_parameters_then_return_n
 TEST_F(TestCNetUser_Get, when_getuserinfo1003_with_proper_parameters_then_return_no_exception)
 {
 	CComPtr<ICUserInfo1003> pUserInfo1003;
-	HRESULT hr = mpCNetUser->GetUserInfo1003(PAR_UINF_PWD, &pUserInfo1003);
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+	CUSTOM_ASSERT_SET;
+	ASSERT_GET_USER_INFO_1003(mpCNetUser, pUserInfo1003);
 
 	// now check if all the properties have the correct values
 	ASSERT_EQ_PROP_GET_BSTR(pUserInfo1003, get_Password, PAR_UINF_PWD);

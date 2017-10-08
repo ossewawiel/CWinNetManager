@@ -66,6 +66,8 @@ public:
 	STDMETHOD(get_Comment)(BSTR* pVal);
 	STDMETHOD(get_UsrComment)(BSTR* pVal);
 	STDMETHOD(get_FullName)(BSTR* pVal);
+
+	static HRESULT TranslateFromUserInfo(LPUSER_INFO_10 pFrom, ICUserInfo10 ** ppTo);
 	
 private:
 	_bstr_t m_bsName;

@@ -63,6 +63,7 @@ public:
 	STDMETHOD(get_UnitsPerWeek)(ULONG* pVal);
 	STDMETHOD(get_LogonHours)(ICLogonHours** pVal);
 
+	static HRESULT TranslateToUserInfo(ICUserInfo1020 * pFrom, USER_INFO_1020 &pTo);
 private:
 	ULONG m_ulUnitsPerWeek;
 	ICLogonHours* m_bLogonHours;

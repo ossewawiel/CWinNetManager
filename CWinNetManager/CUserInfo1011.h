@@ -61,6 +61,7 @@ public:
 	STDMETHOD(Initialise)(BSTR bsFullName);
 	STDMETHOD(get_FullName)(BSTR* pVal);
 
+	static HRESULT TranslateToUserInfo(ICUserInfo1011 * pFrom, USER_INFO_1011 &pTo);
 private:
 	_bstr_t m_bsFullName;
 

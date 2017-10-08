@@ -74,6 +74,8 @@ public:
 	STDMETHOD(get_InternetPrincipleName)(BSTR* pVal);
 	STDMETHOD(get_UserSid)(BSTR* pVal);
 
+	static HRESULT TranslateFromUserInfo(LPUSER_INFO_24 pFrom, ICUserInfo24 ** ppTo);
+
 private:
 	SHORT   m_shInternetIdentity;
 	ULONG   m_ulFlags;

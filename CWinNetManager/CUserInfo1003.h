@@ -61,6 +61,8 @@ public:
 	STDMETHOD(Initialise)(BSTR bsPassword);
 	STDMETHOD(get_Password)(BSTR* pVal);
 
+	static HRESULT TranslateToUserInfo(ICUserInfo1003 * pFrom, USER_INFO_1003 &pTo);
+
 private:
 	_bstr_t m_bsPassword;
 

@@ -45,6 +45,17 @@ STDMETHODIMP CCUserInfo10::get_FullName(BSTR* pVal)
 	return S_OK;
 }
 
+HRESULT CCUserInfo10::TranslateFromUserInfo(LPUSER_INFO_10 pFrom, ICUserInfo10 ** ppTo)
+{
+	HRESULT hr(S_OK);
+	if (hr = CCUserInfo10::CreateInstance(ppTo)) return hr;
+	return (*ppTo)->Initialise(
+		_bstr_t(pFrom->usri10_name)
+		, _bstr_t(pFrom->usri10_comment)
+		, _bstr_t(pFrom->usri10_usr_comment)
+		, _bstr_t(pFrom->usri10_full_name));
+}
+
 
 
 

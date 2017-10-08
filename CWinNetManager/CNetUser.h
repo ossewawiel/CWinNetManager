@@ -308,6 +308,27 @@ public:
 	STDMETHOD(NetUserGetInfo2)(BSTR bsServerName, BSTR bsUserName, ICUserInfo2** ppUserInfo);
 	STDMETHOD(NetUserGetInfo3)(BSTR bsServerName, BSTR bsUserName, ICUserInfo3** ppUserInfo);
 	STDMETHOD(NetUserGetInfo4)(BSTR bsServerName, BSTR bsUserName, ICUserInfo4** ppUserInfo);
+	STDMETHOD(NetUserGetInfo10)(BSTR bsServerName, BSTR bsUserName, ICUserInfo10** ppUserInfo);
+	STDMETHOD(NetUserGetInfo11)(BSTR bsServerName, BSTR bsUserName, ICUserInfo11** ppUserInfo);
+	STDMETHOD(NetUserGetInfo20)(BSTR bsServerName, BSTR bsUserName, ICUserInfo20** ppUserInfo);
+	STDMETHOD(NetUserGetInfo23)(BSTR bsServerName, BSTR bsUserName, ICUserInfo23** ppUserInfo);
+	STDMETHOD(NetUserGetInfo24)(BSTR bsServerName, BSTR bsUserName, ICUserInfo24** ppUserInfo);
+	STDMETHOD(NetUserGetInfo1003)(BSTR bsServerName, BSTR bsUserName, ICUserInfo1003** ppUserInfo);
+	STDMETHOD(NetUserGetInfo1005)(BSTR bsServerName, BSTR bsUserName, ICUserInfo1005** ppUserInfo);
+	STDMETHOD(NetUserGetInfo1006)(BSTR bsServerName, BSTR bsUserName, ICUserInfo1006** ppUserInfo);
+	STDMETHOD(NetUserGetInfo1007)(BSTR bsServerName, BSTR bsUserName, ICUserInfo1007** ppUserInfo);
+	STDMETHOD(NetUserGetInfo1008)(BSTR bsServerName, BSTR bsUserName, ICUserInfo1008** ppUserInfo);
+	STDMETHOD(NetUserGetInfo1009)(BSTR bsServerName, BSTR bsUserName, ICUserInfo1009** ppUserInfo);
+	STDMETHOD(NetUserGetInfo1010)(BSTR bsServerName, BSTR bsUserName, ICUserInfo1010** ppUserInfo);
+	STDMETHOD(NetUserGetInfo1011)(BSTR bsServerName, BSTR bsUserName, ICUserInfo1011** ppUserInfo);
+	STDMETHOD(NetUserGetInfo1012)(BSTR bsServerName, BSTR bsUserName, ICUserInfo1012** ppUserInfo);
+	STDMETHOD(NetUserGetInfo1014)(BSTR bsServerName, BSTR bsUserName, ICUserInfo1014** ppUserInfo);
+	STDMETHOD(NetUserGetInfo1017)(BSTR bsServerName, BSTR bsUserName, ICUserInfo1017** ppUserInfo);
+	STDMETHOD(NetUserGetInfo1020)(BSTR bsServerName, BSTR bsUserName, ICUserInfo1020** ppUserInfo);
+	STDMETHOD(NetUserGetInfo1024)(BSTR bsServerName, BSTR bsUserName, ICUserInfo1024** ppUserInfo);
+	STDMETHOD(NetUserGetInfo1051)(BSTR bsServerName, BSTR bsUserName, ICUserInfo1051** ppUserInfo);
+	STDMETHOD(NetUserGetInfo1052)(BSTR bsServerName, BSTR bsUserName, ICUserInfo1052** ppUserInfo);
+	STDMETHOD(NetUserGetInfo1053)(BSTR bsServerName, BSTR bsUserName, ICUserInfo1053** ppUserInfo);
 	STDMETHOD(GetLogonHoursAllActive)(ICLogonHours** ppLogonHours);
 	STDMETHOD(NetUserSetInfo)(BSTR bsServerName, BSTR bsUserName, eUserInfoType userInfoType, IUnknown* pUserInfo);
 

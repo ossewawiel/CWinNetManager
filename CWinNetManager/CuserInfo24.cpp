@@ -2,7 +2,7 @@
 
 #include "stdafx.h"
 #include "CUserInfo24.h"
-
+#include "CUserInfoUtils.h"
 
 // CCUserInfo24
 
@@ -49,6 +49,20 @@ STDMETHODIMP CCUserInfo24::get_UserSid(BSTR * pVal)
 {
 	*pVal = m_bsUserSid.copy();
 	return S_OK;
+}
+
+HRESULT CCUserInfo24::TranslateFromUserInfo(LPUSER_INFO_24 pFrom, ICUserInfo24 ** ppTo)
+{
+	HRESULT hr(S_OK);
+	if (hr = CCUserInfo24::CreateInstance(ppTo)) return hr;
+	_bstr_t bsSid;
+	if (hr = FromUserInfoUserSid(pFrom->usri24_user_sid, bsSid.GetAddress())) return hr;
+	return (*ppTo)->Initialise(
+		pFrom->usri24_internet_identity
+		, pFrom->usri24_flags
+		, _bstr_t(pFrom->usri24_internet_provider_name)
+		, _bstr_t(pFrom->usri24_internet_principal_name)
+		, bsSid);
 }
 
 
