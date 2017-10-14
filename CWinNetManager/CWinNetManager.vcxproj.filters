@@ -142,6 +142,9 @@
     <ClCompile Include="CLogonHours.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CUsersInfo0.cpp">
+      <Filter>CUserInfo</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -270,6 +273,12 @@
     <ClInclude Include="CLogonHours.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CUsersInfo0.h">
+      <Filter>CUserInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CEnumUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="CWinNetManager.rc">
@@ -389,6 +398,9 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="CLogonHours.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CUsersInfo0.rgs">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

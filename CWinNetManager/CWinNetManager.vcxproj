@@ -246,6 +246,7 @@
     <ClCompile Include="CuserInfo24.cpp" />
     <ClCompile Include="CUserInfo3.cpp" />
     <ClCompile Include="CUserInfo4.cpp" />
+    <ClCompile Include="CUsersInfo0.cpp" />
     <ClCompile Include="CWinNetManager.cpp" />
     <ClCompile Include="CWinNetManager_i.c">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
@@ -297,6 +298,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CEnumUtils.h" />
     <ClInclude Include="CLogonHour.h" />
     <ClInclude Include="CLogonHours.h" />
     <ClInclude Include="CNetUser.h" />
@@ -333,6 +335,7 @@
     <ClInclude Include="CUserInfo3.h" />
     <ClInclude Include="CUserInfo4.h" />
     <ClInclude Include="CUserInfoUtils.h" />
+    <ClInclude Include="CUsersInfo0.h" />
     <ClInclude Include="CWinNetManager.h" />
     <ClInclude Include="dllmain.h" />
     <ClInclude Include="Resource.h" />
@@ -382,6 +385,7 @@
     <None Include="CuserInfo24.rgs" />
     <None Include="CUserInfo3.rgs" />
     <None Include="CUserInfo4.rgs" />
+    <None Include="CUsersInfo0.rgs" />
     <None Include="CWinNetManager.def" />
     <None Include="CWinNetManager.rgs" />
   </ItemGroup>

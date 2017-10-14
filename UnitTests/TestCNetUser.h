@@ -26,3 +26,5 @@ class TestCNetUser_Clear : public TestCNetUser {};
 class TestCNetUser_Add : public TestCNetUser {};
 class TestCNetUser_GetInfo : public TestCNetUser {};
 class TestCNetUser_SetInfo : public TestCNetUser {};
+class TestCNetUser_ChangePassword : public TestCNetUser {};
+class TestCNetUser_Enum : public TestCNetUser {};

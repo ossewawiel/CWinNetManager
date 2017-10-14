@@ -88,6 +88,19 @@ interface ICUserInfo0 : IDispatch {
 };
 [
 	object,
+	uuid(0BC05692-BC52-423B-B749-42D736A3CD6E),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUsersInfo0 : IDispatch {
+	[id(DISPID_NEWENUM), propget] HRESULT _NewEnum([out, retval] IUnknown** ppUnk);
+	[id(DISPID_VALUE), propget] HRESULT Item([in] long n, [out, retval] ICUserInfo0** ppUserInfo0);
+	[propget] HRESULT Count([out, retval] long* pnCount);
+	[id(1)] HRESULT Add([in] ICUserInfo0* pUserInfo0);
+};
+[
+	object,
 	uuid(54E16B87-DEA7-4424-A7F9-239AE50DD5F7),
 	dual,
 	nonextensible,
@@ -993,6 +1006,8 @@ interface ICNetUser : IDispatch{
 	[id(61)] HRESULT NetUserGetInfo1051([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICUserInfo1051** ppUserInfo);
 	[id(62)] HRESULT NetUserGetInfo1052([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICUserInfo1052** ppUserInfo);
 	[id(63)] HRESULT NetUserGetInfo1053([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICUserInfo1053** ppUserInfo);
+	[id(64)] HRESULT NetUserChangePassword([in] BSTR bsDomainName, [in] BSTR bsUserName, [in] BSTR bsOldPwd, [in] BSTR bsNewPwd);
+	[id(65)] HRESULT NetUserEnum0([in] BSTR bsServerName, [out, retval] ICUsersInfo0** ppUsersInfo0);
 };
 [
 	uuid(F53A3EDB-3D55-4E7B-8687-F0759A72FBCA),
@@ -1245,6 +1260,13 @@ library CWinNetManagerLib
 	coclass CLogonHours
 	{
 		[default] interface ICLogonHours;
+	};
+	[
+		uuid(60B50DE1-A7CF-4F60-AFCF-AA46B2BADC9C)		
+	]
+	coclass CUsersInfo0
+	{
+		[default] interface ICUsersInfo0;
 	};
 };
 

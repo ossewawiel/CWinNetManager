@@ -831,3 +831,32 @@ STDMETHODIMP CCNetUser::NetUserSetInfo(BSTR bsServerName, BSTR bsUserName, eUser
 
 	return S_OK;
 }
+
+
+STDMETHODIMP CCNetUser::NetUserChangePassword(BSTR bsDomainName, BSTR bsUserName, BSTR bsOldPwd, BSTR bsNewPwd)
+{
+	return ::NetUserChangePassword((LPCWSTR)bsDomainName, (LPCWSTR)bsUserName, (LPCWSTR)bsOldPwd, (LPCWSTR)bsNewPwd);
+}
+
+
+STDMETHODIMP CCNetUser::NetUserEnum0(BSTR bsServerName, ICUsersInfo0** ppUsersInfo0)
+{
+	HRESULT hr(S_OK);
+	if(hr = CCUsersInfo0::CreateInstance(ppUsersInfo0)) return hr;
+	LPUSER_INFO_0 pBuf = NULL;
+	DWORD pEntriesRead = NULL;
+	DWORD pTotalEntries = NULL;
+	DWORD pResumeHandle = NULL;
+	hr = ::NetUserEnum((LPCWSTR)bsServerName, eUserInfoType::uiType0, 0, (LPBYTE*)&pBuf, MAX_PREFERRED_LENGTH, &pEntriesRead, &pTotalEntries, &pResumeHandle);
+	if (hr != NERR_Success) return hr;
+	if (pBuf == NULL) return hr;
+	for (long i = 0; i < pEntriesRead; i++)
+	{
+		CComPtr<ICUserInfo0> pUI0;
+		if(hr = CCUserInfo0::TranslateFromUserInfo(pBuf, &pUI0)) return hr;
+		if(hr = (*ppUsersInfo0)->Add(pUI0)) return hr;
+		++pBuf;
+	}
+
+	return S_OK;
+}

@@ -4,6 +4,7 @@
 #include "resource.h"       // main symbols
 #include "CWinNetManager.h"
 #include "CUserInfo0.h"
+#include "CUsersInfo0.h"
 #include "CUserInfo1.h"
 #include "CUserInfo2.h"
 #include "CUserInfo3.h"
@@ -336,6 +337,8 @@ public:
 		
 public:
 	
+	STDMETHOD(NetUserChangePassword)(BSTR bsDomainName, BSTR bsUserName, BSTR bsOldPwd, BSTR bsNewPwd);
+	STDMETHOD(NetUserEnum0)(BSTR bsServerName, ICUsersInfo0** ppUsersInfo0);
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(CNetUser), CCNetUser)

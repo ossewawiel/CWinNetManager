@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Sun Oct 08 18:02:51 2017
+/* at Sat Oct 14 19:48:50 2017
  */
 /* Compiler settings for CWinNetManager.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 
@@ -64,6 +64,13 @@ typedef interface ICLogonHours ICLogonHours;
 typedef interface ICUserInfo0 ICUserInfo0;
 
 #endif 	/* __ICUserInfo0_FWD_DEFINED__ */
+
+
+#ifndef __ICUsersInfo0_FWD_DEFINED__
+#define __ICUsersInfo0_FWD_DEFINED__
+typedef interface ICUsersInfo0 ICUsersInfo0;
+
+#endif 	/* __ICUsersInfo0_FWD_DEFINED__ */
 
 
 #ifndef __ICUserInfo1_FWD_DEFINED__
@@ -710,6 +717,18 @@ typedef struct CLogonHours CLogonHours;
 #endif 	/* __CLogonHours_FWD_DEFINED__ */
 
 
+#ifndef __CUsersInfo0_FWD_DEFINED__
+#define __CUsersInfo0_FWD_DEFINED__
+
+#ifdef __cplusplus
+typedef class CUsersInfo0 CUsersInfo0;
+#else
+typedef struct CUsersInfo0 CUsersInfo0;
+#endif /* __cplusplus */
+
+#endif 	/* __CUsersInfo0_FWD_DEFINED__ */
+
+
 /* header files for imported files */
 #include "oaidl.h"
 #include "ocidl.h"
@@ -1312,6 +1331,168 @@ EXTERN_C const IID IID_ICUserInfo0;
 
 
 #endif 	/* __ICUserInfo0_INTERFACE_DEFINED__ */
+
+
+#ifndef __ICUsersInfo0_INTERFACE_DEFINED__
+#define __ICUsersInfo0_INTERFACE_DEFINED__
+
+/* interface ICUsersInfo0 */
+/* [unique][nonextensible][dual][uuid][object] */ 
+
+
+EXTERN_C const IID IID_ICUsersInfo0;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("0BC05692-BC52-423B-B749-42D736A3CD6E")
+    ICUsersInfo0 : public IDispatch
+    {
+    public:
+        virtual /* [propget][id] */ HRESULT STDMETHODCALLTYPE get__NewEnum( 
+            /* [retval][out] */ IUnknown **ppUnk) = 0;
+        
+        virtual /* [propget][id] */ HRESULT STDMETHODCALLTYPE get_Item( 
+            /* [in] */ long n,
+            /* [retval][out] */ ICUserInfo0 **ppUserInfo0) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Count( 
+            /* [retval][out] */ long *pnCount) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Add( 
+            /* [in] */ ICUserInfo0 *pUserInfo0) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct ICUsersInfo0Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            ICUsersInfo0 * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            ICUsersInfo0 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            ICUsersInfo0 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            ICUsersInfo0 * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            ICUsersInfo0 * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            ICUsersInfo0 * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            ICUsersInfo0 * This,
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
+        
+        /* [propget][id] */ HRESULT ( STDMETHODCALLTYPE *get__NewEnum )( 
+            ICUsersInfo0 * This,
+            /* [retval][out] */ IUnknown **ppUnk);
+        
+        /* [propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_Item )( 
+            ICUsersInfo0 * This,
+            /* [in] */ long n,
+            /* [retval][out] */ ICUserInfo0 **ppUserInfo0);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Count )( 
+            ICUsersInfo0 * This,
+            /* [retval][out] */ long *pnCount);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Add )( 
+            ICUsersInfo0 * This,
+            /* [in] */ ICUserInfo0 *pUserInfo0);
+        
+        END_INTERFACE
+    } ICUsersInfo0Vtbl;
+
+    interface ICUsersInfo0
+    {
+        CONST_VTBL struct ICUsersInfo0Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define ICUsersInfo0_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define ICUsersInfo0_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define ICUsersInfo0_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define ICUsersInfo0_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define ICUsersInfo0_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define ICUsersInfo0_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define ICUsersInfo0_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define ICUsersInfo0_get__NewEnum(This,ppUnk)	\
+    ( (This)->lpVtbl -> get__NewEnum(This,ppUnk) ) 
+
+#define ICUsersInfo0_get_Item(This,n,ppUserInfo0)	\
+    ( (This)->lpVtbl -> get_Item(This,n,ppUserInfo0) ) 
+
+#define ICUsersInfo0_get_Count(This,pnCount)	\
+    ( (This)->lpVtbl -> get_Count(This,pnCount) ) 
+
+#define ICUsersInfo0_Add(This,pUserInfo0)	\
+    ( (This)->lpVtbl -> Add(This,pUserInfo0) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __ICUsersInfo0_INTERFACE_DEFINED__ */
 
 
 #ifndef __ICUserInfo1_INTERFACE_DEFINED__
@@ -8065,6 +8246,16 @@ EXTERN_C const IID IID_ICNetUser;
             /* [in] */ BSTR bsUserName,
             /* [retval][out] */ ICUserInfo1053 **ppUserInfo) = 0;
         
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserChangePassword( 
+            /* [in] */ BSTR bsDomainName,
+            /* [in] */ BSTR bsUserName,
+            /* [in] */ BSTR bsOldPwd,
+            /* [in] */ BSTR bsNewPwd) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserEnum0( 
+            /* [in] */ BSTR bsServerName,
+            /* [retval][out] */ ICUsersInfo0 **ppUsersInfo0) = 0;
+        
     };
     
     
@@ -8605,6 +8796,18 @@ EXTERN_C const IID IID_ICNetUser;
             /* [in] */ BSTR bsUserName,
             /* [retval][out] */ ICUserInfo1053 **ppUserInfo);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserChangePassword )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsDomainName,
+            /* [in] */ BSTR bsUserName,
+            /* [in] */ BSTR bsOldPwd,
+            /* [in] */ BSTR bsNewPwd);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserEnum0 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [retval][out] */ ICUsersInfo0 **ppUsersInfo0);
+        
         END_INTERFACE
     } ICNetUserVtbl;
 
@@ -8826,6 +9029,12 @@ EXTERN_C const IID IID_ICNetUser;
 
 #define ICNetUser_NetUserGetInfo1053(This,bsServerName,bsUserName,ppUserInfo)	\
     ( (This)->lpVtbl -> NetUserGetInfo1053(This,bsServerName,bsUserName,ppUserInfo) ) 
+
+#define ICNetUser_NetUserChangePassword(This,bsDomainName,bsUserName,bsOldPwd,bsNewPwd)	\
+    ( (This)->lpVtbl -> NetUserChangePassword(This,bsDomainName,bsUserName,bsOldPwd,bsNewPwd) ) 
+
+#define ICNetUser_NetUserEnum0(This,bsServerName,ppUsersInfo0)	\
+    ( (This)->lpVtbl -> NetUserEnum0(This,bsServerName,ppUsersInfo0) ) 
 
 #endif /* COBJMACROS */
 
@@ -9126,6 +9335,14 @@ EXTERN_C const CLSID CLSID_CLogonHours;
 
 class DECLSPEC_UUID("A6C10DD1-C14C-4429-BB6A-CF2FC55E6073")
 CLogonHours;
+#endif
+
+EXTERN_C const CLSID CLSID_CUsersInfo0;
+
+#ifdef __cplusplus
+
+class DECLSPEC_UUID("60B50DE1-A7CF-4F60-AFCF-AA46B2BADC9C")
+CUsersInfo0;
 #endif
 #endif /* __CWinNetManagerLib_LIBRARY_DEFINED__ */
 

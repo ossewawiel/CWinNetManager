@@ -419,3 +419,4 @@ inline HRESULT FromUserInfoUserSid(PSID &pFrom, BSTR *pTo)
 	*pTo = ::SysAllocString(temp);
 	return hr;
 }
+

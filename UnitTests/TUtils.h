@@ -81,6 +81,11 @@
 	hr = netuserObject->NetUserGetInfo0(NULL, uName, &uinfObject); \
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
+#define ASSERT_USERS_ENUM_0(netuserObject, uinfObject)		\
+	hr = netuserObject->NetUserEnum0(NULL, &uinfObject); \
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+
+
 #define ASSERT_GET_USER_INFO_1(netuserObject, uinfObject)	\
 	hr = netuserObject->GetUserInfo1(						\
 		PAR_UINF_NAME										\
