@@ -6,15 +6,22 @@
 #include "CUserInfo0.h"
 #include "CUsersInfo0.h"
 #include "CUserInfo1.h"
+#include "CUsersInfo1.h"
 #include "CUserInfo2.h"
+#include "CUsersInfo2.h"
 #include "CUserInfo3.h"
+#include "CUsersInfo3.h"
 #include "CUserInfo4.h"
 #include "CUserInfo10.h"
+#include "CUsersInfo10.h"
 #include "CUserInfo11.h"
+#include "CUsersInfo11.h"
 #include "CUserInfo20.h"
+#include "CUsersInfo20.h"
 #include "CUserInfo21.h"
 #include "CUserInfo22.h"
 #include "CUserInfo23.h"
+#include "CUsersInfo23.h"
 #include "CUserInfo24.h"
 #include "CUserInfo1003.h"
 #include "CUserInfo1005.h"
@@ -37,6 +44,10 @@
 #include "CUserInfo1052.h"
 #include "CUserInfo1053.h"
 #include "CLogonHours.h"
+#include "CGroupUserInfo0.h"
+#include "CGroupsUserInfo0.h"
+#include "CGroupUserInfo1.h"
+#include "CGroupsUserInfo1.h"
 
 #if defined(_WIN32_WCE) && !defined(_CE_DCOM) && !defined(_CE_ALLOW_SINGLE_THREADED_OBJECTS_IN_MTA)
 #error "Single-threaded COM objects are not properly supported on Windows CE platform, such as the Windows Mobile platforms that do not include full DCOM support. Define _CE_ALLOW_SINGLE_THREADED_OBJECTS_IN_MTA to force ATL to support creating single-thread COM object's and allow use of it's single-threaded COM object implementations. The threading model in your rgs file was set to 'Free' as that is the only threading model supported in non DCOM Windows CE platforms."
@@ -339,6 +350,15 @@ public:
 	
 	STDMETHOD(NetUserChangePassword)(BSTR bsDomainName, BSTR bsUserName, BSTR bsOldPwd, BSTR bsNewPwd);
 	STDMETHOD(NetUserEnum0)(BSTR bsServerName, ICUsersInfo0** ppUsersInfo0);
+	STDMETHOD(NetUserEnum1)(BSTR bsServerName, ICUsersInfo1** ppUsersInfo1);
+	STDMETHOD(NetUserEnum2)(BSTR bsServerName, ICUsersInfo2** ppUsersInfo2);
+	STDMETHOD(NetUserEnum3)(BSTR bsServerName, ICUsersInfo3** ppUsersInfo3);
+	STDMETHOD(NetUserEnum10)(BSTR bsServerName, ICUsersInfo10** ppUsersInfo10);
+	STDMETHOD(NetUserEnum11)(BSTR bsServerName, ICUsersInfo11** ppUsersInfo11);
+	STDMETHOD(NetUserEnum20)(BSTR bsServerName, ICUsersInfo20** ppUsersInfo20);
+	STDMETHOD(NetUserEnum23)(BSTR bsServerName, ICUsersInfo23** ppUsersInfo23);
+	STDMETHOD(NetUserGetGroups0)(BSTR bsServerName, BSTR bsUserName, ICGroupsUserInfo0** ppGroupsUserInfo0);
+	STDMETHOD(NetUserGetGroups1)(BSTR bsServerName, BSTR bsUserName, ICGroupsUserInfo1** ppGroupsUserInfo1);
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(CNetUser), CCNetUser)

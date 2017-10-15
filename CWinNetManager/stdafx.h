@@ -31,3 +31,4 @@
 #include <vector>
 #include <algorithm>
 #include <bitset>
+#include <windows.h>

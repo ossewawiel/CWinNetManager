@@ -20,6 +20,9 @@
     <Filter Include="CUserInfo">
       <UniqueIdentifier>{3cbc7f1e-552d-4533-81b5-198aac42b268}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CGroupUserInfo">
+      <UniqueIdentifier>{16405210-0e11-4d90-b254-12f60bf46818}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -144,6 +147,39 @@
     </ClCompile>
     <ClCompile Include="CUsersInfo0.cpp">
       <Filter>CUserInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CUsersInfo1.cpp">
+      <Filter>CUserInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CUsersInfo23.cpp">
+      <Filter>CUserInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CUsersInfo20.cpp">
+      <Filter>CUserInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CUsersInfo11.cpp">
+      <Filter>CUserInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CUsersInfo10.cpp">
+      <Filter>CUserInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CUsersInfo3.cpp">
+      <Filter>CUserInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CUsersInfo2.cpp">
+      <Filter>CUserInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CGroupUserInfo0.cpp">
+      <Filter>CGroupUserInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CGroupsUserInfo0.cpp">
+      <Filter>CGroupUserInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CGroupUserInfo1.cpp">
+      <Filter>CGroupUserInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CGroupsUserInfo1.cpp">
+      <Filter>CGroupUserInfo</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -279,6 +315,39 @@
     <ClInclude Include="CEnumUtils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CUsersInfo1.h">
+      <Filter>CUserInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CUsersInfo23.h">
+      <Filter>CUserInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CUsersInfo20.h">
+      <Filter>CUserInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CUsersInfo11.h">
+      <Filter>CUserInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CUsersInfo10.h">
+      <Filter>CUserInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CUsersInfo3.h">
+      <Filter>CUserInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CUsersInfo2.h">
+      <Filter>CUserInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CGroupUserInfo0.h">
+      <Filter>CGroupUserInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CGroupsUserInfo0.h">
+      <Filter>CGroupUserInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CGroupUserInfo1.h">
+      <Filter>CGroupUserInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CGroupsUserInfo1.h">
+      <Filter>CGroupUserInfo</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="CWinNetManager.rc">
@@ -401,6 +470,39 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="CUsersInfo0.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CUsersInfo1.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CUsersInfo2.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CUsersInfo3.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CUsersInfo10.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CUsersInfo11.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CUsersInfo20.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CUsersInfo23.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CGroupUserInfo0.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CGroupsUserInfo0.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CGroupUserInfo1.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CGroupsUserInfo1.rgs">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

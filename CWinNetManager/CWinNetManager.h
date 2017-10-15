@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Sat Oct 14 19:48:50 2017
+/* at Sun Oct 15 18:31:44 2017
  */
 /* Compiler settings for CWinNetManager.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 
@@ -288,6 +288,83 @@ typedef interface ICUserInfo1052 ICUserInfo1052;
 typedef interface ICUserInfo1053 ICUserInfo1053;
 
 #endif 	/* __ICUserInfo1053_FWD_DEFINED__ */
+
+
+#ifndef __ICUsersInfo1_FWD_DEFINED__
+#define __ICUsersInfo1_FWD_DEFINED__
+typedef interface ICUsersInfo1 ICUsersInfo1;
+
+#endif 	/* __ICUsersInfo1_FWD_DEFINED__ */
+
+
+#ifndef __ICUsersInfo2_FWD_DEFINED__
+#define __ICUsersInfo2_FWD_DEFINED__
+typedef interface ICUsersInfo2 ICUsersInfo2;
+
+#endif 	/* __ICUsersInfo2_FWD_DEFINED__ */
+
+
+#ifndef __ICUsersInfo3_FWD_DEFINED__
+#define __ICUsersInfo3_FWD_DEFINED__
+typedef interface ICUsersInfo3 ICUsersInfo3;
+
+#endif 	/* __ICUsersInfo3_FWD_DEFINED__ */
+
+
+#ifndef __ICUsersInfo10_FWD_DEFINED__
+#define __ICUsersInfo10_FWD_DEFINED__
+typedef interface ICUsersInfo10 ICUsersInfo10;
+
+#endif 	/* __ICUsersInfo10_FWD_DEFINED__ */
+
+
+#ifndef __ICUsersInfo11_FWD_DEFINED__
+#define __ICUsersInfo11_FWD_DEFINED__
+typedef interface ICUsersInfo11 ICUsersInfo11;
+
+#endif 	/* __ICUsersInfo11_FWD_DEFINED__ */
+
+
+#ifndef __ICUsersInfo20_FWD_DEFINED__
+#define __ICUsersInfo20_FWD_DEFINED__
+typedef interface ICUsersInfo20 ICUsersInfo20;
+
+#endif 	/* __ICUsersInfo20_FWD_DEFINED__ */
+
+
+#ifndef __ICUsersInfo23_FWD_DEFINED__
+#define __ICUsersInfo23_FWD_DEFINED__
+typedef interface ICUsersInfo23 ICUsersInfo23;
+
+#endif 	/* __ICUsersInfo23_FWD_DEFINED__ */
+
+
+#ifndef __ICGroupUserInfo0_FWD_DEFINED__
+#define __ICGroupUserInfo0_FWD_DEFINED__
+typedef interface ICGroupUserInfo0 ICGroupUserInfo0;
+
+#endif 	/* __ICGroupUserInfo0_FWD_DEFINED__ */
+
+
+#ifndef __ICGroupsUserInfo0_FWD_DEFINED__
+#define __ICGroupsUserInfo0_FWD_DEFINED__
+typedef interface ICGroupsUserInfo0 ICGroupsUserInfo0;
+
+#endif 	/* __ICGroupsUserInfo0_FWD_DEFINED__ */
+
+
+#ifndef __ICGroupUserInfo1_FWD_DEFINED__
+#define __ICGroupUserInfo1_FWD_DEFINED__
+typedef interface ICGroupUserInfo1 ICGroupUserInfo1;
+
+#endif 	/* __ICGroupUserInfo1_FWD_DEFINED__ */
+
+
+#ifndef __ICGroupsUserInfo1_FWD_DEFINED__
+#define __ICGroupsUserInfo1_FWD_DEFINED__
+typedef interface ICGroupsUserInfo1 ICGroupsUserInfo1;
+
+#endif 	/* __ICGroupsUserInfo1_FWD_DEFINED__ */
 
 
 #ifndef __ICNetUser_FWD_DEFINED__
@@ -729,6 +806,138 @@ typedef struct CUsersInfo0 CUsersInfo0;
 #endif 	/* __CUsersInfo0_FWD_DEFINED__ */
 
 
+#ifndef __CUsersInfo1_FWD_DEFINED__
+#define __CUsersInfo1_FWD_DEFINED__
+
+#ifdef __cplusplus
+typedef class CUsersInfo1 CUsersInfo1;
+#else
+typedef struct CUsersInfo1 CUsersInfo1;
+#endif /* __cplusplus */
+
+#endif 	/* __CUsersInfo1_FWD_DEFINED__ */
+
+
+#ifndef __CUsersInfo2_FWD_DEFINED__
+#define __CUsersInfo2_FWD_DEFINED__
+
+#ifdef __cplusplus
+typedef class CUsersInfo2 CUsersInfo2;
+#else
+typedef struct CUsersInfo2 CUsersInfo2;
+#endif /* __cplusplus */
+
+#endif 	/* __CUsersInfo2_FWD_DEFINED__ */
+
+
+#ifndef __CUsersInfo3_FWD_DEFINED__
+#define __CUsersInfo3_FWD_DEFINED__
+
+#ifdef __cplusplus
+typedef class CUsersInfo3 CUsersInfo3;
+#else
+typedef struct CUsersInfo3 CUsersInfo3;
+#endif /* __cplusplus */
+
+#endif 	/* __CUsersInfo3_FWD_DEFINED__ */
+
+
+#ifndef __CUsersInfo10_FWD_DEFINED__
+#define __CUsersInfo10_FWD_DEFINED__
+
+#ifdef __cplusplus
+typedef class CUsersInfo10 CUsersInfo10;
+#else
+typedef struct CUsersInfo10 CUsersInfo10;
+#endif /* __cplusplus */
+
+#endif 	/* __CUsersInfo10_FWD_DEFINED__ */
+
+
+#ifndef __CUsersInfo11_FWD_DEFINED__
+#define __CUsersInfo11_FWD_DEFINED__
+
+#ifdef __cplusplus
+typedef class CUsersInfo11 CUsersInfo11;
+#else
+typedef struct CUsersInfo11 CUsersInfo11;
+#endif /* __cplusplus */
+
+#endif 	/* __CUsersInfo11_FWD_DEFINED__ */
+
+
+#ifndef __CUsersInfo20_FWD_DEFINED__
+#define __CUsersInfo20_FWD_DEFINED__
+
+#ifdef __cplusplus
+typedef class CUsersInfo20 CUsersInfo20;
+#else
+typedef struct CUsersInfo20 CUsersInfo20;
+#endif /* __cplusplus */
+
+#endif 	/* __CUsersInfo20_FWD_DEFINED__ */
+
+
+#ifndef __CUsersInfo23_FWD_DEFINED__
+#define __CUsersInfo23_FWD_DEFINED__
+
+#ifdef __cplusplus
+typedef class CUsersInfo23 CUsersInfo23;
+#else
+typedef struct CUsersInfo23 CUsersInfo23;
+#endif /* __cplusplus */
+
+#endif 	/* __CUsersInfo23_FWD_DEFINED__ */
+
+
+#ifndef __CGroupUserInfo0_FWD_DEFINED__
+#define __CGroupUserInfo0_FWD_DEFINED__
+
+#ifdef __cplusplus
+typedef class CGroupUserInfo0 CGroupUserInfo0;
+#else
+typedef struct CGroupUserInfo0 CGroupUserInfo0;
+#endif /* __cplusplus */
+
+#endif 	/* __CGroupUserInfo0_FWD_DEFINED__ */
+
+
+#ifndef __CGroupsUserInfo0_FWD_DEFINED__
+#define __CGroupsUserInfo0_FWD_DEFINED__
+
+#ifdef __cplusplus
+typedef class CGroupsUserInfo0 CGroupsUserInfo0;
+#else
+typedef struct CGroupsUserInfo0 CGroupsUserInfo0;
+#endif /* __cplusplus */
+
+#endif 	/* __CGroupsUserInfo0_FWD_DEFINED__ */
+
+
+#ifndef __CGroupUserInfo1_FWD_DEFINED__
+#define __CGroupUserInfo1_FWD_DEFINED__
+
+#ifdef __cplusplus
+typedef class CGroupUserInfo1 CGroupUserInfo1;
+#else
+typedef struct CGroupUserInfo1 CGroupUserInfo1;
+#endif /* __cplusplus */
+
+#endif 	/* __CGroupUserInfo1_FWD_DEFINED__ */
+
+
+#ifndef __CGroupsUserInfo1_FWD_DEFINED__
+#define __CGroupsUserInfo1_FWD_DEFINED__
+
+#ifdef __cplusplus
+typedef class CGroupsUserInfo1 CGroupsUserInfo1;
+#else
+typedef struct CGroupsUserInfo1 CGroupsUserInfo1;
+#endif /* __cplusplus */
+
+#endif 	/* __CGroupsUserInfo1_FWD_DEFINED__ */
+
+
 /* header files for imported files */
 #include "oaidl.h"
 #include "ocidl.h"
@@ -775,6 +984,13 @@ enum eUserInfoType
         uiType1052	= 0x41c,
         uiType1053	= 0x41d
     } 	eUserInfoType;
+
+typedef /* [v1_enum][public] */ 
+enum eGroupUserInfoType
+    {
+        guiType0	= 0,
+        guiType1	= 0x1
+    } 	eGroupUserInfoType;
 
 
 
@@ -7811,6 +8027,1756 @@ EXTERN_C const IID IID_ICUserInfo1053;
 #endif 	/* __ICUserInfo1053_INTERFACE_DEFINED__ */
 
 
+#ifndef __ICUsersInfo1_INTERFACE_DEFINED__
+#define __ICUsersInfo1_INTERFACE_DEFINED__
+
+/* interface ICUsersInfo1 */
+/* [unique][nonextensible][dual][uuid][object] */ 
+
+
+EXTERN_C const IID IID_ICUsersInfo1;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("C3DCF9BC-EB1D-4DAD-8A18-C6666F5FCBDC")
+    ICUsersInfo1 : public IDispatch
+    {
+    public:
+        virtual /* [propget][id] */ HRESULT STDMETHODCALLTYPE get__NewEnum( 
+            /* [retval][out] */ IUnknown **ppUnk) = 0;
+        
+        virtual /* [propget][id] */ HRESULT STDMETHODCALLTYPE get_Item( 
+            /* [in] */ long n,
+            /* [retval][out] */ ICUserInfo1 **ppUserInfo1) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Count( 
+            /* [retval][out] */ long *pnCount) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Add( 
+            /* [in] */ ICUserInfo1 *pUserInfo1) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct ICUsersInfo1Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            ICUsersInfo1 * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            ICUsersInfo1 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            ICUsersInfo1 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            ICUsersInfo1 * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            ICUsersInfo1 * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            ICUsersInfo1 * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            ICUsersInfo1 * This,
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
+        
+        /* [propget][id] */ HRESULT ( STDMETHODCALLTYPE *get__NewEnum )( 
+            ICUsersInfo1 * This,
+            /* [retval][out] */ IUnknown **ppUnk);
+        
+        /* [propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_Item )( 
+            ICUsersInfo1 * This,
+            /* [in] */ long n,
+            /* [retval][out] */ ICUserInfo1 **ppUserInfo1);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Count )( 
+            ICUsersInfo1 * This,
+            /* [retval][out] */ long *pnCount);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Add )( 
+            ICUsersInfo1 * This,
+            /* [in] */ ICUserInfo1 *pUserInfo1);
+        
+        END_INTERFACE
+    } ICUsersInfo1Vtbl;
+
+    interface ICUsersInfo1
+    {
+        CONST_VTBL struct ICUsersInfo1Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define ICUsersInfo1_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define ICUsersInfo1_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define ICUsersInfo1_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define ICUsersInfo1_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define ICUsersInfo1_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define ICUsersInfo1_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define ICUsersInfo1_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define ICUsersInfo1_get__NewEnum(This,ppUnk)	\
+    ( (This)->lpVtbl -> get__NewEnum(This,ppUnk) ) 
+
+#define ICUsersInfo1_get_Item(This,n,ppUserInfo1)	\
+    ( (This)->lpVtbl -> get_Item(This,n,ppUserInfo1) ) 
+
+#define ICUsersInfo1_get_Count(This,pnCount)	\
+    ( (This)->lpVtbl -> get_Count(This,pnCount) ) 
+
+#define ICUsersInfo1_Add(This,pUserInfo1)	\
+    ( (This)->lpVtbl -> Add(This,pUserInfo1) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __ICUsersInfo1_INTERFACE_DEFINED__ */
+
+
+#ifndef __ICUsersInfo2_INTERFACE_DEFINED__
+#define __ICUsersInfo2_INTERFACE_DEFINED__
+
+/* interface ICUsersInfo2 */
+/* [unique][nonextensible][dual][uuid][object] */ 
+
+
+EXTERN_C const IID IID_ICUsersInfo2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("BE7ED37C-C111-41F7-8180-3CDF57385695")
+    ICUsersInfo2 : public IDispatch
+    {
+    public:
+        virtual /* [propget][id] */ HRESULT STDMETHODCALLTYPE get__NewEnum( 
+            /* [retval][out] */ IUnknown **ppUnk) = 0;
+        
+        virtual /* [propget][id] */ HRESULT STDMETHODCALLTYPE get_Item( 
+            /* [in] */ long n,
+            /* [retval][out] */ ICUserInfo2 **ppUserInfo2) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Count( 
+            /* [retval][out] */ long *pnCount) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Add( 
+            /* [in] */ ICUserInfo2 *pUserInfo2) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct ICUsersInfo2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            ICUsersInfo2 * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            ICUsersInfo2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            ICUsersInfo2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            ICUsersInfo2 * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            ICUsersInfo2 * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            ICUsersInfo2 * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            ICUsersInfo2 * This,
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
+        
+        /* [propget][id] */ HRESULT ( STDMETHODCALLTYPE *get__NewEnum )( 
+            ICUsersInfo2 * This,
+            /* [retval][out] */ IUnknown **ppUnk);
+        
+        /* [propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_Item )( 
+            ICUsersInfo2 * This,
+            /* [in] */ long n,
+            /* [retval][out] */ ICUserInfo2 **ppUserInfo2);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Count )( 
+            ICUsersInfo2 * This,
+            /* [retval][out] */ long *pnCount);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Add )( 
+            ICUsersInfo2 * This,
+            /* [in] */ ICUserInfo2 *pUserInfo2);
+        
+        END_INTERFACE
+    } ICUsersInfo2Vtbl;
+
+    interface ICUsersInfo2
+    {
+        CONST_VTBL struct ICUsersInfo2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define ICUsersInfo2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define ICUsersInfo2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define ICUsersInfo2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define ICUsersInfo2_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define ICUsersInfo2_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define ICUsersInfo2_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define ICUsersInfo2_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define ICUsersInfo2_get__NewEnum(This,ppUnk)	\
+    ( (This)->lpVtbl -> get__NewEnum(This,ppUnk) ) 
+
+#define ICUsersInfo2_get_Item(This,n,ppUserInfo2)	\
+    ( (This)->lpVtbl -> get_Item(This,n,ppUserInfo2) ) 
+
+#define ICUsersInfo2_get_Count(This,pnCount)	\
+    ( (This)->lpVtbl -> get_Count(This,pnCount) ) 
+
+#define ICUsersInfo2_Add(This,pUserInfo2)	\
+    ( (This)->lpVtbl -> Add(This,pUserInfo2) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __ICUsersInfo2_INTERFACE_DEFINED__ */
+
+
+#ifndef __ICUsersInfo3_INTERFACE_DEFINED__
+#define __ICUsersInfo3_INTERFACE_DEFINED__
+
+/* interface ICUsersInfo3 */
+/* [unique][nonextensible][dual][uuid][object] */ 
+
+
+EXTERN_C const IID IID_ICUsersInfo3;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("C20CD927-B051-4C76-9747-EF10135C9A9C")
+    ICUsersInfo3 : public IDispatch
+    {
+    public:
+        virtual /* [propget][id] */ HRESULT STDMETHODCALLTYPE get__NewEnum( 
+            /* [retval][out] */ IUnknown **ppUnk) = 0;
+        
+        virtual /* [propget][id] */ HRESULT STDMETHODCALLTYPE get_Item( 
+            /* [in] */ long n,
+            /* [retval][out] */ ICUserInfo3 **ppUserInfo3) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Count( 
+            /* [retval][out] */ long *pnCount) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Add( 
+            /* [in] */ ICUserInfo3 *pUserInfo3) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct ICUsersInfo3Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            ICUsersInfo3 * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            ICUsersInfo3 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            ICUsersInfo3 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            ICUsersInfo3 * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            ICUsersInfo3 * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            ICUsersInfo3 * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            ICUsersInfo3 * This,
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
+        
+        /* [propget][id] */ HRESULT ( STDMETHODCALLTYPE *get__NewEnum )( 
+            ICUsersInfo3 * This,
+            /* [retval][out] */ IUnknown **ppUnk);
+        
+        /* [propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_Item )( 
+            ICUsersInfo3 * This,
+            /* [in] */ long n,
+            /* [retval][out] */ ICUserInfo3 **ppUserInfo3);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Count )( 
+            ICUsersInfo3 * This,
+            /* [retval][out] */ long *pnCount);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Add )( 
+            ICUsersInfo3 * This,
+            /* [in] */ ICUserInfo3 *pUserInfo3);
+        
+        END_INTERFACE
+    } ICUsersInfo3Vtbl;
+
+    interface ICUsersInfo3
+    {
+        CONST_VTBL struct ICUsersInfo3Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define ICUsersInfo3_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define ICUsersInfo3_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define ICUsersInfo3_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define ICUsersInfo3_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define ICUsersInfo3_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define ICUsersInfo3_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define ICUsersInfo3_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define ICUsersInfo3_get__NewEnum(This,ppUnk)	\
+    ( (This)->lpVtbl -> get__NewEnum(This,ppUnk) ) 
+
+#define ICUsersInfo3_get_Item(This,n,ppUserInfo3)	\
+    ( (This)->lpVtbl -> get_Item(This,n,ppUserInfo3) ) 
+
+#define ICUsersInfo3_get_Count(This,pnCount)	\
+    ( (This)->lpVtbl -> get_Count(This,pnCount) ) 
+
+#define ICUsersInfo3_Add(This,pUserInfo3)	\
+    ( (This)->lpVtbl -> Add(This,pUserInfo3) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __ICUsersInfo3_INTERFACE_DEFINED__ */
+
+
+#ifndef __ICUsersInfo10_INTERFACE_DEFINED__
+#define __ICUsersInfo10_INTERFACE_DEFINED__
+
+/* interface ICUsersInfo10 */
+/* [unique][nonextensible][dual][uuid][object] */ 
+
+
+EXTERN_C const IID IID_ICUsersInfo10;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("2F77FF1C-1F57-4E38-A8DC-9798859F78E0")
+    ICUsersInfo10 : public IDispatch
+    {
+    public:
+        virtual /* [propget][id] */ HRESULT STDMETHODCALLTYPE get__NewEnum( 
+            /* [retval][out] */ IUnknown **ppUnk) = 0;
+        
+        virtual /* [propget][id] */ HRESULT STDMETHODCALLTYPE get_Item( 
+            /* [in] */ long n,
+            /* [retval][out] */ ICUserInfo10 **ppUserInfo10) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Count( 
+            /* [retval][out] */ long *pnCount) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Add( 
+            /* [in] */ ICUserInfo10 *pUserInfo10) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct ICUsersInfo10Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            ICUsersInfo10 * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            ICUsersInfo10 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            ICUsersInfo10 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            ICUsersInfo10 * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            ICUsersInfo10 * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            ICUsersInfo10 * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            ICUsersInfo10 * This,
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
+        
+        /* [propget][id] */ HRESULT ( STDMETHODCALLTYPE *get__NewEnum )( 
+            ICUsersInfo10 * This,
+            /* [retval][out] */ IUnknown **ppUnk);
+        
+        /* [propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_Item )( 
+            ICUsersInfo10 * This,
+            /* [in] */ long n,
+            /* [retval][out] */ ICUserInfo10 **ppUserInfo10);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Count )( 
+            ICUsersInfo10 * This,
+            /* [retval][out] */ long *pnCount);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Add )( 
+            ICUsersInfo10 * This,
+            /* [in] */ ICUserInfo10 *pUserInfo10);
+        
+        END_INTERFACE
+    } ICUsersInfo10Vtbl;
+
+    interface ICUsersInfo10
+    {
+        CONST_VTBL struct ICUsersInfo10Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define ICUsersInfo10_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define ICUsersInfo10_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define ICUsersInfo10_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define ICUsersInfo10_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define ICUsersInfo10_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define ICUsersInfo10_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define ICUsersInfo10_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define ICUsersInfo10_get__NewEnum(This,ppUnk)	\
+    ( (This)->lpVtbl -> get__NewEnum(This,ppUnk) ) 
+
+#define ICUsersInfo10_get_Item(This,n,ppUserInfo10)	\
+    ( (This)->lpVtbl -> get_Item(This,n,ppUserInfo10) ) 
+
+#define ICUsersInfo10_get_Count(This,pnCount)	\
+    ( (This)->lpVtbl -> get_Count(This,pnCount) ) 
+
+#define ICUsersInfo10_Add(This,pUserInfo10)	\
+    ( (This)->lpVtbl -> Add(This,pUserInfo10) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __ICUsersInfo10_INTERFACE_DEFINED__ */
+
+
+#ifndef __ICUsersInfo11_INTERFACE_DEFINED__
+#define __ICUsersInfo11_INTERFACE_DEFINED__
+
+/* interface ICUsersInfo11 */
+/* [unique][nonextensible][dual][uuid][object] */ 
+
+
+EXTERN_C const IID IID_ICUsersInfo11;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("EFF7F298-96F0-4CB8-ADAA-535F08BDF52D")
+    ICUsersInfo11 : public IDispatch
+    {
+    public:
+        virtual /* [propget][id] */ HRESULT STDMETHODCALLTYPE get__NewEnum( 
+            /* [retval][out] */ IUnknown **ppUnk) = 0;
+        
+        virtual /* [propget][id] */ HRESULT STDMETHODCALLTYPE get_Item( 
+            /* [in] */ long n,
+            /* [retval][out] */ ICUserInfo11 **ppUserInfo11) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Count( 
+            /* [retval][out] */ long *pnCount) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Add( 
+            /* [in] */ ICUserInfo11 *pUserInfo11) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct ICUsersInfo11Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            ICUsersInfo11 * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            ICUsersInfo11 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            ICUsersInfo11 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            ICUsersInfo11 * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            ICUsersInfo11 * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            ICUsersInfo11 * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            ICUsersInfo11 * This,
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
+        
+        /* [propget][id] */ HRESULT ( STDMETHODCALLTYPE *get__NewEnum )( 
+            ICUsersInfo11 * This,
+            /* [retval][out] */ IUnknown **ppUnk);
+        
+        /* [propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_Item )( 
+            ICUsersInfo11 * This,
+            /* [in] */ long n,
+            /* [retval][out] */ ICUserInfo11 **ppUserInfo11);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Count )( 
+            ICUsersInfo11 * This,
+            /* [retval][out] */ long *pnCount);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Add )( 
+            ICUsersInfo11 * This,
+            /* [in] */ ICUserInfo11 *pUserInfo11);
+        
+        END_INTERFACE
+    } ICUsersInfo11Vtbl;
+
+    interface ICUsersInfo11
+    {
+        CONST_VTBL struct ICUsersInfo11Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define ICUsersInfo11_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define ICUsersInfo11_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define ICUsersInfo11_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define ICUsersInfo11_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define ICUsersInfo11_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define ICUsersInfo11_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define ICUsersInfo11_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define ICUsersInfo11_get__NewEnum(This,ppUnk)	\
+    ( (This)->lpVtbl -> get__NewEnum(This,ppUnk) ) 
+
+#define ICUsersInfo11_get_Item(This,n,ppUserInfo11)	\
+    ( (This)->lpVtbl -> get_Item(This,n,ppUserInfo11) ) 
+
+#define ICUsersInfo11_get_Count(This,pnCount)	\
+    ( (This)->lpVtbl -> get_Count(This,pnCount) ) 
+
+#define ICUsersInfo11_Add(This,pUserInfo11)	\
+    ( (This)->lpVtbl -> Add(This,pUserInfo11) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __ICUsersInfo11_INTERFACE_DEFINED__ */
+
+
+#ifndef __ICUsersInfo20_INTERFACE_DEFINED__
+#define __ICUsersInfo20_INTERFACE_DEFINED__
+
+/* interface ICUsersInfo20 */
+/* [unique][nonextensible][dual][uuid][object] */ 
+
+
+EXTERN_C const IID IID_ICUsersInfo20;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("D06A27EF-0F2C-4169-8E42-86559D079D94")
+    ICUsersInfo20 : public IDispatch
+    {
+    public:
+        virtual /* [propget][id] */ HRESULT STDMETHODCALLTYPE get__NewEnum( 
+            /* [retval][out] */ IUnknown **ppUnk) = 0;
+        
+        virtual /* [propget][id] */ HRESULT STDMETHODCALLTYPE get_Item( 
+            /* [in] */ long n,
+            /* [retval][out] */ ICUserInfo20 **ppUserInfo20) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Count( 
+            /* [retval][out] */ long *pnCount) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Add( 
+            /* [in] */ ICUserInfo20 *pUserInfo20) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct ICUsersInfo20Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            ICUsersInfo20 * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            ICUsersInfo20 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            ICUsersInfo20 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            ICUsersInfo20 * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            ICUsersInfo20 * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            ICUsersInfo20 * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            ICUsersInfo20 * This,
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
+        
+        /* [propget][id] */ HRESULT ( STDMETHODCALLTYPE *get__NewEnum )( 
+            ICUsersInfo20 * This,
+            /* [retval][out] */ IUnknown **ppUnk);
+        
+        /* [propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_Item )( 
+            ICUsersInfo20 * This,
+            /* [in] */ long n,
+            /* [retval][out] */ ICUserInfo20 **ppUserInfo20);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Count )( 
+            ICUsersInfo20 * This,
+            /* [retval][out] */ long *pnCount);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Add )( 
+            ICUsersInfo20 * This,
+            /* [in] */ ICUserInfo20 *pUserInfo20);
+        
+        END_INTERFACE
+    } ICUsersInfo20Vtbl;
+
+    interface ICUsersInfo20
+    {
+        CONST_VTBL struct ICUsersInfo20Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define ICUsersInfo20_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define ICUsersInfo20_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define ICUsersInfo20_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define ICUsersInfo20_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define ICUsersInfo20_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define ICUsersInfo20_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define ICUsersInfo20_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define ICUsersInfo20_get__NewEnum(This,ppUnk)	\
+    ( (This)->lpVtbl -> get__NewEnum(This,ppUnk) ) 
+
+#define ICUsersInfo20_get_Item(This,n,ppUserInfo20)	\
+    ( (This)->lpVtbl -> get_Item(This,n,ppUserInfo20) ) 
+
+#define ICUsersInfo20_get_Count(This,pnCount)	\
+    ( (This)->lpVtbl -> get_Count(This,pnCount) ) 
+
+#define ICUsersInfo20_Add(This,pUserInfo20)	\
+    ( (This)->lpVtbl -> Add(This,pUserInfo20) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __ICUsersInfo20_INTERFACE_DEFINED__ */
+
+
+#ifndef __ICUsersInfo23_INTERFACE_DEFINED__
+#define __ICUsersInfo23_INTERFACE_DEFINED__
+
+/* interface ICUsersInfo23 */
+/* [unique][nonextensible][dual][uuid][object] */ 
+
+
+EXTERN_C const IID IID_ICUsersInfo23;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("E0823A05-4F9B-420B-ADF5-A214E07615C7")
+    ICUsersInfo23 : public IDispatch
+    {
+    public:
+        virtual /* [propget][id] */ HRESULT STDMETHODCALLTYPE get__NewEnum( 
+            /* [retval][out] */ IUnknown **ppUnk) = 0;
+        
+        virtual /* [propget][id] */ HRESULT STDMETHODCALLTYPE get_Item( 
+            /* [in] */ long n,
+            /* [retval][out] */ ICUserInfo23 **ppUserInfo23) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Count( 
+            /* [retval][out] */ long *pnCount) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Add( 
+            /* [in] */ ICUserInfo23 *pUserInfo23) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct ICUsersInfo23Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            ICUsersInfo23 * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            ICUsersInfo23 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            ICUsersInfo23 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            ICUsersInfo23 * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            ICUsersInfo23 * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            ICUsersInfo23 * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            ICUsersInfo23 * This,
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
+        
+        /* [propget][id] */ HRESULT ( STDMETHODCALLTYPE *get__NewEnum )( 
+            ICUsersInfo23 * This,
+            /* [retval][out] */ IUnknown **ppUnk);
+        
+        /* [propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_Item )( 
+            ICUsersInfo23 * This,
+            /* [in] */ long n,
+            /* [retval][out] */ ICUserInfo23 **ppUserInfo23);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Count )( 
+            ICUsersInfo23 * This,
+            /* [retval][out] */ long *pnCount);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Add )( 
+            ICUsersInfo23 * This,
+            /* [in] */ ICUserInfo23 *pUserInfo23);
+        
+        END_INTERFACE
+    } ICUsersInfo23Vtbl;
+
+    interface ICUsersInfo23
+    {
+        CONST_VTBL struct ICUsersInfo23Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define ICUsersInfo23_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define ICUsersInfo23_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define ICUsersInfo23_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define ICUsersInfo23_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define ICUsersInfo23_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define ICUsersInfo23_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define ICUsersInfo23_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define ICUsersInfo23_get__NewEnum(This,ppUnk)	\
+    ( (This)->lpVtbl -> get__NewEnum(This,ppUnk) ) 
+
+#define ICUsersInfo23_get_Item(This,n,ppUserInfo23)	\
+    ( (This)->lpVtbl -> get_Item(This,n,ppUserInfo23) ) 
+
+#define ICUsersInfo23_get_Count(This,pnCount)	\
+    ( (This)->lpVtbl -> get_Count(This,pnCount) ) 
+
+#define ICUsersInfo23_Add(This,pUserInfo23)	\
+    ( (This)->lpVtbl -> Add(This,pUserInfo23) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __ICUsersInfo23_INTERFACE_DEFINED__ */
+
+
+#ifndef __ICGroupUserInfo0_INTERFACE_DEFINED__
+#define __ICGroupUserInfo0_INTERFACE_DEFINED__
+
+/* interface ICGroupUserInfo0 */
+/* [unique][nonextensible][dual][uuid][object] */ 
+
+
+EXTERN_C const IID IID_ICGroupUserInfo0;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("6A782E23-3986-44F0-A2A4-0692C109C022")
+    ICGroupUserInfo0 : public IDispatch
+    {
+    public:
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Initialise( 
+            /* [in] */ BSTR bsName) = 0;
+        
+        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_Name( 
+            /* [retval][out] */ BSTR *pVal) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct ICGroupUserInfo0Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            ICGroupUserInfo0 * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            ICGroupUserInfo0 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            ICGroupUserInfo0 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            ICGroupUserInfo0 * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            ICGroupUserInfo0 * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            ICGroupUserInfo0 * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            ICGroupUserInfo0 * This,
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Initialise )( 
+            ICGroupUserInfo0 * This,
+            /* [in] */ BSTR bsName);
+        
+        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_Name )( 
+            ICGroupUserInfo0 * This,
+            /* [retval][out] */ BSTR *pVal);
+        
+        END_INTERFACE
+    } ICGroupUserInfo0Vtbl;
+
+    interface ICGroupUserInfo0
+    {
+        CONST_VTBL struct ICGroupUserInfo0Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define ICGroupUserInfo0_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define ICGroupUserInfo0_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define ICGroupUserInfo0_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define ICGroupUserInfo0_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define ICGroupUserInfo0_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define ICGroupUserInfo0_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define ICGroupUserInfo0_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define ICGroupUserInfo0_Initialise(This,bsName)	\
+    ( (This)->lpVtbl -> Initialise(This,bsName) ) 
+
+#define ICGroupUserInfo0_get_Name(This,pVal)	\
+    ( (This)->lpVtbl -> get_Name(This,pVal) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __ICGroupUserInfo0_INTERFACE_DEFINED__ */
+
+
+#ifndef __ICGroupsUserInfo0_INTERFACE_DEFINED__
+#define __ICGroupsUserInfo0_INTERFACE_DEFINED__
+
+/* interface ICGroupsUserInfo0 */
+/* [unique][nonextensible][dual][uuid][object] */ 
+
+
+EXTERN_C const IID IID_ICGroupsUserInfo0;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("5AD6D8F7-2974-4C6A-8309-535A7E711D69")
+    ICGroupsUserInfo0 : public IDispatch
+    {
+    public:
+        virtual /* [propget][id] */ HRESULT STDMETHODCALLTYPE get__NewEnum( 
+            /* [retval][out] */ IUnknown **ppUnk) = 0;
+        
+        virtual /* [propget][id] */ HRESULT STDMETHODCALLTYPE get_Item( 
+            /* [in] */ long n,
+            /* [retval][out] */ ICGroupUserInfo0 **ppGroupUserInfo0) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Count( 
+            /* [retval][out] */ long *pnCount) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Add( 
+            /* [in] */ ICGroupUserInfo0 *pGroupUserInfo0) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct ICGroupsUserInfo0Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            ICGroupsUserInfo0 * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            ICGroupsUserInfo0 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            ICGroupsUserInfo0 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            ICGroupsUserInfo0 * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            ICGroupsUserInfo0 * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            ICGroupsUserInfo0 * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            ICGroupsUserInfo0 * This,
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
+        
+        /* [propget][id] */ HRESULT ( STDMETHODCALLTYPE *get__NewEnum )( 
+            ICGroupsUserInfo0 * This,
+            /* [retval][out] */ IUnknown **ppUnk);
+        
+        /* [propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_Item )( 
+            ICGroupsUserInfo0 * This,
+            /* [in] */ long n,
+            /* [retval][out] */ ICGroupUserInfo0 **ppGroupUserInfo0);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Count )( 
+            ICGroupsUserInfo0 * This,
+            /* [retval][out] */ long *pnCount);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Add )( 
+            ICGroupsUserInfo0 * This,
+            /* [in] */ ICGroupUserInfo0 *pGroupUserInfo0);
+        
+        END_INTERFACE
+    } ICGroupsUserInfo0Vtbl;
+
+    interface ICGroupsUserInfo0
+    {
+        CONST_VTBL struct ICGroupsUserInfo0Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define ICGroupsUserInfo0_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define ICGroupsUserInfo0_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define ICGroupsUserInfo0_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define ICGroupsUserInfo0_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define ICGroupsUserInfo0_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define ICGroupsUserInfo0_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define ICGroupsUserInfo0_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define ICGroupsUserInfo0_get__NewEnum(This,ppUnk)	\
+    ( (This)->lpVtbl -> get__NewEnum(This,ppUnk) ) 
+
+#define ICGroupsUserInfo0_get_Item(This,n,ppGroupUserInfo0)	\
+    ( (This)->lpVtbl -> get_Item(This,n,ppGroupUserInfo0) ) 
+
+#define ICGroupsUserInfo0_get_Count(This,pnCount)	\
+    ( (This)->lpVtbl -> get_Count(This,pnCount) ) 
+
+#define ICGroupsUserInfo0_Add(This,pGroupUserInfo0)	\
+    ( (This)->lpVtbl -> Add(This,pGroupUserInfo0) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __ICGroupsUserInfo0_INTERFACE_DEFINED__ */
+
+
+#ifndef __ICGroupUserInfo1_INTERFACE_DEFINED__
+#define __ICGroupUserInfo1_INTERFACE_DEFINED__
+
+/* interface ICGroupUserInfo1 */
+/* [unique][nonextensible][dual][uuid][object] */ 
+
+
+EXTERN_C const IID IID_ICGroupUserInfo1;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("8F144BC6-A45D-4BD6-828F-5D3FE5AA937B")
+    ICGroupUserInfo1 : public IDispatch
+    {
+    public:
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Initialise( 
+            /* [in] */ BSTR bsName,
+            /* [in] */ ULONG ulAttributes) = 0;
+        
+        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_Name( 
+            /* [retval][out] */ BSTR *pVal) = 0;
+        
+        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_Attributes( 
+            /* [retval][out] */ ULONG *pVal) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct ICGroupUserInfo1Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            ICGroupUserInfo1 * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            ICGroupUserInfo1 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            ICGroupUserInfo1 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            ICGroupUserInfo1 * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            ICGroupUserInfo1 * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            ICGroupUserInfo1 * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            ICGroupUserInfo1 * This,
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Initialise )( 
+            ICGroupUserInfo1 * This,
+            /* [in] */ BSTR bsName,
+            /* [in] */ ULONG ulAttributes);
+        
+        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_Name )( 
+            ICGroupUserInfo1 * This,
+            /* [retval][out] */ BSTR *pVal);
+        
+        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_Attributes )( 
+            ICGroupUserInfo1 * This,
+            /* [retval][out] */ ULONG *pVal);
+        
+        END_INTERFACE
+    } ICGroupUserInfo1Vtbl;
+
+    interface ICGroupUserInfo1
+    {
+        CONST_VTBL struct ICGroupUserInfo1Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define ICGroupUserInfo1_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define ICGroupUserInfo1_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define ICGroupUserInfo1_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define ICGroupUserInfo1_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define ICGroupUserInfo1_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define ICGroupUserInfo1_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define ICGroupUserInfo1_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define ICGroupUserInfo1_Initialise(This,bsName,ulAttributes)	\
+    ( (This)->lpVtbl -> Initialise(This,bsName,ulAttributes) ) 
+
+#define ICGroupUserInfo1_get_Name(This,pVal)	\
+    ( (This)->lpVtbl -> get_Name(This,pVal) ) 
+
+#define ICGroupUserInfo1_get_Attributes(This,pVal)	\
+    ( (This)->lpVtbl -> get_Attributes(This,pVal) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __ICGroupUserInfo1_INTERFACE_DEFINED__ */
+
+
+#ifndef __ICGroupsUserInfo1_INTERFACE_DEFINED__
+#define __ICGroupsUserInfo1_INTERFACE_DEFINED__
+
+/* interface ICGroupsUserInfo1 */
+/* [unique][nonextensible][dual][uuid][object] */ 
+
+
+EXTERN_C const IID IID_ICGroupsUserInfo1;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("CADE0F40-6E57-4B31-B13C-119D02FD85DF")
+    ICGroupsUserInfo1 : public IDispatch
+    {
+    public:
+        virtual /* [propget][id] */ HRESULT STDMETHODCALLTYPE get__NewEnum( 
+            /* [retval][out] */ IUnknown **ppUnk) = 0;
+        
+        virtual /* [propget][id] */ HRESULT STDMETHODCALLTYPE get_Item( 
+            /* [in] */ long n,
+            /* [retval][out] */ ICGroupUserInfo1 **ppGroupUserInfo1) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Count( 
+            /* [retval][out] */ long *pnCount) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Add( 
+            /* [in] */ ICGroupUserInfo1 *pGroupUserInfo1) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct ICGroupsUserInfo1Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            ICGroupsUserInfo1 * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            ICGroupsUserInfo1 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            ICGroupsUserInfo1 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            ICGroupsUserInfo1 * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            ICGroupsUserInfo1 * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            ICGroupsUserInfo1 * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            ICGroupsUserInfo1 * This,
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
+        
+        /* [propget][id] */ HRESULT ( STDMETHODCALLTYPE *get__NewEnum )( 
+            ICGroupsUserInfo1 * This,
+            /* [retval][out] */ IUnknown **ppUnk);
+        
+        /* [propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_Item )( 
+            ICGroupsUserInfo1 * This,
+            /* [in] */ long n,
+            /* [retval][out] */ ICGroupUserInfo1 **ppGroupUserInfo1);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Count )( 
+            ICGroupsUserInfo1 * This,
+            /* [retval][out] */ long *pnCount);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Add )( 
+            ICGroupsUserInfo1 * This,
+            /* [in] */ ICGroupUserInfo1 *pGroupUserInfo1);
+        
+        END_INTERFACE
+    } ICGroupsUserInfo1Vtbl;
+
+    interface ICGroupsUserInfo1
+    {
+        CONST_VTBL struct ICGroupsUserInfo1Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define ICGroupsUserInfo1_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define ICGroupsUserInfo1_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define ICGroupsUserInfo1_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define ICGroupsUserInfo1_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define ICGroupsUserInfo1_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define ICGroupsUserInfo1_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define ICGroupsUserInfo1_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define ICGroupsUserInfo1_get__NewEnum(This,ppUnk)	\
+    ( (This)->lpVtbl -> get__NewEnum(This,ppUnk) ) 
+
+#define ICGroupsUserInfo1_get_Item(This,n,ppGroupUserInfo1)	\
+    ( (This)->lpVtbl -> get_Item(This,n,ppGroupUserInfo1) ) 
+
+#define ICGroupsUserInfo1_get_Count(This,pnCount)	\
+    ( (This)->lpVtbl -> get_Count(This,pnCount) ) 
+
+#define ICGroupsUserInfo1_Add(This,pGroupUserInfo1)	\
+    ( (This)->lpVtbl -> Add(This,pGroupUserInfo1) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __ICGroupsUserInfo1_INTERFACE_DEFINED__ */
+
+
 #ifndef __ICNetUser_INTERFACE_DEFINED__
 #define __ICNetUser_INTERFACE_DEFINED__
 
@@ -8255,6 +10221,40 @@ EXTERN_C const IID IID_ICNetUser;
         virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserEnum0( 
             /* [in] */ BSTR bsServerName,
             /* [retval][out] */ ICUsersInfo0 **ppUsersInfo0) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserEnum1( 
+            /* [in] */ BSTR bsServerName,
+            /* [retval][out] */ ICUsersInfo1 **ppUsersInfo1) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserEnum2( 
+            /* [in] */ BSTR bsServerName,
+            /* [retval][out] */ ICUsersInfo2 **ppUsersInfo2) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserEnum3( 
+            /* [in] */ BSTR bsServerName,
+            /* [retval][out] */ ICUsersInfo3 **ppUsersInfo3) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserEnum10( 
+            /* [in] */ BSTR bsServerName,
+            /* [retval][out] */ ICUsersInfo10 **ppUsersInfo10) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserEnum11( 
+            /* [in] */ BSTR bsServerName,
+            /* [retval][out] */ ICUsersInfo11 **ppUsersInfo11) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserEnum20( 
+            /* [in] */ BSTR bsServerName,
+            /* [retval][out] */ ICUsersInfo20 **ppUsersInfo20) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserGetGroups0( 
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICGroupsUserInfo0 **ppGroupsUserInfo0) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserGetGroups1( 
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICGroupsUserInfo1 **ppGroupsUserInfo1) = 0;
         
     };
     
@@ -8808,6 +10808,48 @@ EXTERN_C const IID IID_ICNetUser;
             /* [in] */ BSTR bsServerName,
             /* [retval][out] */ ICUsersInfo0 **ppUsersInfo0);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserEnum1 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [retval][out] */ ICUsersInfo1 **ppUsersInfo1);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserEnum2 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [retval][out] */ ICUsersInfo2 **ppUsersInfo2);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserEnum3 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [retval][out] */ ICUsersInfo3 **ppUsersInfo3);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserEnum10 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [retval][out] */ ICUsersInfo10 **ppUsersInfo10);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserEnum11 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [retval][out] */ ICUsersInfo11 **ppUsersInfo11);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserEnum20 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [retval][out] */ ICUsersInfo20 **ppUsersInfo20);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserGetGroups0 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICGroupsUserInfo0 **ppGroupsUserInfo0);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserGetGroups1 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICGroupsUserInfo1 **ppGroupsUserInfo1);
+        
         END_INTERFACE
     } ICNetUserVtbl;
 
@@ -9035,6 +11077,30 @@ EXTERN_C const IID IID_ICNetUser;
 
 #define ICNetUser_NetUserEnum0(This,bsServerName,ppUsersInfo0)	\
     ( (This)->lpVtbl -> NetUserEnum0(This,bsServerName,ppUsersInfo0) ) 
+
+#define ICNetUser_NetUserEnum1(This,bsServerName,ppUsersInfo1)	\
+    ( (This)->lpVtbl -> NetUserEnum1(This,bsServerName,ppUsersInfo1) ) 
+
+#define ICNetUser_NetUserEnum2(This,bsServerName,ppUsersInfo2)	\
+    ( (This)->lpVtbl -> NetUserEnum2(This,bsServerName,ppUsersInfo2) ) 
+
+#define ICNetUser_NetUserEnum3(This,bsServerName,ppUsersInfo3)	\
+    ( (This)->lpVtbl -> NetUserEnum3(This,bsServerName,ppUsersInfo3) ) 
+
+#define ICNetUser_NetUserEnum10(This,bsServerName,ppUsersInfo10)	\
+    ( (This)->lpVtbl -> NetUserEnum10(This,bsServerName,ppUsersInfo10) ) 
+
+#define ICNetUser_NetUserEnum11(This,bsServerName,ppUsersInfo11)	\
+    ( (This)->lpVtbl -> NetUserEnum11(This,bsServerName,ppUsersInfo11) ) 
+
+#define ICNetUser_NetUserEnum20(This,bsServerName,ppUsersInfo20)	\
+    ( (This)->lpVtbl -> NetUserEnum20(This,bsServerName,ppUsersInfo20) ) 
+
+#define ICNetUser_NetUserGetGroups0(This,bsServerName,bsUserName,ppGroupsUserInfo0)	\
+    ( (This)->lpVtbl -> NetUserGetGroups0(This,bsServerName,bsUserName,ppGroupsUserInfo0) ) 
+
+#define ICNetUser_NetUserGetGroups1(This,bsServerName,bsUserName,ppGroupsUserInfo1)	\
+    ( (This)->lpVtbl -> NetUserGetGroups1(This,bsServerName,bsUserName,ppGroupsUserInfo1) ) 
 
 #endif /* COBJMACROS */
 
@@ -9343,6 +11409,94 @@ EXTERN_C const CLSID CLSID_CUsersInfo0;
 
 class DECLSPEC_UUID("60B50DE1-A7CF-4F60-AFCF-AA46B2BADC9C")
 CUsersInfo0;
+#endif
+
+EXTERN_C const CLSID CLSID_CUsersInfo1;
+
+#ifdef __cplusplus
+
+class DECLSPEC_UUID("B106262B-652C-458B-BE83-1EAAF807EE52")
+CUsersInfo1;
+#endif
+
+EXTERN_C const CLSID CLSID_CUsersInfo2;
+
+#ifdef __cplusplus
+
+class DECLSPEC_UUID("AA8F2BC5-E301-4019-A9B3-9A8AD494CF7E")
+CUsersInfo2;
+#endif
+
+EXTERN_C const CLSID CLSID_CUsersInfo3;
+
+#ifdef __cplusplus
+
+class DECLSPEC_UUID("7C52D6E8-CE0F-4877-A8B4-57B7F48941A5")
+CUsersInfo3;
+#endif
+
+EXTERN_C const CLSID CLSID_CUsersInfo10;
+
+#ifdef __cplusplus
+
+class DECLSPEC_UUID("4CE5CC79-EFA5-47D4-897C-87EC6E9467BE")
+CUsersInfo10;
+#endif
+
+EXTERN_C const CLSID CLSID_CUsersInfo11;
+
+#ifdef __cplusplus
+
+class DECLSPEC_UUID("B31EE0BE-9B48-415C-BD1D-3F42D267701C")
+CUsersInfo11;
+#endif
+
+EXTERN_C const CLSID CLSID_CUsersInfo20;
+
+#ifdef __cplusplus
+
+class DECLSPEC_UUID("386EED73-DD10-41E6-A97F-483FAFF3EA16")
+CUsersInfo20;
+#endif
+
+EXTERN_C const CLSID CLSID_CUsersInfo23;
+
+#ifdef __cplusplus
+
+class DECLSPEC_UUID("75D92636-750D-4880-9BF1-6EE08E1FC766")
+CUsersInfo23;
+#endif
+
+EXTERN_C const CLSID CLSID_CGroupUserInfo0;
+
+#ifdef __cplusplus
+
+class DECLSPEC_UUID("3DD903CB-01D1-40BE-BFEB-513931362168")
+CGroupUserInfo0;
+#endif
+
+EXTERN_C const CLSID CLSID_CGroupsUserInfo0;
+
+#ifdef __cplusplus
+
+class DECLSPEC_UUID("4B086E5E-70C1-4424-90B3-8CCD0A64944D")
+CGroupsUserInfo0;
+#endif
+
+EXTERN_C const CLSID CLSID_CGroupUserInfo1;
+
+#ifdef __cplusplus
+
+class DECLSPEC_UUID("0DF2D039-C172-4D50-BB0D-C31E711F257B")
+CGroupUserInfo1;
+#endif
+
+EXTERN_C const CLSID CLSID_CGroupsUserInfo1;
+
+#ifdef __cplusplus
+
+class DECLSPEC_UUID("40E54F89-9F42-4C52-8C05-E2F2047955FA")
+CGroupsUserInfo1;
 #endif
 #endif /* __CWinNetManagerLib_LIBRARY_DEFINED__ */
 

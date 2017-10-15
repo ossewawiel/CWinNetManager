@@ -40,6 +40,11 @@ typedef [public, v1_enum] enum eUserInfoType
 	, uiType1052 = 0x41C
 	, uiType1053 = 0x41D
 } eUserInfoType;
+typedef [public, v1_enum] enum eGroupUserInfoType
+{
+	  guiType0 = 0x000
+	, guiType1 = 0x001
+} eGroupUserInfoType;
 [
 	object,
 	uuid(FFB824F6-E615-4DCC-BCFC-4068E2B442F8),
@@ -770,6 +775,146 @@ interface ICUserInfo1053 : IDispatch {
 };
 [
 	object,
+	uuid(C3DCF9BC-EB1D-4DAD-8A18-C6666F5FCBDC),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUsersInfo1 : IDispatch {
+	[id(DISPID_NEWENUM), propget] HRESULT _NewEnum([out, retval] IUnknown** ppUnk);
+	[id(DISPID_VALUE), propget] HRESULT Item([in] long n, [out, retval] ICUserInfo1** ppUserInfo1);
+	[propget] HRESULT Count([out, retval] long* pnCount);
+	[id(1)] HRESULT Add([in] ICUserInfo1* pUserInfo1);
+};
+[
+	object,
+	uuid(BE7ED37C-C111-41F7-8180-3CDF57385695),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUsersInfo2 : IDispatch {
+	[id(DISPID_NEWENUM), propget] HRESULT _NewEnum([out, retval] IUnknown** ppUnk);
+	[id(DISPID_VALUE), propget] HRESULT Item([in] long n, [out, retval] ICUserInfo2** ppUserInfo2);
+	[propget] HRESULT Count([out, retval] long* pnCount);
+	[id(1)] HRESULT Add([in] ICUserInfo2* pUserInfo2);
+};
+[
+	object,
+	uuid(C20CD927-B051-4C76-9747-EF10135C9A9C),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUsersInfo3 : IDispatch {
+	[id(DISPID_NEWENUM), propget] HRESULT _NewEnum([out, retval] IUnknown** ppUnk);
+	[id(DISPID_VALUE), propget] HRESULT Item([in] long n, [out, retval] ICUserInfo3** ppUserInfo3);
+	[propget] HRESULT Count([out, retval] long* pnCount);
+	[id(1)] HRESULT Add([in] ICUserInfo3* pUserInfo3);
+};
+[
+	object,
+	uuid(2F77FF1C-1F57-4E38-A8DC-9798859F78E0),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUsersInfo10 : IDispatch {
+	[id(DISPID_NEWENUM), propget] HRESULT _NewEnum([out, retval] IUnknown** ppUnk);
+	[id(DISPID_VALUE), propget] HRESULT Item([in] long n, [out, retval] ICUserInfo10** ppUserInfo10);
+	[propget] HRESULT Count([out, retval] long* pnCount);
+	[id(1)] HRESULT Add([in] ICUserInfo10* pUserInfo10);
+};
+[
+	object,
+	uuid(EFF7F298-96F0-4CB8-ADAA-535F08BDF52D),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUsersInfo11 : IDispatch {
+	[id(DISPID_NEWENUM), propget] HRESULT _NewEnum([out, retval] IUnknown** ppUnk);
+	[id(DISPID_VALUE), propget] HRESULT Item([in] long n, [out, retval] ICUserInfo11** ppUserInfo11);
+	[propget] HRESULT Count([out, retval] long* pnCount);
+	[id(1)] HRESULT Add([in] ICUserInfo11* pUserInfo11);
+};
+[
+	object,
+	uuid(D06A27EF-0F2C-4169-8E42-86559D079D94),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUsersInfo20 : IDispatch {
+	[id(DISPID_NEWENUM), propget] HRESULT _NewEnum([out, retval] IUnknown** ppUnk);
+	[id(DISPID_VALUE), propget] HRESULT Item([in] long n, [out, retval] ICUserInfo20** ppUserInfo20);
+	[propget] HRESULT Count([out, retval] long* pnCount);
+	[id(1)] HRESULT Add([in] ICUserInfo20* pUserInfo20);
+};
+[
+	object,
+	uuid(E0823A05-4F9B-420B-ADF5-A214E07615C7),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUsersInfo23 : IDispatch {
+	[id(DISPID_NEWENUM), propget] HRESULT _NewEnum([out, retval] IUnknown** ppUnk);
+	[id(DISPID_VALUE), propget] HRESULT Item([in] long n, [out, retval] ICUserInfo23** ppUserInfo23);
+	[propget] HRESULT Count([out, retval] long* pnCount);
+	[id(1)] HRESULT Add([in] ICUserInfo23* pUserInfo23);
+};
+[
+	object,
+	uuid(6A782E23-3986-44F0-A2A4-0692C109C022),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICGroupUserInfo0 : IDispatch {
+	[id(1)] HRESULT Initialise([in] BSTR bsName);
+	[propget, id(2)] HRESULT Name([out, retval] BSTR* pVal);
+};
+[
+	object,
+	uuid(5AD6D8F7-2974-4C6A-8309-535A7E711D69),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICGroupsUserInfo0 : IDispatch {
+	[id(DISPID_NEWENUM), propget] HRESULT _NewEnum([out, retval] IUnknown** ppUnk);
+	[id(DISPID_VALUE), propget] HRESULT Item([in] long n, [out, retval] ICGroupUserInfo0** ppGroupUserInfo0);
+	[propget] HRESULT Count([out, retval] long* pnCount);
+	[id(1)] HRESULT Add([in] ICGroupUserInfo0* pGroupUserInfo0);
+};
+[
+	object,
+	uuid(8F144BC6-A45D-4BD6-828F-5D3FE5AA937B),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICGroupUserInfo1 : IDispatch {
+	[id(1)] HRESULT Initialise([in] BSTR bsName, [in] ULONG ulAttributes);
+	[propget, id(2)] HRESULT Name([out, retval] BSTR* pVal);
+	[propget, id(3)] HRESULT Attributes([out, retval] ULONG* pVal);
+};
+[
+	object,
+	uuid(CADE0F40-6E57-4B31-B13C-119D02FD85DF),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICGroupsUserInfo1 : IDispatch {
+	[id(DISPID_NEWENUM), propget] HRESULT _NewEnum([out, retval] IUnknown** ppUnk);
+	[id(DISPID_VALUE), propget] HRESULT Item([in] long n, [out, retval] ICGroupUserInfo1** ppGroupUserInfo1);
+	[propget] HRESULT Count([out, retval] long* pnCount);
+	[id(1)] HRESULT Add([in] ICGroupUserInfo1* pGroupUserInfo1);
+};
+[
+	object,
 	uuid(6F0101CF-7948-4472-8542-044189587EFB),
 	dual,
 	nonextensible,
@@ -1008,6 +1153,14 @@ interface ICNetUser : IDispatch{
 	[id(63)] HRESULT NetUserGetInfo1053([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICUserInfo1053** ppUserInfo);
 	[id(64)] HRESULT NetUserChangePassword([in] BSTR bsDomainName, [in] BSTR bsUserName, [in] BSTR bsOldPwd, [in] BSTR bsNewPwd);
 	[id(65)] HRESULT NetUserEnum0([in] BSTR bsServerName, [out, retval] ICUsersInfo0** ppUsersInfo0);
+	[id(66)] HRESULT NetUserEnum1([in] BSTR bsServerName, [out, retval] ICUsersInfo1** ppUsersInfo1);
+	[id(67)] HRESULT NetUserEnum2([in] BSTR bsServerName, [out, retval] ICUsersInfo2** ppUsersInfo2);
+	[id(68)] HRESULT NetUserEnum3([in] BSTR bsServerName, [out, retval] ICUsersInfo3** ppUsersInfo3);
+	[id(69)] HRESULT NetUserEnum10([in] BSTR bsServerName, [out, retval] ICUsersInfo10** ppUsersInfo10);
+	[id(70)] HRESULT NetUserEnum11([in] BSTR bsServerName, [out, retval] ICUsersInfo11** ppUsersInfo11);
+	[id(71)] HRESULT NetUserEnum20([in] BSTR bsServerName, [out, retval] ICUsersInfo20** ppUsersInfo20);
+	[id(72)] HRESULT NetUserGetGroups0([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICGroupsUserInfo0** ppGroupsUserInfo0);
+	[id(73)] HRESULT NetUserGetGroups1([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICGroupsUserInfo1** ppGroupsUserInfo1);
 };
 [
 	uuid(F53A3EDB-3D55-4E7B-8687-F0759A72FBCA),
@@ -1267,6 +1420,83 @@ library CWinNetManagerLib
 	coclass CUsersInfo0
 	{
 		[default] interface ICUsersInfo0;
+	};
+	[
+		uuid(B106262B-652C-458B-BE83-1EAAF807EE52)		
+	]
+	coclass CUsersInfo1
+	{
+		[default] interface ICUsersInfo1;
+	};
+	[
+		uuid(AA8F2BC5-E301-4019-A9B3-9A8AD494CF7E)		
+	]
+	coclass CUsersInfo2
+	{
+		[default] interface ICUsersInfo2;
+	};
+	[
+		uuid(7C52D6E8-CE0F-4877-A8B4-57B7F48941A5)		
+	]
+	coclass CUsersInfo3
+	{
+		[default] interface ICUsersInfo3;
+	};
+	[
+		uuid(4CE5CC79-EFA5-47D4-897C-87EC6E9467BE)		
+	]
+	coclass CUsersInfo10
+	{
+		[default] interface ICUsersInfo10;
+	};
+	[
+		uuid(B31EE0BE-9B48-415C-BD1D-3F42D267701C)		
+	]
+	coclass CUsersInfo11
+	{
+		[default] interface ICUsersInfo11;
+	};
+	[
+		uuid(386EED73-DD10-41E6-A97F-483FAFF3EA16)		
+	]
+	coclass CUsersInfo20
+	{
+		[default] interface ICUsersInfo20;
+	};
+	[
+		uuid(75D92636-750D-4880-9BF1-6EE08E1FC766)		
+	]
+	coclass CUsersInfo23
+	{
+		[default] interface ICUsersInfo23;
+	};
+	[
+		uuid(3DD903CB-01D1-40BE-BFEB-513931362168)		
+	]
+	coclass CGroupUserInfo0
+	{
+		[default] interface ICGroupUserInfo0;
+	};
+	[
+		uuid(4B086E5E-70C1-4424-90B3-8CCD0A64944D)		
+	]
+	coclass CGroupsUserInfo0
+	{
+		[default] interface ICGroupsUserInfo0;
+	};
+	[
+		uuid(0DF2D039-C172-4D50-BB0D-C31E711F257B)		
+	]
+	coclass CGroupUserInfo1
+	{
+		[default] interface ICGroupUserInfo1;
+	};
+	[
+		uuid(40E54F89-9F42-4C52-8C05-E2F2047955FA)		
+	]
+	coclass CGroupsUserInfo1
+	{
+		[default] interface ICGroupsUserInfo1;
 	};
 };
 

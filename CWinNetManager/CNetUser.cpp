@@ -841,22 +841,84 @@ STDMETHODIMP CCNetUser::NetUserChangePassword(BSTR bsDomainName, BSTR bsUserName
 
 STDMETHODIMP CCNetUser::NetUserEnum0(BSTR bsServerName, ICUsersInfo0** ppUsersInfo0)
 {
-	HRESULT hr(S_OK);
-	if(hr = CCUsersInfo0::CreateInstance(ppUsersInfo0)) return hr;
-	LPUSER_INFO_0 pBuf = NULL;
-	DWORD pEntriesRead = NULL;
-	DWORD pTotalEntries = NULL;
-	DWORD pResumeHandle = NULL;
-	hr = ::NetUserEnum((LPCWSTR)bsServerName, eUserInfoType::uiType0, 0, (LPBYTE*)&pBuf, MAX_PREFERRED_LENGTH, &pEntriesRead, &pTotalEntries, &pResumeHandle);
-	if (hr != NERR_Success) return hr;
-	if (pBuf == NULL) return hr;
-	for (long i = 0; i < pEntriesRead; i++)
-	{
-		CComPtr<ICUserInfo0> pUI0;
-		if(hr = CCUserInfo0::TranslateFromUserInfo(pBuf, &pUI0)) return hr;
-		if(hr = (*ppUsersInfo0)->Add(pUI0)) return hr;
-		++pBuf;
-	}
+	return NetUserEnumFrom<ICUsersInfo0, CCUsersInfo0, LPUSER_INFO_0, ICUserInfo0, CCUserInfo0>(
+		bsServerName
+		, eUserInfoType::uiType0
+		, ppUsersInfo0);
+}
 
-	return S_OK;
+STDMETHODIMP CCNetUser::NetUserEnum1(BSTR bsServerName, ICUsersInfo1 ** ppUsersInfo1)
+{
+	return NetUserEnumFrom<ICUsersInfo1, CCUsersInfo1, LPUSER_INFO_1, ICUserInfo1, CCUserInfo1>(
+		bsServerName
+		, eUserInfoType::uiType1
+		, ppUsersInfo1);
+}
+
+STDMETHODIMP CCNetUser::NetUserEnum2(BSTR bsServerName, ICUsersInfo2 ** ppUsersInfo2)
+{
+	return NetUserEnumFrom<ICUsersInfo2, CCUsersInfo2, LPUSER_INFO_2, ICUserInfo2, CCUserInfo2>(
+		bsServerName
+		, eUserInfoType::uiType2
+		, ppUsersInfo2);
+}
+
+STDMETHODIMP CCNetUser::NetUserEnum3(BSTR bsServerName, ICUsersInfo3 ** ppUsersInfo3)
+{
+	return NetUserEnumFrom<ICUsersInfo3, CCUsersInfo3, LPUSER_INFO_3, ICUserInfo3, CCUserInfo3>(
+		bsServerName
+		, eUserInfoType::uiType3
+		, ppUsersInfo3);
+}
+
+STDMETHODIMP CCNetUser::NetUserEnum10(BSTR bsServerName, ICUsersInfo10 ** ppUsersInfo10)
+{
+	return NetUserEnumFrom<ICUsersInfo10, CCUsersInfo10, LPUSER_INFO_10, ICUserInfo10, CCUserInfo10>(
+		bsServerName
+		, eUserInfoType::uiType10
+		, ppUsersInfo10);
+}
+
+STDMETHODIMP CCNetUser::NetUserEnum11(BSTR bsServerName, ICUsersInfo11 ** ppUsersInfo11)
+{
+	return NetUserEnumFrom<ICUsersInfo11, CCUsersInfo11, LPUSER_INFO_11, ICUserInfo11, CCUserInfo11>(
+		bsServerName
+		, eUserInfoType::uiType11
+		, ppUsersInfo11);
+}
+
+STDMETHODIMP CCNetUser::NetUserEnum20(BSTR bsServerName, ICUsersInfo20 ** ppUsersInfo20)
+{
+	return NetUserEnumFrom<ICUsersInfo20, CCUsersInfo20, LPUSER_INFO_20, ICUserInfo20, CCUserInfo20>(
+		bsServerName
+		, eUserInfoType::uiType20
+		, ppUsersInfo20);
+}
+
+STDMETHODIMP CCNetUser::NetUserEnum23(BSTR bsServerName, ICUsersInfo23 ** ppUsersInfo23)
+{
+	return NetUserEnumFrom<ICUsersInfo23, CCUsersInfo23, LPUSER_INFO_23, ICUserInfo23, CCUserInfo23>(
+		bsServerName
+		, eUserInfoType::uiType23
+		, ppUsersInfo23);
+}
+
+
+STDMETHODIMP CCNetUser::NetUserGetGroups0(BSTR bsServerName, BSTR bsUserName, ICGroupsUserInfo0** ppGroupsUserInfo0)
+{
+	return NetUserGetGroupsFrom<ICGroupsUserInfo0, CCGroupsUserInfo0, LPGROUP_USERS_INFO_0, ICGroupUserInfo0, CCGroupUserInfo0>(
+		bsServerName
+		, bsUserName
+		, eGroupUserInfoType::guiType0
+		, ppGroupsUserInfo0);
+}
+
+
+STDMETHODIMP CCNetUser::NetUserGetGroups1(BSTR bsServerName, BSTR bsUserName, ICGroupsUserInfo1** ppGroupsUserInfo1)
+{
+	return NetUserGetGroupsFrom<ICGroupsUserInfo1, CCGroupsUserInfo1, LPGROUP_USERS_INFO_1, ICGroupUserInfo1, CCGroupUserInfo1>(
+		bsServerName
+		, bsUserName
+		, eGroupUserInfoType::guiType1
+		, ppGroupsUserInfo1);
 }

@@ -3,6 +3,12 @@
 #define CUSTOM_ASSERT_SET \
 	HRESULT hr(S_OK);
 
+#define ASSERT_PROP_GET_BSTR(uinfObject, getProperty, toValue) \
+	HRESULT hr##getProperty(S_OK); \
+	hr##getProperty =  ##uinfObject->##getProperty(toValue.GetAddress()); \
+	ASSERT_FALSE(hr##getProperty) << TUtils::GetLastErrorAsString(hr##getProperty); \
+	ASSERT_FALSE(toValue.length() == 0);
+
 #define ASSERT_EQ_PROP_GET_BSTR(uinfObject, getProperty, eqTo) \
 	_bstr_t bs##getProperty(L"*"); \
 	HRESULT hr##getProperty(S_OK); \
@@ -17,6 +23,13 @@
 	ASSERT_FALSE(hr##getProperty) << TUtils::GetLastErrorAsString(hr##getProperty); \
 	ASSERT_NE(##neTo, bs##getProperty);
 
+#define ASSERT_LGT_PROP_GET_BSTR(uinfObject, getProperty, gtValue) \
+	_bstr_t bs##getProperty(L""); \
+	HRESULT hr##getProperty(S_OK); \
+	hr##getProperty =  ##uinfObject->##getProperty(bs##getProperty.GetAddress()); \
+	ASSERT_FALSE(hr##getProperty) << TUtils::GetLastErrorAsString(hr##getProperty); \
+	ASSERT_TRUE(bs##getProperty.length() > ##gtValue);
+
 #define ASSERT_EQ_PROP_GET_ULONG(uinfObject, getProperty, eqTo) \
 	ULONG ul##getProperty(100); \
 	HRESULT hr##getProperty(S_OK); \
@@ -30,6 +43,13 @@
 	hr##getProperty =  ##uinfObject->##getProperty(&ul##getProperty); \
 	ASSERT_FALSE(hr##getProperty) << TUtils::GetLastErrorAsString(hr##getProperty); \
 	ASSERT_NE(##neTo, ul##getProperty);
+
+#define ASSERT_GT_PROP_GET_ULONG(uinfObject, getProperty, gtValue) \
+	ULONG ul##getProperty(0); \
+	HRESULT hr##getProperty(S_OK); \
+	hr##getProperty =  ##uinfObject->##getProperty(&ul##getProperty); \
+	ASSERT_FALSE(hr##getProperty) << TUtils::GetLastErrorAsString(hr##getProperty); \
+	ASSERT_TRUE(ul##getProperty > ##gtValue);
 
 #define ASSERT_EQ_PROP_GET_CLOGONHOURS(uinfObject, getProperty, eqTo) \
 	CComPtr<ICLogonHours> p##getProperty; \
@@ -69,6 +89,16 @@
 	hr = netuserObject->NetUserDel(NULL, userName); \
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
+#define ASSERT_GET_ITEM(enumUserObject, index, uinfObject) \
+	hr = enumUserObject->get_Item(index, & uinfObject); \
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr); \
+	ASSERT_FALSE(uinfObject == NULL);
+
+#define ASSERT_GT_GET_COUNT(enumUserObject, count) \
+	hr = enumUserObject->get_Count(& count); \
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr); \
+	ASSERT_TRUE(count > 0);
+
 #define ASSERT_GET_USER_INFO_0(netuserObject, uinfObject)		\
 	hr = netuserObject->GetUserInfo0(PAR_UINF_NAME, &uinfObject); \
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
@@ -81,9 +111,14 @@
 	hr = netuserObject->NetUserGetInfo0(NULL, uName, &uinfObject); \
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
-#define ASSERT_USERS_ENUM_0(netuserObject, uinfObject)		\
-	hr = netuserObject->NetUserEnum0(NULL, &uinfObject); \
-	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
+#define ASSERT_USERS_ENUM(netuserObject, uiNo, uinfObject)		\
+	hr = netuserObject->NetUserEnum##uiNo(NULL, &uinfObject); \
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr); \
+
+#define ASSERT_USERS_GET_GROUPS(netuserObject, uiNo, usrName, uinfObject)		\
+	hr = netuserObject->NetUserGetGroups##uiNo(NULL, usrName, &uinfObject); \
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr); \
+	ASSERT_FALSE(uinfObject == NULL);
 
 
 #define ASSERT_GET_USER_INFO_1(netuserObject, uinfObject)	\

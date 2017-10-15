@@ -211,6 +211,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CGroupsUserInfo0.cpp" />
+    <ClCompile Include="CGroupsUserInfo1.cpp" />
+    <ClCompile Include="CGroupUserInfo0.cpp" />
+    <ClCompile Include="CGroupUserInfo1.cpp" />
     <ClCompile Include="CLogonHour.cpp" />
     <ClCompile Include="CLogonHours.cpp" />
     <ClCompile Include="CNetUser.cpp" />
@@ -247,6 +251,13 @@
     <ClCompile Include="CUserInfo3.cpp" />
     <ClCompile Include="CUserInfo4.cpp" />
     <ClCompile Include="CUsersInfo0.cpp" />
+    <ClCompile Include="CUsersInfo1.cpp" />
+    <ClCompile Include="CUsersInfo10.cpp" />
+    <ClCompile Include="CUsersInfo11.cpp" />
+    <ClCompile Include="CUsersInfo2.cpp" />
+    <ClCompile Include="CUsersInfo20.cpp" />
+    <ClCompile Include="CUsersInfo23.cpp" />
+    <ClCompile Include="CUsersInfo3.cpp" />
     <ClCompile Include="CWinNetManager.cpp" />
     <ClCompile Include="CWinNetManager_i.c">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
@@ -299,6 +310,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CEnumUtils.h" />
+    <ClInclude Include="CGroupsUserInfo0.h" />
+    <ClInclude Include="CGroupsUserInfo1.h" />
+    <ClInclude Include="CGroupUserInfo0.h" />
+    <ClInclude Include="CGroupUserInfo1.h" />
     <ClInclude Include="CLogonHour.h" />
     <ClInclude Include="CLogonHours.h" />
     <ClInclude Include="CNetUser.h" />
@@ -336,6 +351,13 @@
     <ClInclude Include="CUserInfo4.h" />
     <ClInclude Include="CUserInfoUtils.h" />
     <ClInclude Include="CUsersInfo0.h" />
+    <ClInclude Include="CUsersInfo1.h" />
+    <ClInclude Include="CUsersInfo10.h" />
+    <ClInclude Include="CUsersInfo11.h" />
+    <ClInclude Include="CUsersInfo2.h" />
+    <ClInclude Include="CUsersInfo20.h" />
+    <ClInclude Include="CUsersInfo23.h" />
+    <ClInclude Include="CUsersInfo3.h" />
     <ClInclude Include="CWinNetManager.h" />
     <ClInclude Include="dllmain.h" />
     <ClInclude Include="Resource.h" />
@@ -350,6 +372,10 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="CGroupsUserInfo0.rgs" />
+    <None Include="CGroupsUserInfo1.rgs" />
+    <None Include="CGroupUserInfo0.rgs" />
+    <None Include="CGroupUserInfo1.rgs" />
     <None Include="CLogonHour.rgs" />
     <None Include="CLogonHours.rgs" />
     <None Include="CNetUser.rgs" />
@@ -386,6 +412,13 @@
     <None Include="CUserInfo3.rgs" />
     <None Include="CUserInfo4.rgs" />
     <None Include="CUsersInfo0.rgs" />
+    <None Include="CUsersInfo1.rgs" />
+    <None Include="CUsersInfo10.rgs" />
+    <None Include="CUsersInfo11.rgs" />
+    <None Include="CUsersInfo2.rgs" />
+    <None Include="CUsersInfo20.rgs" />
+    <None Include="CUsersInfo23.rgs" />
+    <None Include="CUsersInfo3.rgs" />
     <None Include="CWinNetManager.def" />
     <None Include="CWinNetManager.rgs" />
   </ItemGroup>

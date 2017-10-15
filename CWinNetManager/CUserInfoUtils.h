@@ -42,6 +42,53 @@ HRESULT NetUserTranslateFrom(IUnknown *pFrom, V &pTo)
 	return U::TranslateToUserInfo(pUserInfo, pTo);
 }
 
+template<typename T, typename U, typename V, typename W, typename X>
+HRESULT NetUserEnumFrom(_bstr_t bsServerName, eUserInfoType userInfoType, T **pFrom)
+{
+	HRESULT hr(S_OK);
+	if (hr = U::CreateInstance(pFrom)) return hr;
+	V pBuf = NULL;
+	DWORD pEntriesRead = NULL;
+	DWORD pTotalEntries = NULL;
+	DWORD pResumeHandle = NULL;
+	hr = ::NetUserEnum((LPCWSTR)bsServerName, userInfoType, 0, (LPBYTE*)&pBuf, MAX_PREFERRED_LENGTH, &pEntriesRead, &pTotalEntries, &pResumeHandle);
+	if (hr != NERR_Success) return hr;
+	if (pBuf == NULL) return hr;
+	for (long i = 0; i < pEntriesRead; i++)
+	{
+		CComPtr<W> pUI;
+		if (hr = X::TranslateFromUserInfo(pBuf, &pUI)) return hr;
+		if (hr = (*pFrom)->Add(pUI)) return hr;
+		++pBuf;
+	}
+
+	return S_OK;
+}
+
+template<typename T, typename U, typename V, typename W, typename X>
+HRESULT NetUserGetGroupsFrom(_bstr_t bsServerName, _bstr_t bsUserName, eGroupUserInfoType groupUserInfoType, T **pFrom)
+{
+	HRESULT hr(S_OK);
+	if (hr = U::CreateInstance(pFrom)) return hr;
+	V pBuf = NULL;
+	DWORD dwPrefMaxLen = MAX_PREFERRED_LENGTH;
+	DWORD dwEntriesRead = 0;
+	DWORD dwTotalEntries = 0;
+
+	hr = ::NetUserGetGroups((LPWSTR)bsServerName, (LPWSTR)bsUserName, groupUserInfoType, (LPBYTE*)&pBuf, dwPrefMaxLen, &dwEntriesRead, &dwTotalEntries);
+	if (hr != NERR_Success) return hr;
+	if (pBuf == NULL) return hr;
+	for (DWORD i = 0; i < dwEntriesRead; i++)
+	{
+		CComPtr<W> pGroupUserInfo;
+		if(hr = X::TranslateFromGroupUserInfo(pBuf, &pGroupUserInfo)) return hr;
+		if(hr = (*pFrom)->Add(pGroupUserInfo)) return hr;
+		++pBuf;
+	}
+
+	return hr;
+}
+
 template<typename T>
 HRESULT ToUserInfoName(T *pFrom, LPWSTR &pTo)
 {
