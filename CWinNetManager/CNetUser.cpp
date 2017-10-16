@@ -922,3 +922,13 @@ STDMETHODIMP CCNetUser::NetUserGetGroups1(BSTR bsServerName, BSTR bsUserName, IC
 		, eGroupUserInfoType::guiType1
 		, ppGroupsUserInfo1);
 }
+
+
+STDMETHODIMP CCNetUser::NetUserGetLocalGroups0(BSTR bsServerName, BSTR bsUserName, ICLocalGroupsUserInfo0** ppLocalGroupsUserInfo0)
+{
+	return NetUserGetLocalGroupsFrom<ICLocalGroupsUserInfo0, CCLocalGroupsUserInfo0, LPLOCALGROUP_USERS_INFO_0, ICLocalGroupUserInfo0, CCLocalGroupUserInfo0>(
+		bsServerName
+		, bsUserName
+		, eLocalGroupUserInfoType::lguiType0
+		, ppLocalGroupsUserInfo0);
+}

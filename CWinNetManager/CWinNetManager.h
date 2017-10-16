@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Sun Oct 15 18:31:44 2017
+/* at Mon Oct 16 08:15:32 2017
  */
 /* Compiler settings for CWinNetManager.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 
@@ -365,6 +365,20 @@ typedef interface ICGroupUserInfo1 ICGroupUserInfo1;
 typedef interface ICGroupsUserInfo1 ICGroupsUserInfo1;
 
 #endif 	/* __ICGroupsUserInfo1_FWD_DEFINED__ */
+
+
+#ifndef __ICLocalGroupUserInfo0_FWD_DEFINED__
+#define __ICLocalGroupUserInfo0_FWD_DEFINED__
+typedef interface ICLocalGroupUserInfo0 ICLocalGroupUserInfo0;
+
+#endif 	/* __ICLocalGroupUserInfo0_FWD_DEFINED__ */
+
+
+#ifndef __ICLocalGroupsUserInfo0_FWD_DEFINED__
+#define __ICLocalGroupsUserInfo0_FWD_DEFINED__
+typedef interface ICLocalGroupsUserInfo0 ICLocalGroupsUserInfo0;
+
+#endif 	/* __ICLocalGroupsUserInfo0_FWD_DEFINED__ */
 
 
 #ifndef __ICNetUser_FWD_DEFINED__
@@ -938,6 +952,30 @@ typedef struct CGroupsUserInfo1 CGroupsUserInfo1;
 #endif 	/* __CGroupsUserInfo1_FWD_DEFINED__ */
 
 
+#ifndef __CLocalGroupsUserInfo0_FWD_DEFINED__
+#define __CLocalGroupsUserInfo0_FWD_DEFINED__
+
+#ifdef __cplusplus
+typedef class CLocalGroupsUserInfo0 CLocalGroupsUserInfo0;
+#else
+typedef struct CLocalGroupsUserInfo0 CLocalGroupsUserInfo0;
+#endif /* __cplusplus */
+
+#endif 	/* __CLocalGroupsUserInfo0_FWD_DEFINED__ */
+
+
+#ifndef __CLocalGroupUserInfo0_FWD_DEFINED__
+#define __CLocalGroupUserInfo0_FWD_DEFINED__
+
+#ifdef __cplusplus
+typedef class CLocalGroupUserInfo0 CLocalGroupUserInfo0;
+#else
+typedef struct CLocalGroupUserInfo0 CLocalGroupUserInfo0;
+#endif /* __cplusplus */
+
+#endif 	/* __CLocalGroupUserInfo0_FWD_DEFINED__ */
+
+
 /* header files for imported files */
 #include "oaidl.h"
 #include "ocidl.h"
@@ -991,6 +1029,12 @@ enum eGroupUserInfoType
         guiType0	= 0,
         guiType1	= 0x1
     } 	eGroupUserInfoType;
+
+typedef /* [v1_enum][public] */ 
+enum eLocalGroupUserInfoType
+    {
+        lguiType0	= 0
+    } 	eLocalGroupUserInfoType;
 
 
 
@@ -9777,6 +9821,308 @@ EXTERN_C const IID IID_ICGroupsUserInfo1;
 #endif 	/* __ICGroupsUserInfo1_INTERFACE_DEFINED__ */
 
 
+#ifndef __ICLocalGroupUserInfo0_INTERFACE_DEFINED__
+#define __ICLocalGroupUserInfo0_INTERFACE_DEFINED__
+
+/* interface ICLocalGroupUserInfo0 */
+/* [unique][nonextensible][dual][uuid][object] */ 
+
+
+EXTERN_C const IID IID_ICLocalGroupUserInfo0;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("CECBA229-0710-4C7D-A33B-653ED87D40FB")
+    ICLocalGroupUserInfo0 : public IDispatch
+    {
+    public:
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Initialise( 
+            /* [in] */ BSTR bsName) = 0;
+        
+        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_Name( 
+            /* [retval][out] */ BSTR *pVal) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct ICLocalGroupUserInfo0Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            ICLocalGroupUserInfo0 * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            ICLocalGroupUserInfo0 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            ICLocalGroupUserInfo0 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            ICLocalGroupUserInfo0 * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            ICLocalGroupUserInfo0 * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            ICLocalGroupUserInfo0 * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            ICLocalGroupUserInfo0 * This,
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Initialise )( 
+            ICLocalGroupUserInfo0 * This,
+            /* [in] */ BSTR bsName);
+        
+        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_Name )( 
+            ICLocalGroupUserInfo0 * This,
+            /* [retval][out] */ BSTR *pVal);
+        
+        END_INTERFACE
+    } ICLocalGroupUserInfo0Vtbl;
+
+    interface ICLocalGroupUserInfo0
+    {
+        CONST_VTBL struct ICLocalGroupUserInfo0Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define ICLocalGroupUserInfo0_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define ICLocalGroupUserInfo0_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define ICLocalGroupUserInfo0_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define ICLocalGroupUserInfo0_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define ICLocalGroupUserInfo0_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define ICLocalGroupUserInfo0_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define ICLocalGroupUserInfo0_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define ICLocalGroupUserInfo0_Initialise(This,bsName)	\
+    ( (This)->lpVtbl -> Initialise(This,bsName) ) 
+
+#define ICLocalGroupUserInfo0_get_Name(This,pVal)	\
+    ( (This)->lpVtbl -> get_Name(This,pVal) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __ICLocalGroupUserInfo0_INTERFACE_DEFINED__ */
+
+
+#ifndef __ICLocalGroupsUserInfo0_INTERFACE_DEFINED__
+#define __ICLocalGroupsUserInfo0_INTERFACE_DEFINED__
+
+/* interface ICLocalGroupsUserInfo0 */
+/* [unique][nonextensible][dual][uuid][object] */ 
+
+
+EXTERN_C const IID IID_ICLocalGroupsUserInfo0;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("0EB1120A-4651-49B9-BC6D-B882984B7FBD")
+    ICLocalGroupsUserInfo0 : public IDispatch
+    {
+    public:
+        virtual /* [propget][id] */ HRESULT STDMETHODCALLTYPE get__NewEnum( 
+            /* [retval][out] */ IUnknown **ppUnk) = 0;
+        
+        virtual /* [propget][id] */ HRESULT STDMETHODCALLTYPE get_Item( 
+            /* [in] */ long n,
+            /* [retval][out] */ ICLocalGroupUserInfo0 **ppLocalGroupUserInfo0) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Count( 
+            /* [retval][out] */ long *pnCount) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Add( 
+            /* [in] */ ICLocalGroupUserInfo0 *pLocalGroupUserInfo0) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct ICLocalGroupsUserInfo0Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            ICLocalGroupsUserInfo0 * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            ICLocalGroupsUserInfo0 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            ICLocalGroupsUserInfo0 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            ICLocalGroupsUserInfo0 * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            ICLocalGroupsUserInfo0 * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            ICLocalGroupsUserInfo0 * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            ICLocalGroupsUserInfo0 * This,
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
+        
+        /* [propget][id] */ HRESULT ( STDMETHODCALLTYPE *get__NewEnum )( 
+            ICLocalGroupsUserInfo0 * This,
+            /* [retval][out] */ IUnknown **ppUnk);
+        
+        /* [propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_Item )( 
+            ICLocalGroupsUserInfo0 * This,
+            /* [in] */ long n,
+            /* [retval][out] */ ICLocalGroupUserInfo0 **ppLocalGroupUserInfo0);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Count )( 
+            ICLocalGroupsUserInfo0 * This,
+            /* [retval][out] */ long *pnCount);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Add )( 
+            ICLocalGroupsUserInfo0 * This,
+            /* [in] */ ICLocalGroupUserInfo0 *pLocalGroupUserInfo0);
+        
+        END_INTERFACE
+    } ICLocalGroupsUserInfo0Vtbl;
+
+    interface ICLocalGroupsUserInfo0
+    {
+        CONST_VTBL struct ICLocalGroupsUserInfo0Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define ICLocalGroupsUserInfo0_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define ICLocalGroupsUserInfo0_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define ICLocalGroupsUserInfo0_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define ICLocalGroupsUserInfo0_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define ICLocalGroupsUserInfo0_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define ICLocalGroupsUserInfo0_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define ICLocalGroupsUserInfo0_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define ICLocalGroupsUserInfo0_get__NewEnum(This,ppUnk)	\
+    ( (This)->lpVtbl -> get__NewEnum(This,ppUnk) ) 
+
+#define ICLocalGroupsUserInfo0_get_Item(This,n,ppLocalGroupUserInfo0)	\
+    ( (This)->lpVtbl -> get_Item(This,n,ppLocalGroupUserInfo0) ) 
+
+#define ICLocalGroupsUserInfo0_get_Count(This,pnCount)	\
+    ( (This)->lpVtbl -> get_Count(This,pnCount) ) 
+
+#define ICLocalGroupsUserInfo0_Add(This,pLocalGroupUserInfo0)	\
+    ( (This)->lpVtbl -> Add(This,pLocalGroupUserInfo0) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __ICLocalGroupsUserInfo0_INTERFACE_DEFINED__ */
+
+
 #ifndef __ICNetUser_INTERFACE_DEFINED__
 #define __ICNetUser_INTERFACE_DEFINED__
 
@@ -10255,6 +10601,11 @@ EXTERN_C const IID IID_ICNetUser;
             /* [in] */ BSTR bsServerName,
             /* [in] */ BSTR bsUserName,
             /* [retval][out] */ ICGroupsUserInfo1 **ppGroupsUserInfo1) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserGetLocalGroups0( 
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICLocalGroupsUserInfo0 **ppLocalGroupsUserInfo0) = 0;
         
     };
     
@@ -10850,6 +11201,12 @@ EXTERN_C const IID IID_ICNetUser;
             /* [in] */ BSTR bsUserName,
             /* [retval][out] */ ICGroupsUserInfo1 **ppGroupsUserInfo1);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserGetLocalGroups0 )( 
+            ICNetUser * This,
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ BSTR bsUserName,
+            /* [retval][out] */ ICLocalGroupsUserInfo0 **ppLocalGroupsUserInfo0);
+        
         END_INTERFACE
     } ICNetUserVtbl;
 
@@ -11101,6 +11458,9 @@ EXTERN_C const IID IID_ICNetUser;
 
 #define ICNetUser_NetUserGetGroups1(This,bsServerName,bsUserName,ppGroupsUserInfo1)	\
     ( (This)->lpVtbl -> NetUserGetGroups1(This,bsServerName,bsUserName,ppGroupsUserInfo1) ) 
+
+#define ICNetUser_NetUserGetLocalGroups0(This,bsServerName,bsUserName,ppLocalGroupsUserInfo0)	\
+    ( (This)->lpVtbl -> NetUserGetLocalGroups0(This,bsServerName,bsUserName,ppLocalGroupsUserInfo0) ) 
 
 #endif /* COBJMACROS */
 
@@ -11497,6 +11857,22 @@ EXTERN_C const CLSID CLSID_CGroupsUserInfo1;
 
 class DECLSPEC_UUID("40E54F89-9F42-4C52-8C05-E2F2047955FA")
 CGroupsUserInfo1;
+#endif
+
+EXTERN_C const CLSID CLSID_CLocalGroupsUserInfo0;
+
+#ifdef __cplusplus
+
+class DECLSPEC_UUID("C4335A13-25C6-4B9A-8DAA-BDB207D1158D")
+CLocalGroupsUserInfo0;
+#endif
+
+EXTERN_C const CLSID CLSID_CLocalGroupUserInfo0;
+
+#ifdef __cplusplus
+
+class DECLSPEC_UUID("0492574E-7E72-4F06-91D1-CB7DCE1D4FE1")
+CLocalGroupUserInfo0;
 #endif
 #endif /* __CWinNetManagerLib_LIBRARY_DEFINED__ */
 

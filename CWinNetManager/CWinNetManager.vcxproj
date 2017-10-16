@@ -215,6 +215,8 @@
     <ClCompile Include="CGroupsUserInfo1.cpp" />
     <ClCompile Include="CGroupUserInfo0.cpp" />
     <ClCompile Include="CGroupUserInfo1.cpp" />
+    <ClCompile Include="CLocalGroupsUserInfo0.cpp" />
+    <ClCompile Include="CLocalGroupUserInfo0.cpp" />
     <ClCompile Include="CLogonHour.cpp" />
     <ClCompile Include="CLogonHours.cpp" />
     <ClCompile Include="CNetUser.cpp" />
@@ -314,6 +316,8 @@
     <ClInclude Include="CGroupsUserInfo1.h" />
     <ClInclude Include="CGroupUserInfo0.h" />
     <ClInclude Include="CGroupUserInfo1.h" />
+    <ClInclude Include="CLocalGroupsUserInfo0.h" />
+    <ClInclude Include="CLocalGroupUserInfo0.h" />
     <ClInclude Include="CLogonHour.h" />
     <ClInclude Include="CLogonHours.h" />
     <ClInclude Include="CNetUser.h" />
@@ -376,6 +380,8 @@
     <None Include="CGroupsUserInfo1.rgs" />
     <None Include="CGroupUserInfo0.rgs" />
     <None Include="CGroupUserInfo1.rgs" />
+    <None Include="CLocalGroupsUserInfo0.rgs" />
+    <None Include="CLocalGroupUserInfo0.rgs" />
     <None Include="CLogonHour.rgs" />
     <None Include="CLogonHours.rgs" />
     <None Include="CNetUser.rgs" />

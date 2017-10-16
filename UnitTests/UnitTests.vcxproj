@@ -163,6 +163,7 @@
     <ClCompile Include="TestCNetUser_Enum.cpp" />
     <ClCompile Include="TestCNetUser_GetGroups.cpp" />
     <ClCompile Include="TestCNetUser_GetInfo.cpp" />
+    <ClCompile Include="TestCNetUser_GetLocalGroups.cpp" />
     <ClCompile Include="TestCNetUser_GetUserInfo.cpp" />
     <ClCompile Include="TestCNetUser_NetUserAdd.cpp" />
     <ClCompile Include="TestCNetUser_SetUserInfo.cpp" />

@@ -23,6 +23,9 @@
     <Filter Include="CGroupUserInfo">
       <UniqueIdentifier>{16405210-0e11-4d90-b254-12f60bf46818}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CLocalGroupUserInfo">
+      <UniqueIdentifier>{1e4e88a5-2b69-46e8-ae5b-03931f64e4b8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -180,6 +183,12 @@
     </ClCompile>
     <ClCompile Include="CGroupsUserInfo1.cpp">
       <Filter>CGroupUserInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CLocalGroupsUserInfo0.cpp">
+      <Filter>CLocalGroupUserInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CLocalGroupUserInfo0.cpp">
+      <Filter>CLocalGroupUserInfo</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -348,6 +357,12 @@
     <ClInclude Include="CGroupsUserInfo1.h">
       <Filter>CGroupUserInfo</Filter>
     </ClInclude>
+    <ClInclude Include="CLocalGroupsUserInfo0.h">
+      <Filter>CLocalGroupUserInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CLocalGroupUserInfo0.h">
+      <Filter>CLocalGroupUserInfo</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="CWinNetManager.rc">
@@ -503,6 +518,12 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="CGroupsUserInfo1.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CLocalGroupsUserInfo0.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CLocalGroupUserInfo0.rgs">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

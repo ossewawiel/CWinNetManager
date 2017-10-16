@@ -89,6 +89,31 @@ HRESULT NetUserGetGroupsFrom(_bstr_t bsServerName, _bstr_t bsUserName, eGroupUse
 	return hr;
 }
 
+template<typename T, typename U, typename V, typename W, typename X>
+HRESULT NetUserGetLocalGroupsFrom(_bstr_t bsServerName, _bstr_t bsUserName, eLocalGroupUserInfoType localGroupUserInfoType, T **pFrom)
+{
+	HRESULT hr(S_OK);
+	if (hr = U::CreateInstance(pFrom)) return hr;
+	V pBuf = NULL;
+	DWORD dwFlags = LG_INCLUDE_INDIRECT;
+	DWORD dwPrefMaxLen = MAX_PREFERRED_LENGTH;
+	DWORD dwEntriesRead = 0;
+	DWORD dwTotalEntries = 0;
+
+	hr = ::NetUserGetLocalGroups((LPWSTR)bsServerName, (LPWSTR)bsUserName, localGroupUserInfoType, dwFlags, (LPBYTE*)&pBuf, dwPrefMaxLen, &dwEntriesRead, &dwTotalEntries);
+	if (hr != NERR_Success) return hr;
+	if (pBuf == NULL) return hr;
+	for (DWORD i = 0; i < dwEntriesRead; i++)
+	{
+		CComPtr<W> pGroupUserInfo;
+		if (hr = X::TranslateFromLocalGroupUserInfo(pBuf, &pGroupUserInfo)) return hr;
+		if (hr = (*pFrom)->Add(pGroupUserInfo)) return hr;
+		++pBuf;
+	}
+
+	return hr;
+}
+
 template<typename T>
 HRESULT ToUserInfoName(T *pFrom, LPWSTR &pTo)
 {

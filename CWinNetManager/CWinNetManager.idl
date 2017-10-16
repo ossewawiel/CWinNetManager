@@ -45,6 +45,10 @@ typedef [public, v1_enum] enum eGroupUserInfoType
 	  guiType0 = 0x000
 	, guiType1 = 0x001
 } eGroupUserInfoType;
+typedef [public, v1_enum] enum eLocalGroupUserInfoType
+{
+	lguiType0 = 0x000
+} eLocalGroupUserInfoType;
 [
 	object,
 	uuid(FFB824F6-E615-4DCC-BCFC-4068E2B442F8),
@@ -915,6 +919,30 @@ interface ICGroupsUserInfo1 : IDispatch {
 };
 [
 	object,
+	uuid(CECBA229-0710-4C7D-A33B-653ED87D40FB),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICLocalGroupUserInfo0 : IDispatch {
+	[id(1)] HRESULT Initialise([in] BSTR bsName);
+	[propget, id(2)] HRESULT Name([out, retval] BSTR* pVal);
+};
+[
+	object,
+	uuid(0EB1120A-4651-49B9-BC6D-B882984B7FBD),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICLocalGroupsUserInfo0 : IDispatch {
+	[id(DISPID_NEWENUM), propget] HRESULT _NewEnum([out, retval] IUnknown** ppUnk);
+	[id(DISPID_VALUE), propget] HRESULT Item([in] long n, [out, retval] ICLocalGroupUserInfo0** ppLocalGroupUserInfo0);
+	[propget] HRESULT Count([out, retval] long* pnCount);
+	[id(1)] HRESULT Add([in] ICLocalGroupUserInfo0* pLocalGroupUserInfo0);
+};
+[
+	object,
 	uuid(6F0101CF-7948-4472-8542-044189587EFB),
 	dual,
 	nonextensible,
@@ -1161,6 +1189,7 @@ interface ICNetUser : IDispatch{
 	[id(71)] HRESULT NetUserEnum20([in] BSTR bsServerName, [out, retval] ICUsersInfo20** ppUsersInfo20);
 	[id(72)] HRESULT NetUserGetGroups0([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICGroupsUserInfo0** ppGroupsUserInfo0);
 	[id(73)] HRESULT NetUserGetGroups1([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICGroupsUserInfo1** ppGroupsUserInfo1);
+	[id(74)] HRESULT NetUserGetLocalGroups0([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICLocalGroupsUserInfo0** ppLocalGroupsUserInfo0);
 };
 [
 	uuid(F53A3EDB-3D55-4E7B-8687-F0759A72FBCA),
@@ -1497,6 +1526,20 @@ library CWinNetManagerLib
 	coclass CGroupsUserInfo1
 	{
 		[default] interface ICGroupsUserInfo1;
+	};
+	[
+		uuid(C4335A13-25C6-4B9A-8DAA-BDB207D1158D)		
+	]
+	coclass CLocalGroupsUserInfo0
+	{
+		[default] interface ICLocalGroupsUserInfo0;
+	};
+	[
+		uuid(0492574E-7E72-4F06-91D1-CB7DCE1D4FE1)		
+	]
+	coclass CLocalGroupUserInfo0
+	{
+		[default] interface ICLocalGroupUserInfo0;
 	};
 };
 

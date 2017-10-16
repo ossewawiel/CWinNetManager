@@ -120,6 +120,11 @@
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr); \
 	ASSERT_FALSE(uinfObject == NULL);
 
+#define ASSERT_USERS_GET_LOCAL_GROUPS(netuserObject, uiNo, usrName, uinfObject)		\
+	hr = netuserObject->NetUserGetLocalGroups##uiNo(NULL, usrName, &uinfObject); \
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr); \
+	ASSERT_FALSE(uinfObject == NULL);
+
 
 #define ASSERT_GET_USER_INFO_1(netuserObject, uinfObject)	\
 	hr = netuserObject->GetUserInfo1(						\

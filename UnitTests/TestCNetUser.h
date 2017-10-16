@@ -29,3 +29,4 @@ class TestCNetUser_SetInfo : public TestCNetUser {};
 class TestCNetUser_ChangePassword : public TestCNetUser {};
 class TestCNetUser_Enum : public TestCNetUser {};
 class TestCNetUser_GetGroups : public TestCNetUser {};
+class TestCNetUser_GetLocalGroups : public TestCNetUser {};
