@@ -165,6 +165,7 @@
     <ClCompile Include="TestCNetUser_GetInfo.cpp" />
     <ClCompile Include="TestCNetUser_GetLocalGroups.cpp" />
     <ClCompile Include="TestCNetUser_GetUserInfo.cpp" />
+    <ClCompile Include="TestCNetUser_ModalsGet.cpp" />
     <ClCompile Include="TestCNetUser_NetUserAdd.cpp" />
     <ClCompile Include="TestCNetUser_SetUserInfo.cpp" />
     <ClCompile Include="TUtils.cpp" />

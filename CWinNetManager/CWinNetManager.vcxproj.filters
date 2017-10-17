@@ -26,6 +26,9 @@
     <Filter Include="CLocalGroupUserInfo">
       <UniqueIdentifier>{1e4e88a5-2b69-46e8-ae5b-03931f64e4b8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CUserModalInfo">
+      <UniqueIdentifier>{7133b1bf-55d1-4360-aa86-7f97f98762d8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -189,6 +192,30 @@
     </ClCompile>
     <ClCompile Include="CLocalGroupUserInfo0.cpp">
       <Filter>CLocalGroupUserInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CuserModalInfo0.cpp">
+      <Filter>CUserModalInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CUserModalsInfo0.cpp">
+      <Filter>CUserModalInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CUserModalInfo1.cpp">
+      <Filter>CUserModalInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CUserModalsInfo1.cpp">
+      <Filter>CUserModalInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CUserModalInfo2.cpp">
+      <Filter>CUserModalInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CUserModalsInfo2.cpp">
+      <Filter>CUserModalInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CUserModalInfo3.cpp">
+      <Filter>CUserModalInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="CUserModalsInfo3.cpp">
+      <Filter>CUserModalInfo</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -363,6 +390,30 @@
     <ClInclude Include="CLocalGroupUserInfo0.h">
       <Filter>CLocalGroupUserInfo</Filter>
     </ClInclude>
+    <ClInclude Include="CuserModalInfo0.h">
+      <Filter>CUserModalInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CUserModalsInfo0.h">
+      <Filter>CUserModalInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CUserModalInfo1.h">
+      <Filter>CUserModalInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CUserModalsInfo1.h">
+      <Filter>CUserModalInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CUserModalInfo2.h">
+      <Filter>CUserModalInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CUserModalsInfo2.h">
+      <Filter>CUserModalInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CUserModalInfo3.h">
+      <Filter>CUserModalInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="CUserModalsInfo3.h">
+      <Filter>CUserModalInfo</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="CWinNetManager.rc">
@@ -524,6 +575,30 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="CLocalGroupUserInfo0.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CuserModalInfo0.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CUserModalsInfo0.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CUserModalInfo1.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CUserModalsInfo1.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CUserModalInfo2.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CUserModalsInfo2.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CUserModalInfo3.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CUserModalsInfo3.rgs">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

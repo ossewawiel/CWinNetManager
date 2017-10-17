@@ -97,7 +97,7 @@
 #define ASSERT_GT_GET_COUNT(enumUserObject, count) \
 	hr = enumUserObject->get_Count(& count); \
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr); \
-	ASSERT_TRUE(count > 0);
+	ASSERT_TRUE(count >= 0);
 
 #define ASSERT_GET_USER_INFO_0(netuserObject, uinfObject)		\
 	hr = netuserObject->GetUserInfo0(PAR_UINF_NAME, &uinfObject); \

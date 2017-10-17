@@ -1192,6 +1192,78 @@ interface ICNetUser : IDispatch{
 	[id(74)] HRESULT NetUserGetLocalGroups0([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICLocalGroupsUserInfo0** ppLocalGroupsUserInfo0);
 };
 [
+	object,
+	uuid(CA860640-7ED7-425F-A53F-8F7300D97E65),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICuserModalInfo0 : IDispatch{
+};
+[
+	object,
+	uuid(E4CCD4B0-B645-4C60-8DEC-C31220F96945),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserModalsInfo0 : IDispatch{
+};
+[
+	object,
+	uuid(CDB11C20-0C8A-4C56-9D42-B1629D2230A2),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserModalInfo1 : IDispatch{
+};
+[
+	object,
+	uuid(4EAF170E-7915-4D4E-836C-2BC1E8C9FD55),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserModalsInfo1 : IDispatch{
+};
+[
+	object,
+	uuid(AB6805C1-C837-4F90-B0AD-1FA3F7E43E0A),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserModalInfo2 : IDispatch{
+};
+[
+	object,
+	uuid(B5CF2A13-D25B-418F-A87A-C27BD478A4EF),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserModalsInfo2 : IDispatch{
+};
+[
+	object,
+	uuid(EE99095B-3031-4338-8287-5E8DEA07DE7E),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserModalInfo3 : IDispatch{
+};
+[
+	object,
+	uuid(DEC2DB0E-D14B-4E9D-A1C9-A4AC119D86CD),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserModalsInfo3 : IDispatch{
+};
+[
 	uuid(F53A3EDB-3D55-4E7B-8687-F0759A72FBCA),
 	version(1.0),
 ]
@@ -1540,6 +1612,62 @@ library CWinNetManagerLib
 	coclass CLocalGroupUserInfo0
 	{
 		[default] interface ICLocalGroupUserInfo0;
+	};
+	[
+		uuid(96935F8A-21DC-44AA-B93A-83FB155D1057)		
+	]
+	coclass CuserModalInfo0
+	{
+		[default] interface ICuserModalInfo0;
+	};
+	[
+		uuid(EAC02669-3DEC-48C0-9CBE-11141E97A1C9)		
+	]
+	coclass CUserModalsInfo0
+	{
+		[default] interface ICUserModalsInfo0;
+	};
+	[
+		uuid(D0376505-EAF4-4FB8-AF70-80FCF92AA500)		
+	]
+	coclass CUserModalInfo1
+	{
+		[default] interface ICUserModalInfo1;
+	};
+	[
+		uuid(EF488BB3-05E9-41B1-93C3-CEAEC19BA528)		
+	]
+	coclass CUserModalsInfo1
+	{
+		[default] interface ICUserModalsInfo1;
+	};
+	[
+		uuid(39CEC288-1467-4F62-9640-75038C819423)		
+	]
+	coclass CUserModalInfo2
+	{
+		[default] interface ICUserModalInfo2;
+	};
+	[
+		uuid(5BA1D11C-EF1E-4DD0-A6A7-B22C36E30235)		
+	]
+	coclass CUserModalsInfo2
+	{
+		[default] interface ICUserModalsInfo2;
+	};
+	[
+		uuid(E975B289-79D6-428B-A94E-EEF8B203079A)		
+	]
+	coclass CUserModalInfo3
+	{
+		[default] interface ICUserModalInfo3;
+	};
+	[
+		uuid(658A9F62-B4D3-4A97-99F0-3C1BA8A0457F)		
+	]
+	coclass CUserModalsInfo3
+	{
+		[default] interface ICUserModalsInfo3;
 	};
 };
 
