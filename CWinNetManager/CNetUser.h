@@ -362,6 +362,10 @@ public:
 	STDMETHOD(NetUserGetGroups0)(BSTR bsServerName, BSTR bsUserName, ICGroupsUserInfo0** ppGroupsUserInfo0);
 	STDMETHOD(NetUserGetGroups1)(BSTR bsServerName, BSTR bsUserName, ICGroupsUserInfo1** ppGroupsUserInfo1);
 	STDMETHOD(NetUserGetLocalGroups0)(BSTR bsServerName, BSTR bsUserName, ICLocalGroupsUserInfo0** ppLocalGroupsUserInfo0);
+	STDMETHOD(NetUserModalsGet0)(BSTR bsServerName, ICUserModalsInfo0** ppUserModalsInfo0);
+	STDMETHOD(NetUserModalsGet1)(BSTR bsServerName, ICUserModalsInfo1** ppUserModalsInfo1);
+	STDMETHOD(NetUserModalsGet2)(BSTR bsServerName, ICUserModalsInfo2** ppUserModalsInfo2);
+	STDMETHOD(NetUserModalsGet3)(BSTR bsServerName, ICUserModalsInfo3** ppUserModalsInfo3);
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(CNetUser), CCNetUser)

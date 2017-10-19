@@ -6,3 +6,7 @@
 
 // CCUserModalsInfo0
 
+STDMETHODIMP CCUserModalsInfo0::Add(ICUserModalsInfo0 * pUserModalsInfo0)
+{
+	return E_NOTIMPL;
+}

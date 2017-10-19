@@ -2,7 +2,7 @@ HKCR
 {
 	NoRemove CLSID
 	{
-		ForceRemove {96935F8A-21DC-44AA-B93A-83FB155D1057} = s 'CuserModalInfo0 Class'
+		ForceRemove {96935F8A-21DC-44AA-B93A-83FB155D1057} = s 'CUserModalInfo0 Class'
 		{
 			ForceRemove Programmable
 			InprocServer32 = s '%MODULE%'

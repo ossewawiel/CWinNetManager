@@ -932,3 +932,32 @@ STDMETHODIMP CCNetUser::NetUserGetLocalGroups0(BSTR bsServerName, BSTR bsUserNam
 		, eLocalGroupUserInfoType::lguiType0
 		, ppLocalGroupsUserInfo0);
 }
+
+
+STDMETHODIMP CCNetUser::NetUserModalsGet0(BSTR bsServerName, ICUserModalsInfo0** ppUserModalsInfo0)
+{
+	// TODO: Add your implementation code here
+
+	return S_OK;
+}
+
+STDMETHODIMP CCNetUser::NetUserModalsGet1(BSTR bsServerName, ICUserModalsInfo1** ppUserModalsInfo1)
+{
+	// TODO: Add your implementation code here
+
+	return S_OK;
+}
+
+STDMETHODIMP CCNetUser::NetUserModalsGet2(BSTR bsServerName, ICUserModalsInfo2** ppUserModalsInfo2)
+{
+	// TODO: Add your implementation code here
+
+	return S_OK;
+}
+
+STDMETHODIMP CCNetUser::NetUserModalsGet3(BSTR bsServerName, ICUserModalsInfo3** ppUserModalsInfo3)
+{
+	// TODO: Add your implementation code here
+
+	return S_OK;
+}

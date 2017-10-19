@@ -18,13 +18,13 @@ using namespace ATL;
 
 // CCuserModalInfo0
 
-class ATL_NO_VTABLE CCuserModalInfo0 :
+class ATL_NO_VTABLE CCUserModalInfo0 :
 	public CComObjectRootEx<CComMultiThreadModel>,
-	public CComCoClass<CCuserModalInfo0, &CLSID_CuserModalInfo0>,
-	public IDispatchImpl<ICuserModalInfo0, &IID_ICuserModalInfo0, &LIBID_CWinNetManagerLib, /*wMajor =*/ 1, /*wMinor =*/ 0>
+	public CComCoClass<CCUserModalInfo0, &CLSID_CUserModalInfo0>,
+	public IDispatchImpl<ICUserModalInfo0, &IID_ICUserModalInfo0, &LIBID_CWinNetManagerLib, /*wMajor =*/ 1, /*wMinor =*/ 0>
 {
 public:
-	CCuserModalInfo0()
+	CCUserModalInfo0()
 	{
 		m_pUnkMarshaler = NULL;
 	}
@@ -32,8 +32,8 @@ public:
 DECLARE_REGISTRY_RESOURCEID(IDR_CUSERMODALINFO0)
 
 
-BEGIN_COM_MAP(CCuserModalInfo0)
-	COM_INTERFACE_ENTRY(ICuserModalInfo0)
+BEGIN_COM_MAP(CCUserModalInfo0)
+	COM_INTERFACE_ENTRY(ICUserModalInfo0)
 	COM_INTERFACE_ENTRY(IDispatch)
 	COM_INTERFACE_ENTRY_AGGREGATE(IID_IMarshal, m_pUnkMarshaler.p)
 END_COM_MAP()
@@ -62,4 +62,4 @@ public:
 
 };
 
-OBJECT_ENTRY_AUTO(__uuidof(CuserModalInfo0), CCuserModalInfo0)
+OBJECT_ENTRY_AUTO(__uuidof(CUserModalInfo0), CCUserModalInfo0)

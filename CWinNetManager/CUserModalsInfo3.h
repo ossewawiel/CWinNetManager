@@ -6,7 +6,8 @@
 
 
 #include "CWinNetManager.h"
-
+#include "CuserModalInfo3.h"
+#include "CEnumUtils.h"
 
 
 #if defined(_WIN32_WCE) && !defined(_CE_DCOM) && !defined(_CE_ALLOW_SINGLE_THREADED_OBJECTS_IN_MTA)
@@ -14,14 +15,25 @@
 #endif
 
 using namespace ATL;
+using namespace std;
 
+typedef CComEnumOnSTL<IEnumVARIANT, &IID_IEnumVARIANT, VARIANT,
+	_CopyVariantFromAdaptItf<CCUserModalInfo3>,
+	vector< CAdapt< CComPtr<CCUserModalInfo3> > > >
+	CComEnumVariantOnVectorOfCUserModalsInfo3;
 
+typedef ICollectionOnSTLImpl<IDispatchImpl<ICUserModalsInfo3, &IID_ICUserModalsInfo3>,
+	vector< CAdapt< CComPtr<CCUserModalInfo3> > >,
+	CCUserModalInfo3*,
+	_CopyItfFromAdaptItf<CCUserModalInfo3>,
+	CComEnumVariantOnVectorOfCUserModalsInfo3>
+	CUserModalsInfo3CollImpl;
 // CCUserModalsInfo3
 
 class ATL_NO_VTABLE CCUserModalsInfo3 :
 	public CComObjectRootEx<CComMultiThreadModel>,
 	public CComCoClass<CCUserModalsInfo3, &CLSID_CUserModalsInfo3>,
-	public IDispatchImpl<ICUserModalsInfo3, &IID_ICUserModalsInfo3, &LIBID_CWinNetManagerLib, /*wMajor =*/ 1, /*wMinor =*/ 0>
+	public CUserModalsInfo3CollImpl
 {
 public:
 	CCUserModalsInfo3()
@@ -57,9 +69,9 @@ END_COM_MAP()
 	CComPtr<IUnknown> m_pUnkMarshaler;
 
 public:
-
+	STDMETHOD(Add)(ICUserModalsInfo3* pUserModalsInfo3);
 
 
 };
 
-OBJECT_ENTRY_AUTO(__uuidof(CUserModalsInfo3), CCUserModalsInfo3)
+OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserModalsInfo3), CCUserModalsInfo3)

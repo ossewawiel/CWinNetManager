@@ -115,6 +115,11 @@
 	hr = netuserObject->NetUserEnum##uiNo(NULL, &uinfObject); \
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr); \
 
+#define ASSERT_MODALS_GET(netuserObject, uiNo, uinfObject)		\
+	hr = netuserObject->NetUserModalsGet##uiNo(NULL, &uinfObject); \
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr); \
+	ASSERT_FALSE(uinfObject == NULL);
+
 #define ASSERT_USERS_GET_GROUPS(netuserObject, uiNo, usrName, uinfObject)		\
 	hr = netuserObject->NetUserGetGroups##uiNo(NULL, usrName, &uinfObject); \
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr); \

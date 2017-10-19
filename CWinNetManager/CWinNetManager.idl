@@ -943,6 +943,94 @@ interface ICLocalGroupsUserInfo0 : IDispatch {
 };
 [
 	object,
+	uuid(CA860640-7ED7-425F-A53F-8F7300D97E65),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserModalInfo0 : IDispatch {
+};
+[
+	object,
+	uuid(E4CCD4B0-B645-4C60-8DEC-C31220F96945),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserModalsInfo0 : IDispatch {
+	[id(DISPID_NEWENUM), propget] HRESULT _NewEnum([out, retval] IUnknown** ppUnk);
+	[id(DISPID_VALUE), propget] HRESULT Item([in] long n, [out, retval] ICUserModalInfo0** ppUserModalInfo0);
+	[propget] HRESULT Count([out, retval] long* pnCount);
+	[id(1)] HRESULT Add([in] ICUserModalInfo0* pUserModalInfo0);
+};
+[
+	object,
+	uuid(CDB11C20-0C8A-4C56-9D42-B1629D2230A2),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserModalInfo1 : IDispatch {
+};
+[
+	object,
+	uuid(4EAF170E-7915-4D4E-836C-2BC1E8C9FD55),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserModalsInfo1 : IDispatch {
+	[id(DISPID_NEWENUM), propget] HRESULT _NewEnum([out, retval] IUnknown** ppUnk);
+	[id(DISPID_VALUE), propget] HRESULT Item([in] long n, [out, retval] ICUserModalInfo1** ppUserModalInfo1);
+	[propget] HRESULT Count([out, retval] long* pnCount);
+	[id(1)] HRESULT Add([in] ICUserModalInfo1* pUserModalInfo1);
+};
+[
+	object,
+	uuid(AB6805C1-C837-4F90-B0AD-1FA3F7E43E0A),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserModalInfo2 : IDispatch {
+};
+[
+	object,
+	uuid(B5CF2A13-D25B-418F-A87A-C27BD478A4EF),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserModalsInfo2 : IDispatch {
+	[id(DISPID_NEWENUM), propget] HRESULT _NewEnum([out, retval] IUnknown** ppUnk);
+	[id(DISPID_VALUE), propget] HRESULT Item([in] long n, [out, retval] ICUserModalInfo2** ppUserModalInfo2);
+	[propget] HRESULT Count([out, retval] long* pnCount);
+	[id(1)] HRESULT Add([in] ICUserModalInfo2* pUserModalInfo2);
+};
+[
+	object,
+	uuid(EE99095B-3031-4338-8287-5E8DEA07DE7E),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserModalInfo3 : IDispatch {
+};
+[
+	object,
+	uuid(DEC2DB0E-D14B-4E9D-A1C9-A4AC119D86CD),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICUserModalsInfo3 : IDispatch {
+	[id(DISPID_NEWENUM), propget] HRESULT _NewEnum([out, retval] IUnknown** ppUnk);
+	[id(DISPID_VALUE), propget] HRESULT Item([in] long n, [out, retval] ICUserModalInfo3** ppUserModalInfo3);
+	[propget] HRESULT Count([out, retval] long* pnCount);
+	[id(1)] HRESULT Add([in] ICUserModalInfo3* pUserModalInfo3);
+};
+[
+	object,
 	uuid(6F0101CF-7948-4472-8542-044189587EFB),
 	dual,
 	nonextensible,
@@ -1190,78 +1278,10 @@ interface ICNetUser : IDispatch{
 	[id(72)] HRESULT NetUserGetGroups0([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICGroupsUserInfo0** ppGroupsUserInfo0);
 	[id(73)] HRESULT NetUserGetGroups1([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICGroupsUserInfo1** ppGroupsUserInfo1);
 	[id(74)] HRESULT NetUserGetLocalGroups0([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICLocalGroupsUserInfo0** ppLocalGroupsUserInfo0);
-};
-[
-	object,
-	uuid(CA860640-7ED7-425F-A53F-8F7300D97E65),
-	dual,
-	nonextensible,
-	pointer_default(unique)
-]
-interface ICuserModalInfo0 : IDispatch{
-};
-[
-	object,
-	uuid(E4CCD4B0-B645-4C60-8DEC-C31220F96945),
-	dual,
-	nonextensible,
-	pointer_default(unique)
-]
-interface ICUserModalsInfo0 : IDispatch{
-};
-[
-	object,
-	uuid(CDB11C20-0C8A-4C56-9D42-B1629D2230A2),
-	dual,
-	nonextensible,
-	pointer_default(unique)
-]
-interface ICUserModalInfo1 : IDispatch{
-};
-[
-	object,
-	uuid(4EAF170E-7915-4D4E-836C-2BC1E8C9FD55),
-	dual,
-	nonextensible,
-	pointer_default(unique)
-]
-interface ICUserModalsInfo1 : IDispatch{
-};
-[
-	object,
-	uuid(AB6805C1-C837-4F90-B0AD-1FA3F7E43E0A),
-	dual,
-	nonextensible,
-	pointer_default(unique)
-]
-interface ICUserModalInfo2 : IDispatch{
-};
-[
-	object,
-	uuid(B5CF2A13-D25B-418F-A87A-C27BD478A4EF),
-	dual,
-	nonextensible,
-	pointer_default(unique)
-]
-interface ICUserModalsInfo2 : IDispatch{
-};
-[
-	object,
-	uuid(EE99095B-3031-4338-8287-5E8DEA07DE7E),
-	dual,
-	nonextensible,
-	pointer_default(unique)
-]
-interface ICUserModalInfo3 : IDispatch{
-};
-[
-	object,
-	uuid(DEC2DB0E-D14B-4E9D-A1C9-A4AC119D86CD),
-	dual,
-	nonextensible,
-	pointer_default(unique)
-]
-interface ICUserModalsInfo3 : IDispatch{
+	[id(75)] HRESULT NetUserModalsGet0([in] BSTR bsServerName, [out, retval] ICUserModalsInfo0** ppUserModalsInfo0);
+	[id(76)] HRESULT NetUserModalsGet1([in] BSTR bsServerName, [out, retval] ICUserModalsInfo1** ppUserModalsInfo1);
+	[id(77)] HRESULT NetUserModalsGet2([in] BSTR bsServerName, [out, retval] ICUserModalsInfo2** ppUserModalsInfo2);
+	[id(78)] HRESULT NetUserModalsGet3([in] BSTR bsServerName, [out, retval] ICUserModalsInfo3** ppUserModalsInfo3);
 };
 [
 	uuid(F53A3EDB-3D55-4E7B-8687-F0759A72FBCA),
@@ -1616,9 +1636,9 @@ library CWinNetManagerLib
 	[
 		uuid(96935F8A-21DC-44AA-B93A-83FB155D1057)		
 	]
-	coclass CuserModalInfo0
+	coclass CUserModalInfo0
 	{
-		[default] interface ICuserModalInfo0;
+		[default] interface ICUserModalInfo0;
 	};
 	[
 		uuid(EAC02669-3DEC-48C0-9CBE-11141E97A1C9)		
