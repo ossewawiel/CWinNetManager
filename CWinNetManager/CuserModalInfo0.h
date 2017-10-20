@@ -60,6 +60,13 @@ public:
 
 
 
+	STDMETHOD(Initialise)(ULONG ulMinPwdLen, ULONG ulMaxPwdAge, ULONG ulMinPwdAge, ULONG ulForceLogoff, ULONG ulPwdHistLen);
+	STDMETHOD(get_MinPwdLen)(ULONG* pVal);
+	STDMETHOD(get_MaxPwdAge)(ULONG* pVal);
+	STDMETHOD(get_MinPwdAge)(ULONG* pVal);
+	STDMETHOD(get_ForceLogoff)(ULONG* pVal);
+	STDMETHOD(get_PwdHistLen)(ULONG* pVal);
+	STDMETHOD(put_PwdHistLen)(ULONG newVal);
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(CUserModalInfo0), CCUserModalInfo0)

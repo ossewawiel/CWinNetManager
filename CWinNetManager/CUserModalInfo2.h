@@ -60,6 +60,9 @@ public:
 
 
 
+	STDMETHOD(Initialise)(BSTR bsDomainName, BSTR bsDomainId);
+	STDMETHOD(get_DomainName)(BSTR* pVal);
+	STDMETHOD(get_DomainId)(BSTR* pVal);
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(CUserModalInfo2), CCUserModalInfo2)

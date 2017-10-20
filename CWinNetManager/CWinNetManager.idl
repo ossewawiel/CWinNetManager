@@ -949,6 +949,13 @@ interface ICLocalGroupsUserInfo0 : IDispatch {
 	pointer_default(unique)
 ]
 interface ICUserModalInfo0 : IDispatch {
+	[id(1)] HRESULT Initialise([in] ULONG ulMinPwdLen, [in] ULONG ulMaxPwdAge, [in] ULONG ulMinPwdAge, [in] ULONG ulForceLogoff, [in] ULONG ulPwdHistLen);
+	[propget, id(2)] HRESULT MinPwdLen([out, retval] ULONG* pVal);
+	[propget, id(3)] HRESULT MaxPwdAge([out, retval] ULONG* pVal);
+	[propget, id(4)] HRESULT MinPwdAge([out, retval] ULONG* pVal);
+	[propget, id(5)] HRESULT ForceLogoff([out, retval] ULONG* pVal);
+	[propget, id(6)] HRESULT PwdHistLen([out, retval] ULONG* pVal);
+	[propput, id(6)] HRESULT PwdHistLen([in] ULONG newVal);
 };
 [
 	object,
@@ -971,6 +978,9 @@ interface ICUserModalsInfo0 : IDispatch {
 	pointer_default(unique)
 ]
 interface ICUserModalInfo1 : IDispatch {
+	[id(1)] HRESULT Initialise([in] ULONG ulRole, [in] BSTR bsPrimary);
+	[propget, id(2)] HRESULT Role([out, retval] ULONG* pVal);
+	[propget, id(3)] HRESULT Primary([out, retval] BSTR* pVal);
 };
 [
 	object,
@@ -993,6 +1003,9 @@ interface ICUserModalsInfo1 : IDispatch {
 	pointer_default(unique)
 ]
 interface ICUserModalInfo2 : IDispatch {
+	[id(1)] HRESULT Initialise([in] BSTR bsDomainName, [in] BSTR bsDomainId);
+	[propget, id(2)] HRESULT DomainName([out, retval] BSTR* pVal);
+	[propget, id(3)] HRESULT DomainId([out, retval] BSTR* pVal);
 };
 [
 	object,
@@ -1015,6 +1028,10 @@ interface ICUserModalsInfo2 : IDispatch {
 	pointer_default(unique)
 ]
 interface ICUserModalInfo3 : IDispatch {
+	[id(1)] HRESULT Initialise([in] ULONG ulLockoutDuration, [in] ULONG ulLockoutObservationWindow, [in] ULONG ulLockoutThreshold);
+	[propget, id(2)] HRESULT LockoutDuration([out, retval] ULONG* pVal);
+	[propget, id(3)] HRESULT LockoutObservationWindow([out, retval] ULONG* pVal);
+	[propget, id(4)] HRESULT LockoutThreshold([out, retval] ULONG* pVal);
 };
 [
 	object,

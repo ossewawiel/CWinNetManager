@@ -6,3 +6,35 @@
 
 // CCUserModalInfo3
 
+
+
+STDMETHODIMP CCUserModalInfo3::Initialise(ULONG ulLockoutDuration, ULONG ulLockoutObservationWindow, ULONG ulLockoutThreshold)
+{
+	// TODO: Add your implementation code here
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CCUserModalInfo3::get_LockoutDuration(ULONG* pVal)
+{
+	// TODO: Add your implementation code here
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CCUserModalInfo3::get_LockoutObservationWindow(ULONG* pVal)
+{
+	// TODO: Add your implementation code here
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CCUserModalInfo3::get_LockoutThreshold(ULONG* pVal)
+{
+	// TODO: Add your implementation code here
+
+	return S_OK;
+}

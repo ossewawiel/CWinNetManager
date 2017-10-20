@@ -60,6 +60,9 @@ public:
 
 
 
+	STDMETHOD(Initialise)(ULONG ulRole, BSTR bsPrimary);
+	STDMETHOD(get_Role)(ULONG* pVal);
+	STDMETHOD(get_Primary)(BSTR* pVal);
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(CUserModalInfo1), CCUserModalInfo1)

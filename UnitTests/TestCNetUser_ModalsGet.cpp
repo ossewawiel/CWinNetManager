@@ -90,8 +90,8 @@ TEST_F(TestCNetUser_ModalsGet, when_calling_netusermodalsget3_then_return_usermo
 			CComPtr<ICUserModalInfo3> pUserModalInfo3;
 			ASSERT_GET_ITEM(pUserModalsInfo3, idx, pUserModalInfo3);
 
-			ASSERT_GT_PROP_GET_ULONG(pUserModalInfo0, get_LockoutDuration, 0);
-			ASSERT_GT_PROP_GET_ULONG(pUserModalInfo0, get_LockoutObservationWindow, 0);
-			ASSERT_GT_PROP_GET_ULONG(pUserModalInfo0, get_Threshold, 0);
+			ASSERT_GT_PROP_GET_ULONG(pUserModalInfo3, get_LockoutDuration, 0);
+			ASSERT_GT_PROP_GET_ULONG(pUserModalInfo3, get_LockoutObservationWindow, 0);
+			ASSERT_GT_PROP_GET_ULONG(pUserModalInfo3, get_LockoutThreshold, 0);
 		}
 }

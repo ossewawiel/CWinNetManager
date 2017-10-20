@@ -60,6 +60,10 @@ public:
 
 
 
+	STDMETHOD(Initialise)(ULONG ulLockoutDuration, ULONG ulLockoutObservationWindow, ULONG ulLockoutThreshold);
+	STDMETHOD(get_LockoutDuration)(ULONG* pVal);
+	STDMETHOD(get_LockoutObservationWindow)(ULONG* pVal);
+	STDMETHOD(get_LockoutThreshold)(ULONG* pVal);
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(CUserModalInfo3), CCUserModalInfo3)
