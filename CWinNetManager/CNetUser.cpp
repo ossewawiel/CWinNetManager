@@ -936,28 +936,20 @@ STDMETHODIMP CCNetUser::NetUserGetLocalGroups0(BSTR bsServerName, BSTR bsUserNam
 
 STDMETHODIMP CCNetUser::NetUserModalsGet0(BSTR bsServerName, ICUserModalsInfo0** ppUserModalsInfo0)
 {
-	// TODO: Add your implementation code here
-
-	return S_OK;
+	return NetUserModalsGetFrom<ICUserModalsInfo0, CCUserModalsInfo0, LPUSER_MODALS_INFO_0>(bsServerName, eUserModalsInfoType::umiType0, ppUserModalsInfo0);
 }
 
 STDMETHODIMP CCNetUser::NetUserModalsGet1(BSTR bsServerName, ICUserModalsInfo1** ppUserModalsInfo1)
 {
-	// TODO: Add your implementation code here
-
-	return S_OK;
+	return NetUserModalsGetFrom<ICUserModalsInfo1, CCUserModalsInfo1, LPUSER_MODALS_INFO_1>(bsServerName, eUserModalsInfoType::umiType1, ppUserModalsInfo1);
 }
 
 STDMETHODIMP CCNetUser::NetUserModalsGet2(BSTR bsServerName, ICUserModalsInfo2** ppUserModalsInfo2)
 {
-	// TODO: Add your implementation code here
-
-	return S_OK;
+	return NetUserModalsGetFrom<ICUserModalsInfo2, CCUserModalsInfo2, LPUSER_MODALS_INFO_2>(bsServerName, eUserModalsInfoType::umiType2, ppUserModalsInfo2);
 }
 
 STDMETHODIMP CCNetUser::NetUserModalsGet3(BSTR bsServerName, ICUserModalsInfo3** ppUserModalsInfo3)
 {
-	// TODO: Add your implementation code here
-
-	return S_OK;
+	return NetUserModalsGetFrom<ICUserModalsInfo3, CCUserModalsInfo3, LPUSER_MODALS_INFO_3>(bsServerName, eUserModalsInfoType::umiType3, ppUserModalsInfo3);
 }

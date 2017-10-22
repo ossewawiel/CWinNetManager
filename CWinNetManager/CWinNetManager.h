@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Fri Oct 20 07:50:11 2017
+/* at Sun Oct 22 17:49:22 2017
  */
 /* Compiler settings for CWinNetManager.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 
@@ -381,25 +381,11 @@ typedef interface ICLocalGroupsUserInfo0 ICLocalGroupsUserInfo0;
 #endif 	/* __ICLocalGroupsUserInfo0_FWD_DEFINED__ */
 
 
-#ifndef __ICUserModalInfo0_FWD_DEFINED__
-#define __ICUserModalInfo0_FWD_DEFINED__
-typedef interface ICUserModalInfo0 ICUserModalInfo0;
-
-#endif 	/* __ICUserModalInfo0_FWD_DEFINED__ */
-
-
 #ifndef __ICUserModalsInfo0_FWD_DEFINED__
 #define __ICUserModalsInfo0_FWD_DEFINED__
 typedef interface ICUserModalsInfo0 ICUserModalsInfo0;
 
 #endif 	/* __ICUserModalsInfo0_FWD_DEFINED__ */
-
-
-#ifndef __ICUserModalInfo1_FWD_DEFINED__
-#define __ICUserModalInfo1_FWD_DEFINED__
-typedef interface ICUserModalInfo1 ICUserModalInfo1;
-
-#endif 	/* __ICUserModalInfo1_FWD_DEFINED__ */
 
 
 #ifndef __ICUserModalsInfo1_FWD_DEFINED__
@@ -409,25 +395,11 @@ typedef interface ICUserModalsInfo1 ICUserModalsInfo1;
 #endif 	/* __ICUserModalsInfo1_FWD_DEFINED__ */
 
 
-#ifndef __ICUserModalInfo2_FWD_DEFINED__
-#define __ICUserModalInfo2_FWD_DEFINED__
-typedef interface ICUserModalInfo2 ICUserModalInfo2;
-
-#endif 	/* __ICUserModalInfo2_FWD_DEFINED__ */
-
-
 #ifndef __ICUserModalsInfo2_FWD_DEFINED__
 #define __ICUserModalsInfo2_FWD_DEFINED__
 typedef interface ICUserModalsInfo2 ICUserModalsInfo2;
 
 #endif 	/* __ICUserModalsInfo2_FWD_DEFINED__ */
-
-
-#ifndef __ICUserModalInfo3_FWD_DEFINED__
-#define __ICUserModalInfo3_FWD_DEFINED__
-typedef interface ICUserModalInfo3 ICUserModalInfo3;
-
-#endif 	/* __ICUserModalInfo3_FWD_DEFINED__ */
 
 
 #ifndef __ICUserModalsInfo3_FWD_DEFINED__
@@ -1032,18 +1004,6 @@ typedef struct CLocalGroupUserInfo0 CLocalGroupUserInfo0;
 #endif 	/* __CLocalGroupUserInfo0_FWD_DEFINED__ */
 
 
-#ifndef __CUserModalInfo0_FWD_DEFINED__
-#define __CUserModalInfo0_FWD_DEFINED__
-
-#ifdef __cplusplus
-typedef class CUserModalInfo0 CUserModalInfo0;
-#else
-typedef struct CUserModalInfo0 CUserModalInfo0;
-#endif /* __cplusplus */
-
-#endif 	/* __CUserModalInfo0_FWD_DEFINED__ */
-
-
 #ifndef __CUserModalsInfo0_FWD_DEFINED__
 #define __CUserModalsInfo0_FWD_DEFINED__
 
@@ -1054,18 +1014,6 @@ typedef struct CUserModalsInfo0 CUserModalsInfo0;
 #endif /* __cplusplus */
 
 #endif 	/* __CUserModalsInfo0_FWD_DEFINED__ */
-
-
-#ifndef __CUserModalInfo1_FWD_DEFINED__
-#define __CUserModalInfo1_FWD_DEFINED__
-
-#ifdef __cplusplus
-typedef class CUserModalInfo1 CUserModalInfo1;
-#else
-typedef struct CUserModalInfo1 CUserModalInfo1;
-#endif /* __cplusplus */
-
-#endif 	/* __CUserModalInfo1_FWD_DEFINED__ */
 
 
 #ifndef __CUserModalsInfo1_FWD_DEFINED__
@@ -1080,18 +1028,6 @@ typedef struct CUserModalsInfo1 CUserModalsInfo1;
 #endif 	/* __CUserModalsInfo1_FWD_DEFINED__ */
 
 
-#ifndef __CUserModalInfo2_FWD_DEFINED__
-#define __CUserModalInfo2_FWD_DEFINED__
-
-#ifdef __cplusplus
-typedef class CUserModalInfo2 CUserModalInfo2;
-#else
-typedef struct CUserModalInfo2 CUserModalInfo2;
-#endif /* __cplusplus */
-
-#endif 	/* __CUserModalInfo2_FWD_DEFINED__ */
-
-
 #ifndef __CUserModalsInfo2_FWD_DEFINED__
 #define __CUserModalsInfo2_FWD_DEFINED__
 
@@ -1102,18 +1038,6 @@ typedef struct CUserModalsInfo2 CUserModalsInfo2;
 #endif /* __cplusplus */
 
 #endif 	/* __CUserModalsInfo2_FWD_DEFINED__ */
-
-
-#ifndef __CUserModalInfo3_FWD_DEFINED__
-#define __CUserModalInfo3_FWD_DEFINED__
-
-#ifdef __cplusplus
-typedef class CUserModalInfo3 CUserModalInfo3;
-#else
-typedef struct CUserModalInfo3 CUserModalInfo3;
-#endif /* __cplusplus */
-
-#endif 	/* __CUserModalInfo3_FWD_DEFINED__ */
 
 
 #ifndef __CUserModalsInfo3_FWD_DEFINED__
@@ -1187,6 +1111,15 @@ enum eLocalGroupUserInfoType
     {
         lguiType0	= 0
     } 	eLocalGroupUserInfoType;
+
+typedef /* [v1_enum][public] */ 
+enum eUserModalsInfoType
+    {
+        umiType0	= 0,
+        umiType1	= 0x1,
+        umiType2	= 0x2,
+        umiType3	= 0x3
+    } 	eUserModalsInfoType;
 
 
 
@@ -10275,19 +10208,19 @@ EXTERN_C const IID IID_ICLocalGroupsUserInfo0;
 #endif 	/* __ICLocalGroupsUserInfo0_INTERFACE_DEFINED__ */
 
 
-#ifndef __ICUserModalInfo0_INTERFACE_DEFINED__
-#define __ICUserModalInfo0_INTERFACE_DEFINED__
+#ifndef __ICUserModalsInfo0_INTERFACE_DEFINED__
+#define __ICUserModalsInfo0_INTERFACE_DEFINED__
 
-/* interface ICUserModalInfo0 */
+/* interface ICUserModalsInfo0 */
 /* [unique][nonextensible][dual][uuid][object] */ 
 
 
-EXTERN_C const IID IID_ICUserModalInfo0;
+EXTERN_C const IID IID_ICUserModalsInfo0;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("CA860640-7ED7-425F-A53F-8F7300D97E65")
-    ICUserModalInfo0 : public IDispatch
+    MIDL_INTERFACE("E4CCD4B0-B645-4C60-8DEC-C31220F96945")
+    ICUserModalsInfo0 : public IDispatch
     {
     public:
         virtual /* [id] */ HRESULT STDMETHODCALLTYPE Initialise( 
@@ -10311,195 +10244,6 @@ EXTERN_C const IID IID_ICUserModalInfo0;
         
         virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_PwdHistLen( 
             /* [retval][out] */ ULONG *pVal) = 0;
-        
-        virtual /* [id][propput] */ HRESULT STDMETHODCALLTYPE put_PwdHistLen( 
-            /* [in] */ ULONG newVal) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
-
-    typedef struct ICUserModalInfo0Vtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            ICUserModalInfo0 * This,
-            /* [in] */ REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            ICUserModalInfo0 * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            ICUserModalInfo0 * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
-            ICUserModalInfo0 * This,
-            /* [out] */ UINT *pctinfo);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
-            ICUserModalInfo0 * This,
-            /* [in] */ UINT iTInfo,
-            /* [in] */ LCID lcid,
-            /* [out] */ ITypeInfo **ppTInfo);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
-            ICUserModalInfo0 * This,
-            /* [in] */ REFIID riid,
-            /* [size_is][in] */ LPOLESTR *rgszNames,
-            /* [range][in] */ UINT cNames,
-            /* [in] */ LCID lcid,
-            /* [size_is][out] */ DISPID *rgDispId);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
-            ICUserModalInfo0 * This,
-            /* [annotation][in] */ 
-            _In_  DISPID dispIdMember,
-            /* [annotation][in] */ 
-            _In_  REFIID riid,
-            /* [annotation][in] */ 
-            _In_  LCID lcid,
-            /* [annotation][in] */ 
-            _In_  WORD wFlags,
-            /* [annotation][out][in] */ 
-            _In_  DISPPARAMS *pDispParams,
-            /* [annotation][out] */ 
-            _Out_opt_  VARIANT *pVarResult,
-            /* [annotation][out] */ 
-            _Out_opt_  EXCEPINFO *pExcepInfo,
-            /* [annotation][out] */ 
-            _Out_opt_  UINT *puArgErr);
-        
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Initialise )( 
-            ICUserModalInfo0 * This,
-            /* [in] */ ULONG ulMinPwdLen,
-            /* [in] */ ULONG ulMaxPwdAge,
-            /* [in] */ ULONG ulMinPwdAge,
-            /* [in] */ ULONG ulForceLogoff,
-            /* [in] */ ULONG ulPwdHistLen);
-        
-        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_MinPwdLen )( 
-            ICUserModalInfo0 * This,
-            /* [retval][out] */ ULONG *pVal);
-        
-        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_MaxPwdAge )( 
-            ICUserModalInfo0 * This,
-            /* [retval][out] */ ULONG *pVal);
-        
-        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_MinPwdAge )( 
-            ICUserModalInfo0 * This,
-            /* [retval][out] */ ULONG *pVal);
-        
-        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_ForceLogoff )( 
-            ICUserModalInfo0 * This,
-            /* [retval][out] */ ULONG *pVal);
-        
-        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_PwdHistLen )( 
-            ICUserModalInfo0 * This,
-            /* [retval][out] */ ULONG *pVal);
-        
-        /* [id][propput] */ HRESULT ( STDMETHODCALLTYPE *put_PwdHistLen )( 
-            ICUserModalInfo0 * This,
-            /* [in] */ ULONG newVal);
-        
-        END_INTERFACE
-    } ICUserModalInfo0Vtbl;
-
-    interface ICUserModalInfo0
-    {
-        CONST_VTBL struct ICUserModalInfo0Vtbl *lpVtbl;
-    };
-
-    
-
-#ifdef COBJMACROS
-
-
-#define ICUserModalInfo0_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define ICUserModalInfo0_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define ICUserModalInfo0_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define ICUserModalInfo0_GetTypeInfoCount(This,pctinfo)	\
-    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
-
-#define ICUserModalInfo0_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
-
-#define ICUserModalInfo0_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
-
-#define ICUserModalInfo0_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
-
-
-#define ICUserModalInfo0_Initialise(This,ulMinPwdLen,ulMaxPwdAge,ulMinPwdAge,ulForceLogoff,ulPwdHistLen)	\
-    ( (This)->lpVtbl -> Initialise(This,ulMinPwdLen,ulMaxPwdAge,ulMinPwdAge,ulForceLogoff,ulPwdHistLen) ) 
-
-#define ICUserModalInfo0_get_MinPwdLen(This,pVal)	\
-    ( (This)->lpVtbl -> get_MinPwdLen(This,pVal) ) 
-
-#define ICUserModalInfo0_get_MaxPwdAge(This,pVal)	\
-    ( (This)->lpVtbl -> get_MaxPwdAge(This,pVal) ) 
-
-#define ICUserModalInfo0_get_MinPwdAge(This,pVal)	\
-    ( (This)->lpVtbl -> get_MinPwdAge(This,pVal) ) 
-
-#define ICUserModalInfo0_get_ForceLogoff(This,pVal)	\
-    ( (This)->lpVtbl -> get_ForceLogoff(This,pVal) ) 
-
-#define ICUserModalInfo0_get_PwdHistLen(This,pVal)	\
-    ( (This)->lpVtbl -> get_PwdHistLen(This,pVal) ) 
-
-#define ICUserModalInfo0_put_PwdHistLen(This,newVal)	\
-    ( (This)->lpVtbl -> put_PwdHistLen(This,newVal) ) 
-
-#endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* __ICUserModalInfo0_INTERFACE_DEFINED__ */
-
-
-#ifndef __ICUserModalsInfo0_INTERFACE_DEFINED__
-#define __ICUserModalsInfo0_INTERFACE_DEFINED__
-
-/* interface ICUserModalsInfo0 */
-/* [unique][nonextensible][dual][uuid][object] */ 
-
-
-EXTERN_C const IID IID_ICUserModalsInfo0;
-
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("E4CCD4B0-B645-4C60-8DEC-C31220F96945")
-    ICUserModalsInfo0 : public IDispatch
-    {
-    public:
-        virtual /* [propget][id] */ HRESULT STDMETHODCALLTYPE get__NewEnum( 
-            /* [retval][out] */ IUnknown **ppUnk) = 0;
-        
-        virtual /* [propget][id] */ HRESULT STDMETHODCALLTYPE get_Item( 
-            /* [in] */ long n,
-            /* [retval][out] */ ICUserModalInfo0 **ppUserModalInfo0) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Count( 
-            /* [retval][out] */ long *pnCount) = 0;
-        
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Add( 
-            /* [in] */ ICUserModalInfo0 *pUserModalInfo0) = 0;
         
     };
     
@@ -10559,22 +10303,33 @@ EXTERN_C const IID IID_ICUserModalsInfo0;
             /* [annotation][out] */ 
             _Out_opt_  UINT *puArgErr);
         
-        /* [propget][id] */ HRESULT ( STDMETHODCALLTYPE *get__NewEnum )( 
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Initialise )( 
             ICUserModalsInfo0 * This,
-            /* [retval][out] */ IUnknown **ppUnk);
+            /* [in] */ ULONG ulMinPwdLen,
+            /* [in] */ ULONG ulMaxPwdAge,
+            /* [in] */ ULONG ulMinPwdAge,
+            /* [in] */ ULONG ulForceLogoff,
+            /* [in] */ ULONG ulPwdHistLen);
         
-        /* [propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_Item )( 
+        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_MinPwdLen )( 
             ICUserModalsInfo0 * This,
-            /* [in] */ long n,
-            /* [retval][out] */ ICUserModalInfo0 **ppUserModalInfo0);
+            /* [retval][out] */ ULONG *pVal);
         
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Count )( 
+        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_MaxPwdAge )( 
             ICUserModalsInfo0 * This,
-            /* [retval][out] */ long *pnCount);
+            /* [retval][out] */ ULONG *pVal);
         
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Add )( 
+        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_MinPwdAge )( 
             ICUserModalsInfo0 * This,
-            /* [in] */ ICUserModalInfo0 *pUserModalInfo0);
+            /* [retval][out] */ ULONG *pVal);
+        
+        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_ForceLogoff )( 
+            ICUserModalsInfo0 * This,
+            /* [retval][out] */ ULONG *pVal);
+        
+        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_PwdHistLen )( 
+            ICUserModalsInfo0 * This,
+            /* [retval][out] */ ULONG *pVal);
         
         END_INTERFACE
     } ICUserModalsInfo0Vtbl;
@@ -10612,17 +10367,23 @@ EXTERN_C const IID IID_ICUserModalsInfo0;
     ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
-#define ICUserModalsInfo0_get__NewEnum(This,ppUnk)	\
-    ( (This)->lpVtbl -> get__NewEnum(This,ppUnk) ) 
+#define ICUserModalsInfo0_Initialise(This,ulMinPwdLen,ulMaxPwdAge,ulMinPwdAge,ulForceLogoff,ulPwdHistLen)	\
+    ( (This)->lpVtbl -> Initialise(This,ulMinPwdLen,ulMaxPwdAge,ulMinPwdAge,ulForceLogoff,ulPwdHistLen) ) 
 
-#define ICUserModalsInfo0_get_Item(This,n,ppUserModalInfo0)	\
-    ( (This)->lpVtbl -> get_Item(This,n,ppUserModalInfo0) ) 
+#define ICUserModalsInfo0_get_MinPwdLen(This,pVal)	\
+    ( (This)->lpVtbl -> get_MinPwdLen(This,pVal) ) 
 
-#define ICUserModalsInfo0_get_Count(This,pnCount)	\
-    ( (This)->lpVtbl -> get_Count(This,pnCount) ) 
+#define ICUserModalsInfo0_get_MaxPwdAge(This,pVal)	\
+    ( (This)->lpVtbl -> get_MaxPwdAge(This,pVal) ) 
 
-#define ICUserModalsInfo0_Add(This,pUserModalInfo0)	\
-    ( (This)->lpVtbl -> Add(This,pUserModalInfo0) ) 
+#define ICUserModalsInfo0_get_MinPwdAge(This,pVal)	\
+    ( (This)->lpVtbl -> get_MinPwdAge(This,pVal) ) 
+
+#define ICUserModalsInfo0_get_ForceLogoff(This,pVal)	\
+    ( (This)->lpVtbl -> get_ForceLogoff(This,pVal) ) 
+
+#define ICUserModalsInfo0_get_PwdHistLen(This,pVal)	\
+    ( (This)->lpVtbl -> get_PwdHistLen(This,pVal) ) 
 
 #endif /* COBJMACROS */
 
@@ -10633,158 +10394,6 @@ EXTERN_C const IID IID_ICUserModalsInfo0;
 
 
 #endif 	/* __ICUserModalsInfo0_INTERFACE_DEFINED__ */
-
-
-#ifndef __ICUserModalInfo1_INTERFACE_DEFINED__
-#define __ICUserModalInfo1_INTERFACE_DEFINED__
-
-/* interface ICUserModalInfo1 */
-/* [unique][nonextensible][dual][uuid][object] */ 
-
-
-EXTERN_C const IID IID_ICUserModalInfo1;
-
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("CDB11C20-0C8A-4C56-9D42-B1629D2230A2")
-    ICUserModalInfo1 : public IDispatch
-    {
-    public:
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Initialise( 
-            /* [in] */ ULONG ulRole,
-            /* [in] */ BSTR bsPrimary) = 0;
-        
-        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_Role( 
-            /* [retval][out] */ ULONG *pVal) = 0;
-        
-        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_Primary( 
-            /* [retval][out] */ BSTR *pVal) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
-
-    typedef struct ICUserModalInfo1Vtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            ICUserModalInfo1 * This,
-            /* [in] */ REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            ICUserModalInfo1 * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            ICUserModalInfo1 * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
-            ICUserModalInfo1 * This,
-            /* [out] */ UINT *pctinfo);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
-            ICUserModalInfo1 * This,
-            /* [in] */ UINT iTInfo,
-            /* [in] */ LCID lcid,
-            /* [out] */ ITypeInfo **ppTInfo);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
-            ICUserModalInfo1 * This,
-            /* [in] */ REFIID riid,
-            /* [size_is][in] */ LPOLESTR *rgszNames,
-            /* [range][in] */ UINT cNames,
-            /* [in] */ LCID lcid,
-            /* [size_is][out] */ DISPID *rgDispId);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
-            ICUserModalInfo1 * This,
-            /* [annotation][in] */ 
-            _In_  DISPID dispIdMember,
-            /* [annotation][in] */ 
-            _In_  REFIID riid,
-            /* [annotation][in] */ 
-            _In_  LCID lcid,
-            /* [annotation][in] */ 
-            _In_  WORD wFlags,
-            /* [annotation][out][in] */ 
-            _In_  DISPPARAMS *pDispParams,
-            /* [annotation][out] */ 
-            _Out_opt_  VARIANT *pVarResult,
-            /* [annotation][out] */ 
-            _Out_opt_  EXCEPINFO *pExcepInfo,
-            /* [annotation][out] */ 
-            _Out_opt_  UINT *puArgErr);
-        
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Initialise )( 
-            ICUserModalInfo1 * This,
-            /* [in] */ ULONG ulRole,
-            /* [in] */ BSTR bsPrimary);
-        
-        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_Role )( 
-            ICUserModalInfo1 * This,
-            /* [retval][out] */ ULONG *pVal);
-        
-        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_Primary )( 
-            ICUserModalInfo1 * This,
-            /* [retval][out] */ BSTR *pVal);
-        
-        END_INTERFACE
-    } ICUserModalInfo1Vtbl;
-
-    interface ICUserModalInfo1
-    {
-        CONST_VTBL struct ICUserModalInfo1Vtbl *lpVtbl;
-    };
-
-    
-
-#ifdef COBJMACROS
-
-
-#define ICUserModalInfo1_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define ICUserModalInfo1_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define ICUserModalInfo1_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define ICUserModalInfo1_GetTypeInfoCount(This,pctinfo)	\
-    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
-
-#define ICUserModalInfo1_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
-
-#define ICUserModalInfo1_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
-
-#define ICUserModalInfo1_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
-
-
-#define ICUserModalInfo1_Initialise(This,ulRole,bsPrimary)	\
-    ( (This)->lpVtbl -> Initialise(This,ulRole,bsPrimary) ) 
-
-#define ICUserModalInfo1_get_Role(This,pVal)	\
-    ( (This)->lpVtbl -> get_Role(This,pVal) ) 
-
-#define ICUserModalInfo1_get_Primary(This,pVal)	\
-    ( (This)->lpVtbl -> get_Primary(This,pVal) ) 
-
-#endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* __ICUserModalInfo1_INTERFACE_DEFINED__ */
 
 
 #ifndef __ICUserModalsInfo1_INTERFACE_DEFINED__
@@ -10802,18 +10411,15 @@ EXTERN_C const IID IID_ICUserModalsInfo1;
     ICUserModalsInfo1 : public IDispatch
     {
     public:
-        virtual /* [propget][id] */ HRESULT STDMETHODCALLTYPE get__NewEnum( 
-            /* [retval][out] */ IUnknown **ppUnk) = 0;
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Initialise( 
+            /* [in] */ ULONG ulRole,
+            /* [in] */ BSTR bsPrimary) = 0;
         
-        virtual /* [propget][id] */ HRESULT STDMETHODCALLTYPE get_Item( 
-            /* [in] */ long n,
-            /* [retval][out] */ ICUserModalInfo1 **ppUserModalInfo1) = 0;
+        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_Role( 
+            /* [retval][out] */ ULONG *pVal) = 0;
         
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Count( 
-            /* [retval][out] */ long *pnCount) = 0;
-        
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Add( 
-            /* [in] */ ICUserModalInfo1 *pUserModalInfo1) = 0;
+        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_Primary( 
+            /* [retval][out] */ BSTR *pVal) = 0;
         
     };
     
@@ -10873,22 +10479,18 @@ EXTERN_C const IID IID_ICUserModalsInfo1;
             /* [annotation][out] */ 
             _Out_opt_  UINT *puArgErr);
         
-        /* [propget][id] */ HRESULT ( STDMETHODCALLTYPE *get__NewEnum )( 
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Initialise )( 
             ICUserModalsInfo1 * This,
-            /* [retval][out] */ IUnknown **ppUnk);
+            /* [in] */ ULONG ulRole,
+            /* [in] */ BSTR bsPrimary);
         
-        /* [propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_Item )( 
+        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_Role )( 
             ICUserModalsInfo1 * This,
-            /* [in] */ long n,
-            /* [retval][out] */ ICUserModalInfo1 **ppUserModalInfo1);
+            /* [retval][out] */ ULONG *pVal);
         
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Count )( 
+        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_Primary )( 
             ICUserModalsInfo1 * This,
-            /* [retval][out] */ long *pnCount);
-        
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Add )( 
-            ICUserModalsInfo1 * This,
-            /* [in] */ ICUserModalInfo1 *pUserModalInfo1);
+            /* [retval][out] */ BSTR *pVal);
         
         END_INTERFACE
     } ICUserModalsInfo1Vtbl;
@@ -10926,17 +10528,14 @@ EXTERN_C const IID IID_ICUserModalsInfo1;
     ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
-#define ICUserModalsInfo1_get__NewEnum(This,ppUnk)	\
-    ( (This)->lpVtbl -> get__NewEnum(This,ppUnk) ) 
+#define ICUserModalsInfo1_Initialise(This,ulRole,bsPrimary)	\
+    ( (This)->lpVtbl -> Initialise(This,ulRole,bsPrimary) ) 
 
-#define ICUserModalsInfo1_get_Item(This,n,ppUserModalInfo1)	\
-    ( (This)->lpVtbl -> get_Item(This,n,ppUserModalInfo1) ) 
+#define ICUserModalsInfo1_get_Role(This,pVal)	\
+    ( (This)->lpVtbl -> get_Role(This,pVal) ) 
 
-#define ICUserModalsInfo1_get_Count(This,pnCount)	\
-    ( (This)->lpVtbl -> get_Count(This,pnCount) ) 
-
-#define ICUserModalsInfo1_Add(This,pUserModalInfo1)	\
-    ( (This)->lpVtbl -> Add(This,pUserModalInfo1) ) 
+#define ICUserModalsInfo1_get_Primary(This,pVal)	\
+    ( (This)->lpVtbl -> get_Primary(This,pVal) ) 
 
 #endif /* COBJMACROS */
 
@@ -10947,158 +10546,6 @@ EXTERN_C const IID IID_ICUserModalsInfo1;
 
 
 #endif 	/* __ICUserModalsInfo1_INTERFACE_DEFINED__ */
-
-
-#ifndef __ICUserModalInfo2_INTERFACE_DEFINED__
-#define __ICUserModalInfo2_INTERFACE_DEFINED__
-
-/* interface ICUserModalInfo2 */
-/* [unique][nonextensible][dual][uuid][object] */ 
-
-
-EXTERN_C const IID IID_ICUserModalInfo2;
-
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("AB6805C1-C837-4F90-B0AD-1FA3F7E43E0A")
-    ICUserModalInfo2 : public IDispatch
-    {
-    public:
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Initialise( 
-            /* [in] */ BSTR bsDomainName,
-            /* [in] */ BSTR bsDomainId) = 0;
-        
-        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_DomainName( 
-            /* [retval][out] */ BSTR *pVal) = 0;
-        
-        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_DomainId( 
-            /* [retval][out] */ BSTR *pVal) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
-
-    typedef struct ICUserModalInfo2Vtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            ICUserModalInfo2 * This,
-            /* [in] */ REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            ICUserModalInfo2 * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            ICUserModalInfo2 * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
-            ICUserModalInfo2 * This,
-            /* [out] */ UINT *pctinfo);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
-            ICUserModalInfo2 * This,
-            /* [in] */ UINT iTInfo,
-            /* [in] */ LCID lcid,
-            /* [out] */ ITypeInfo **ppTInfo);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
-            ICUserModalInfo2 * This,
-            /* [in] */ REFIID riid,
-            /* [size_is][in] */ LPOLESTR *rgszNames,
-            /* [range][in] */ UINT cNames,
-            /* [in] */ LCID lcid,
-            /* [size_is][out] */ DISPID *rgDispId);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
-            ICUserModalInfo2 * This,
-            /* [annotation][in] */ 
-            _In_  DISPID dispIdMember,
-            /* [annotation][in] */ 
-            _In_  REFIID riid,
-            /* [annotation][in] */ 
-            _In_  LCID lcid,
-            /* [annotation][in] */ 
-            _In_  WORD wFlags,
-            /* [annotation][out][in] */ 
-            _In_  DISPPARAMS *pDispParams,
-            /* [annotation][out] */ 
-            _Out_opt_  VARIANT *pVarResult,
-            /* [annotation][out] */ 
-            _Out_opt_  EXCEPINFO *pExcepInfo,
-            /* [annotation][out] */ 
-            _Out_opt_  UINT *puArgErr);
-        
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Initialise )( 
-            ICUserModalInfo2 * This,
-            /* [in] */ BSTR bsDomainName,
-            /* [in] */ BSTR bsDomainId);
-        
-        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_DomainName )( 
-            ICUserModalInfo2 * This,
-            /* [retval][out] */ BSTR *pVal);
-        
-        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_DomainId )( 
-            ICUserModalInfo2 * This,
-            /* [retval][out] */ BSTR *pVal);
-        
-        END_INTERFACE
-    } ICUserModalInfo2Vtbl;
-
-    interface ICUserModalInfo2
-    {
-        CONST_VTBL struct ICUserModalInfo2Vtbl *lpVtbl;
-    };
-
-    
-
-#ifdef COBJMACROS
-
-
-#define ICUserModalInfo2_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define ICUserModalInfo2_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define ICUserModalInfo2_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define ICUserModalInfo2_GetTypeInfoCount(This,pctinfo)	\
-    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
-
-#define ICUserModalInfo2_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
-
-#define ICUserModalInfo2_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
-
-#define ICUserModalInfo2_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
-
-
-#define ICUserModalInfo2_Initialise(This,bsDomainName,bsDomainId)	\
-    ( (This)->lpVtbl -> Initialise(This,bsDomainName,bsDomainId) ) 
-
-#define ICUserModalInfo2_get_DomainName(This,pVal)	\
-    ( (This)->lpVtbl -> get_DomainName(This,pVal) ) 
-
-#define ICUserModalInfo2_get_DomainId(This,pVal)	\
-    ( (This)->lpVtbl -> get_DomainId(This,pVal) ) 
-
-#endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* __ICUserModalInfo2_INTERFACE_DEFINED__ */
 
 
 #ifndef __ICUserModalsInfo2_INTERFACE_DEFINED__
@@ -11116,18 +10563,15 @@ EXTERN_C const IID IID_ICUserModalsInfo2;
     ICUserModalsInfo2 : public IDispatch
     {
     public:
-        virtual /* [propget][id] */ HRESULT STDMETHODCALLTYPE get__NewEnum( 
-            /* [retval][out] */ IUnknown **ppUnk) = 0;
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Initialise( 
+            /* [in] */ BSTR bsDomainName,
+            /* [in] */ BSTR bsDomainId) = 0;
         
-        virtual /* [propget][id] */ HRESULT STDMETHODCALLTYPE get_Item( 
-            /* [in] */ long n,
-            /* [retval][out] */ ICUserModalInfo2 **ppUserModalInfo2) = 0;
+        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_DomainName( 
+            /* [retval][out] */ BSTR *pVal) = 0;
         
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Count( 
-            /* [retval][out] */ long *pnCount) = 0;
-        
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Add( 
-            /* [in] */ ICUserModalInfo2 *pUserModalInfo2) = 0;
+        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_DomainId( 
+            /* [retval][out] */ BSTR *pVal) = 0;
         
     };
     
@@ -11187,22 +10631,18 @@ EXTERN_C const IID IID_ICUserModalsInfo2;
             /* [annotation][out] */ 
             _Out_opt_  UINT *puArgErr);
         
-        /* [propget][id] */ HRESULT ( STDMETHODCALLTYPE *get__NewEnum )( 
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Initialise )( 
             ICUserModalsInfo2 * This,
-            /* [retval][out] */ IUnknown **ppUnk);
+            /* [in] */ BSTR bsDomainName,
+            /* [in] */ BSTR bsDomainId);
         
-        /* [propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_Item )( 
+        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_DomainName )( 
             ICUserModalsInfo2 * This,
-            /* [in] */ long n,
-            /* [retval][out] */ ICUserModalInfo2 **ppUserModalInfo2);
+            /* [retval][out] */ BSTR *pVal);
         
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Count )( 
+        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_DomainId )( 
             ICUserModalsInfo2 * This,
-            /* [retval][out] */ long *pnCount);
-        
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Add )( 
-            ICUserModalsInfo2 * This,
-            /* [in] */ ICUserModalInfo2 *pUserModalInfo2);
+            /* [retval][out] */ BSTR *pVal);
         
         END_INTERFACE
     } ICUserModalsInfo2Vtbl;
@@ -11240,17 +10680,14 @@ EXTERN_C const IID IID_ICUserModalsInfo2;
     ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
-#define ICUserModalsInfo2_get__NewEnum(This,ppUnk)	\
-    ( (This)->lpVtbl -> get__NewEnum(This,ppUnk) ) 
+#define ICUserModalsInfo2_Initialise(This,bsDomainName,bsDomainId)	\
+    ( (This)->lpVtbl -> Initialise(This,bsDomainName,bsDomainId) ) 
 
-#define ICUserModalsInfo2_get_Item(This,n,ppUserModalInfo2)	\
-    ( (This)->lpVtbl -> get_Item(This,n,ppUserModalInfo2) ) 
+#define ICUserModalsInfo2_get_DomainName(This,pVal)	\
+    ( (This)->lpVtbl -> get_DomainName(This,pVal) ) 
 
-#define ICUserModalsInfo2_get_Count(This,pnCount)	\
-    ( (This)->lpVtbl -> get_Count(This,pnCount) ) 
-
-#define ICUserModalsInfo2_Add(This,pUserModalInfo2)	\
-    ( (This)->lpVtbl -> Add(This,pUserModalInfo2) ) 
+#define ICUserModalsInfo2_get_DomainId(This,pVal)	\
+    ( (This)->lpVtbl -> get_DomainId(This,pVal) ) 
 
 #endif /* COBJMACROS */
 
@@ -11261,170 +10698,6 @@ EXTERN_C const IID IID_ICUserModalsInfo2;
 
 
 #endif 	/* __ICUserModalsInfo2_INTERFACE_DEFINED__ */
-
-
-#ifndef __ICUserModalInfo3_INTERFACE_DEFINED__
-#define __ICUserModalInfo3_INTERFACE_DEFINED__
-
-/* interface ICUserModalInfo3 */
-/* [unique][nonextensible][dual][uuid][object] */ 
-
-
-EXTERN_C const IID IID_ICUserModalInfo3;
-
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("EE99095B-3031-4338-8287-5E8DEA07DE7E")
-    ICUserModalInfo3 : public IDispatch
-    {
-    public:
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Initialise( 
-            /* [in] */ ULONG ulLockoutDuration,
-            /* [in] */ ULONG ulLockoutObservationWindow,
-            /* [in] */ ULONG ulLockoutThreshold) = 0;
-        
-        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_LockoutDuration( 
-            /* [retval][out] */ ULONG *pVal) = 0;
-        
-        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_LockoutObservationWindow( 
-            /* [retval][out] */ ULONG *pVal) = 0;
-        
-        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_LockoutThreshold( 
-            /* [retval][out] */ ULONG *pVal) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
-
-    typedef struct ICUserModalInfo3Vtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            ICUserModalInfo3 * This,
-            /* [in] */ REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            ICUserModalInfo3 * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            ICUserModalInfo3 * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
-            ICUserModalInfo3 * This,
-            /* [out] */ UINT *pctinfo);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
-            ICUserModalInfo3 * This,
-            /* [in] */ UINT iTInfo,
-            /* [in] */ LCID lcid,
-            /* [out] */ ITypeInfo **ppTInfo);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
-            ICUserModalInfo3 * This,
-            /* [in] */ REFIID riid,
-            /* [size_is][in] */ LPOLESTR *rgszNames,
-            /* [range][in] */ UINT cNames,
-            /* [in] */ LCID lcid,
-            /* [size_is][out] */ DISPID *rgDispId);
-        
-        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
-            ICUserModalInfo3 * This,
-            /* [annotation][in] */ 
-            _In_  DISPID dispIdMember,
-            /* [annotation][in] */ 
-            _In_  REFIID riid,
-            /* [annotation][in] */ 
-            _In_  LCID lcid,
-            /* [annotation][in] */ 
-            _In_  WORD wFlags,
-            /* [annotation][out][in] */ 
-            _In_  DISPPARAMS *pDispParams,
-            /* [annotation][out] */ 
-            _Out_opt_  VARIANT *pVarResult,
-            /* [annotation][out] */ 
-            _Out_opt_  EXCEPINFO *pExcepInfo,
-            /* [annotation][out] */ 
-            _Out_opt_  UINT *puArgErr);
-        
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Initialise )( 
-            ICUserModalInfo3 * This,
-            /* [in] */ ULONG ulLockoutDuration,
-            /* [in] */ ULONG ulLockoutObservationWindow,
-            /* [in] */ ULONG ulLockoutThreshold);
-        
-        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_LockoutDuration )( 
-            ICUserModalInfo3 * This,
-            /* [retval][out] */ ULONG *pVal);
-        
-        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_LockoutObservationWindow )( 
-            ICUserModalInfo3 * This,
-            /* [retval][out] */ ULONG *pVal);
-        
-        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_LockoutThreshold )( 
-            ICUserModalInfo3 * This,
-            /* [retval][out] */ ULONG *pVal);
-        
-        END_INTERFACE
-    } ICUserModalInfo3Vtbl;
-
-    interface ICUserModalInfo3
-    {
-        CONST_VTBL struct ICUserModalInfo3Vtbl *lpVtbl;
-    };
-
-    
-
-#ifdef COBJMACROS
-
-
-#define ICUserModalInfo3_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define ICUserModalInfo3_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define ICUserModalInfo3_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define ICUserModalInfo3_GetTypeInfoCount(This,pctinfo)	\
-    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
-
-#define ICUserModalInfo3_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
-
-#define ICUserModalInfo3_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
-
-#define ICUserModalInfo3_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
-
-
-#define ICUserModalInfo3_Initialise(This,ulLockoutDuration,ulLockoutObservationWindow,ulLockoutThreshold)	\
-    ( (This)->lpVtbl -> Initialise(This,ulLockoutDuration,ulLockoutObservationWindow,ulLockoutThreshold) ) 
-
-#define ICUserModalInfo3_get_LockoutDuration(This,pVal)	\
-    ( (This)->lpVtbl -> get_LockoutDuration(This,pVal) ) 
-
-#define ICUserModalInfo3_get_LockoutObservationWindow(This,pVal)	\
-    ( (This)->lpVtbl -> get_LockoutObservationWindow(This,pVal) ) 
-
-#define ICUserModalInfo3_get_LockoutThreshold(This,pVal)	\
-    ( (This)->lpVtbl -> get_LockoutThreshold(This,pVal) ) 
-
-#endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* __ICUserModalInfo3_INTERFACE_DEFINED__ */
 
 
 #ifndef __ICUserModalsInfo3_INTERFACE_DEFINED__
@@ -11442,18 +10715,19 @@ EXTERN_C const IID IID_ICUserModalsInfo3;
     ICUserModalsInfo3 : public IDispatch
     {
     public:
-        virtual /* [propget][id] */ HRESULT STDMETHODCALLTYPE get__NewEnum( 
-            /* [retval][out] */ IUnknown **ppUnk) = 0;
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Initialise( 
+            /* [in] */ ULONG ulLockoutDuration,
+            /* [in] */ ULONG ulLockoutObservationWindow,
+            /* [in] */ ULONG ulLockoutThreshold) = 0;
         
-        virtual /* [propget][id] */ HRESULT STDMETHODCALLTYPE get_Item( 
-            /* [in] */ long n,
-            /* [retval][out] */ ICUserModalInfo3 **ppUserModalInfo3) = 0;
+        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_LockoutDuration( 
+            /* [retval][out] */ ULONG *pVal) = 0;
         
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Count( 
-            /* [retval][out] */ long *pnCount) = 0;
+        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_LockoutObservationWindow( 
+            /* [retval][out] */ ULONG *pVal) = 0;
         
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Add( 
-            /* [in] */ ICUserModalInfo3 *pUserModalInfo3) = 0;
+        virtual /* [id][propget] */ HRESULT STDMETHODCALLTYPE get_LockoutThreshold( 
+            /* [retval][out] */ ULONG *pVal) = 0;
         
     };
     
@@ -11513,22 +10787,23 @@ EXTERN_C const IID IID_ICUserModalsInfo3;
             /* [annotation][out] */ 
             _Out_opt_  UINT *puArgErr);
         
-        /* [propget][id] */ HRESULT ( STDMETHODCALLTYPE *get__NewEnum )( 
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Initialise )( 
             ICUserModalsInfo3 * This,
-            /* [retval][out] */ IUnknown **ppUnk);
+            /* [in] */ ULONG ulLockoutDuration,
+            /* [in] */ ULONG ulLockoutObservationWindow,
+            /* [in] */ ULONG ulLockoutThreshold);
         
-        /* [propget][id] */ HRESULT ( STDMETHODCALLTYPE *get_Item )( 
+        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_LockoutDuration )( 
             ICUserModalsInfo3 * This,
-            /* [in] */ long n,
-            /* [retval][out] */ ICUserModalInfo3 **ppUserModalInfo3);
+            /* [retval][out] */ ULONG *pVal);
         
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Count )( 
+        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_LockoutObservationWindow )( 
             ICUserModalsInfo3 * This,
-            /* [retval][out] */ long *pnCount);
+            /* [retval][out] */ ULONG *pVal);
         
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Add )( 
+        /* [id][propget] */ HRESULT ( STDMETHODCALLTYPE *get_LockoutThreshold )( 
             ICUserModalsInfo3 * This,
-            /* [in] */ ICUserModalInfo3 *pUserModalInfo3);
+            /* [retval][out] */ ULONG *pVal);
         
         END_INTERFACE
     } ICUserModalsInfo3Vtbl;
@@ -11566,17 +10841,17 @@ EXTERN_C const IID IID_ICUserModalsInfo3;
     ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
-#define ICUserModalsInfo3_get__NewEnum(This,ppUnk)	\
-    ( (This)->lpVtbl -> get__NewEnum(This,ppUnk) ) 
+#define ICUserModalsInfo3_Initialise(This,ulLockoutDuration,ulLockoutObservationWindow,ulLockoutThreshold)	\
+    ( (This)->lpVtbl -> Initialise(This,ulLockoutDuration,ulLockoutObservationWindow,ulLockoutThreshold) ) 
 
-#define ICUserModalsInfo3_get_Item(This,n,ppUserModalInfo3)	\
-    ( (This)->lpVtbl -> get_Item(This,n,ppUserModalInfo3) ) 
+#define ICUserModalsInfo3_get_LockoutDuration(This,pVal)	\
+    ( (This)->lpVtbl -> get_LockoutDuration(This,pVal) ) 
 
-#define ICUserModalsInfo3_get_Count(This,pnCount)	\
-    ( (This)->lpVtbl -> get_Count(This,pnCount) ) 
+#define ICUserModalsInfo3_get_LockoutObservationWindow(This,pVal)	\
+    ( (This)->lpVtbl -> get_LockoutObservationWindow(This,pVal) ) 
 
-#define ICUserModalsInfo3_Add(This,pUserModalInfo3)	\
-    ( (This)->lpVtbl -> Add(This,pUserModalInfo3) ) 
+#define ICUserModalsInfo3_get_LockoutThreshold(This,pVal)	\
+    ( (This)->lpVtbl -> get_LockoutThreshold(This,pVal) ) 
 
 #endif /* COBJMACROS */
 
@@ -13389,28 +12664,12 @@ class DECLSPEC_UUID("0492574E-7E72-4F06-91D1-CB7DCE1D4FE1")
 CLocalGroupUserInfo0;
 #endif
 
-EXTERN_C const CLSID CLSID_CUserModalInfo0;
-
-#ifdef __cplusplus
-
-class DECLSPEC_UUID("96935F8A-21DC-44AA-B93A-83FB155D1057")
-CUserModalInfo0;
-#endif
-
 EXTERN_C const CLSID CLSID_CUserModalsInfo0;
 
 #ifdef __cplusplus
 
 class DECLSPEC_UUID("EAC02669-3DEC-48C0-9CBE-11141E97A1C9")
 CUserModalsInfo0;
-#endif
-
-EXTERN_C const CLSID CLSID_CUserModalInfo1;
-
-#ifdef __cplusplus
-
-class DECLSPEC_UUID("D0376505-EAF4-4FB8-AF70-80FCF92AA500")
-CUserModalInfo1;
 #endif
 
 EXTERN_C const CLSID CLSID_CUserModalsInfo1;
@@ -13421,28 +12680,12 @@ class DECLSPEC_UUID("EF488BB3-05E9-41B1-93C3-CEAEC19BA528")
 CUserModalsInfo1;
 #endif
 
-EXTERN_C const CLSID CLSID_CUserModalInfo2;
-
-#ifdef __cplusplus
-
-class DECLSPEC_UUID("39CEC288-1467-4F62-9640-75038C819423")
-CUserModalInfo2;
-#endif
-
 EXTERN_C const CLSID CLSID_CUserModalsInfo2;
 
 #ifdef __cplusplus
 
 class DECLSPEC_UUID("5BA1D11C-EF1E-4DD0-A6A7-B22C36E30235")
 CUserModalsInfo2;
-#endif
-
-EXTERN_C const CLSID CLSID_CUserModalInfo3;
-
-#ifdef __cplusplus
-
-class DECLSPEC_UUID("E975B289-79D6-428B-A94E-EEF8B203079A")
-CUserModalInfo3;
 #endif
 
 EXTERN_C const CLSID CLSID_CUserModalsInfo3;

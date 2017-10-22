@@ -30,6 +30,13 @@
 	ASSERT_FALSE(hr##getProperty) << TUtils::GetLastErrorAsString(hr##getProperty); \
 	ASSERT_TRUE(bs##getProperty.length() > ##gtValue);
 
+#define ASSERT_LEGT_PROP_GET_BSTR(uinfObject, getProperty, gtValue) \
+	_bstr_t bs##getProperty(L""); \
+	HRESULT hr##getProperty(S_OK); \
+	hr##getProperty =  ##uinfObject->##getProperty(bs##getProperty.GetAddress()); \
+	ASSERT_FALSE(hr##getProperty) << TUtils::GetLastErrorAsString(hr##getProperty); \
+	ASSERT_TRUE(bs##getProperty.length() >= ##gtValue);
+
 #define ASSERT_EQ_PROP_GET_ULONG(uinfObject, getProperty, eqTo) \
 	ULONG ul##getProperty(100); \
 	HRESULT hr##getProperty(S_OK); \
@@ -50,6 +57,13 @@
 	hr##getProperty =  ##uinfObject->##getProperty(&ul##getProperty); \
 	ASSERT_FALSE(hr##getProperty) << TUtils::GetLastErrorAsString(hr##getProperty); \
 	ASSERT_TRUE(ul##getProperty > ##gtValue);
+
+#define ASSERT_EGT_PROP_GET_ULONG(uinfObject, getProperty, gtValue) \
+	ULONG ul##getProperty(0); \
+	HRESULT hr##getProperty(S_OK); \
+	hr##getProperty =  ##uinfObject->##getProperty(&ul##getProperty); \
+	ASSERT_FALSE(hr##getProperty) << TUtils::GetLastErrorAsString(hr##getProperty); \
+	ASSERT_TRUE(ul##getProperty >= ##gtValue);
 
 #define ASSERT_EQ_PROP_GET_CLOGONHOURS(uinfObject, getProperty, eqTo) \
 	CComPtr<ICLogonHours> p##getProperty; \

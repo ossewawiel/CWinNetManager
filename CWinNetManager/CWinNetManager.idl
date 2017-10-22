@@ -49,6 +49,13 @@ typedef [public, v1_enum] enum eLocalGroupUserInfoType
 {
 	lguiType0 = 0x000
 } eLocalGroupUserInfoType;
+typedef [public, v1_enum] enum eUserModalsInfoType
+{
+	umiType0 = 0x000
+	, umiType1 = 0x001
+	, umiType2 = 0x002
+	, umiType3 = 0x003
+} eUserModalsInfoType;
 [
 	object,
 	uuid(FFB824F6-E615-4DCC-BCFC-4068E2B442F8),
@@ -943,44 +950,18 @@ interface ICLocalGroupsUserInfo0 : IDispatch {
 };
 [
 	object,
-	uuid(CA860640-7ED7-425F-A53F-8F7300D97E65),
-	dual,
-	nonextensible,
-	pointer_default(unique)
-]
-interface ICUserModalInfo0 : IDispatch {
-	[id(1)] HRESULT Initialise([in] ULONG ulMinPwdLen, [in] ULONG ulMaxPwdAge, [in] ULONG ulMinPwdAge, [in] ULONG ulForceLogoff, [in] ULONG ulPwdHistLen);
-	[propget, id(2)] HRESULT MinPwdLen([out, retval] ULONG* pVal);
-	[propget, id(3)] HRESULT MaxPwdAge([out, retval] ULONG* pVal);
-	[propget, id(4)] HRESULT MinPwdAge([out, retval] ULONG* pVal);
-	[propget, id(5)] HRESULT ForceLogoff([out, retval] ULONG* pVal);
-	[propget, id(6)] HRESULT PwdHistLen([out, retval] ULONG* pVal);
-	[propput, id(6)] HRESULT PwdHistLen([in] ULONG newVal);
-};
-[
-	object,
 	uuid(E4CCD4B0-B645-4C60-8DEC-C31220F96945),
 	dual,
 	nonextensible,
 	pointer_default(unique)
 ]
 interface ICUserModalsInfo0 : IDispatch {
-	[id(DISPID_NEWENUM), propget] HRESULT _NewEnum([out, retval] IUnknown** ppUnk);
-	[id(DISPID_VALUE), propget] HRESULT Item([in] long n, [out, retval] ICUserModalInfo0** ppUserModalInfo0);
-	[propget] HRESULT Count([out, retval] long* pnCount);
-	[id(1)] HRESULT Add([in] ICUserModalInfo0* pUserModalInfo0);
-};
-[
-	object,
-	uuid(CDB11C20-0C8A-4C56-9D42-B1629D2230A2),
-	dual,
-	nonextensible,
-	pointer_default(unique)
-]
-interface ICUserModalInfo1 : IDispatch {
-	[id(1)] HRESULT Initialise([in] ULONG ulRole, [in] BSTR bsPrimary);
-	[propget, id(2)] HRESULT Role([out, retval] ULONG* pVal);
-	[propget, id(3)] HRESULT Primary([out, retval] BSTR* pVal);
+	[id(1)] HRESULT Initialise([in] ULONG ulMinPwdLen, [in] ULONG ulMaxPwdAge, [in] ULONG ulMinPwdAge, [in] ULONG ulForceLogoff, [in] ULONG ulPwdHistLen);
+	[propget, id(2)] HRESULT MinPwdLen([out, retval] ULONG* pVal);
+	[propget, id(3)] HRESULT MaxPwdAge([out, retval] ULONG* pVal);
+	[propget, id(4)] HRESULT MinPwdAge([out, retval] ULONG* pVal);
+	[propget, id(5)] HRESULT ForceLogoff([out, retval] ULONG* pVal);
+	[propget, id(6)] HRESULT PwdHistLen([out, retval] ULONG* pVal);
 };
 [
 	object,
@@ -990,22 +971,9 @@ interface ICUserModalInfo1 : IDispatch {
 	pointer_default(unique)
 ]
 interface ICUserModalsInfo1 : IDispatch {
-	[id(DISPID_NEWENUM), propget] HRESULT _NewEnum([out, retval] IUnknown** ppUnk);
-	[id(DISPID_VALUE), propget] HRESULT Item([in] long n, [out, retval] ICUserModalInfo1** ppUserModalInfo1);
-	[propget] HRESULT Count([out, retval] long* pnCount);
-	[id(1)] HRESULT Add([in] ICUserModalInfo1* pUserModalInfo1);
-};
-[
-	object,
-	uuid(AB6805C1-C837-4F90-B0AD-1FA3F7E43E0A),
-	dual,
-	nonextensible,
-	pointer_default(unique)
-]
-interface ICUserModalInfo2 : IDispatch {
-	[id(1)] HRESULT Initialise([in] BSTR bsDomainName, [in] BSTR bsDomainId);
-	[propget, id(2)] HRESULT DomainName([out, retval] BSTR* pVal);
-	[propget, id(3)] HRESULT DomainId([out, retval] BSTR* pVal);
+	[id(1)] HRESULT Initialise([in] ULONG ulRole, [in] BSTR bsPrimary);
+	[propget, id(2)] HRESULT Role([out, retval] ULONG* pVal);
+	[propget, id(3)] HRESULT Primary([out, retval] BSTR* pVal);
 };
 [
 	object,
@@ -1015,23 +983,9 @@ interface ICUserModalInfo2 : IDispatch {
 	pointer_default(unique)
 ]
 interface ICUserModalsInfo2 : IDispatch {
-	[id(DISPID_NEWENUM), propget] HRESULT _NewEnum([out, retval] IUnknown** ppUnk);
-	[id(DISPID_VALUE), propget] HRESULT Item([in] long n, [out, retval] ICUserModalInfo2** ppUserModalInfo2);
-	[propget] HRESULT Count([out, retval] long* pnCount);
-	[id(1)] HRESULT Add([in] ICUserModalInfo2* pUserModalInfo2);
-};
-[
-	object,
-	uuid(EE99095B-3031-4338-8287-5E8DEA07DE7E),
-	dual,
-	nonextensible,
-	pointer_default(unique)
-]
-interface ICUserModalInfo3 : IDispatch {
-	[id(1)] HRESULT Initialise([in] ULONG ulLockoutDuration, [in] ULONG ulLockoutObservationWindow, [in] ULONG ulLockoutThreshold);
-	[propget, id(2)] HRESULT LockoutDuration([out, retval] ULONG* pVal);
-	[propget, id(3)] HRESULT LockoutObservationWindow([out, retval] ULONG* pVal);
-	[propget, id(4)] HRESULT LockoutThreshold([out, retval] ULONG* pVal);
+	[id(1)] HRESULT Initialise([in] BSTR bsDomainName, [in] BSTR bsDomainId);
+	[propget, id(2)] HRESULT DomainName([out, retval] BSTR* pVal);
+	[propget, id(3)] HRESULT DomainId([out, retval] BSTR* pVal);
 };
 [
 	object,
@@ -1041,10 +995,10 @@ interface ICUserModalInfo3 : IDispatch {
 	pointer_default(unique)
 ]
 interface ICUserModalsInfo3 : IDispatch {
-	[id(DISPID_NEWENUM), propget] HRESULT _NewEnum([out, retval] IUnknown** ppUnk);
-	[id(DISPID_VALUE), propget] HRESULT Item([in] long n, [out, retval] ICUserModalInfo3** ppUserModalInfo3);
-	[propget] HRESULT Count([out, retval] long* pnCount);
-	[id(1)] HRESULT Add([in] ICUserModalInfo3* pUserModalInfo3);
+	[id(1)] HRESULT Initialise([in] ULONG ulLockoutDuration, [in] ULONG ulLockoutObservationWindow, [in] ULONG ulLockoutThreshold);
+	[propget, id(2)] HRESULT LockoutDuration([out, retval] ULONG* pVal);
+	[propget, id(3)] HRESULT LockoutObservationWindow([out, retval] ULONG* pVal);
+	[propget, id(4)] HRESULT LockoutThreshold([out, retval] ULONG* pVal);
 };
 [
 	object,
@@ -1651,25 +1605,11 @@ library CWinNetManagerLib
 		[default] interface ICLocalGroupUserInfo0;
 	};
 	[
-		uuid(96935F8A-21DC-44AA-B93A-83FB155D1057)		
-	]
-	coclass CUserModalInfo0
-	{
-		[default] interface ICUserModalInfo0;
-	};
-	[
 		uuid(EAC02669-3DEC-48C0-9CBE-11141E97A1C9)		
 	]
 	coclass CUserModalsInfo0
 	{
 		[default] interface ICUserModalsInfo0;
-	};
-	[
-		uuid(D0376505-EAF4-4FB8-AF70-80FCF92AA500)		
-	]
-	coclass CUserModalInfo1
-	{
-		[default] interface ICUserModalInfo1;
 	};
 	[
 		uuid(EF488BB3-05E9-41B1-93C3-CEAEC19BA528)		
@@ -1679,25 +1619,11 @@ library CWinNetManagerLib
 		[default] interface ICUserModalsInfo1;
 	};
 	[
-		uuid(39CEC288-1467-4F62-9640-75038C819423)		
-	]
-	coclass CUserModalInfo2
-	{
-		[default] interface ICUserModalInfo2;
-	};
-	[
 		uuid(5BA1D11C-EF1E-4DD0-A6A7-B22C36E30235)		
 	]
 	coclass CUserModalsInfo2
 	{
 		[default] interface ICUserModalsInfo2;
-	};
-	[
-		uuid(E975B289-79D6-428B-A94E-EEF8B203079A)		
-	]
-	coclass CUserModalInfo3
-	{
-		[default] interface ICUserModalInfo3;
 	};
 	[
 		uuid(658A9F62-B4D3-4A97-99F0-3C1BA8A0457F)		

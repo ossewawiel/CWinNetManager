@@ -6,37 +6,24 @@
 
 
 #include "CWinNetManager.h"
-#include "CuserModalInfo1.h"
-#include "CEnumUtils.h"
-
+#include "comutil.h"
 
 #if defined(_WIN32_WCE) && !defined(_CE_DCOM) && !defined(_CE_ALLOW_SINGLE_THREADED_OBJECTS_IN_MTA)
 #error "Single-threaded COM objects are not properly supported on Windows CE platform, such as the Windows Mobile platforms that do not include full DCOM support. Define _CE_ALLOW_SINGLE_THREADED_OBJECTS_IN_MTA to force ATL to support creating single-thread COM object's and allow use of it's single-threaded COM object implementations. The threading model in your rgs file was set to 'Free' as that is the only threading model supported in non DCOM Windows CE platforms."
 #endif
 
 using namespace ATL;
-using namespace std;
-
-typedef CComEnumOnSTL<IEnumVARIANT, &IID_IEnumVARIANT, VARIANT,
-	_CopyVariantFromAdaptItf<CCUserModalInfo1>,
-	vector< CAdapt< CComPtr<CCUserModalInfo1> > > >
-	CComEnumVariantOnVectorOfCUserModalsInfo1;
-
-typedef ICollectionOnSTLImpl<IDispatchImpl<ICUserModalsInfo1, &IID_ICUserModalsInfo1>,
-	vector< CAdapt< CComPtr<CCUserModalInfo1> > >,
-	CCUserModalInfo1*,
-	_CopyItfFromAdaptItf<CCUserModalInfo1>,
-	CComEnumVariantOnVectorOfCUserModalsInfo1>
-	CUserModalsInfo1CollImpl;
 // CCUserModalsInfo1
 
 class ATL_NO_VTABLE CCUserModalsInfo1 :
 	public CComObjectRootEx<CComMultiThreadModel>,
 	public CComCoClass<CCUserModalsInfo1, &CLSID_CUserModalsInfo1>,
-	public CUserModalsInfo1CollImpl
+	public IDispatchImpl<ICUserModalsInfo1, &IID_ICUserModalsInfo1, &LIBID_CWinNetManagerLib, /*wMajor =*/ 1, /*wMinor =*/ 0>
 {
 public:
 	CCUserModalsInfo1()
+		: mulRole(0)
+		, mbsPrimary(L"")
 	{
 		m_pUnkMarshaler = NULL;
 	}
@@ -69,9 +56,14 @@ END_COM_MAP()
 	CComPtr<IUnknown> m_pUnkMarshaler;
 
 public:
-	STDMETHOD(Add)(ICUserModalsInfo1* pUserModalsInfo1);
+	STDMETHOD(Initialise)(ULONG ulRole, BSTR bsPrimary);
+	STDMETHOD(get_Role)(ULONG* pVal);
+	STDMETHOD(get_Primary)(BSTR* pVal);
 
-
+	static HRESULT TranslateFromUserModalsInfo(LPUSER_MODALS_INFO_1 & pFrom, ICUserModalsInfo1** ppTo);
+private:
+	unsigned long mulRole;
+	_bstr_t mbsPrimary;
 };
 
 OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserModalsInfo1), CCUserModalsInfo1)

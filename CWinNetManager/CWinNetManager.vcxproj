@@ -252,10 +252,6 @@
     <ClCompile Include="CuserInfo24.cpp" />
     <ClCompile Include="CUserInfo3.cpp" />
     <ClCompile Include="CUserInfo4.cpp" />
-    <ClCompile Include="CuserModalInfo0.cpp" />
-    <ClCompile Include="CUserModalInfo1.cpp" />
-    <ClCompile Include="CUserModalInfo2.cpp" />
-    <ClCompile Include="CUserModalInfo3.cpp" />
     <ClCompile Include="CUserModalsInfo0.cpp" />
     <ClCompile Include="CUserModalsInfo1.cpp" />
     <ClCompile Include="CUserModalsInfo2.cpp" />
@@ -362,10 +358,6 @@
     <ClInclude Include="CUserInfo3.h" />
     <ClInclude Include="CUserInfo4.h" />
     <ClInclude Include="CUserInfoUtils.h" />
-    <ClInclude Include="CuserModalInfo0.h" />
-    <ClInclude Include="CUserModalInfo1.h" />
-    <ClInclude Include="CUserModalInfo2.h" />
-    <ClInclude Include="CUserModalInfo3.h" />
     <ClInclude Include="CUserModalsInfo0.h" />
     <ClInclude Include="CUserModalsInfo1.h" />
     <ClInclude Include="CUserModalsInfo2.h" />
@@ -433,10 +425,6 @@
     <None Include="CuserInfo24.rgs" />
     <None Include="CUserInfo3.rgs" />
     <None Include="CUserInfo4.rgs" />
-    <None Include="CuserModalInfo0.rgs" />
-    <None Include="CUserModalInfo1.rgs" />
-    <None Include="CUserModalInfo2.rgs" />
-    <None Include="CUserModalInfo3.rgs" />
     <None Include="CUserModalsInfo0.rgs" />
     <None Include="CUserModalsInfo1.rgs" />
     <None Include="CUserModalsInfo2.rgs" />
