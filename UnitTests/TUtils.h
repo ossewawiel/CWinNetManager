@@ -640,6 +640,91 @@
 	hr = netuserObject->NetUserGetInfo1053(NULL, uName, &uinfObject);		\
 	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr);
 
+#define ASSERT_GET_USER_MODALS_INFO_0(netuserObject, uinfObject)	\
+	hr = netuserObject->GetUserModalsInfo0(						\
+		PAR_ZERO										\
+		, PAR_UMINF_MAXPWDAGE										\
+		, PAR_ZERO										\
+		, PAR_UMINFFORCELOGOFF										\
+		, PAR_ZERO									\
+		, &uinfObject);										\
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr); \
+	ASSERT_FALSE(uinfObject == NULL);
+
+#define ASSERT_GET_USER_MODALS_INFO_1(netuserObject, uinfObject)	\
+	hr = netuserObject->GetUserModalsInfo1(						\
+		PAR_ZERO										\
+		, PAR_EMPTY										\
+		, &uinfObject);										\
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr); \
+	ASSERT_FALSE(uinfObject == NULL);
+
+#define ASSERT_GET_USER_MODALS_INFO_2(netuserObject, uinfObject)	\
+	hr = netuserObject->GetUserModalsInfo2(						\
+		PAR_NOT_EMPTY										\
+		, PAR_NOT_EMPTY										\
+		, &uinfObject);										\
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr); \
+	ASSERT_FALSE(uinfObject == NULL);
+
+#define ASSERT_GET_USER_MODALS_INFO_3(netuserObject, uinfObject)	\
+	hr = netuserObject->GetUserModalsInfo3(						\
+		PAR_ZERO										\
+		, PAR_ZERO										\
+		, PAR_ZERO \
+		, &uinfObject);										\
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr); \
+	ASSERT_FALSE(uinfObject == NULL);
+
+#define ASSERT_GET_USER_MODALS_INFO_1001(netuserObject, uinfObject)	\
+	hr = netuserObject->GetUserModalsInfo1001(						\
+		PAR_ZERO										\
+		, &uinfObject);										\
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr); \
+	ASSERT_FALSE(uinfObject == NULL);
+
+#define ASSERT_GET_USER_MODALS_INFO_1002(netuserObject, uinfObject)	\
+	hr = netuserObject->GetUserModalsInfo1002(						\
+		PAR_UMINF_MAXPWDAGE										\
+		, &uinfObject);										\
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr); \
+	ASSERT_FALSE(uinfObject == NULL);
+
+#define ASSERT_GET_USER_MODALS_INFO_1003(netuserObject, uinfObject)	\
+	hr = netuserObject->GetUserModalsInfo1003(						\
+		PAR_ZERO										\
+		, &uinfObject);										\
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr); \
+	ASSERT_FALSE(uinfObject == NULL);
+
+#define ASSERT_GET_USER_MODALS_INFO_1004(netuserObject, uinfObject)	\
+	hr = netuserObject->GetUserModalsInfo1004(						\
+		PAR_UMINFFORCELOGOFF										\
+		, &uinfObject);										\
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr); \
+	ASSERT_FALSE(uinfObject == NULL);
+
+#define ASSERT_GET_USER_MODALS_INFO_1005(netuserObject, uinfObject)	\
+	hr = netuserObject->GetUserModalsInfo1005(						\
+		PAR_ZERO										\
+		, &uinfObject);										\
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr); \
+	ASSERT_FALSE(uinfObject == NULL);
+
+#define ASSERT_GET_USER_MODALS_INFO_1006(netuserObject, uinfObject)	\
+	hr = netuserObject->GetUserModalsInfo1006(						\
+		PAR_ZERO										\
+		, &uinfObject);										\
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr); \
+	ASSERT_FALSE(uinfObject == NULL);
+
+#define ASSERT_GET_USER_MODALS_INFO_1007(netuserObject, uinfObject)	\
+	hr = netuserObject->GetUserModalsInfo1007(						\
+		PAR_EMPTY										\
+		, &uinfObject);										\
+	ASSERT_FALSE(hr) << TUtils::GetLastErrorAsString(hr); \
+	ASSERT_FALSE(uinfObject == NULL);
+
 namespace TUtils
 {
 	static _bstr_t GetLastErrorAsString(HRESULT hr)

@@ -953,3 +953,91 @@ STDMETHODIMP CCNetUser::NetUserModalsGet3(BSTR bsServerName, ICUserModalsInfo3**
 {
 	return NetUserModalsGetFrom<ICUserModalsInfo3, CCUserModalsInfo3, LPUSER_MODALS_INFO_3>(bsServerName, eUserModalsInfoType::umiType3, ppUserModalsInfo3);
 }
+
+
+STDMETHODIMP CCNetUser::GetUserModalsInfo0(ULONG ulMinPwdLen, ULONG ulMaxPwdAge, ULONG ulMinPwdAge, ULONG ulForceLogoff, ULONG ulPwdHistLen, ICUserModalsInfo0** ppUserModalsInfo0)
+{
+	// TODO: Add your implementation code here
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CCNetUser::GetUserModalsInfo1(ULONG ulRole, BSTR bsPrimary, ICUserModalsInfo1** ppUserModalsInfo1)
+{
+	// TODO: Add your implementation code here
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CCNetUser::GetUserModalsInfo2(BSTR bsDomainName, BSTR bsDomainId, ICUserModalsInfo2** ppUserModalsInfo2)
+{
+	// TODO: Add your implementation code here
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CCNetUser::GetUserModalsInfo3(ULONG ulLockoutDuration, ULONG ulLockoutObservationWindow, ULONG ulLockoutThreshold, ICUserModalsInfo3** ppUserModalsInfo3)
+{
+	// TODO: Add your implementation code here
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CCNetUser::GetUserModalsInfo1001(ULONG ulMinPwdLen, ICUserModalsInfo1001** ppUserModalsInfo1001)
+{
+	// TODO: Add your implementation code here
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CCNetUser::GetUserModalsInfo1002(ULONG ulMaxPwdAge, ICUserModalsInfo1002** ppUserModalsInfo1002)
+{
+	// TODO: Add your implementation code here
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CCNetUser::GetUserModalsInfo1003(ULONG ulMinPwdAge, ICUserModalsInfo1003** ppUserModalsInfo1003)
+{
+	// TODO: Add your implementation code here
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CCNetUser::GetUserModalsInfo1004(ULONG ulForceLogoff, ICUserModalsInfo1004** ppUserModalsInfo1004)
+{
+	// TODO: Add your implementation code here
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CCNetUser::GetUserModalsInfo1005(ULONG ulPwdHistLen, ICUserModalsInfo1005** ppUserModalsInfo1005)
+{
+	// TODO: Add your implementation code here
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CCNetUser::GetUserModalsInfo1006(ULONG ulRole, ICUserModalsInfo1006** ppUserModalsInfo1006)
+{
+	// TODO: Add your implementation code here
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CCNetUser::GetUserModalsInfo1007(BSTR bsPrimary, ICUserModalsInfo1007** ppUserModalsInfo1007)
+{
+	// TODO: Add your implementation code here
+
+	return S_OK;
+}

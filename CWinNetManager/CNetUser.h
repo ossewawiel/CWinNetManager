@@ -370,6 +370,17 @@ public:
 	STDMETHOD(NetUserModalsGet1)(BSTR bsServerName, ICUserModalsInfo1** ppUserModalsInfo1);
 	STDMETHOD(NetUserModalsGet2)(BSTR bsServerName, ICUserModalsInfo2** ppUserModalsInfo2);
 	STDMETHOD(NetUserModalsGet3)(BSTR bsServerName, ICUserModalsInfo3** ppUserModalsInfo3);
+	STDMETHOD(GetUserModalsInfo0)(ULONG ulMinPwdLen, ULONG ulMaxPwdAge, ULONG ulMinPwdAge, ULONG ulForceLogoff, ULONG ulPwdHistLen, ICUserModalsInfo0** ppUserModalsInfo0);
+	STDMETHOD(GetUserModalsInfo1)(ULONG ulRole, BSTR bsPrimary, ICUserModalsInfo1** ppUserModalsInfo1);
+	STDMETHOD(GetUserModalsInfo2)(BSTR bsDomainName, BSTR bsDomainId, ICUserModalsInfo2** ppUserModalsInfo2);
+	STDMETHOD(GetUserModalsInfo3)(ULONG ulLockoutDuration, ULONG ulLockoutObservationWindow, ULONG ulLockoutThreshold, ICUserModalsInfo3** ppUserModalsInfo3);
+	STDMETHOD(GetUserModalsInfo1001)(ULONG ulMinPwdLen, ICUserModalsInfo1001** ppUserModalsInfo1001);
+	STDMETHOD(GetUserModalsInfo1002)(ULONG ulMaxPwdAge, ICUserModalsInfo1002** ppUserModalsInfo1002);
+	STDMETHOD(GetUserModalsInfo1003)(ULONG ulMinPwdAge, ICUserModalsInfo1003** ppUserModalsInfo1003);
+	STDMETHOD(GetUserModalsInfo1004)(ULONG ulForceLogoff, ICUserModalsInfo1004** ppUserModalsInfo1004);
+	STDMETHOD(GetUserModalsInfo1005)(ULONG ulPwdHistLen, ICUserModalsInfo1005** ppUserModalsInfo1005);
+	STDMETHOD(GetUserModalsInfo1006)(ULONG ulRole, ICUserModalsInfo1006** ppUserModalsInfo1006);
+	STDMETHOD(GetUserModalsInfo1007)(BSTR bsPrimary, ICUserModalsInfo1007** ppUserModalsInfo1007);
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(CNetUser), CCNetUser)
