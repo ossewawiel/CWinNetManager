@@ -10,15 +10,13 @@
 
 STDMETHODIMP CCUserModalsInfo1004::Initialise(ULONG ulForceLogoff)
 {
-	// TODO: Add your implementation code here
-
+	mulForceLogoff = ulForceLogoff;
 	return S_OK;
 }
 
 
 STDMETHODIMP CCUserModalsInfo1004::get_ForceLogoff(ULONG* pVal)
 {
-	// TODO: Add your implementation code here
-
+	*pVal = mulForceLogoff;
 	return S_OK;
 }

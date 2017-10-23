@@ -10,15 +10,13 @@
 
 STDMETHODIMP CCUserModalsInfo1006::Initialise(ULONG ulRole)
 {
-	// TODO: Add your implementation code here
-
+	mulRole = ulRole;
 	return S_OK;
 }
 
 
 STDMETHODIMP CCUserModalsInfo1006::get_Role(ULONG* pVal)
 {
-	// TODO: Add your implementation code here
-
+	*pVal = mulRole;
 	return S_OK;
 }

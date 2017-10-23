@@ -6,6 +6,7 @@
 
 
 #include "CWinNetManager.h"
+#include "comutil.h"
 
 
 
@@ -25,6 +26,7 @@ class ATL_NO_VTABLE CCUserModalsInfo1007 :
 {
 public:
 	CCUserModalsInfo1007()
+		: mbsPrimary(L"")
 	{
 		m_pUnkMarshaler = NULL;
 	}
@@ -62,6 +64,8 @@ public:
 
 	STDMETHOD(Initialise)(BSTR bsPrimary);
 	STDMETHOD(get_Primary)(BSTR* pVal);
+private:
+	_bstr_t mbsPrimary;
 };
 
 OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserModalsInfo1007), CCUserModalsInfo1007)

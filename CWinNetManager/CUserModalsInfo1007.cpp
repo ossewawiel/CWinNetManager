@@ -10,15 +10,13 @@
 
 STDMETHODIMP CCUserModalsInfo1007::Initialise(BSTR bsPrimary)
 {
-	// TODO: Add your implementation code here
-
+	mbsPrimary.Assign(bsPrimary);
 	return S_OK;
 }
 
 
 STDMETHODIMP CCUserModalsInfo1007::get_Primary(BSTR* pVal)
 {
-	// TODO: Add your implementation code here
-
+	*pVal = mbsPrimary.copy();
 	return S_OK;
 }

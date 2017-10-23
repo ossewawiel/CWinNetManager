@@ -10,15 +10,13 @@
 
 STDMETHODIMP CCUserModalsInfo1005::Initialise(ULONG ulPwdHistLen)
 {
-	// TODO: Add your implementation code here
-
+	mulPwdHistLen = ulPwdHistLen;
 	return S_OK;
 }
 
 
 STDMETHODIMP CCUserModalsInfo1005::get_PwdHistLen(ULONG* pVal)
 {
-	// TODO: Add your implementation code here
-
+	*pVal = mulPwdHistLen;
 	return S_OK;
 }

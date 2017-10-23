@@ -10,15 +10,13 @@
 
 STDMETHODIMP CCUserModalsInfo1002::Initialise(ULONG ulMaxPwdAge)
 {
-	// TODO: Add your implementation code here
-
+	mulMaxPwdAge = ulMaxPwdAge;
 	return S_OK;
 }
 
 
 STDMETHODIMP CCUserModalsInfo1002::get_MaxPwdAge(ULONG* pVal)
 {
-	// TODO: Add your implementation code here
-
+	*pVal = mulMaxPwdAge;
 	return S_OK;
 }

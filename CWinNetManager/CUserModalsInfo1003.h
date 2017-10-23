@@ -25,6 +25,7 @@ class ATL_NO_VTABLE CCUserModalsInfo1003 :
 {
 public:
 	CCUserModalsInfo1003()
+		: mulMinPwdAge(0)
 	{
 		m_pUnkMarshaler = NULL;
 	}
@@ -62,6 +63,8 @@ public:
 
 	STDMETHOD(Initialise)(ULONG ulMinPwdAge);
 	STDMETHOD(get_MinPwdAge)(ULONG* pVal);
+private:
+	unsigned long mulMinPwdAge;
 };
 
 OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserModalsInfo1003), CCUserModalsInfo1003)

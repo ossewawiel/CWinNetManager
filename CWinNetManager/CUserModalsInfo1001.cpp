@@ -10,15 +10,13 @@
 
 STDMETHODIMP CCUserModalsInfo1001::Initialise(ULONG ulMinPwdLen)
 {
-	// TODO: Add your implementation code here
-
+	mulMinPwdLen = ulMinPwdLen;
 	return S_OK;
 }
 
 
 STDMETHODIMP CCUserModalsInfo1001::get_MinPwdLen(ULONG* pVal)
 {
-	// TODO: Add your implementation code here
-
+	*pVal = mulMinPwdLen;
 	return S_OK;
 }

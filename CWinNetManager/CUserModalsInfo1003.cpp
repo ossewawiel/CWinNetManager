@@ -10,15 +10,13 @@
 
 STDMETHODIMP CCUserModalsInfo1003::Initialise(ULONG ulMinPwdAge)
 {
-	// TODO: Add your implementation code here
-
+	mulMinPwdAge = ulMinPwdAge;
 	return S_OK;
 }
 
 
 STDMETHODIMP CCUserModalsInfo1003::get_MinPwdAge(ULONG* pVal)
 {
-	// TODO: Add your implementation code here
-
+	*pVal = mulMinPwdAge;
 	return S_OK;
 }

@@ -25,6 +25,7 @@ class ATL_NO_VTABLE CCUserModalsInfo1006 :
 {
 public:
 	CCUserModalsInfo1006()
+		: mulRole(0)
 	{
 		m_pUnkMarshaler = NULL;
 	}
@@ -62,6 +63,8 @@ public:
 
 	STDMETHOD(Initialise)(ULONG ulRole);
 	STDMETHOD(get_Role)(ULONG* pVal);
+private:
+	unsigned long mulRole;
 };
 
 OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserModalsInfo1006), CCUserModalsInfo1006)

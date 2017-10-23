@@ -25,6 +25,7 @@ class ATL_NO_VTABLE CCUserModalsInfo1004 :
 {
 public:
 	CCUserModalsInfo1004()
+		: mulForceLogoff(0)
 	{
 		m_pUnkMarshaler = NULL;
 	}
@@ -62,6 +63,8 @@ public:
 
 	STDMETHOD(Initialise)(ULONG ulForceLogoff);
 	STDMETHOD(get_ForceLogoff)(ULONG* pVal);
+private:
+	unsigned long mulForceLogoff;
 };
 
 OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserModalsInfo1004), CCUserModalsInfo1004)

@@ -54,6 +54,13 @@
 #include "CUserModalsInfo1.h"
 #include "CUserModalsInfo2.h"
 #include "CUserModalsInfo3.h"
+#include "CUserModalsInfo1001.h"
+#include "CUserModalsInfo1002.h"
+#include "CUserModalsInfo1003.h"
+#include "CUserModalsInfo1004.h"
+#include "CUserModalsInfo1005.h"
+#include "CUserModalsInfo1006.h"
+#include "CUserModalsInfo1007.h"
 
 #if defined(_WIN32_WCE) && !defined(_CE_DCOM) && !defined(_CE_ALLOW_SINGLE_THREADED_OBJECTS_IN_MTA)
 #error "Single-threaded COM objects are not properly supported on Windows CE platform, such as the Windows Mobile platforms that do not include full DCOM support. Define _CE_ALLOW_SINGLE_THREADED_OBJECTS_IN_MTA to force ATL to support creating single-thread COM object's and allow use of it's single-threaded COM object implementations. The threading model in your rgs file was set to 'Free' as that is the only threading model supported in non DCOM Windows CE platforms."

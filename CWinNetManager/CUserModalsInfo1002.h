@@ -25,6 +25,7 @@ class ATL_NO_VTABLE CCUserModalsInfo1002 :
 {
 public:
 	CCUserModalsInfo1002()
+		: mulMaxPwdAge(0)
 	{
 		m_pUnkMarshaler = NULL;
 	}
@@ -62,6 +63,8 @@ public:
 
 	STDMETHOD(Initialise)(ULONG ulMaxPwdAge);
 	STDMETHOD(get_MaxPwdAge)(ULONG* pVal);
+private:
+	unsigned long mulMaxPwdAge;
 };
 
 OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserModalsInfo1002), CCUserModalsInfo1002)

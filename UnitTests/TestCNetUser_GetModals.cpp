@@ -51,9 +51,9 @@ TEST_F(TestCNetUser_GetModals, when_calling_getusermodals3_with_valid_values_the
 	CUSTOM_ASSERT_SET;
 	ASSERT_GET_USER_MODALS_INFO_3(mpCNetUser, pUserModalsInfo3);
 
-	ASSERT_GT_PROP_GET_ULONG(pUserModalsInfo3, get_LockoutDuration, PAR_ZERO);
-	ASSERT_GT_PROP_GET_ULONG(pUserModalsInfo3, get_LockoutObservationWindow, PAR_ZERO);
-	ASSERT_EGT_PROP_GET_ULONG(pUserModalsInfo3, get_LockoutThreshold, PAR_ZERO);
+	ASSERT_EQ_PROP_GET_ULONG(pUserModalsInfo3, get_LockoutDuration, PAR_ZERO);
+	ASSERT_EQ_PROP_GET_ULONG(pUserModalsInfo3, get_LockoutObservationWindow, PAR_ZERO);
+	ASSERT_EQ_PROP_GET_ULONG(pUserModalsInfo3, get_LockoutThreshold, PAR_ZERO);
 }
 
 // WHEN_CALLING_GETUSERMODALS1001_WITH_VALID_VALUES_THEN_RETURN_NO_EXCEPTION

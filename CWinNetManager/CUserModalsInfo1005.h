@@ -25,6 +25,7 @@ class ATL_NO_VTABLE CCUserModalsInfo1005 :
 {
 public:
 	CCUserModalsInfo1005()
+		: mulPwdHistLen(0)
 	{
 		m_pUnkMarshaler = NULL;
 	}
@@ -62,6 +63,8 @@ public:
 
 	STDMETHOD(Initialise)(ULONG ulPwdHistLen);
 	STDMETHOD(get_PwdHistLen)(ULONG* pVal);
+private:
+	unsigned long mulPwdHistLen;
 };
 
 OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO(__uuidof(CUserModalsInfo1005), CCUserModalsInfo1005)
