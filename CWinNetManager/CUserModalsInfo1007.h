@@ -64,6 +64,8 @@ public:
 
 	STDMETHOD(Initialise)(BSTR bsPrimary);
 	STDMETHOD(get_Primary)(BSTR* pVal);
+
+	static HRESULT TranslateToUserModalsInfo(ICUserModalsInfo1007 * pFrom, LPUSER_MODALS_INFO_1007 &pTo);
 private:
 	_bstr_t mbsPrimary;
 };

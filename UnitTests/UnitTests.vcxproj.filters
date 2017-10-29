@@ -33,6 +33,9 @@
     <ClInclude Include="TConstants.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TestCNetUserModals.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -77,13 +80,13 @@
     <ClCompile Include="TestCNetUser_GetLocalGroups.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TestCNetUser_ModalsGet.cpp">
+    <ClCompile Include="TestCNetUserModals_GetModals.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TestCNetUser_ModalsSet.cpp">
+    <ClCompile Include="TestCNetUserModals_Get.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TestCNetUser_GetModals.cpp">
+    <ClCompile Include="TestCNetUserModals_Set.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

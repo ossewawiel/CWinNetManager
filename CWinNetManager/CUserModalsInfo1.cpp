@@ -2,7 +2,7 @@
 
 #include "stdafx.h"
 #include "CUserModalsInfo1.h"
-
+#include "CuserModalsInfoUtils.h"
 
 // CCUserModalsInfo1
 
@@ -34,4 +34,12 @@ HRESULT CCUserModalsInfo1::TranslateFromUserModalsInfo(LPUSER_MODALS_INFO_1 & pF
 	return (*ppTo)->Initialise(
 		pFrom->usrmod1_role
 		, _bstr_t(pFrom->usrmod1_primary));
+}
+
+HRESULT CCUserModalsInfo1::TranslateToUserModalsInfo(ICUserModalsInfo1 * pFrom, USER_MODALS_INFO_1 & pTo)
+{
+	HRESULT hr(S_OK);
+	if (hr = ToUserModelsRole	<ICUserModalsInfo1>(pFrom, pTo.usrmod1_role))		return hr;
+	if (hr = ToUserModelsPrimary<ICUserModalsInfo1>(pFrom, pTo.usrmod1_primary))	return hr;
+	return hr;
 }

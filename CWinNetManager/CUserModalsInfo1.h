@@ -61,6 +61,7 @@ public:
 	STDMETHOD(get_Primary)(BSTR* pVal);
 
 	static HRESULT TranslateFromUserModalsInfo(LPUSER_MODALS_INFO_1 & pFrom, ICUserModalsInfo1** ppTo);
+	static HRESULT TranslateToUserModalsInfo(ICUserModalsInfo1 * pFrom, USER_MODALS_INFO_1 &pTo);
 private:
 	unsigned long mulRole;
 	_bstr_t mbsPrimary;

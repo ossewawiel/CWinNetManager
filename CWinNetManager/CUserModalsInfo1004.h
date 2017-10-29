@@ -63,6 +63,8 @@ public:
 
 	STDMETHOD(Initialise)(ULONG ulForceLogoff);
 	STDMETHOD(get_ForceLogoff)(ULONG* pVal);
+
+	static HRESULT TranslateToUserModalsInfo(ICUserModalsInfo1004 * pFrom, LPUSER_MODALS_INFO_1004 &pTo);
 private:
 	unsigned long mulForceLogoff;
 };

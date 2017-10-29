@@ -1333,21 +1333,31 @@ interface ICNetUser : IDispatch{
 	[id(72)] HRESULT NetUserGetGroups0([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICGroupsUserInfo0** ppGroupsUserInfo0);
 	[id(73)] HRESULT NetUserGetGroups1([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICGroupsUserInfo1** ppGroupsUserInfo1);
 	[id(74)] HRESULT NetUserGetLocalGroups0([in] BSTR bsServerName, [in] BSTR bsUserName, [out, retval] ICLocalGroupsUserInfo0** ppLocalGroupsUserInfo0);
-	[id(75)] HRESULT NetUserModalsGet0([in] BSTR bsServerName, [out, retval] ICUserModalsInfo0** ppUserModalsInfo0);
-	[id(76)] HRESULT NetUserModalsGet1([in] BSTR bsServerName, [out, retval] ICUserModalsInfo1** ppUserModalsInfo1);
-	[id(77)] HRESULT NetUserModalsGet2([in] BSTR bsServerName, [out, retval] ICUserModalsInfo2** ppUserModalsInfo2);
-	[id(78)] HRESULT NetUserModalsGet3([in] BSTR bsServerName, [out, retval] ICUserModalsInfo3** ppUserModalsInfo3);
-	[id(79)] HRESULT GetUserModalsInfo0([in] ULONG ulMinPwdLen, [in] ULONG ulMaxPwdAge, [in] ULONG ulMinPwdAge, [in] ULONG ulForceLogoff, [in] ULONG ulPwdHistLen, [out, retval] ICUserModalsInfo0** ppUserModalsInfo0);
-	[id(80)] HRESULT GetUserModalsInfo1([in] ULONG ulRole, [in] BSTR bsPrimary, [out, retval] ICUserModalsInfo1** ppUserModalsInfo1);
-	[id(81)] HRESULT GetUserModalsInfo2([in] BSTR bsDomainName, [in] BSTR bsDomainId, [out, retval] ICUserModalsInfo2** ppUserModalsInfo2);
-	[id(82)] HRESULT GetUserModalsInfo3([in] ULONG ulLockoutDuration, [in] ULONG ulLockoutObservationWindow, [in] ULONG ulLockoutThreshold, [out, retval] ICUserModalsInfo3** ppUserModalsInfo3);
-	[id(83)] HRESULT GetUserModalsInfo1001([in] ULONG ulMinPwdLen, [out, retval] ICUserModalsInfo1001** ppUserModalsInfo1001);
-	[id(84)] HRESULT GetUserModalsInfo1002([in] ULONG ulMaxPwdAge, [out, retval] ICUserModalsInfo1002** ppUserModalsInfo1002);
-	[id(85)] HRESULT GetUserModalsInfo1003([in] ULONG ulMinPwdAge, [out, retval] ICUserModalsInfo1003** ppUserModalsInfo1003);
-	[id(86)] HRESULT GetUserModalsInfo1004([in] ULONG ulForceLogoff, [out, retval] ICUserModalsInfo1004** ppUserModalsInfo1004);
-	[id(87)] HRESULT GetUserModalsInfo1005([in] ULONG ulPwdHistLen, [out, retval] ICUserModalsInfo1005** ppUserModalsInfo1005);
-	[id(88)] HRESULT GetUserModalsInfo1006([in] ULONG ulRole, [out, retval] ICUserModalsInfo1006** ppUserModalsInfo1006);
-	[id(89)] HRESULT GetUserModalsInfo1007([in] BSTR bsPrimary, [out, retval] ICUserModalsInfo1007** ppUserModalsInfo1007);
+};
+[
+	object,
+	uuid(B0FA4122-FC51-4C9A-BB03-E3F86A16E83D),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICNetUserModals : IDispatch{
+	[id(1)] HRESULT NetUserModalsGet0([in] BSTR bsServerName, [out, retval] ICUserModalsInfo0** ppUserModalsInfo0);
+	[id(2)] HRESULT NetUserModalsGet1([in] BSTR bsServerName, [out, retval] ICUserModalsInfo1** ppUserModalsInfo1);
+	[id(3)] HRESULT NetUserModalsGet2([in] BSTR bsServerName, [out, retval] ICUserModalsInfo2** ppUserModalsInfo2);
+	[id(4)] HRESULT NetUserModalsGet3([in] BSTR bsServerName, [out, retval] ICUserModalsInfo3** ppUserModalsInfo3);
+	[id(5)] HRESULT GetUserModalsInfo0([in] ULONG ulMinPwdLen, [in] ULONG ulMaxPwdAge, [in] ULONG ulMinPwdAge, [in] ULONG ulForceLogoff, [in] ULONG ulPwdHistLen, [out, retval] ICUserModalsInfo0** ppUserModalsInfo0);
+	[id(6)] HRESULT GetUserModalsInfo1([in] ULONG ulRole, [in] BSTR bsPrimary, [out, retval] ICUserModalsInfo1** ppUserModalsInfo1);
+	[id(7)] HRESULT GetUserModalsInfo2([in] BSTR bsDomainName, [in] BSTR bsDomainId, [out, retval] ICUserModalsInfo2** ppUserModalsInfo2);
+	[id(8)] HRESULT GetUserModalsInfo3([in] ULONG ulLockoutDuration, [in] ULONG ulLockoutObservationWindow, [in] ULONG ulLockoutThreshold, [out, retval] ICUserModalsInfo3** ppUserModalsInfo3);
+	[id(9)] HRESULT GetUserModalsInfo1001([in] ULONG ulMinPwdLen, [out, retval] ICUserModalsInfo1001** ppUserModalsInfo1001);
+	[id(10)] HRESULT GetUserModalsInfo1002([in] ULONG ulMaxPwdAge, [out, retval] ICUserModalsInfo1002** ppUserModalsInfo1002);
+	[id(11)] HRESULT GetUserModalsInfo1003([in] ULONG ulMinPwdAge, [out, retval] ICUserModalsInfo1003** ppUserModalsInfo1003);
+	[id(12)] HRESULT GetUserModalsInfo1004([in] ULONG ulForceLogoff, [out, retval] ICUserModalsInfo1004** ppUserModalsInfo1004);
+	[id(13)] HRESULT GetUserModalsInfo1005([in] ULONG ulPwdHistLen, [out, retval] ICUserModalsInfo1005** ppUserModalsInfo1005);
+	[id(14)] HRESULT GetUserModalsInfo1006([in] ULONG ulRole, [out, retval] ICUserModalsInfo1006** ppUserModalsInfo1006);
+	[id(15)] HRESULT GetUserModalsInfo1007([in] BSTR bsPrimary, [out, retval] ICUserModalsInfo1007** ppUserModalsInfo1007);
+	[id(16)] HRESULT NetUserModalsSet([in] BSTR bsServerName, [in] eUserModalsInfoType infoType, [in] IUnknown* pUserModalsInfo);
 };
 [
 	uuid(F53A3EDB-3D55-4E7B-8687-F0759A72FBCA),
@@ -1775,6 +1785,13 @@ library CWinNetManagerLib
 	coclass CUserModalsInfo1007
 	{
 		[default] interface ICUserModalsInfo1007;
+	};
+	[
+		uuid(D8F184DA-6B14-4653-88C2-1C9881B34C74)		
+	]
+	coclass CNetUserModals
+	{
+		[default] interface ICNetUserModals;
 	};
 };
 

@@ -63,6 +63,7 @@ public:
 	STDMETHOD(get_DomainId)(BSTR* pVal);
 
 	static HRESULT TranslateFromUserModalsInfo(LPUSER_MODALS_INFO_2 & pFrom, ICUserModalsInfo2** ppTo);
+	static HRESULT TranslateToUserModalsInfo(ICUserModalsInfo2 * pFrom, USER_MODALS_INFO_2 &pTo);
 private:
 	_bstr_t mbsDomainName;
 	_bstr_t mbsDomainId;

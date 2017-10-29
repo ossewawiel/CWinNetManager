@@ -63,6 +63,8 @@ public:
 
 	STDMETHOD(Initialise)(ULONG ulMinPwdAge);
 	STDMETHOD(get_MinPwdAge)(ULONG* pVal);
+
+	static HRESULT TranslateToUserModalsInfo(ICUserModalsInfo1003 * pFrom, LPUSER_MODALS_INFO_1003 &pTo);
 private:
 	unsigned long mulMinPwdAge;
 };

@@ -220,6 +220,7 @@
     <ClCompile Include="CLogonHour.cpp" />
     <ClCompile Include="CLogonHours.cpp" />
     <ClCompile Include="CNetUser.cpp" />
+    <ClCompile Include="CNetUserModals.cpp" />
     <ClCompile Include="CUserInfo0.cpp" />
     <ClCompile Include="CUserInfo1.cpp" />
     <ClCompile Include="CUserInfo10.cpp" />
@@ -332,6 +333,7 @@
     <ClInclude Include="CLogonHour.h" />
     <ClInclude Include="CLogonHours.h" />
     <ClInclude Include="CNetUser.h" />
+    <ClInclude Include="CNetUserModals.h" />
     <ClInclude Include="CUserInfo0.h" />
     <ClInclude Include="CUserInfo1.h" />
     <ClInclude Include="CUserInfo10.h" />
@@ -376,6 +378,7 @@
     <ClInclude Include="CUserModalsInfo1007.h" />
     <ClInclude Include="CUserModalsInfo2.h" />
     <ClInclude Include="CUserModalsInfo3.h" />
+    <ClInclude Include="CuserModalsInfoUtils.h" />
     <ClInclude Include="CUsersInfo0.h" />
     <ClInclude Include="CUsersInfo1.h" />
     <ClInclude Include="CUsersInfo10.h" />
@@ -407,6 +410,7 @@
     <None Include="CLogonHour.rgs" />
     <None Include="CLogonHours.rgs" />
     <None Include="CNetUser.rgs" />
+    <None Include="CNetUserModals.rgs" />
     <None Include="CUserInfo0.rgs" />
     <None Include="CUserInfo1.rgs" />
     <None Include="CUserInfo10.rgs" />
@@ -439,10 +443,6 @@
     <None Include="CuserInfo24.rgs" />
     <None Include="CUserInfo3.rgs" />
     <None Include="CUserInfo4.rgs" />
-    <None Include="CuserModalInfo0.rgs" />
-    <None Include="CUserModalInfo1.rgs" />
-    <None Include="CUserModalInfo2.rgs" />
-    <None Include="CUserModalInfo3.rgs" />
     <None Include="CUserModalsInfo0.rgs" />
     <None Include="CUserModalsInfo1.rgs" />
     <None Include="CUserModalsInfo1001.rgs" />

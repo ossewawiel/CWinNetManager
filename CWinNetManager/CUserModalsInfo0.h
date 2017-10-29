@@ -69,7 +69,7 @@ public:
 	STDMETHOD(get_PwdHistLen)(ULONG* pVal);
 
 	static HRESULT TranslateFromUserModalsInfo(LPUSER_MODALS_INFO_0 & pFrom, ICUserModalsInfo0** ppTo);
-
+	static HRESULT TranslateToUserModalsInfo(ICUserModalsInfo0 * pFrom, USER_MODALS_INFO_0 &pTo);
 	
 private:
 	unsigned long mulMinPwdLen;

@@ -63,6 +63,8 @@ public:
 
 	STDMETHOD(Initialise)(ULONG ulMaxPwdAge);
 	STDMETHOD(get_MaxPwdAge)(ULONG* pVal);
+
+	static HRESULT TranslateToUserModalsInfo(ICUserModalsInfo1002 * pFrom, LPUSER_MODALS_INFO_1002 &pTo);
 private:
 	unsigned long mulMaxPwdAge;
 };

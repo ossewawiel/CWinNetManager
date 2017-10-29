@@ -2,7 +2,7 @@
 
 #include "stdafx.h"
 #include "CUserModalsInfo3.h"
-
+#include "CuserModalsInfoUtils.h"
 
 // CCUserModalsInfo3
 
@@ -43,4 +43,13 @@ HRESULT CCUserModalsInfo3::TranslateFromUserModalsInfo(LPUSER_MODALS_INFO_3 & pF
 		pFrom->usrmod3_lockout_duration
 		, pFrom->usrmod3_lockout_observation_window
 		, pFrom->usrmod3_lockout_threshold);
+}
+
+HRESULT CCUserModalsInfo3::TranslateToUserModalsInfo(ICUserModalsInfo3 * pFrom, USER_MODALS_INFO_3 & pTo)
+{
+	HRESULT hr(S_OK);
+	if (hr = ToUserModelsLockoutDuration			<ICUserModalsInfo3>(pFrom, pTo.usrmod3_lockout_duration))				return hr;
+	if (hr = ToUserModelsLockoutObservationWindow	<ICUserModalsInfo3>(pFrom, pTo.usrmod3_lockout_observation_window))		return hr;
+	if (hr = ToUserModelsLockoutThreshold			<ICUserModalsInfo3>(pFrom, pTo.usrmod3_lockout_threshold))				return hr;
+	return hr;
 }

@@ -63,6 +63,8 @@ public:
 
 	STDMETHOD(Initialise)(ULONG ulRole);
 	STDMETHOD(get_Role)(ULONG* pVal);
+
+	static HRESULT TranslateToUserModalsInfo(ICUserModalsInfo1006 * pFrom, LPUSER_MODALS_INFO_1006 &pTo);
 private:
 	unsigned long mulRole;
 };

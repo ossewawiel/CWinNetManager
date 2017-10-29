@@ -154,6 +154,7 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TestCNetUser.h" />
     <ClInclude Include="TConstants.h" />
+    <ClInclude Include="TestCNetUserModals.h" />
     <ClInclude Include="TUtils.h" />
   </ItemGroup>
   <ItemGroup>
@@ -164,10 +165,10 @@
     <ClCompile Include="TestCNetUser_GetGroups.cpp" />
     <ClCompile Include="TestCNetUser_GetInfo.cpp" />
     <ClCompile Include="TestCNetUser_GetLocalGroups.cpp" />
-    <ClCompile Include="TestCNetUser_GetModals.cpp" />
+    <ClCompile Include="TestCNetUserModals_GetModals.cpp" />
     <ClCompile Include="TestCNetUser_GetUserInfo.cpp" />
-    <ClCompile Include="TestCNetUser_ModalsGet.cpp" />
-    <ClCompile Include="TestCNetUser_ModalsSet.cpp" />
+    <ClCompile Include="TestCNetUserModals_Get.cpp" />
+    <ClCompile Include="TestCNetUserModals_Set.cpp" />
     <ClCompile Include="TestCNetUser_NetUserAdd.cpp" />
     <ClCompile Include="TestCNetUser_SetUserInfo.cpp" />
     <ClCompile Include="TUtils.cpp" />

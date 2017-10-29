@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Sun Oct 22 20:42:52 2017
+/* at Sun Oct 29 14:49:18 2017
  */
 /* Compiler settings for CWinNetManager.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 
@@ -463,6 +463,13 @@ typedef interface ICUserModalsInfo1007 ICUserModalsInfo1007;
 typedef interface ICNetUser ICNetUser;
 
 #endif 	/* __ICNetUser_FWD_DEFINED__ */
+
+
+#ifndef __ICNetUserModals_FWD_DEFINED__
+#define __ICNetUserModals_FWD_DEFINED__
+typedef interface ICNetUserModals ICNetUserModals;
+
+#endif 	/* __ICNetUserModals_FWD_DEFINED__ */
 
 
 #ifndef __CNetUser_FWD_DEFINED__
@@ -1183,6 +1190,18 @@ typedef struct CUserModalsInfo1007 CUserModalsInfo1007;
 #endif /* __cplusplus */
 
 #endif 	/* __CUserModalsInfo1007_FWD_DEFINED__ */
+
+
+#ifndef __CNetUserModals_FWD_DEFINED__
+#define __CNetUserModals_FWD_DEFINED__
+
+#ifdef __cplusplus
+typedef class CNetUserModals CNetUserModals;
+#else
+typedef struct CNetUserModals CNetUserModals;
+#endif /* __cplusplus */
+
+#endif 	/* __CNetUserModals_FWD_DEFINED__ */
 
 
 /* header files for imported files */
@@ -12468,74 +12487,6 @@ EXTERN_C const IID IID_ICNetUser;
             /* [in] */ BSTR bsUserName,
             /* [retval][out] */ ICLocalGroupsUserInfo0 **ppLocalGroupsUserInfo0) = 0;
         
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserModalsGet0( 
-            /* [in] */ BSTR bsServerName,
-            /* [retval][out] */ ICUserModalsInfo0 **ppUserModalsInfo0) = 0;
-        
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserModalsGet1( 
-            /* [in] */ BSTR bsServerName,
-            /* [retval][out] */ ICUserModalsInfo1 **ppUserModalsInfo1) = 0;
-        
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserModalsGet2( 
-            /* [in] */ BSTR bsServerName,
-            /* [retval][out] */ ICUserModalsInfo2 **ppUserModalsInfo2) = 0;
-        
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserModalsGet3( 
-            /* [in] */ BSTR bsServerName,
-            /* [retval][out] */ ICUserModalsInfo3 **ppUserModalsInfo3) = 0;
-        
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetUserModalsInfo0( 
-            /* [in] */ ULONG ulMinPwdLen,
-            /* [in] */ ULONG ulMaxPwdAge,
-            /* [in] */ ULONG ulMinPwdAge,
-            /* [in] */ ULONG ulForceLogoff,
-            /* [in] */ ULONG ulPwdHistLen,
-            /* [retval][out] */ ICUserModalsInfo0 **ppUserModalsInfo0) = 0;
-        
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetUserModalsInfo1( 
-            /* [in] */ ULONG ulRole,
-            /* [in] */ BSTR bsPrimary,
-            /* [retval][out] */ ICUserModalsInfo1 **ppUserModalsInfo1) = 0;
-        
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetUserModalsInfo2( 
-            /* [in] */ BSTR bsDomainName,
-            /* [in] */ BSTR bsDomainId,
-            /* [retval][out] */ ICUserModalsInfo2 **ppUserModalsInfo2) = 0;
-        
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetUserModalsInfo3( 
-            /* [in] */ ULONG ulLockoutDuration,
-            /* [in] */ ULONG ulLockoutObservationWindow,
-            /* [in] */ ULONG ulLockoutThreshold,
-            /* [retval][out] */ ICUserModalsInfo3 **ppUserModalsInfo3) = 0;
-        
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetUserModalsInfo1001( 
-            /* [in] */ ULONG ulMinPwdLen,
-            /* [retval][out] */ ICUserModalsInfo1001 **ppUserModalsInfo1001) = 0;
-        
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetUserModalsInfo1002( 
-            /* [in] */ ULONG ulMaxPwdAge,
-            /* [retval][out] */ ICUserModalsInfo1002 **ppUserModalsInfo1002) = 0;
-        
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetUserModalsInfo1003( 
-            /* [in] */ ULONG ulMinPwdAge,
-            /* [retval][out] */ ICUserModalsInfo1003 **ppUserModalsInfo1003) = 0;
-        
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetUserModalsInfo1004( 
-            /* [in] */ ULONG ulForceLogoff,
-            /* [retval][out] */ ICUserModalsInfo1004 **ppUserModalsInfo1004) = 0;
-        
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetUserModalsInfo1005( 
-            /* [in] */ ULONG ulPwdHistLen,
-            /* [retval][out] */ ICUserModalsInfo1005 **ppUserModalsInfo1005) = 0;
-        
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetUserModalsInfo1006( 
-            /* [in] */ ULONG ulRole,
-            /* [retval][out] */ ICUserModalsInfo1006 **ppUserModalsInfo1006) = 0;
-        
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetUserModalsInfo1007( 
-            /* [in] */ BSTR bsPrimary,
-            /* [retval][out] */ ICUserModalsInfo1007 **ppUserModalsInfo1007) = 0;
-        
     };
     
     
@@ -13136,89 +13087,6 @@ EXTERN_C const IID IID_ICNetUser;
             /* [in] */ BSTR bsUserName,
             /* [retval][out] */ ICLocalGroupsUserInfo0 **ppLocalGroupsUserInfo0);
         
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserModalsGet0 )( 
-            ICNetUser * This,
-            /* [in] */ BSTR bsServerName,
-            /* [retval][out] */ ICUserModalsInfo0 **ppUserModalsInfo0);
-        
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserModalsGet1 )( 
-            ICNetUser * This,
-            /* [in] */ BSTR bsServerName,
-            /* [retval][out] */ ICUserModalsInfo1 **ppUserModalsInfo1);
-        
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserModalsGet2 )( 
-            ICNetUser * This,
-            /* [in] */ BSTR bsServerName,
-            /* [retval][out] */ ICUserModalsInfo2 **ppUserModalsInfo2);
-        
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserModalsGet3 )( 
-            ICNetUser * This,
-            /* [in] */ BSTR bsServerName,
-            /* [retval][out] */ ICUserModalsInfo3 **ppUserModalsInfo3);
-        
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetUserModalsInfo0 )( 
-            ICNetUser * This,
-            /* [in] */ ULONG ulMinPwdLen,
-            /* [in] */ ULONG ulMaxPwdAge,
-            /* [in] */ ULONG ulMinPwdAge,
-            /* [in] */ ULONG ulForceLogoff,
-            /* [in] */ ULONG ulPwdHistLen,
-            /* [retval][out] */ ICUserModalsInfo0 **ppUserModalsInfo0);
-        
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetUserModalsInfo1 )( 
-            ICNetUser * This,
-            /* [in] */ ULONG ulRole,
-            /* [in] */ BSTR bsPrimary,
-            /* [retval][out] */ ICUserModalsInfo1 **ppUserModalsInfo1);
-        
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetUserModalsInfo2 )( 
-            ICNetUser * This,
-            /* [in] */ BSTR bsDomainName,
-            /* [in] */ BSTR bsDomainId,
-            /* [retval][out] */ ICUserModalsInfo2 **ppUserModalsInfo2);
-        
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetUserModalsInfo3 )( 
-            ICNetUser * This,
-            /* [in] */ ULONG ulLockoutDuration,
-            /* [in] */ ULONG ulLockoutObservationWindow,
-            /* [in] */ ULONG ulLockoutThreshold,
-            /* [retval][out] */ ICUserModalsInfo3 **ppUserModalsInfo3);
-        
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetUserModalsInfo1001 )( 
-            ICNetUser * This,
-            /* [in] */ ULONG ulMinPwdLen,
-            /* [retval][out] */ ICUserModalsInfo1001 **ppUserModalsInfo1001);
-        
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetUserModalsInfo1002 )( 
-            ICNetUser * This,
-            /* [in] */ ULONG ulMaxPwdAge,
-            /* [retval][out] */ ICUserModalsInfo1002 **ppUserModalsInfo1002);
-        
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetUserModalsInfo1003 )( 
-            ICNetUser * This,
-            /* [in] */ ULONG ulMinPwdAge,
-            /* [retval][out] */ ICUserModalsInfo1003 **ppUserModalsInfo1003);
-        
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetUserModalsInfo1004 )( 
-            ICNetUser * This,
-            /* [in] */ ULONG ulForceLogoff,
-            /* [retval][out] */ ICUserModalsInfo1004 **ppUserModalsInfo1004);
-        
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetUserModalsInfo1005 )( 
-            ICNetUser * This,
-            /* [in] */ ULONG ulPwdHistLen,
-            /* [retval][out] */ ICUserModalsInfo1005 **ppUserModalsInfo1005);
-        
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetUserModalsInfo1006 )( 
-            ICNetUser * This,
-            /* [in] */ ULONG ulRole,
-            /* [retval][out] */ ICUserModalsInfo1006 **ppUserModalsInfo1006);
-        
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetUserModalsInfo1007 )( 
-            ICNetUser * This,
-            /* [in] */ BSTR bsPrimary,
-            /* [retval][out] */ ICUserModalsInfo1007 **ppUserModalsInfo1007);
-        
         END_INTERFACE
     } ICNetUserVtbl;
 
@@ -13474,51 +13342,6 @@ EXTERN_C const IID IID_ICNetUser;
 #define ICNetUser_NetUserGetLocalGroups0(This,bsServerName,bsUserName,ppLocalGroupsUserInfo0)	\
     ( (This)->lpVtbl -> NetUserGetLocalGroups0(This,bsServerName,bsUserName,ppLocalGroupsUserInfo0) ) 
 
-#define ICNetUser_NetUserModalsGet0(This,bsServerName,ppUserModalsInfo0)	\
-    ( (This)->lpVtbl -> NetUserModalsGet0(This,bsServerName,ppUserModalsInfo0) ) 
-
-#define ICNetUser_NetUserModalsGet1(This,bsServerName,ppUserModalsInfo1)	\
-    ( (This)->lpVtbl -> NetUserModalsGet1(This,bsServerName,ppUserModalsInfo1) ) 
-
-#define ICNetUser_NetUserModalsGet2(This,bsServerName,ppUserModalsInfo2)	\
-    ( (This)->lpVtbl -> NetUserModalsGet2(This,bsServerName,ppUserModalsInfo2) ) 
-
-#define ICNetUser_NetUserModalsGet3(This,bsServerName,ppUserModalsInfo3)	\
-    ( (This)->lpVtbl -> NetUserModalsGet3(This,bsServerName,ppUserModalsInfo3) ) 
-
-#define ICNetUser_GetUserModalsInfo0(This,ulMinPwdLen,ulMaxPwdAge,ulMinPwdAge,ulForceLogoff,ulPwdHistLen,ppUserModalsInfo0)	\
-    ( (This)->lpVtbl -> GetUserModalsInfo0(This,ulMinPwdLen,ulMaxPwdAge,ulMinPwdAge,ulForceLogoff,ulPwdHistLen,ppUserModalsInfo0) ) 
-
-#define ICNetUser_GetUserModalsInfo1(This,ulRole,bsPrimary,ppUserModalsInfo1)	\
-    ( (This)->lpVtbl -> GetUserModalsInfo1(This,ulRole,bsPrimary,ppUserModalsInfo1) ) 
-
-#define ICNetUser_GetUserModalsInfo2(This,bsDomainName,bsDomainId,ppUserModalsInfo2)	\
-    ( (This)->lpVtbl -> GetUserModalsInfo2(This,bsDomainName,bsDomainId,ppUserModalsInfo2) ) 
-
-#define ICNetUser_GetUserModalsInfo3(This,ulLockoutDuration,ulLockoutObservationWindow,ulLockoutThreshold,ppUserModalsInfo3)	\
-    ( (This)->lpVtbl -> GetUserModalsInfo3(This,ulLockoutDuration,ulLockoutObservationWindow,ulLockoutThreshold,ppUserModalsInfo3) ) 
-
-#define ICNetUser_GetUserModalsInfo1001(This,ulMinPwdLen,ppUserModalsInfo1001)	\
-    ( (This)->lpVtbl -> GetUserModalsInfo1001(This,ulMinPwdLen,ppUserModalsInfo1001) ) 
-
-#define ICNetUser_GetUserModalsInfo1002(This,ulMaxPwdAge,ppUserModalsInfo1002)	\
-    ( (This)->lpVtbl -> GetUserModalsInfo1002(This,ulMaxPwdAge,ppUserModalsInfo1002) ) 
-
-#define ICNetUser_GetUserModalsInfo1003(This,ulMinPwdAge,ppUserModalsInfo1003)	\
-    ( (This)->lpVtbl -> GetUserModalsInfo1003(This,ulMinPwdAge,ppUserModalsInfo1003) ) 
-
-#define ICNetUser_GetUserModalsInfo1004(This,ulForceLogoff,ppUserModalsInfo1004)	\
-    ( (This)->lpVtbl -> GetUserModalsInfo1004(This,ulForceLogoff,ppUserModalsInfo1004) ) 
-
-#define ICNetUser_GetUserModalsInfo1005(This,ulPwdHistLen,ppUserModalsInfo1005)	\
-    ( (This)->lpVtbl -> GetUserModalsInfo1005(This,ulPwdHistLen,ppUserModalsInfo1005) ) 
-
-#define ICNetUser_GetUserModalsInfo1006(This,ulRole,ppUserModalsInfo1006)	\
-    ( (This)->lpVtbl -> GetUserModalsInfo1006(This,ulRole,ppUserModalsInfo1006) ) 
-
-#define ICNetUser_GetUserModalsInfo1007(This,bsPrimary,ppUserModalsInfo1007)	\
-    ( (This)->lpVtbl -> GetUserModalsInfo1007(This,bsPrimary,ppUserModalsInfo1007) ) 
-
 #endif /* COBJMACROS */
 
 
@@ -13528,6 +13351,336 @@ EXTERN_C const IID IID_ICNetUser;
 
 
 #endif 	/* __ICNetUser_INTERFACE_DEFINED__ */
+
+
+#ifndef __ICNetUserModals_INTERFACE_DEFINED__
+#define __ICNetUserModals_INTERFACE_DEFINED__
+
+/* interface ICNetUserModals */
+/* [unique][nonextensible][dual][uuid][object] */ 
+
+
+EXTERN_C const IID IID_ICNetUserModals;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("B0FA4122-FC51-4C9A-BB03-E3F86A16E83D")
+    ICNetUserModals : public IDispatch
+    {
+    public:
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserModalsGet0( 
+            /* [in] */ BSTR bsServerName,
+            /* [retval][out] */ ICUserModalsInfo0 **ppUserModalsInfo0) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserModalsGet1( 
+            /* [in] */ BSTR bsServerName,
+            /* [retval][out] */ ICUserModalsInfo1 **ppUserModalsInfo1) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserModalsGet2( 
+            /* [in] */ BSTR bsServerName,
+            /* [retval][out] */ ICUserModalsInfo2 **ppUserModalsInfo2) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserModalsGet3( 
+            /* [in] */ BSTR bsServerName,
+            /* [retval][out] */ ICUserModalsInfo3 **ppUserModalsInfo3) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetUserModalsInfo0( 
+            /* [in] */ ULONG ulMinPwdLen,
+            /* [in] */ ULONG ulMaxPwdAge,
+            /* [in] */ ULONG ulMinPwdAge,
+            /* [in] */ ULONG ulForceLogoff,
+            /* [in] */ ULONG ulPwdHistLen,
+            /* [retval][out] */ ICUserModalsInfo0 **ppUserModalsInfo0) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetUserModalsInfo1( 
+            /* [in] */ ULONG ulRole,
+            /* [in] */ BSTR bsPrimary,
+            /* [retval][out] */ ICUserModalsInfo1 **ppUserModalsInfo1) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetUserModalsInfo2( 
+            /* [in] */ BSTR bsDomainName,
+            /* [in] */ BSTR bsDomainId,
+            /* [retval][out] */ ICUserModalsInfo2 **ppUserModalsInfo2) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetUserModalsInfo3( 
+            /* [in] */ ULONG ulLockoutDuration,
+            /* [in] */ ULONG ulLockoutObservationWindow,
+            /* [in] */ ULONG ulLockoutThreshold,
+            /* [retval][out] */ ICUserModalsInfo3 **ppUserModalsInfo3) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetUserModalsInfo1001( 
+            /* [in] */ ULONG ulMinPwdLen,
+            /* [retval][out] */ ICUserModalsInfo1001 **ppUserModalsInfo1001) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetUserModalsInfo1002( 
+            /* [in] */ ULONG ulMaxPwdAge,
+            /* [retval][out] */ ICUserModalsInfo1002 **ppUserModalsInfo1002) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetUserModalsInfo1003( 
+            /* [in] */ ULONG ulMinPwdAge,
+            /* [retval][out] */ ICUserModalsInfo1003 **ppUserModalsInfo1003) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetUserModalsInfo1004( 
+            /* [in] */ ULONG ulForceLogoff,
+            /* [retval][out] */ ICUserModalsInfo1004 **ppUserModalsInfo1004) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetUserModalsInfo1005( 
+            /* [in] */ ULONG ulPwdHistLen,
+            /* [retval][out] */ ICUserModalsInfo1005 **ppUserModalsInfo1005) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetUserModalsInfo1006( 
+            /* [in] */ ULONG ulRole,
+            /* [retval][out] */ ICUserModalsInfo1006 **ppUserModalsInfo1006) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetUserModalsInfo1007( 
+            /* [in] */ BSTR bsPrimary,
+            /* [retval][out] */ ICUserModalsInfo1007 **ppUserModalsInfo1007) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE NetUserModalsSet( 
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ eUserModalsInfoType infoType,
+            /* [in] */ IUnknown *pUserModalsInfo) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct ICNetUserModalsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            ICNetUserModals * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            ICNetUserModals * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            ICNetUserModals * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
+            ICNetUserModals * This,
+            /* [out] */ UINT *pctinfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
+            ICNetUserModals * This,
+            /* [in] */ UINT iTInfo,
+            /* [in] */ LCID lcid,
+            /* [out] */ ITypeInfo **ppTInfo);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
+            ICNetUserModals * This,
+            /* [in] */ REFIID riid,
+            /* [size_is][in] */ LPOLESTR *rgszNames,
+            /* [range][in] */ UINT cNames,
+            /* [in] */ LCID lcid,
+            /* [size_is][out] */ DISPID *rgDispId);
+        
+        /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
+            ICNetUserModals * This,
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserModalsGet0 )( 
+            ICNetUserModals * This,
+            /* [in] */ BSTR bsServerName,
+            /* [retval][out] */ ICUserModalsInfo0 **ppUserModalsInfo0);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserModalsGet1 )( 
+            ICNetUserModals * This,
+            /* [in] */ BSTR bsServerName,
+            /* [retval][out] */ ICUserModalsInfo1 **ppUserModalsInfo1);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserModalsGet2 )( 
+            ICNetUserModals * This,
+            /* [in] */ BSTR bsServerName,
+            /* [retval][out] */ ICUserModalsInfo2 **ppUserModalsInfo2);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserModalsGet3 )( 
+            ICNetUserModals * This,
+            /* [in] */ BSTR bsServerName,
+            /* [retval][out] */ ICUserModalsInfo3 **ppUserModalsInfo3);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetUserModalsInfo0 )( 
+            ICNetUserModals * This,
+            /* [in] */ ULONG ulMinPwdLen,
+            /* [in] */ ULONG ulMaxPwdAge,
+            /* [in] */ ULONG ulMinPwdAge,
+            /* [in] */ ULONG ulForceLogoff,
+            /* [in] */ ULONG ulPwdHistLen,
+            /* [retval][out] */ ICUserModalsInfo0 **ppUserModalsInfo0);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetUserModalsInfo1 )( 
+            ICNetUserModals * This,
+            /* [in] */ ULONG ulRole,
+            /* [in] */ BSTR bsPrimary,
+            /* [retval][out] */ ICUserModalsInfo1 **ppUserModalsInfo1);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetUserModalsInfo2 )( 
+            ICNetUserModals * This,
+            /* [in] */ BSTR bsDomainName,
+            /* [in] */ BSTR bsDomainId,
+            /* [retval][out] */ ICUserModalsInfo2 **ppUserModalsInfo2);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetUserModalsInfo3 )( 
+            ICNetUserModals * This,
+            /* [in] */ ULONG ulLockoutDuration,
+            /* [in] */ ULONG ulLockoutObservationWindow,
+            /* [in] */ ULONG ulLockoutThreshold,
+            /* [retval][out] */ ICUserModalsInfo3 **ppUserModalsInfo3);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetUserModalsInfo1001 )( 
+            ICNetUserModals * This,
+            /* [in] */ ULONG ulMinPwdLen,
+            /* [retval][out] */ ICUserModalsInfo1001 **ppUserModalsInfo1001);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetUserModalsInfo1002 )( 
+            ICNetUserModals * This,
+            /* [in] */ ULONG ulMaxPwdAge,
+            /* [retval][out] */ ICUserModalsInfo1002 **ppUserModalsInfo1002);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetUserModalsInfo1003 )( 
+            ICNetUserModals * This,
+            /* [in] */ ULONG ulMinPwdAge,
+            /* [retval][out] */ ICUserModalsInfo1003 **ppUserModalsInfo1003);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetUserModalsInfo1004 )( 
+            ICNetUserModals * This,
+            /* [in] */ ULONG ulForceLogoff,
+            /* [retval][out] */ ICUserModalsInfo1004 **ppUserModalsInfo1004);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetUserModalsInfo1005 )( 
+            ICNetUserModals * This,
+            /* [in] */ ULONG ulPwdHistLen,
+            /* [retval][out] */ ICUserModalsInfo1005 **ppUserModalsInfo1005);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetUserModalsInfo1006 )( 
+            ICNetUserModals * This,
+            /* [in] */ ULONG ulRole,
+            /* [retval][out] */ ICUserModalsInfo1006 **ppUserModalsInfo1006);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetUserModalsInfo1007 )( 
+            ICNetUserModals * This,
+            /* [in] */ BSTR bsPrimary,
+            /* [retval][out] */ ICUserModalsInfo1007 **ppUserModalsInfo1007);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *NetUserModalsSet )( 
+            ICNetUserModals * This,
+            /* [in] */ BSTR bsServerName,
+            /* [in] */ eUserModalsInfoType infoType,
+            /* [in] */ IUnknown *pUserModalsInfo);
+        
+        END_INTERFACE
+    } ICNetUserModalsVtbl;
+
+    interface ICNetUserModals
+    {
+        CONST_VTBL struct ICNetUserModalsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define ICNetUserModals_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define ICNetUserModals_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define ICNetUserModals_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define ICNetUserModals_GetTypeInfoCount(This,pctinfo)	\
+    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+
+#define ICNetUserModals_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+
+#define ICNetUserModals_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+
+#define ICNetUserModals_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+
+
+#define ICNetUserModals_NetUserModalsGet0(This,bsServerName,ppUserModalsInfo0)	\
+    ( (This)->lpVtbl -> NetUserModalsGet0(This,bsServerName,ppUserModalsInfo0) ) 
+
+#define ICNetUserModals_NetUserModalsGet1(This,bsServerName,ppUserModalsInfo1)	\
+    ( (This)->lpVtbl -> NetUserModalsGet1(This,bsServerName,ppUserModalsInfo1) ) 
+
+#define ICNetUserModals_NetUserModalsGet2(This,bsServerName,ppUserModalsInfo2)	\
+    ( (This)->lpVtbl -> NetUserModalsGet2(This,bsServerName,ppUserModalsInfo2) ) 
+
+#define ICNetUserModals_NetUserModalsGet3(This,bsServerName,ppUserModalsInfo3)	\
+    ( (This)->lpVtbl -> NetUserModalsGet3(This,bsServerName,ppUserModalsInfo3) ) 
+
+#define ICNetUserModals_GetUserModalsInfo0(This,ulMinPwdLen,ulMaxPwdAge,ulMinPwdAge,ulForceLogoff,ulPwdHistLen,ppUserModalsInfo0)	\
+    ( (This)->lpVtbl -> GetUserModalsInfo0(This,ulMinPwdLen,ulMaxPwdAge,ulMinPwdAge,ulForceLogoff,ulPwdHistLen,ppUserModalsInfo0) ) 
+
+#define ICNetUserModals_GetUserModalsInfo1(This,ulRole,bsPrimary,ppUserModalsInfo1)	\
+    ( (This)->lpVtbl -> GetUserModalsInfo1(This,ulRole,bsPrimary,ppUserModalsInfo1) ) 
+
+#define ICNetUserModals_GetUserModalsInfo2(This,bsDomainName,bsDomainId,ppUserModalsInfo2)	\
+    ( (This)->lpVtbl -> GetUserModalsInfo2(This,bsDomainName,bsDomainId,ppUserModalsInfo2) ) 
+
+#define ICNetUserModals_GetUserModalsInfo3(This,ulLockoutDuration,ulLockoutObservationWindow,ulLockoutThreshold,ppUserModalsInfo3)	\
+    ( (This)->lpVtbl -> GetUserModalsInfo3(This,ulLockoutDuration,ulLockoutObservationWindow,ulLockoutThreshold,ppUserModalsInfo3) ) 
+
+#define ICNetUserModals_GetUserModalsInfo1001(This,ulMinPwdLen,ppUserModalsInfo1001)	\
+    ( (This)->lpVtbl -> GetUserModalsInfo1001(This,ulMinPwdLen,ppUserModalsInfo1001) ) 
+
+#define ICNetUserModals_GetUserModalsInfo1002(This,ulMaxPwdAge,ppUserModalsInfo1002)	\
+    ( (This)->lpVtbl -> GetUserModalsInfo1002(This,ulMaxPwdAge,ppUserModalsInfo1002) ) 
+
+#define ICNetUserModals_GetUserModalsInfo1003(This,ulMinPwdAge,ppUserModalsInfo1003)	\
+    ( (This)->lpVtbl -> GetUserModalsInfo1003(This,ulMinPwdAge,ppUserModalsInfo1003) ) 
+
+#define ICNetUserModals_GetUserModalsInfo1004(This,ulForceLogoff,ppUserModalsInfo1004)	\
+    ( (This)->lpVtbl -> GetUserModalsInfo1004(This,ulForceLogoff,ppUserModalsInfo1004) ) 
+
+#define ICNetUserModals_GetUserModalsInfo1005(This,ulPwdHistLen,ppUserModalsInfo1005)	\
+    ( (This)->lpVtbl -> GetUserModalsInfo1005(This,ulPwdHistLen,ppUserModalsInfo1005) ) 
+
+#define ICNetUserModals_GetUserModalsInfo1006(This,ulRole,ppUserModalsInfo1006)	\
+    ( (This)->lpVtbl -> GetUserModalsInfo1006(This,ulRole,ppUserModalsInfo1006) ) 
+
+#define ICNetUserModals_GetUserModalsInfo1007(This,bsPrimary,ppUserModalsInfo1007)	\
+    ( (This)->lpVtbl -> GetUserModalsInfo1007(This,bsPrimary,ppUserModalsInfo1007) ) 
+
+#define ICNetUserModals_NetUserModalsSet(This,bsServerName,infoType,pUserModalsInfo)	\
+    ( (This)->lpVtbl -> NetUserModalsSet(This,bsServerName,infoType,pUserModalsInfo) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __ICNetUserModals_INTERFACE_DEFINED__ */
 
 
 
@@ -14018,6 +14171,14 @@ EXTERN_C const CLSID CLSID_CUserModalsInfo1007;
 
 class DECLSPEC_UUID("C0F13B54-80F4-4FB9-9D8C-D6445DE31A47")
 CUserModalsInfo1007;
+#endif
+
+EXTERN_C const CLSID CLSID_CNetUserModals;
+
+#ifdef __cplusplus
+
+class DECLSPEC_UUID("D8F184DA-6B14-4653-88C2-1C9881B34C74")
+CNetUserModals;
 #endif
 #endif /* __CWinNetManagerLib_LIBRARY_DEFINED__ */
 

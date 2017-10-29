@@ -64,6 +64,7 @@ public:
 	STDMETHOD(get_LockoutThreshold)(ULONG* pVal);
 
 	static HRESULT TranslateFromUserModalsInfo(LPUSER_MODALS_INFO_3 & pFrom, ICUserModalsInfo3** ppTo);
+	static HRESULT TranslateToUserModalsInfo(ICUserModalsInfo3 * pFrom, USER_MODALS_INFO_3 &pTo);
 private:
 	unsigned long mulLockoutDuration;
 	unsigned long mulLockoutObservationWindow;

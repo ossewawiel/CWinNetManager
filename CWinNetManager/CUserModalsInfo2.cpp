@@ -2,7 +2,7 @@
 
 #include "stdafx.h"
 #include "CUserModalsInfo2.h"
-
+#include "CuserModalsInfoUtils.h"
 
 // CCUserModalsInfo2
 
@@ -32,7 +32,17 @@ HRESULT CCUserModalsInfo2::TranslateFromUserModalsInfo(LPUSER_MODALS_INFO_2 & pF
 {
 	HRESULT hr(S_OK);
 	if (hr = CCUserModalsInfo2::CreateInstance(ppTo)) return hr;
+	_bstr_t bsSid;
+	if (hr = FromUserModelsSid(pFrom->usrmod2_domain_id, bsSid.GetAddress())) return hr;
 	return (*ppTo)->Initialise(
 		_bstr_t(pFrom->usrmod2_domain_name)
-		, _bstr_t(pFrom->usrmod2_domain_id));
+		, bsSid);
+}
+
+HRESULT CCUserModalsInfo2::TranslateToUserModalsInfo(ICUserModalsInfo2 * pFrom, USER_MODALS_INFO_2 & pTo)
+{
+	HRESULT hr(S_OK);
+	if (hr = ToUserModelsDomainName	<ICUserModalsInfo2>(pFrom, pTo.usrmod2_domain_name))	return hr;
+	if (hr = ToUserModelsDomainId	<ICUserModalsInfo2>(pFrom, pTo.usrmod2_domain_id))		return hr;
+	return hr;
 }

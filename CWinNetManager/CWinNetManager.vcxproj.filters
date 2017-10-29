@@ -226,6 +226,9 @@
     <ClCompile Include="CUserModalsInfo1007.cpp">
       <Filter>CUserModalInfo</Filter>
     </ClCompile>
+    <ClCompile Include="CNetUserModals.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -432,6 +435,12 @@
     <ClInclude Include="CUserModalsInfo1007.h">
       <Filter>CUserModalInfo</Filter>
     </ClInclude>
+    <ClInclude Include="CNetUserModals.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CuserModalsInfoUtils.h">
+      <Filter>CUserModalInfo</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="CWinNetManager.rc">
@@ -607,18 +616,6 @@
     <None Include="CUserModalsInfo3.rgs">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="CuserModalInfo0.rgs">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="CUserModalInfo1.rgs">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="CUserModalInfo2.rgs">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="CUserModalInfo3.rgs">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="CUserModalsInfo1001.rgs">
       <Filter>Resource Files</Filter>
     </None>
@@ -638,6 +635,9 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="CUserModalsInfo1007.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CNetUserModals.rgs">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

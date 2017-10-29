@@ -2,7 +2,7 @@
 
 #include "stdafx.h"
 #include "CUserModalsInfo0.h"
-
+#include "CuserModalsInfoUtils.h"
 
 // CCUserModalsInfo0
 
@@ -64,4 +64,15 @@ HRESULT CCUserModalsInfo0::TranslateFromUserModalsInfo(LPUSER_MODALS_INFO_0 & pF
 		, pFrom->usrmod0_min_passwd_age
 		, pFrom->usrmod0_force_logoff
 		, pFrom->usrmod0_password_hist_len);
+}
+
+HRESULT CCUserModalsInfo0::TranslateToUserModalsInfo(ICUserModalsInfo0 * pFrom, USER_MODALS_INFO_0 &pTo)
+{
+	HRESULT hr(S_OK);
+	if (hr = ToUserModelsForceLogoff<ICUserModalsInfo0>(pFrom, pTo.usrmod0_force_logoff))		return hr;
+	if (hr = ToUserModelsMaxPwdAge	<ICUserModalsInfo0>(pFrom, pTo.usrmod0_max_passwd_age))		return hr;
+	if (hr = ToUserModelsMinPwdAge	<ICUserModalsInfo0>(pFrom, pTo.usrmod0_min_passwd_age))		return hr;
+	if (hr = ToUserModelsMinPwdLen	<ICUserModalsInfo0>(pFrom, pTo.usrmod0_min_passwd_len))		return hr;
+	if (hr = ToUserModelsPwdHistLen	<ICUserModalsInfo0>(pFrom, pTo.usrmod0_password_hist_len))	return hr;
+	return hr;
 }

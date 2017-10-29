@@ -63,6 +63,8 @@ public:
 
 	STDMETHOD(Initialise)(ULONG ulMinPwdLen);
 	STDMETHOD(get_MinPwdLen)(ULONG* pVal);
+
+	static HRESULT TranslateToUserModalsInfo(ICUserModalsInfo1001 * pFrom, LPUSER_MODALS_INFO_1001 &pTo);
 private:
 	unsigned long mulMinPwdLen;
 };

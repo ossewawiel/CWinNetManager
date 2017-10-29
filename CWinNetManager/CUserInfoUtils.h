@@ -114,19 +114,6 @@ HRESULT NetUserGetLocalGroupsFrom(_bstr_t bsServerName, _bstr_t bsUserName, eLoc
 	return hr;
 }
 
-template<typename T, typename U, typename V>
-HRESULT NetUserModalsGetFrom(const _bstr_t &bsServerName, const eUserModalsInfoType umiType, T **pFrom)
-{
-	HRESULT hr(S_OK);
-	if (hr = U::CreateInstance(pFrom)) return hr;
-	V pBuf = NULL;
-	hr = ::NetUserModalsGet((LPWSTR)bsServerName, umiType, (LPBYTE*)&pBuf);
-	if (hr != NERR_Success) return hr;
-	if (pBuf == NULL) return hr;
-	if (hr = U::TranslateFromUserModalsInfo(pBuf, pFrom)) return hr;
-	return hr;
-}
-
 template<typename T>
 HRESULT ToUserInfoName(T *pFrom, LPWSTR &pTo)
 {
